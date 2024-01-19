@@ -1,0 +1,207 @@
+/* 웹폰트 적용하는 방법 -  웹폰트란 이 폰트가 깔려있지 않은 이용자가 보이도록 사용하는 방법*/
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff'); font-weight:800; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff'); font-weight:900; font-style:normal; }
+@font-face {
+    font-family: 'Cafe24Danjunghae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px;
+    color: #0d0d0d;
+    font-weight: 400;
+    line-height: 1.2;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+* {
+    padding: 0;   /* 모든 태그의 여백 삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넒이를 늘리는 요소인데 
+    넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li {
+    list-style: none;
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline제거 */
+    color: inherit;
+}
+
+header {
+    height: 100px;
+}
+header .logo {
+    float: left;
+    margin: 36px 0 0 0;
+}
+header .logo {
+    display: block;
+}
+header .gnb {
+    float: right;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 35px 35px 35px 35px;
+    /* a가 커져야하므로 padding을 줌. */
+}
+/* a태그에 마우스를 오버했을 때 -- 가상선택자 */
+header .gnb ul li a:hover {
+    text-decoration: underline;
+}
+
+.visual {
+    /* 
+        경로에서 ../는 폴더 밖으로 나가라는 명령
+        background에 아무리 큰 이미지를 넣어도
+        해당영역의 높이만큼만 보임
+        backgrond는 큰 이미지를 넣었고 
+        그걸 다 보이게 하려면 높이를 줘야함.  
+    */
+    height: 800px;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    color: #f1f1f1;
+    text-align: center;
+    /* 배경색 때문에 그 내부의 글자색상이 달라졌다면 
+    대표되는 색을 background랑 같이 선언해주는 것이 이해가 쉬움 */
+}
+.visual h2 {
+    font-size: 46px;
+    font-weight: 700;
+    color: rgba(241, 241, 241, 0.95);
+    line-height: 1.3;
+    padding: 310px 0 0 0;
+}
+.visual p {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    color: rgba(241, 241, 241, 0.6);
+    padding: 8px 0 0 0;
+
+}
+.visual h2 strong {
+    color: #ffef53;
+    font-weight: inherit;
+}
+
+.biz h2 {
+    font-size: 19px;
+    font-weight: inherit;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: -0.04em;
+    margin: 85px 0 60px 0;
+}
+.biz h2 strong {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0em;
+}
+ /*.biz h2 span {
+    font-size: 19px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.04em;
+} */
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.biz ul li h3 {
+    font-size: 40px;
+    font-weight: inherit;
+    margin: 40px 0 25px 0;
+}
+.biz ul li p {
+    font-size: 19px;
+    font-weight: inherit;
+}
+.biz ul li a {
+    border: 1px solid #888;
+    margin: 30px 0 0 0;
+    padding: 18px 90px 18px 90px;
+    display: inline-block;
+    /*display: block 넓이 100%라는 말 - 나를 감싸는 요소의 넓이 100%
+        그럼 a한테 display:block 주면 li와 넓이가 같아짐.
+        padding만 잘 들어가려면 display:inline-block;
+        a태그는 인라인 태그라서 padding이 올바르게 적용되지 않음
+        그래서 display: block을 주면 a태그를 감싸는 요소가 wrapper 넓이와 넓이가 같아짐
+        display: block;은 넓이 100%라는 이야기이므로 난 padding만 올바르게 주려면 
+        display: inline-block;
+        a태그에 padding이나 width을 주고자 할 때는 일단 display: block;을 주고 넓이가 너무 넓어지면
+        그때만 display: inline-block; */
+}
+
+.brand {
+    height: 800px;
+    background: url(../images/brand.png) center center no-repeat;
+    color: #f1f1f1;
+    text-align: left;
+    margin: 85px 0 0 0;
+}
+.brand h2 {
+    font-family: 'Cafe24Danjunghae';
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.1;
+    padding: 320px 0 12px 0;
+}
+.brand p {
+    font-size: 24px;
+    font-weight: inherit;
+    line-height: 1.4;
+    color: rgba(241, 241, 241, 0.6);
+}
+/*.brand .sub_tit {
+    font-size: 19px;
+    font-weight: inherit;
+    line-height: 1.4;
+    color: rgba(241, 241, 241, 0.6);
+}*/
+.brand a {
+    border: 1px solid rgba(241, 241, 241, 0.8);
+    margin: 30px 0 0 0;
+    padding: 18px 45px 18px 45px;
+    display: inline-block;
+    color: rgba(241, 241, 241, 0.8);
+}
+footer {
+    background-color: #222222;
+    padding: 40px 0 40px 0;
+    color: rgba(241, 241, 241, 0.8)
+    /* footer는 나중에 반응형 할 것을 감안해서 위아래 여백을 footer가 padding으로 처리*/
+}
+footer .f_nav {
+    display: flex;
+    margin: 0 0 10px 0;
+    /* 하단의 copyright와의 여백 */
+}
+footer .f_nav li {
+    margin: 0 20px 0 0;
+    /* 각각의 li 사이의 여백 */
+}
+footer .f_nav .privacy {
+    margin: 0 20px 0 0;
+    font-weight: 700;
+}
+footer .copyright {
+    color: rgba(241, 241, 241, 0.6)
+}

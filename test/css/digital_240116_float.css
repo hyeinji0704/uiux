@@ -1,0 +1,98 @@
+/* 웹폰트 적용하는 방법 -  웹폰트란 이 폰트가 깔려있지 않은 이용자가 보이도록 사용하는 방법*/
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff'); font-weight:800; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff'); font-weight:900; font-style:normal; }
+/* 글자의 스타일(서체, 색상, 행간, 자간, 정렬)은 상속이 가능합니다.
+기본 글꼴의 스타일 즉, p태그에 정의한 스타일은 전체를 감싸는 body태그에 정의해주고 다른 태그가 상속받게 스타일 줍니다. */
+body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.5;
+    word-break: keep-all;
+    word-wrap: break-word;
+    /* 단어가 줄이 바뀔 때 분리되는 현상을 막아주는 기능
+    즉, "새로운"이라는 글자가 줄이 바뀌면서
+    새
+    로운
+    이렇게 줄이 바뀌지 않고 한번에 나타나도록 하는 기능
+    단어(띄어쓰기 기준)가 무조건 붙어서 나오는 기능 */
+}
+
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+/* 태그의 스타일의 초기화
+   - 브라우저에서 특정태그에 스타일을 주는 경우가 많음
+    이 스타일을 제거하고 내 스타일을 입히는 작업
+    (어떤 태그는 여백이 기본적으로 있음)
+    */
+
+/* 태그초기화 - 태그의 기본스타일 제거*/
+* {
+    padding: 0;   /* 모든 태그의 여백 삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넒이를 늘리는 요소인데 
+    넓이를 늘리지 않도록 하는 속성 */
+}
+/* 다중선택자 쉼표로 연결한 선택자 모두에게
+동일한 스타일을 적용할 때 사용 */
+ul, ol, li {
+    list-style: none;
+    /* ul li앞에 동그라미 삭제 */
+}
+.tit {
+    background-color: #2d2d2d;
+    color: #fff;
+    /* 배경색상을 진하게 준 경우에는 
+    그 배경색에서 사용되는 기본 글자색상을 같이 지정하는게 좋은 그래야 쉽다 */
+    padding: 65px 0 40px 0;
+    margin: 0 0 55px 0;
+}
+.tit h1 {
+    font-size: 38px;
+    font-weight: 900;
+    margin: 0 0 15px 0;
+}
+.tit p {
+    color: rgba(255, 255, 255, 0.8)
+}
+
+
+.service ul li {
+    background-color: #f4f4f4;
+    width: 408px;
+    height: 416px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 40px 40px 0 40px;
+    float: left;
+    margin: 0 28px 0 0;
+
+}
+
+/* li가 많을 때 그 많은 li중에서 마지막 li를 :last-child 로 선택함 */
+
+.service ul li:last-child {
+    margin-right: 0;
+}
+.service ul li h2 {
+    font-size: 28px;
+    color: #1d1d1d;
+    font-weight: 900;
+}
+.service ul li .sub_tit {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 17px 0 22px 0;
+}
+.service ul li strong {
+    color: #0030ff;
+}
+
+.clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;}

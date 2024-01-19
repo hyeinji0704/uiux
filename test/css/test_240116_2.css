@@ -1,0 +1,73 @@
+/* 웹폰트 적용하는 방법 -  웹폰트란 이 폰트가 깔려있지 않은 이용자가 보이도록 사용하는 방법*/
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff'); font-weight:800; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff'); font-weight:900; font-style:normal; }
+/* 글자의 스타일(서체, 색상, 행간, 자간, 정렬)은 상속이 가능합니다.
+기본 글꼴의 스타일 즉, p태그에 정의한 스타일은 전체를 감싸는 body태그에 정의해주고 다른 태그가 상속받게 스타일 줍니다. */
+body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px;
+    color: #666666;
+    font-weight: 400;
+    line-height: 1.25;
+    word-break: keep-all;
+    word-wrap: break-word;
+    /* 단어가 줄이 바뀔 때 분리되는 현상을 막아주는 기능
+    즉, "새로운"이라는 글자가 줄이 바뀌면서
+    새
+    로운
+    이렇게 줄이 바뀌지 않고 한번에 나타나도록 하는 기능
+    단어(띄어쓰기 기준)가 무조건 붙어서 나오는 기능 */
+}
+
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+/* 태그의 스타일의 초기화
+   - 브라우저에서 특정태그에 스타일을 주는 경우가 많음
+    이 스타일을 제거하고 내 스타일을 입히는 작업
+    (어떤 태그는 여백이 기본적으로 있음)
+    */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+.g_center {
+    text-align: center;
+}
+.g_center h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #1d1d1d;
+    margin: 50px 0 12px 0;
+} 
+.g_left {
+    background-color: #f4f4f4;
+    padding: 30px;
+    margin: 50px 0 0 0;
+}
+.g_left h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #2d2d2d;
+    line-height: 1.3;
+    margin: 0px 0 19px 0;
+}
+.g_right {
+    background-color: #1d1d1d;
+    padding: 30px;
+    color: #fff;
+    margin: 50px 0 50px 0;
+}
+.g_right h2 {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin: 0px 0 19px 0;
+}
+.g_right {
+    text-align: right;
+}

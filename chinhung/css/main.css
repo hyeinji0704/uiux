@@ -22,6 +22,9 @@ body {
     width: 1280px; /* 넓이 제한 */
     margin: 0 auto; /* 센터 */
 }
+ #wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+}
 * {
     padding: 0;   /* 모든 태그의 여백 삭제 */
     margin: 0;

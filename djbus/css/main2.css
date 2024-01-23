@@ -46,6 +46,13 @@ a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
     text-decoration: none; /* underline제거 */
     color: inherit;
 }
+address, em {
+    font-style: normal;
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐
+    디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+    기울어짐 디자인을 하지 않음*/
+} 
+
 .header {
     height: 100px;
 }
@@ -78,11 +85,12 @@ a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
     /* 배경에 큰 이미지를 넣는다고 이미지가 모두 다 보이는 것은 아님
     배경이 모두 보이려면 반드시 영역에 높이를 줘야함. */
     color: #fff;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
 }
 .visual strong {
     font-size: 15px;
-    padding: 210px 0 0 114px;
-    font-weight: inherit;
+    padding: 240px 0 0 114px;
+    font-weight: normal;
     display: block;
     letter-spacing: -0.01em;
 }
@@ -94,7 +102,7 @@ a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
 }
 .visual h2 em {
     font-weight: 700;
-    font-style: normal;
+
 }
 .biz h2 {
     font-size: 40px;
@@ -150,4 +158,150 @@ a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
 }
 .biz .edu .btn_wrap a {
     margin: 0 0 0 8px;
+}
+
+.promo {
+    /* 배경이 콘텐츠 높이보다 짧음. 배경 이미지 만큼 높이 못줌. visual하고 다름 */
+    background: url(../images/promo_bg.png) center top no-repeat;
+    color: #fff;
+    /* padding: 0 0 200px 0; 삭제 예정 */
+    margin: 140px 0 0 0;
+}
+.promo .notice {
+    display: flex;
+    justify-content: space-between;
+    /* 하위 요소 두개를 좌우로 나란히 배치 flex
+    하위 요소를 균등하게 영역에 좌우에 딱맞게 배치 space-between */
+}
+.promo .notice .tit {
+    margin: 125px 0 0 0;
+}
+.promo .notice .tit h2 {
+    font-size:  34px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.promo .notice .tit p {
+    font-weight: inherit;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 12px 0 14px 0;
+}
+.promo .notice .tit a {
+    font-weight: inherit;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 12px 24px 10px 24px;
+    display: inline-block;
+    /* a태그는 inline태그라서 padding이 적용되지 않음.
+    block 태그로 변경하여 값이 적용되도록 함.
+    header의 높이가 100px이라 a태그의 높이가 100px을 넘으면 안됨 */
+}
+.promo .notice ul {
+    margin: 115px 0 0 0;
+    width: 735px;
+}
+.promo .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+/* li가 몇개인지는 모르겠지만 무조건 마지막 li */
+.promo .notice ul li:last-child {
+    border-bottom: 0;
+}
+.promo .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    /* 제목과 날짜가 왼쪽 끝 오른쪽 끝에 배치 */
+    font-size: 20px;
+    line-height: 60px;
+    /* 공지사항 리스트 디자인을 할 때 정확하게 줄간격을 주려고 행간으로 떨어뜨려 디자인
+    코딩도 정확하게 줄간격을 주기 위해서 line-height을 고정값으로 줌 */
+}
+.promo .notice ul li a strong {
+    font-weight: inherit;
+    /* strong 태그에 브라우저가 주는 스타일 말고 
+    내가 strong 태그를 감싸는 요소에 준 스타일을 상속 브라우저가 주는 스타일 무시해! */
+}
+.promo .notice ul li a span {
+    color: rgba(255, 255, 255, 0.6);
+}
+.promo .video {
+    margin: 130px 0 0px 0;
+}
+.promo .video h2 {
+    font-size:  34px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.promo .video ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 27px 0 0 0;
+}
+.promo .video ul li {
+    width: 408px;
+    /* li안에 콘텐트가 많고 넓어 그럼 넓이 제한해줘야 알아서 글에는 줄바꿈이 들어감.
+    웬만하면 li에는 넓이를 주는 편. (li가 나란히 들어갈 경우) */
+}
+.promo .video ul li a strong {
+    color: #1d1d1d;
+    font-weight: inherit;
+    font-size: 20px;
+    margin: 5px 0 0 2px;
+    display: block;
+}
+.promo .video ul li a img {
+    border-radius: 15px;
+    /* border: 1px solid #222222;  이미지에 테두리를 주면 무조건 밖으로 테두리가 생김 */
+    box-shadow: 3px -4px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: #1d1d1d;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 130px 0 0 0;
+    padding: 38px 0 38px 0;
+    letter-spacing: 0;
+    /* footer는 내부요소의 상단 여백 하단 여백으로 하지 않고 
+    footer에 padding을 준다 */
+}
+.footer .f_nav,
+.footer .f_info {
+    display: flex;
+}
+.footer .f_nav li {
+    margin: 0 30px 0 0;
+    /* border-left: 1px solid rgba(255, 255, 255, 0.4);
+        메뉴 사이의 선은 border로 처리가 안됨
+        높이 조절이 불가 위아래 위치 조정이 안됨. */
+    position: relative;
+    /*정렬의 기준 - li::after의 정렬기준*/
+}
+.footer .f_nav li::after {
+    position: absolute;
+    right: -16px;
+    top: 6px;
+    width: 1px;
+    height: 9px;
+    background-color: rgba(217, 217, 217, 0.4);
+    content: ""; /* after를 보이게하는 값*/
+}
+.footer .f_nav li:last-child::after {
+    display: none;
+}
+.footer .f_nav li.privacy {
+    font-weight: 700;
+}
+/* .footer .f_nav li.privacy::after {
+    display: none;
+} */
+.footer .f_info {
+    display: flex;
+    margin: 5px 0 5px 0;
+}
+.footer .f_info span,
+.footer .f_info address {
+    margin: 0 30px 0 0
+}
+.footer .copyright {
+    color: rgba(255, 255, 255, 0.4)
 }

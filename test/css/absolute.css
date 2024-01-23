@@ -1,0 +1,113 @@
+/* 웹폰트 적용하는 방법 -  웹폰트란 이 폰트가 깔려있지 않은 이용자가 보이도록 사용하는 방법*/
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../../djbus/fonts/Pretendard-Regular.woff2) format('woff2'), url(../../djbus/fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../../djbus/fonts/Pretendard-Bold.woff2) format('woff2'), url(../../djbus/fonts/Pretendard-Bold.woff) format('woff');
+}
+
+html, body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px;
+    color: #2d2d2d;
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
+    가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
+    가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+}
+* {
+    padding: 0;   /* 모든 태그의 여백 삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넒이를 늘리는 요소인데 
+    넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li {
+    list-style: none;
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline제거 */
+    color: inherit;
+}
+address, em {
+    font-style: normal;
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐
+    디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+    기울어짐 디자인을 하지 않음*/
+}
+/* h태그는 글자크기가 바뀌고 두께 바뀜 - 브라우저가 준 속성
+이걸 body태그에서 준 스타일대로 적용될 수 있도록
+- 브라우저가 준 스타일을 적용시키지 않도록 */
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+.service {
+    width: 400px;
+}
+.notice {
+    width: 500px;
+    height: 500px;
+    background-color: #ededed;
+    position: relative;
+    /* 내부요소 tit의 absolute정렬의 기준점 */
+}
+.notice .tit {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 300px;
+    height: 200px;
+    border: 3px solid #ff6600;
+    /* 감싸는 요소 notice가 position 값을 가지고 있어서 notice 기준으로 정렬 */
+}
+.notice .sub_tit {
+    position: absolute;
+    right: 50%;
+    bottom: 100px;
+    border: 5px solid brown;
+}
+.notice .cnt {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    border: 5px solid blue;
+}
+
+.community {
+    margin: 100px 0 100px 0;
+}
+.community ul {
+    display: flex;
+}
+.community ul li {
+    position: relative;
+}
+.community ul li::after {
+    position: absolute;
+    top: 53px;
+    right: -7px;
+    content: "사이";
+    color: red;
+    font-size: 11px;
+}
+.community ul li a {
+    display: block;
+    padding: 50px; /*4곳이 모두 같은 값*/
+}

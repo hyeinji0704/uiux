@@ -1,0 +1,102 @@
+/* 웹폰트 적용하는 방법 -  웹폰트란 이 폰트가 깔려있지 않은 이용자가 보이도록 사용하는 방법*/
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../../djbus/fonts/Pretendard-Regular.woff2) format('woff2'), url(../../djbus/fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../../djbus/fonts/Pretendard-Bold.woff2) format('woff2'), url(../../djbus/fonts/Pretendard-Bold.woff) format('woff');
+}
+
+html, body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.5;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
+    가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
+    가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+}
+* {
+    padding: 0;   /* 모든 태그의 여백 삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넒이를 늘리는 요소인데 
+    넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li {
+    list-style: none;
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline제거 */
+    color: inherit;
+}
+address, em {
+    font-style: normal;
+}
+
+.global {
+    margin: 62px 0 0 0;
+    text-align: left;
+}
+.global h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+.global .sub_tit {
+    font-size: 20px;
+    margin: 20px 0 10px 0;
+    font-weight: 700;
+    color: #07B53B;
+}
+.global .btn_wrap {
+    display: flex;
+    margin: 20px 0 40px 0;
+}
+.global .btn_wrap a {
+    color: #3d3d3d;
+    margin: 0 9px 0 0;
+    border: 1px solid rgba(102, 102, 102);
+    padding: 8px 47px 9px 45px;
+    display: block;
+}
+.global .btn_wrap a:last-child{
+    border: 1px solid rgba(7, 181, 59);
+    color: #07B53B;
+}
+
+.market {
+    height: 600px;
+    background: url(../images/market_bg.png) center center no-repeat;
+    text-align: center;
+    margin: 65px 0 0 0;
+    color: #fff;
+}
+.market h2 {
+    font-size: 30px;
+    font-weight: 700;
+    padding: 62px 0 0 0;
+}
+.market p {
+    margin: 22px 0 25px 0;
+}
+.market .btn_wrap {
+    border: 1px solid rgba(255, 255, 255);
+    padding: 9px 38px 10px 43px;
+    display: inline-block;
+    margin: 0 0 40px 0;
+}

@@ -1,0 +1,129 @@
+/*웹폰트 선언*/
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+html, body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px;
+    color: #2d2d2d;
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
+    가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
+    가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+}
+* {
+    padding: 0;   /* 모든 태그의 여백 삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넒이를 늘리는 요소인데 
+    넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li {
+    list-style: none;
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline제거 */
+    color: inherit;
+}
+address, em {
+    font-style: normal;
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐
+    디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+    기울어짐 디자인을 하지 않음*/
+} 
+/*글자를 두껍게하고 글자크기를 조정하는 태그
+    BODY가 선언한 속성대로 적용될 수 있도록 초기화
+    브라우저가 기본적으로 적용한 스타일 적용되지 않도록 막기*/
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.header {
+    /*body를 기준으로 정렬
+        position값을 주면 (예외 relative) block요소라도 
+        콘텐츠가 존재하는 만큼만 넒이값이 있음..
+        block요소는 원래 넓이가 100%임.
+        이걸 기대하고 코딩하면 안된다.
+    */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; /*header가 absolute면 width 100%가 필수*/
+    height: 100px; /* 높이를 줄 때는 신중하게!*/
+    color: #fff;
+}
+.header .logo {
+    float: left;
+    margin-top: 28px;
+}
+.header .gnb {
+    float: right;
+}
+.header .gnb ul {
+    display: flex;
+}
+.header .gnb ul li a {
+    font-size: 24px;
+    padding: 36px 30px 29px 30px;
+    /*padding은 위아래, 좌우 사이즈 값이 같다면 두 개만 줘도 됨.*/
+    display: block;
+}
+
+.visual {
+    /* 넓이와 높이는 제한하기 때문에 신중하게...
+    배경이 내부 콘텐츠 만큼 늘어나느게 아니라 엄청 큼. 
+    이 배경이미지를 모두 보이도록 하려고...*/
+    height: 900px;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    border-radius: 0 0 250px 0; /*시계방향 - 왼쪽상단부터*/
+    /*이미지를 모서리 둥글게 디자인했다면 대부분 이미지를 네모 반듯하게 저장하고 
+    css에서 둥글게 처리하는 경우가 많음 - 반응형에서도 영향을 받음 */
+}
+.visual h2 {
+    text-align: center; /* 이미지가 가운데 */
+    padding: 330px 0 0 0;
+}
+.visual .photo {
+    width: 140px;
+    height: 140px;
+    background-color: #FFA300;
+    color: #fff;
+    display: block;
+    border-radius: 100%;
+    /*동그라미는 넓이와 높이를 주고  border-radius: 100%로 줌 */
+    box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.1);
+    text-align: center ;
+}
+.visual .photo i {
+    padding: 35px 0 5px 0;
+    display: block;
+}
+.visual .photo span {
+    font-size: 18px;
+    display: block;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    /* i태그와 span태그 모두 inline태그라 줄바꿈이 안됨
+        이 때 span태그와 block을 주면 넓이가 100%가 되서 줄이 바뀜*/
+}

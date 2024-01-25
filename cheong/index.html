@@ -6,6 +6,56 @@
     <title>청산도</title>
 </head>
 <body>
-    
+    <div id="wrap">
+        <!--
+            header - 머리(로고/메뉴)
+            container - 몸 (header/footer제외하고 나머지 다)
+            footer - 다리(copyright)
+        -->
+        <header class="header">
+            <div class="wrapper">
+                <h1 class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="완도군 청산도 로고"></a>
+                </h1>
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="#">청산도 소개</a></li>
+                        <li><a href="#">관광안내</a></li>
+                        <li><a href="#">추천여행</a></li>
+                        <li><a href="#">커뮤니티</a></li>
+                    </ul>
+                </nav>
+            </div><!--wrapper-->
+        </header>
+        <div class="container">
+            <section class="visual">
+                <div class="wrapper">
+                    <h2> <!--반드시 section태그에는 h태그가 있어야함-->
+                        <!--글자를 이미지로 저장했다면 반드시 이미지에 있는 모든 글자를 대체텍스트로 써야함--웹접근성-->
+                        <img src="images/visual_tit.png" alt="가고싶은(산 일러스트 그림) 섬 청산도 SLOW ISLAND CHEONGSANDO">
+                    </h2>
+                    <a href="#" class="photo">
+                        <i><img src="images/photo_icon.svg" alt="사진첩 아이콘"></i>
+                        <span>은하수<br>사진공방</span>
+                        <!--글자는 태그로 감쌀 이유가 없지만 a요소 안에 아이콘하고 글자가 있는 배치라서 
+                            아이콘 i태그로 감싸기때문에 글자도 의미없는 태그 span으로 묶어줌
+                            태그와 태그가 배치되는게 구조상 깔끔하다-->
+                    </a>
+                </div><!--wrapper-->
+            </section><!--visual-->
+            <section class="culture">
+                <div class="wrapper"></div><!--wrapper-->
+            </section><!--culture-->
+            <section class="tour">
+                <div class="wrapper"></div><!--wrapper-->
+            </section><!--tour-->
+            <section class="community">
+                <div class="wrapper"></div><!--wrapper-->
+            </section><!--community-->
+        </div><!--container-->
+        <footer class="footer">
+            <div class="wrapper"></div><!--wrapper-->
+        </footer>
+    </div> <!--wrap-->
 </body>
 </html>

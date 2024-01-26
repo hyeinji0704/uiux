@@ -212,7 +212,12 @@ h1, h2, h3, h4, h5, h6, strong {
 }
 .tour ul li {
     width: 190px;
-    height: 450px;
+    /* a가 늘어난 만큼 늘어남. li의 높이는 a한테 줌
+        li사이즈와 a사이즈를 똑같이 주기 위해서
+        li에 높이를 주고 a에 height를 100%를 주면 안됩니다.
+        넓이 100% 존재---->높이 100%는 존재X
+        */
+    color: #fff;
 }
 .tour ul li.tour01 {
     background: url(../images/tour01.png) center center no-repeat;
@@ -226,7 +231,192 @@ h1, h2, h3, h4, h5, h6, strong {
 .tour ul li.tour04 {
     background: url(../images/tour04.png) center center no-repeat;
 }
+.tour ul li a {
+    height: 450px;
+    display: block;
+    padding: 357px 0 0 28px;
+}
+.tour ul li a h3 {
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.tour ul li a p {
+    display: none;
+}
 /*li.active라는 말은 li태그들 중에서 active 클래스를 준 li를 선택하는 선택자*/
 .tour ul li.active {
     width: 626px;
+}
+.tour ul li.active a {
+    padding: 327px 287px 0 40px;
+}
+.tour ul li.active a h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.tour ul li.active a p {
+    /*display:none 으로 숨김처리한 것을 다시 나타나게 하려면 display:none을 제외한 그 어떠한 속성을 줘도 나타남
+    단, 해당 스타일이 적용되기 때문에 맞춰서 줘야함
+    일반적으로 display:block으로 줌*/
+    display: block;
+}
+.tour .more {
+    background-color: rgba(217, 217, 217, 0.2);
+    padding: 5px 13px 5px 14px;
+    border-radius: 10px 10px 20px 0;
+    /*inner를 기준으로 정렬*/
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    /*글자와 아이콘 사이즈가 다른 요소가 좌우로 들어갈 때 align-items: center;*/
+}
+.tour .more span {
+    margin-right: 13px;
+    color: #666666;
+}
+
+.community {
+    height: 900px;
+    background: url(../images/community_bg.png) center center no-repeat;
+    margin-top: 110px;
+    color: #fff;
+} 
+.community .inner {
+    display: flex;
+    padding-top: 166px;
+}
+.community .tit {
+    width: 339px;
+}
+.community .tit .sub_tit {
+    font-size: 18px;
+    letter-spacing: -0.05em;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.community .tit h2 {
+    font-size: 45px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.community .tit h2 span {
+    position: relative;
+    padding-left: 160px;
+    display: block;
+}
+.community .tit h2 span::before {
+    position: absolute;
+    left: 12px;
+    top: 30px;
+    width: 130px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.6);
+    content: "";
+}
+.community .notice {
+    width: 517px;
+    height: 400px;
+    background-color: rgba(63, 62, 62, 0.6);
+    border-radius: 20px;
+    padding: 37px 40px 0 38px;
+}
+.community .notice h3 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 3px;
+}
+.community .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.community .notice ul li:last-child {
+    border-bottom: 0;
+}
+.community .notice ul li a {
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.community .notice ul li a span {
+    color: rgba(255, 255, 255, 0.6);
+}
+.community .service {
+    width: 400px;
+    background-color: rgba(63, 62, 62, 0.6);
+    margin-left: 24px;
+    height: 0;
+}
+.community .service ul {
+    display: flex;
+    /*flex는 하위요소를 모두 다 좌우 한줄로 배치하려는 특징이 있음.
+    그래서 넓이를 줄여서라도 좌우로 배치 
+    내 넓이에 따라서 한줄에 들어갈 수 있는 만큼만 들어가고 줄바꿈이 되려면 
+    flex-wrap:wrap;이 필요*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.community .service ul li {
+    width: 190px;
+    margin-bottom: 25px;
+    /* li의 사이즈와 a사이즈를 동일하게 주려면 li한테 넓이를 주고 a한테 높이를 주는 것이 best*/
+}
+.community .service ul li a {
+    height: 120px;
+    background-color: rgba(63, 62, 62, 0.6);
+    border-radius: 10px;
+    display: block;
+    padding: 32px 27px 25px 27px;
+    position: relative;/*i태그 ablsoulute 정렬의 기준*/
+}
+.community .service ul li a strong {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: rgba(255, 255, 255, 0.8);
+}
+.community .service ul li a i {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer {
+    background-color: #2d2d2d;
+    color: #ededed;
+    padding: 48px 0 45px 0;
+}
+.footer .footer_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .f_nav {
+    display: flex;
+}
+.footer .f_nav li {
+    margin-right: 35px;
+    position: relative;
+}
+.footer .f_nav li.privacy {
+    font-weight: 700;
+}
+.footer .f_nav li::after {
+    position: absolute;
+    right: -19px;
+    top: 4px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(204, 204, 204, 0.5);
+    content: "";
+}
+.footer .f_info {
+    display: flex;
+    margin: 19px 0;
+}
+.footer .f_info address,
+.footer .f_info span {
+    margin-right: 35px;
 }

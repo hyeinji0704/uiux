@@ -412,6 +412,9 @@ h1, h2, h3, h4, h5, h6, strong {
     background-color: rgba(204, 204, 204, 0.5);
     content: "";
 }
+.footer .f_nav li:last-child::after {
+    display: none;
+}
 .footer .f_info {
     display: flex;
     margin: 19px 0;

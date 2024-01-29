@@ -13,7 +13,7 @@
 }
 
 html, body {
-    font-family: 'Pretendard', serif;
+    font-family: 'Pretendard', sans-serif;
     font-size: 15px;
     color: #3d3d3d;
     font-weight: 400;
@@ -74,7 +74,7 @@ address, em {
     padding: 8px 47px 9px 45px;
     display: block;
 }
-.global .btn_wrap a:last-child{
+.global .btn_wrap a.btn01 {
     border: 1px solid rgba(7, 181, 59);
     color: #07B53B;
 }
@@ -94,7 +94,7 @@ address, em {
 .market p {
     margin: 22px 0 25px 0;
 }
-.market .btn_wrap {
+.market .btn_wrap a {
     border: 1px solid rgba(255, 255, 255);
     padding: 9px 38px 10px 43px;
     display: inline-block;

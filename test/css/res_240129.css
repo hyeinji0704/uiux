@@ -3,13 +3,13 @@
     font-family: 'Pretendard';
     font-weight: 400;
     font-display: swap;
-    src: local('Pretendard Regular'), url(../../cheong/fonts/Pretendard-Regular.woff2) format('woff2'), url(../../cheong/fonts/Pretendard-Regular.woff) format('woff');
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
 }
 @font-face {
     font-family: 'Pretendard';
     font-weight: 700;
     font-display: swap;
-    src: local('Pretendard Bold'), url(../../cheong/fonts/Pretendard-Bold.woff2) format('woff2'), url(../../cheong/fonts/Pretendard-Bold.woff) format('woff');
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
 }
 
 html, body {
@@ -139,6 +139,10 @@ button {
     background-color: #1e1e1e;
     color: #fff;
 }
+
+
+
+/*media*/
 @media screen and (max-width:640px) {
     .notice {
         margin: 55px 0 0 0;
@@ -179,8 +183,7 @@ button {
         display: block;
         /*제목은 strong, 날짜는 span으로 - 디자인상 줄바꿈 필요
         이 때 display:block 각 요소가 block요소로 연결되어 둘이 한줄에 나타나지 않음.*/
-        font-weight: inherit;
-        margin: 0;
+        margin: 0 0 10px 0;
         /*제목을 무조건 2줄로 제한*/
         line-height: 1.2;
         height: 2.4em; /*행간에 x2한값에 단위는 em*/
@@ -200,9 +203,119 @@ button {
         padding: 0 30px;
         display: inline-block;
     }
-    /*a태그에 마우스를 오버했을 때 */
-    .notice .more a:hover {
-        background-color: #1e1e1e;
-        color: #fff;
+}
+
+.news {
+    margin: 80px 0 0 0;
+}
+.news h2 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1.3;
+    color: #666;
+    margin-bottom:38px;
+}
+.news h2 strong {
+    color: #1e1e1e;
+}
+.news ul {
+    display: flex;
+    justify-content: space-between;
+}
+.news ul li {
+    width: 299px;
+}
+.news ul li a {
+    display: block;
+}
+.news ul li a strong {
+    display: block;
+    /*제목은 strong, 날짜는 span으로 - 디자인상 줄바꿈 필요
+    이 때 display:block 각 요소가 block요소로 연결되어 둘이 한줄에 나타나지 않음.*/
+    font-weight: 700;
+    margin: 15px 0 21px 0;
+}
+.news ul li a span {
+    display: block;
+    color: #666;
+}
+.news .notice_wrap {
+    position: relative;
+}
+.news .more {
+    position: absolute;
+    top: 0; 
+    right: 5px;
+}
+.news .more a {
+    border: 1px solid #1e1e1e;
+    border-radius: 100px;
+    line-height: 56px;
+    padding: 0 40px;
+    display: block;
+}
+/*a태그에 마우스를 오버했을 때 */
+.news .more a:hover {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+/*media*/
+@media screen and (max-width:640px) {
+    .news {
+        margin: 55px 0 0 0;
+    }
+    .news h2 {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    .news h2 br {
+        display: none;
+        /* br태그를 숨김처리하기때문에 줄바꿈이 사라짐
+        br태그는 여는 태그 닫는 태그가 없는 단독태그라 가능*/
+    }
+    .news ul {
+        flex-wrap: wrap;
+        /*한줄에 2개씩으로 변경 그럼 display:flex 유지하고 flexwrap:wrap으로 줄바꿈 허용
+        원래 flex는 죽어도 한줄에 배치*/
+    }
+    .news ul li {
+        width: calc(50% - 8px);
+        /*한줄에 2개씩 사이에 여백 16px을 고정으로 배치
+        넓이는 %고 여백은 px이라면 계산하기 위해서 calc()
+        calc(100%/갯수 - 여백/갯수)*/
+        margin-bottom: 12px;
+    }
+    .news ul li a {
+        display: block;
+    }
+    .news ul li a img {
+        width: 100%;
+        /*이미지 크기를 조정하려면 반드시 img에 width/height를 줘야함. 감싸는 요소에 줘도 안들어감. 
+        넓이나 높이 하나만 줘도 나머지는 알아서 비율에 맞게 적용
+        그래서 넓이나 높이 하나만 줌.. 둘 다 주면 비율이 깨짐*/
+    }
+    .news ul li a strong {
+        display: block;
+        /*제목은 strong, 날짜는 span으로 - 디자인상 줄바꿈 필요
+        이 때 display:block 각 요소가 block요소로 연결되어 둘이 한줄에 나타나지 않음.*/
+        margin: 6px 0 10px 0;
+        /*제목을 무조건 2줄로 제한*/
+        line-height: 1.2;
+        height: 2.4em; /*행간에 x2 한값에 단위는 em*/
+        overflow: hidden; /* 높이를 제한했기때문에 높이에서 벗어나는 글자는 숨김*/
+    }
+    .news .more {
+        /*absolute를 해제하고 원래 코딩순서대로 아래에 배치*/
+        position: relative;
+        top: auto; 
+        right: auto;
+        margin-top: 38px;
+        text-align: center;
+        /*width가 넓은 요소에서 inline 요소를 결정함 */
+    }
+    .news .more a {
+        line-height: 45px;
+        padding: 0 30px;
+        display: inline-block;
     }
 }

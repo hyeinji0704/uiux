@@ -106,8 +106,8 @@ button {
 }
 .notice .more {
     position: absolute;
-    top: 140px;
-    right: 195px;
+    top: 65px; 
+    right: 5px;
 }
 .notice .more a {
     border: 1px solid #1e1e1e;

@@ -114,6 +114,7 @@ button {
     이 때 display:block 각 요소가 block요소로 연결되어 둘이 한줄에 나타나지 않음.*/
     font-weight: 700;
     margin: 15px 0 21px 0;
+    height: 72px;
 }
 .notice ul li a span {
     display: block;
@@ -234,6 +235,7 @@ button {
     이 때 display:block 각 요소가 block요소로 연결되어 둘이 한줄에 나타나지 않음.*/
     font-weight: 700;
     margin: 15px 0 21px 0;
+    height: 72px;
 }
 .news ul li a span {
     display: block;
@@ -244,7 +246,7 @@ button {
 }
 .news .more {
     position: absolute;
-    top: 0; 
+    top: 65px; 
     right: 5px;
 }
 .news .more a {

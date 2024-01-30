@@ -1,0 +1,126 @@
+/*웹폰트 선언*/
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+html, body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px;
+    color: #3d3d3d; 
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
+    가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
+    가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+}
+* {
+    padding: 0;   /* 모든 태그의 여백 삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넒이를 늘리는 요소인데 
+    넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li {
+    list-style: none;
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline제거 */
+    color: inherit;
+}
+address, em {
+    font-style: normal;
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐
+    디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+    기울어짐 디자인을 하지 않음*/
+} 
+/*글자를 두껍게하고 글자크기를 조정하는 태그
+    BODY가 선언한 속성대로 적용될 수 있도록 초기화
+    브라우저가 기본적으로 적용한 스타일 적용되지 않도록 막기*/
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+/*button태그는 기본스타일이 많음*/
+button {
+    background-color: transparent;
+    border: 0;
+    color: inherit; /*브라우저가 주는 값 삭제*/
+    font-family: inherit; /*button은 서체도 바뀜 - 상속*/
+}
+
+.header {
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+}
+.header .logo {
+    float: left;
+    margin-top: 29px;
+}
+.header .gnb {
+    float: right;
+}
+.header .gnb ul {
+    display: flex;
+}
+.header .gnb ul li a {
+    font-size: 24px;
+    padding: 35px 32px 31px 32px;
+    display: block;
+}
+
+.visual {
+    height: 900px;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    border-radius: 0 0 250px 0;
+    position: relative;
+}
+.visual h2 {
+    text-align: center;
+    padding-top: 330px;
+}
+.visual .photo {
+    width: 140px;
+    height: 140px;
+    background-color: #FFA300;
+    color: #fff;
+    border-radius: 100%;
+    box-shadow: 4px 4px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: absolute;
+    left: calc(50% + 570px);
+    bottom: -30px;
+}
+.visual .photo i {
+    padding-top: 35px;
+    display: block;
+}
+.visual .photo span {
+    font-size: 18px;
+    display: block;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+}
+

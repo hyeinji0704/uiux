@@ -1,0 +1,121 @@
+/*웹폰트 선언*/
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+html, body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.05em;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
+    가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
+    가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+}
+* {
+    padding: 0;   /* 모든 태그의 여백 삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넒이를 늘리는 요소인데 
+    넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li {
+    list-style: none;
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline제거 */
+    color: inherit;
+}
+address, em {
+    font-style: normal;
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐
+    디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+    기울어짐 디자인을 하지 않음*/
+} 
+/*글자를 두껍게하고 글자크기를 조정하는 태그
+    BODY가 선언한 속성대로 적용될 수 있도록 초기화
+    브라우저가 기본적으로 적용한 스타일 적용되지 않도록 막기*/
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.biz {
+    margin-top: 80px;
+}
+.biz h2 {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    text-align: center;
+}
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz ul li {
+    width: 290px;
+}
+.biz ul li a h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px 0 5px 0;
+}
+
+.tec {
+    height: 762px;
+    background-color: #F4F4F4;
+    margin-top: 80px;
+}
+.tec h2 {
+    font-size: 45px;
+    font-weight: 700;
+    padding: 80px 0 25px 0;
+    display: block;
+    text-align: center;
+}
+.tec ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tec ul li {
+    color: #fff;
+    width: 620px;
+}
+.tec ul li.tec01 {
+    background: url(../images/tech01.png) center center no-repeat;
+}
+.tec ul li.tec02 {
+    background: url(../images/tech02.png) center center no-repeat;
+}
+.tec ul li a {
+    height: 514px;
+    display: block;
+    text-align: center;
+}
+.tec ul li a h3 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    padding-top: 195px;
+}

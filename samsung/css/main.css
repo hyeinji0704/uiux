@@ -1,11 +1,17 @@
-@charset "utf-8";
+@charset "utf-8";/*이 css문서는 utf-8방식으로 인코딩 되어 있습니다. */
 @import url(default.css);
+/* CDN방식은 폰트를 다른 홈페이지에 업로드하고 가져다 쓰는 방식이다. 
+(홈페이지에 웹폰트파일을 포함할 필요 없음) */
+/* 본고딕 CDN방식으로 사용할 때 
+폰트를 정의하는 font-face가 입력된 css를 import 불러다가 사용하는 방식을 많이 씀
+장점은 간단하지만 단점은 google이 서비스를 중단하면 사용 못함
+그래서 font파일을 저장해서 사용하기도 함. */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 html, body {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
     color: #2d2d2d;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.4;
     word-break: keep-all;
     word-wrap: break-word;
@@ -20,3 +26,173 @@ html, body {
     가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
     가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
 }
+
+/*640px 이하일 때 스타일 - 640이하는 모바일 초과는 탭 */
+@media screen and (max-width:640px) {
+    html, body {
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 1.2;
+    }
+    .wrapper {
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에*/
+        margin: 0 20px; 
+        /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+    }
+    #wrap { /*id="wrap"에 적용되는 스타일 */
+        min-width: auto;
+        /* 홈페이지의 최소넓이를 제한하지 않음 */
+    }    
+} /*media*/
+
+.header {
+    /*body를 기준으로 정렬*/
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    color: #fff;
+    border-bottom: 1px solid rgba(237, 237, 237, 0.2);
+}
+.header .logo {
+    float: left;
+    /*logo가 내려온 거니깐 a가 아니라 logo에 줘야함.*/
+    margin-top: 21px;
+}
+.header .logo a {
+    width: 163px;
+    height: 54px;
+    display: block;
+    /*배경의 로고크기는 pc/mobile에서 사이즈가 다름
+        물론 background-size를 width와 높이값으로 수정 가능
+        하지만 a태그에 준 넓이와 높이 값에 맞게 background-size가 자동으로 조정되었으면 함.
+        contain - 이미지를 짜르지 않고 영역에 딱 맞게 조절 - 주로 사용
+        100% auto - 가로는 영역에 딱맞게 세로는 가로비율에 맞게 */
+    background: url(../images/logo.svg) no-repeat left top/contain;
+    /* a태그에 써준 글자를 안보이게 하는 방법 */
+    font-size: 0;
+    line-height: 0;
+}
+.header .inner {
+    float: right;
+    display: flex;
+    align-items: center;
+    /*display: flex;는 좌우로 배치된 요소의 높이를 제일 긴 사이즈와 동일하게 모든 높이를 맞춤
+        이를 원해 요소별 높이로 주고 싶으면 align-items를 줘야함*/
+}
+/*모바일에서 사용할 메뉴 열기 버튼 
+-pc버전에서는 숨김 처리*/
+.header .gnb .gnb_open {
+    display: none;
+    /*태그를 지운 것처럼 공간을 차지하지 않음*/
+}
+.header .gnb ul {
+    display: flex;
+}
+.header .gnb ul li a {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 36px 25px;
+    display: block;
+}
+.header ul {
+    display: flex;
+}
+.header a.login, .header a.lang {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 36px 22px;
+    display: block;
+    position: relative;
+}
+.header a.lang::before {
+    position: absolute;
+    right: 47px;
+    top: 41px;
+    width: 14px;
+    height: 14px;
+    background: url(../images/lang_icon_w.svg);
+    content: "";
+}
+@media screen and (max-width:640px) {
+    .header {
+        height: 50px;
+    }
+    .header .logo {
+        margin-top: 10px;
+    }
+    .header .logo a {
+        width: 76px;
+        height: 25px;
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        /*태그를 지운 것을 다시 되돌리는 태그
+        display:none;으로 준 것은 display: none을 제외하고 어떤 것을 줘도 바뀜*/
+        font-size: 0;
+        line-height: 0;
+        width: 25.5px;
+        height: 17.1px;
+        background: url(../images/gnb_open_w.svg) no-repeat center center;
+        margin: 16px 3px;
+    }
+    .header .gnb ul {
+        display: none;
+    }
+    .header a.login, .header a.lang {
+        display: none;
+    }
+}/*media*/
+
+.visual {
+    /*background 사이즈 조절
+    cover는 영역에 이미지가 꽉차게 - 이미지 일부가 짤리고 배경은 꽉참 - 배경에 이미지
+    contain 영역에 이미지가 꽉차게 - 이미지 일부가 안짤리고 배경이 일부가 빔 - 배경에 로고 */
+    background: url(../images/visual_bg.png) no-repeat center center/cover;
+    color: #fff;
+}
+/*visual의 높이가 브라우저의 높이에 따라서 바뀜 
+    그래서 h2태그가 위에서 부터으 여백이 때에 따라 달라짐
+    --->고정값으로 줄 수가 없음 
+    사이즈가 변경될 때 가운데는 바뀌지 않음
+    h2태그는 원래 디자인 자체가 visual영역에 위아래 가운데 디자인
+    코딩도 위아래 가운데에서부터 시작해서 여백을 줘야함*/
+.visual .wrapper {
+    height: 100vh; /*브라우저 높이와 동일한 높이*/
+    min-height: 400px; /*최소높이*/
+    position: relative;
+}
+.visual .inner {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.visual h2 {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.05em;
+}
+
+@media screen and (max-width:640px) {
+    .visual .wrapper {
+        height: 300px; /*브라우저 높이와 동일한 높이*/
+        min-height: auto; /*최소높이*/
+    }
+    .visual .inner {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: translate(0,0);
+        padding-top: 121px;
+    }
+    .visual h2 {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+}/*media*/

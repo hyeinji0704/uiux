@@ -1,0 +1,224 @@
+/*태그초기화*/
+* {
+    padding: 0;   /* 모든 태그의 여백 삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넒이를 늘리는 요소인데 
+    넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li {
+    list-style: none;
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline제거 */
+    color: inherit;
+}
+address, em {
+    font-style: normal;
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐
+    디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+    기울어짐 디자인을 하지 않음*/
+} 
+/*글자를 두껍게하고 글자크기를 조정하는 태그
+    BODY가 선언한 속성대로 적용될 수 있도록 초기화
+    브라우저가 기본적으로 적용한 스타일 적용되지 않도록 막기*/
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+/*button태그는 기본스타일이 많음*/
+button {
+    background-color: transparent;
+    border: 0;
+    color: inherit; /*브라우저가 주는 값 삭제*/
+    font-family: inherit; /*button은 서체도 바뀜 - 상속*/
+}
+/* CDN방식은 폰트를 다른 홈페이지에 업로드하고 가져다 쓰는 방식이다. 
+(홈페이지에 웹폰트파일을 포함할 필요 없음) */
+/* 본고딕 CDN방식으로 사용할 때 
+폰트를 정의하는 font-face가 입력된 css를 import 불러다가 사용하는 방식을 많이 씀
+장점은 간단하지만 단점은 google이 서비스를 중단하면 사용 못함
+그래서 font파일을 저장해서 사용하기도 함. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+html, body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 80px;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 1.2;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
+    가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
+    가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+}
+
+/*640px 이하일 때 스타일 - 640이하는 모바일 초과는 탭 */
+@media screen and (max-width:640px) {
+    html, body {
+        font-size: 20px;
+        word-break: none;
+        word-wrap: none;
+    }
+    .wrapper {
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에*/
+        margin: 0 20px; 
+        /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+    }
+    #wrap { /*id="wrap"에 적용되는 스타일 */
+        min-width: auto;
+        /* 홈페이지의 최소넓이를 제한하지 않음 */
+    }    
+} /*media*/
+
+/*
+width : 100%는 쉽게 적용되는 값
+height : 100%는 거의 적용되지 않음 (absolute 제외)
+height : 100% 구현이 쉽지 않기 때문에 
+콘텐츠를 위아래 가운데 배치하는게 어려움
+*/
+.flex_center {
+    background: url(../images/f_bg01.png) no-repeat center center/cover;
+}
+/*
+    flex_center
+        wrapper
+            inner ---높이값
+    inner의 사이즈가 늘어나서 감싸고 있는 wrapper와 flex_center가 동일한 높이로 같이 늘어남
+*/
+.flex_center .inner {
+    height: 100vh; /*브라우저 사이즈에 맞게 바뀔라고*/
+    min-height: 350px;
+    display: flex; /*flex를 가지고 있는 inner가 height: 100vh를 가지고 있어야함*/
+    flex-direction: column; /*세로로 정렬*/
+    justify-content: center;
+    /* display:flex를 준 요소의 높이 안에서 위아래 가운데 */
+    text-align: center;
+}
+@media screen and (max-width:640px) {
+    .flex_center .inner {
+        height: 350px; /*브라우저 사이즈에 맞게 바뀔라고*/
+        min-height: auto;
+        display: block; /*모바일에서 flex로 정렬한거 취소*/
+        padding-top: 130px;
+        text-align: center;
+    }
+}
+
+.flex_btm {
+    background: url(../images/f_bg03.png) no-repeat center center/cover;
+}
+.flex_btm .inner {
+    height: 100vh; /*브라우저 사이즈에 맞게 바뀔라고*/
+    min-height: 350px;
+    display: flex; /*flex를 가지고 있는 inner가 height: 100vh를 가지고 있어야함*/
+    justify-content: flex-end;
+    flex-direction: column; /*세로로 정렬*/
+    text-align: right;
+    padding-bottom: 130px;
+}
+@media screen and (max-width:640px) {
+    .flex_btm .inner {
+        height: 350px; /*브라우저 사이즈에 맞게 바뀔라고*/
+        min-height: auto;
+        display: block;
+        padding-top: 250px;
+    }
+}
+
+.abs_center {
+    background: url(../images/f_bg02.png) no-repeat center center/cover;
+    height: 100vh; /*브라우저 사이즈에 맞게 바뀔라고*/
+    min-height: 350px;
+    position: relative;
+}
+.abs_center .inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*나의 넓이의 절반을 왼쪽으로 이동, 높이 절반을 위로 이동*/
+    text-align: center;
+}
+@media screen and (max-width:640px) {
+    .abs_center {
+        height: 350px; /*브라우저 사이즈에 맞게 바뀔라고*/
+        min-height: auto;
+    }
+    .abs_center .inner {
+        position: relative; /*absolute취소하려면 relative로 바꿈*/
+        left: auto; /*준 값을 지우려면 auto*/
+        top: auto;
+        transform: translate(0, 0);
+        /*나의 넓이의 절반을 왼쪽으로 이동, 높이 절반을 위로 이동*/
+        text-align: center;
+        padding-top: 145px;
+    }
+}
+
+.abs_left {
+    background: url(../images/f_bg03.png) no-repeat center center/cover;
+}
+.abs_left .wrapper {
+    position: relative;
+    height: 100vh; /*브라우저 사이즈에 맞게 바뀔라고*/
+    min-height: 350px;
+}
+.abs_left .inner {
+    position: absolute;
+    left: 0;
+    top: 50%; /*absolute 정렬의 기준이 되는 요소의 높이의 50%*/
+    transform: translate(0,-50%);
+}
+@media screen and (max-width:640px) {
+    .abs_left .wrapper {
+        height: 350px;/*브라우저 사이즈에 맞게 바뀔라고*/
+        min-height: auto;
+    }
+    .abs_left .inner {
+        position: relative;
+        left: auto;
+        top: auto; /*absolute 정렬의 기준이 되는 요소의 높이의 50%*/
+        transform: translate(0,0);
+        padding-top: 180px;
+        text-align: left;
+    }
+}
+
+.abs_btm {
+    background: url(../images/f_bg01.png) no-repeat center center/cover;
+}
+.abs_btm .wrapper {
+    position: relative;
+    height: 100vh; /*브라우저 사이즈에 맞게 바뀔라고*/
+    min-height: 350px;
+}
+.abs_btm .inner {
+    position: absolute;
+    right: 0;
+    bottom: 130px; /*absolute 정렬의 기준이 되는 요소의 높이의 50%*/
+    text-align: right;
+}
+@media screen and (max-width:640px) {
+    .abs_btm .wrapper {
+        height: 350px; /*브라우저 사이즈에 맞게 바뀔라고*/
+        min-height: auto;
+    }
+    .abs_btm .inner {
+        position: relative;
+        right: auto;
+        bottom: auto; /*absolute 정렬의 기준이 되는 요소의 높이의 50%*/
+        text-align: right;
+        padding-top: 250px;
+    }
+}

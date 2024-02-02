@@ -1,0 +1,413 @@
+/*태그초기화*/
+* {
+    padding: 0;   /* 모든 태그의 여백 삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넒이를 늘리는 요소인데 
+    넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li {
+    list-style: none;
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline제거 */
+    color: inherit;
+}
+address, em {
+    font-style: normal;
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐
+    디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+    기울어짐 디자인을 하지 않음*/
+} 
+/*글자를 두껍게하고 글자크기를 조정하는 태그
+    BODY가 선언한 속성대로 적용될 수 있도록 초기화
+    브라우저가 기본적으로 적용한 스타일 적용되지 않도록 막기*/
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+/*button태그는 기본스타일이 많음*/
+button {
+    background-color: transparent;
+    border: 0;
+    color: inherit; /*브라우저가 주는 값 삭제*/
+    font-family: inherit; /*button은 서체도 바뀜 - 상속*/
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+html, body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    color: #2d2d2d;
+    font-weight: 500;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
+    가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
+    가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+}
+
+/*640px 이하일 때 스타일 - 640이하는 모바일 초과는 탭 */
+@media screen and (max-width:640px) {
+    html, body {
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 1.2;
+    }
+    .wrapper {
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에*/
+        margin: 0 20px; 
+        /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+    }
+    #wrap { /*id="wrap"에 적용되는 스타일 */
+        min-width: auto;
+        /* 홈페이지의 최소넓이를 제한하지 않음 */
+    }    
+} /*media*/
+
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 20px;
+    color: #1d1d1d;
+}
+
+.tnb {
+    margin: 20px 0;
+}
+.tnb .inner {
+    display: flex;
+    align-items: center;
+}
+.tnb .login1, .tnb .lang1 {
+    /*글자를 없애고 아이콘만 나오는 코딩*/
+    width: 25px; /* 아이콘 사이즈 또는 a태그에 주고 싶은 크기*/
+    height: 25px;
+    font-size: 0;
+    line-height: 0;
+    margin: 0 5px;
+}
+.tnb .login1 {
+    background: url(../images/login_icon.svg) no-repeat center center;
+}
+.tnb .lang1 {
+    background: url(../images/lang_icon.svg) no-repeat center center;
+}
+
+@media screen and (max-width:640px) {
+    h1 {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 10px;
+        color: #1d1d1d;
+    }
+    .tnb {
+        margin: 15px 0;
+    }
+    .tnb .login1, .tnb .lang1 {
+        /*글자를 없애고 아이콘만 나오는 코딩*/
+        width: 25px; /* 아이콘 사이즈 또는 a태그에 주고 싶은 크기*/
+        height: 25px;
+        background-size: 12px auto;
+        margin: 0 2px;
+    }
+}
+
+.tnb .login2, .tnb .lang2 {
+    /* 아이콘이 왼쪽에 들어가고 오른쪽에 글자가 들어감
+    그럼 아이콘이 들어갈 자리를 padding으로 줌 
+    아이콘은 위치를 자유롭게 움직여야 해서 
+    before 가상 선택자에 position : absolute로 줌 */
+    padding-left: 26px;
+    position: relative; /*before 선택자 정렬의 기준*/
+    margin: 0 10px;
+}
+.tnb .login2::before, .tnb .lang2::before {
+    position: absolute; /*a를 기준으로 정렬*/
+    left: -4px;
+    top: -3px;
+    content: "";
+    width: 25px; /*아이콘 크기*/
+    height: 25px;
+}
+.tnb .login2::before {
+    background: url(../images/login_icon.svg) no-repeat center center;
+}
+.tnb .lang2::before {
+    background: url(../images/lang_icon.svg) no-repeat center center;
+}
+@media screen and (max-width:640px) {
+    .tnb .login2, .tnb .lang2 {
+        padding-left: 16px;
+    }
+    .tnb .login2::before, .tnb .lang2::before {
+        top: -5px;
+        width: 25px; /*아이콘 크기*/
+        height: 25px;
+    }
+    .tnb .login2::before {
+        background: url(../images/login_icon.svg) no-repeat center center;
+        background-size: 12px auto;
+    }
+    .tnb .lang2::before {
+        background: url(../images/lang_icon.svg) no-repeat center center;
+        background-size: 12px auto;    
+    }
+}
+
+.tnb .login3, .tnb .lang3 {
+    padding-top: 26px;
+    text-align: center;
+    margin: 0 10px;
+    position: relative;
+}
+.tnb .login3::before, .tnb .lang3::before {
+    position: absolute;
+    /*before가 글자에 가운데 정렬*/
+    /*a의 50%에서 아이콘의 넓이의 반을 뺀 값*/
+    left: calc(50% - 12px);
+    top: 0;
+    content: "";
+    width: 25px; /*아이콘 크기*/
+    height: 25px; 
+}
+.tnb .login3::before {
+    background: url(../images/login_icon.svg) no-repeat center center;
+}
+.tnb .lang3::before {
+    background: url(../images/lang_icon.svg) no-repeat center center;
+}
+@media screen and (max-width:640px) {
+    .tnb .login3, .tnb .lang3 {
+        padding-top: 0;
+    }
+    .tnb .login3::before, .tnb .lang3::before {
+        display: none;
+    }
+}
+
+.service ul {
+    margin: 20px 0;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.service .st1 {
+    display: flex;
+}
+.service .st1 li {
+    width: 16.66%; /* 100/6 = 16.66% */
+    text-align: center;
+}
+.service .st1 li a {
+    padding-top: 60px;
+    display: block;
+    position: relative;
+}
+.service .st1 li a::before {
+    position: absolute;
+    left: calc(50% - 26px);
+    top: 5px;
+    content: "";
+    width: 52px;
+    height: 44px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* background라고 스타일을 주면 repeat, position, size, image 모든 스타일을 
+    선언하는 것이다.
+    이 때문에 css가 충돌되는 경우가 발생
+    background를 각자 속성별로 선언하는게 충돌을 막을 수 있음*/
+}
+.service .st1 li.se1 a::before {
+    background-image: url(../images/service01.svg);
+    top: 7px;
+}
+.service .st1 li.se2 a::before {
+    background-image: url(../images/service02.svg);
+}
+.service .st1 li.se3 a::before {
+    background-image: url(../images/service03.svg);
+}
+.service .st1 li.se4 a::before {
+    background-image: url(../images/service04.svg);
+}
+.service .st1 li.se5 a::before {
+    background-image: url(../images/service05.svg);
+}
+.service .st1 li.se6 a::before {
+    background-image: url(../images/service06.svg);
+}
+
+@media screen and (max-width:640px) {
+    .service ul {
+        font-size: 15px;
+    }
+    .service .st1 {
+        flex-wrap: wrap; /* 두줄도 허용 */
+    }
+    .service .st1 li {
+        width: 33.33%; /* 100/3 = 33.33% */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .service .st1 li a {
+        padding-top: 60px;
+        margin-bottom: 10px;
+    }
+    .service .st1 li a span {
+        display: none;
+    }
+    .service .st1 li a::before {
+        left: calc(50% - 25px);
+        width: 50px;
+        height: 58px;
+        background-size: auto 40px;/*넓이는 알아서*/
+    }
+    .service .st1 li.se1 a::before {
+        background: url(../images/service01.svg)no-repeat center center;
+    }
+    .service .st1 li.se2 a::before {
+        background: url(../images/service02.svg)no-repeat center center;
+    }
+    .service .st1 li.se3 a::before {
+        background: url(../images/service03.svg)no-repeat center center;
+    }
+    .service .st1 li.se4 a::before {
+        background: url(../images/service04.svg)no-repeat center center;
+    }
+    .service .st1 li.se5 a::before {
+        background: url(../images/service05.svg)no-repeat center center;
+    }
+    .service .st1 li.se6 a::before {
+        background: url(../images/service06.svg)no-repeat center center;
+    }
+}
+
+.service .st2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+.service .st2 li a {
+    width: 190px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #666;
+    padding-top: 25px;
+}
+.service .st2 li a em {
+    padding-left: 60px;
+    display: block;
+    position: relative;
+}
+.service .st2 li a em::before {
+    position: absolute;
+    left: -10px;
+    top: calc(50% - 36px);
+    content: "";
+    width: 60px;
+    height: 45px;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+.service .st2 li.se1 em::before {
+    background-image: url(../images/service01.svg);
+    background-size: 40px auto;
+}
+.service .st2 li.se2 em::before {
+    background-image: url(../images/service02.svg);
+    background-size: 33px auto;
+}
+.service .st2 li.se3 em::before {
+    background-image: url(../images/service03.svg);
+    background-size: 52px auto;
+}
+.service .st2 li.se4 em::before {
+    background-image: url(../images/service04.svg);
+    background-size: 42px auto;
+}
+.service .st2 li.se5 em::before {
+    background-image: url(../images/service05.svg);
+    background-size: 35px auto;
+}
+.service .st2 li.se6 a em::before {
+    background-image: url(../images/service06.svg);
+    background-size: 44px auto;
+}
+@media screen and (max-width:640px) {
+    .service .st2 {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: 15px;
+    }
+    .service .st2 li {
+        width: 33.33%;
+    }
+    .service .st2 li a {
+        width: 100%;
+        height: 106px;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #666;
+        border-bottom: 1px solid #666;
+        padding-top: 15px;
+    }
+    .service .st2 li a span {
+        display: none;
+    }
+    .service .st2 li a em {
+        padding-left: 0;
+        padding-top: 50px;
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+    .service .st2 li a em::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        width: 60px;
+        height: 45px;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .service .st2 li.se1 em::before {
+        background-image: url(../images/service01.svg);
+        background-size: 40px auto;
+        left: -5px;
+    }
+    .service .st2 li.se2 em::before {
+        background-image: url(../images/service02.svg);
+        background-size: 33px auto;
+    }
+    .service .st2 li.se3 em::before {
+        background-image: url(../images/service03.svg);
+        background-size: 52px auto;
+        left: 14px;
+    }
+    .service .st2 li.se4 em::before {
+        background-image: url(../images/service04.svg);
+        background-size: 42px auto;
+        left: 15px;
+    }
+    .service .st2 li.se5 em::before {
+        background-image: url(../images/service05.svg);
+        background-size: 35px auto;
+        left: 18px;
+    }
+    .service .st2 li.se6 a em::before {
+        background-image: url(../images/service06.svg);
+        background-size: 44px auto;
+    }
+}

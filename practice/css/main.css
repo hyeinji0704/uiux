@@ -48,20 +48,36 @@ html, body {
     height: 100px;
     width: 100%;
     color: #fff;
+    border-bottom: 1px solid rgba(237, 237, 237, 0.2);
 }
 .header .logo {
     float: left;
+    margin-top: 20px;
+}
+.header .logo a {
+    display: block;
+    width: 163px;
+    height: 54px;
+    background: url(../images/logo.svg) no-repeat left top/contain;
+    font-size: 0;
+    line-height: 0;
 }
 .header .inner {
     float: right;
     display: flex;
-    align-items: center
+    align-items: center;
 }
-.header .gnb_open {
+.header .gnb .gnb_open {
     display: none;
 }
 .header .gnb ul {
     display: flex;
+}
+.header .gnb ul li a {
+    padding: 35px 25px;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .visual {

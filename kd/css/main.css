@@ -76,22 +76,28 @@ h1, h2, h3, h4, h5, h6, strong {
 .biz ul li {
     width: 290px;
 }
-.biz ul li a h3 {
+.biz ul li a {
+    display: block;
+}
+.biz ul li a strong {
     font-size: 20px;
     font-weight: 700;
     margin: 5px 0 5px 0;
+    display: block;
+}
+.biz ul li a span {
+    display: block;
 }
 
 .tec {
-    height: 762px;
     background-color: #F4F4F4;
     margin-top: 80px;
+    padding-bottom: 80px;
 }
 .tec h2 {
     font-size: 45px;
     font-weight: 700;
     padding: 80px 0 25px 0;
-    display: block;
     text-align: center;
 }
 .tec ul {
@@ -101,6 +107,7 @@ h1, h2, h3, h4, h5, h6, strong {
 .tec ul li {
     color: #fff;
     width: 620px;
+    text-align: center;
 }
 .tec ul li.tec01 {
     background: url(../images/tech01.png) center center no-repeat;
@@ -111,11 +118,13 @@ h1, h2, h3, h4, h5, h6, strong {
 .tec ul li a {
     height: 514px;
     display: block;
-    text-align: center;
 }
-.tec ul li a h3 {
+.tec ul li a strong {
     font-size: 35px;
-    margin-bottom: 10px;
+    padding: 196px 0 10px 0;
     font-weight: 700;
-    padding-top: 195px;
+    display: block;
+}
+.tec ul li a span {
+    display: block;
 }

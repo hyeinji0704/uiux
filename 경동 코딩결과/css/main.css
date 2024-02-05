@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+body {
+    font-family: 'Pretendard', sans-serif; /* 서체 */
+    font-size: 15px; /* 크기 */
+    color: #3d3d3d; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.5; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때 가로스크롤바가 생성되는데 오른쪽에 background가  짤리는 현상이 생김.  
+       가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+}
+/* 태그초기화 - 태그의 기본스타일 제거 */
+* {
+    padding: 0; /* 모든 태그의 여백삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+ul, ol, li { 
+    list-style: none; /* ul li앞에 동그라미 삭제 */
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; 
+    /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용  */
+}
+em, address {
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.biz h2 {
+    margin: 80px 0 20px 0;
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+}
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz ul li {
+    width: 290px;
+}
+.biz ul li a {
+    display: block;
+}
+.biz ul li a strong {
+    display: block;
+    margin: 6px 0 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.biz ul li a span {
+    display:block;
+}
+
+.tech {
+    margin: 80px 0 0 0;
+    padding: 0 0 80px 0;
+    background-color: #F4F4F4;
+}
+.tech h2 {
+    padding: 80px 0 20px 0;
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+}
+.tech ul {
+    display:flex;
+    justify-content: space-between;
+}
+.tech ul li {
+    width: 620px;
+    color: #FFFFFF;
+    text-align: center;
+}
+.tech ul li a {
+    display: block;
+    height: 514px;
+}
+.tech ul li.new {
+    background-image: url(../images/tech01.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.tech ul li.safe {
+    background-image: url(../images/tech02.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.tech ul li a strong {
+    display: block;
+    padding: 196px 0 10px 0;
+    font-size: 35px;
+    font-weight: 700;
+}
+.tech ul li a span {
+    display: block;
+}

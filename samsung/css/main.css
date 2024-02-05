@@ -226,7 +226,6 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
     z-index: 100;
     border-radius: 50px;
     width: 1356px;
-    height: 180px;
     background-color: #f4f4f4;
     box-shadow: 4px 4px 3px 3px rgba(0, 0, 0, 0.1);
     color: #2d2d2d;
@@ -238,7 +237,7 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
 }
 .service ul {
     display: flex;
-    padding-top: 35px;
+    padding: 35px 0 35px 0;
 }
 .service ul li {
     width: 16.66%;
@@ -296,7 +295,6 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
         z-index: 0;
         border-radius: 0;
         width: 100%;
-        height: 150px;
         background-color: #ededed;
         box-shadow: none;
         font-size: 11px;
@@ -304,7 +302,7 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
     }
     .service ul {
         flex-wrap: wrap;
-        padding-top: 16px;
+        padding: 18px 0 20px 0;
     }
     .service ul li {
         width: 33.33%;
@@ -315,12 +313,13 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
     }
     .service ul li a::before {
         left: calc(50% - 11px);
-        top: 8%;
+        top: 18%;
         width: 26px;
         height: 23px;
     }
     .service ul li a::after {
         left: calc(50% - 13px);
+        top: 10%;
         width: 31px;
         height: 31px;
         background-color: #f8f8f8;
@@ -346,6 +345,582 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
     }
 }/*media*/
 
+.biz h2 {
+    margin: 90px 0 63px 0;
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: #075F63;
+}
+
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz ul li a {
+    width: 308px;
+    height: 320px;
+    display: block;
+    border-radius: 20px;
+    padding: 30px 25px 0 29px;
+    color: #fff;
+    position: relative; /*more정렬의 기준*/
+    /*높이를 주었다면 밑의 여백은 주지 않음*/
+}
+.biz ul li.biz01 a {
+    background-color: #FA5A5D;
+}
+.biz ul li.biz02 a {
+    background-color: #FFBA00;
+}
+.biz ul li.biz03 a {
+    background-color: #49BEB6;
+}
+.biz ul li.biz04 a {
+    background-color: #075F63;
+}
+.biz ul li a::after {
+    position: absolute;
+    content: "";
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    /*after 선택자에 준 넓이에 딱 맞게 배경이미지 사이즈 조정 (높이는 비율에 맞게 조정)*/
+}
+.biz ul li.biz01 a::after {
+    width: 126px;
+    height: 117px;
+    right: 10px;
+    bottom: 0;
+    background-image: url(../images/biz01.svg);
+    opacity: 10%;
+}
+.biz ul li.biz02 a::after {
+    width: 90px;
+    height: 157px;
+    right: 25px;
+    bottom: -11px;
+    background-image: url(../images/biz02.svg);
+    opacity: 20%;
+}
+.biz ul li.biz03 a::after {
+    width: 196px;
+    height: 113px;
+    right: -50px;
+    bottom: -5px;
+    background-image: url(../images/biz03.svg);
+    opacity: 15%;
+}
+.biz ul li.biz04 a::after {
+    width: 110px;
+    height: 130px;
+    right: 11px;
+    bottom: -15px;
+    background-image: url(../images/biz04.svg);
+    opacity: 10%;
+}
+
+.biz ul li a h3 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 19px;
+}
+/*위에 배치된 h3/p 문장의 길이가 길거나 짧아도 디자인 동일한 위치에 배치되어야함.
+    상단여백으로 배치 x
+    position: absolute로 배치해야됨.
+    (위 컨텐츠를 */
+.biz ul li a .more {
+    position: absolute;
+    left: 29px;           
+    bottom: 32px;
+    border: 1px solid rgba(237,237,237,0.6);
+    border-radius: 30px;
+    padding: 10px 28px 12px 14px;
+    display: block;     
+}
+.biz ul li a .more:hover {
+    border: 1px solid rgba(255,255,255);
+    background-color: #fff;
+    color: #1d1d1d;
+}
+.biz ul li a .more::after {
+    position: absolute;
+    right: 8px;
+    top: 13px;
+    width: 18px;
+    height: 18px;
+    background: url(../images/biz_more.svg) no-repeat center center;
+    content: "";
+}
+.biz ul li a .more:hover::after {
+    background: url(../images/more_b.svg) no-repeat center center;
+}
+@media screen and (max-width:640px) {
+    .biz h2 {
+        margin: 55px 0 24px 0;
+        font-size: 22px;
+    }
+    .biz ul {
+        display: block;
+    }
+    .biz ul li a {
+        width: auto; /*a에 display: block;있기 때문에 넓이를 auto를 주면 100%가 적용됨*/
+        height: 120px;
+        padding: 20px 0 0 30px; 
+        margin-bottom: 10px;
+    }
+    .biz ul li a::after {
+        background-position: center center;
+    }
+    .biz ul li.biz01 a::after {
+        width: 50px;
+        height: 68px;
+        right: 45px;
+        bottom: 25px;
+        opacity: 80%;
+    }
+    .biz ul li.biz02 a::after {
+        width: 42px;
+        height: 79px;
+        right: 53px;
+        bottom: 25px;
+        opacity: 80%;
+    }
+    .biz ul li.biz03 a::after {
+        width: 84px;
+        height: 48px;
+        right: 30px;
+        bottom: 35px;
+        opacity: 80%;
+    }
+    .biz ul li.biz04 a::after {
+        width: 58px;
+        height: 74px;
+        right: 46px;
+        bottom: 25px;
+        opacity: 80%;
+    }
+    .biz ul li a h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+    .biz ul li a p {
+        display: none;
+    }
+    .biz ul li a .more {
+        font-size: 11px;
+        left: 28px;           
+        bottom: 20px;
+        padding: 5px 19px 5px 9px;    
+    }
+    .biz ul li a .more::after {
+        right: 8px;
+        top: 9px;
+        width: 8px;
+        height: 8px;
+    }
+}/*media*/
+
+.notice .inner {
+    position: relative;
+}
+.notice h2 {
+    margin: 90px 0 63px 0;
+    font-size: 45px;
+    font-weight: 700;   
+    letter-spacing: -0.05em;
+    color: #075F63;
+}
+.notice ul li {
+    border: 1px solid rgba(187,187,187);
+    border-radius: 50px;
+    margin-bottom: 5px;
+}
+.notice ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 70px;
+    font-size: 18px;
+    /*공지사항에 행간을 높이값으로 주면 높이도 들어가고 글자도 높이에 */
+    padding: 0 55px 0 45px;
+}
+.notice ul li a em {
+    color: #fff;
+    line-height: 29px;
+    padding: 3px 9px;
+    border-radius: 50px;
+}
+.notice ul li.notice01 a em {
+    background-color: #FFBA00;
+}
+.notice ul li.notice02 a em {
+    background-color: #49BEB6;
+}
+.notice ul li a strong {
+    color: #2d2d2d;
+    width: 850px;
+    /*글자가 들어갈 수 있는 최대 넓이 지정
+    날짜는 자리수가 딱 정해져 있음
+    왼쪽에 장학공지/일반공지도 자리수가 정해져있음
+    하지만 제목은 입력한 대로 길수도 있고 짧을 수도 있음
+    그래서 글자가 들어갈 수 있는 최대 넓이를 제한 
+    그 넓이를 넘어가면 제목을 잘라버리기 위해서*/
+    white-space: nowrap; /*줄바꿈 금지*/
+    overflow: hidden;/*넘치는 글자 숨김*/
+    text-overflow: ellipsis; /* 글자가 반잘리는 현상 막기 */
+    /* 글자 끝에 ...추가, 글자가 반이 짤려서 나타날 수 있기 때문에 이 현상을 막고...을 추가하는 방법
+    점...(3개)를 2개로 변경 불가, 점 삭제 불가*/
+}
+.notice ul li a span {
+    color: #888888;
+}
+.notice .more {
+    position: absolute;
+    right: 5px;           
+    top: 25px;
+}
+.notice .more a {
+    border: 1px solid rgba(61,61,61);
+    border-radius: 30px;
+    padding: 10px 30px 12px 15px;
+    display: block;  
+}
+.notice .more::after {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    width: 18px;
+    height: 18px;
+    background: url(../images/more_b.svg) no-repeat center center;
+    /*pc와 모바일에서 아이콘 사이즈가 변경된다면 background-size를 미리 지정하는게 좋음
+    contain은 영역에 아이콘이 짤리지 않고 꽉차게 나오는 명령*/
+    content: "";
+}
+@media screen and (max-width:640px) {
+    .notice h2 {
+        margin: 55px 0 24px 0;
+        font-size: 22px;
+    }
+    .notice ul li {
+        border: 0;
+        border-bottom: 1px solid rgba(102,102,102,0.2);
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+    .notice ul li a {
+        line-height: 35px;
+        font-size: 11px;
+        font-weight: 400;
+        padding: 0;
+    }
+    .notice ul li a em {
+        display: none;
+    }
+    .notice ul li a strong {
+        color: #2d2d2d;
+        font-size: 13px;
+        width: calc(100% - 84px);
+        /* 모바일에서는 제목의 넓이가 디바이스의 넓이에 따라 바뀜
+        그래서 오른쪽 날짜와 여백값을 100%에서 빼줌
+        (날짜와 여백은 고정값이니깐.)*/
+    }
+    .notice ul li a span {
+        font-size: 11px;
+    }
+    .notice .more {
+        position: relative;
+        right: auto;           
+        top: auto;
+        margin-top: 35px;
+        text-align: center;
+    }
+    .notice .more a {
+        padding: 8px 35px 8px 17px;
+        display: inline-block;
+    }
+    .notice .more::after {
+        right: calc(50% - 35px);
+        top: 13px;
+        width: 8px;
+        height: 8px;
+    }
+}
+
+.webzine {
+    padding: 130px 0 183px 0;
+    /*background때문에 여백을 padding으로 줌
+    padding은 내부여백이라 background가 padding 영역까지 배치가능*/
+    background: url(../images/webzine_bg.svg) no-repeat center top 220px/ 2061px auto;
+}
+.webzine .inner {
+    display: flex;
+    justify-content: space-between;
+    /*타이틀과 ul을 나란히 배치하기 위해*/
+    position: relative;
+}
+.webzine h2 {
+    margin: 0 0 16px 0;
+    font-size: 45px;
+    font-weight: 700;   
+    letter-spacing: -0.05em;
+    color: #075F63;
+}
+.webzine strong {
+    font-size: 28px;
+    letter-spacing: -0.05em;
+    color: #3d3d3d;
+}
+.webzine ul {
+    display: flex;
+    /*ul은 감싸는 요소가 display:flex를 줬기 때문에 넓이가 100%가 아님 
+    그래서 justify-content로 사이에 여백을 주려고 해도 줄 여백이 없음 (넓이가 없어서)
+    li한테 여백을 줘야함*/
+}
+.webzine ul li {
+    width: 308px;
+    margin-left: 16px;
+    text-align: center;
+    display: block;
+}
+.webzine ul li a {
+    background-color: #fff;
+    display: block;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    /*a 안에 있는 이미지는 border-radius 영역 밖으로 나옴 
+    그럼 해결방법 1. 이미지에 border-radius를 또 주는 방법
+    2.overflow: hidden;으로 border-radius밖으로 나온 이미지 숨기기*/
+}
+.webzine ul li a strong {
+    font-size: 15px;
+    padding: 10px 0 16px 0;
+    display: block;
+    /*제목 1줄로 자르기 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+.webzine .more {
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    top: 170px;
+}
+.webzine .more a {
+    padding-right: 18px;
+    display: block;
+    position: relative;
+}
+.webzine .more a::after {
+    position: absolute;
+    right: -5px;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    background: url(../images/more_b.svg) no-repeat center center;
+    content: "";
+}
+
+@media screen and (max-width:640px) {
+    .webzine {
+        padding: 47px 0 186px 0;
+        background-position: center top 190px;
+        background-size: 385px auto;
+    }
+    .webzine .inner {
+        display: block;
+    }
+    .webzine .tit {
+        display: flex;
+        align-items: flex-end;
+    }
+    .webzine .tit br {
+        display: none;
+    }
+    .webzine .tit h2 {
+        margin: 0 5px 0 0;
+        font-size: 22px;
+    }
+    .webzine .tit strong {
+        font-size: 13px;
+        font-weight: 700;
+    }
+    .webzine ul {
+        justify-content: space-between;
+        /*넓이가 100%*/
+        margin-top: 20px;
+    }
+    .webzine ul li {
+        /* 100% 나누기 li 수 = 50% 사이 여백의 합 16px 나누기 li 수 = 8px*/
+        width: calc(50% - 8px);
+        margin-left: 0;
+    }
+    .webzine ul li:last-child {
+        display: none;
+    }
+    .webzine ul li a img {
+        width: 100%;
+        /*감싸는 요소의 넓이에 맞게 */
+    }
+    .webzine ul li a strong {
+        font-size: 11px;
+        padding: 5px 10px 7px 10px; 
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .webzine .more {
+        position: relative;
+        right: auto;           
+        top: auto;
+        margin-top: 35px;
+        text-align: center;
+    }
+    .webzine .more a {
+        border: 1px solid rgba(255,255,255);
+        border-radius: 30px;
+        color: #fff;
+        font-size: 11px;
+        padding: 8px 35px 8px 17px;
+        display: inline-block;
+    }
+    .webzine .more a::after {
+        right: calc(50% - 35px);
+        top: 12px;
+        background: url(../images/biz_more.svg) no-repeat center center;
+        width: 8px;
+        height: 8px;
+    }
+}
+/*footer한테는 높이를 주면 안된다. 그러면 모바일이랑 꼬임
+모바일에서는 높이가 계속 바뀜 그래서 높이를 안주고 위아래 여백을 padding으로 주는 편*/
 .footer {
-    height: 500px;
+    background-color: #075F63;
+    color: #fff;
+    padding-bottom: 100px;
+}
+.footer .footer_top {
+    border-bottom: 1px solid rgba(237,237,237,0.2);
+}
+.footer .footer_top .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+.footer .footer_top .f_nav ul {    
+    display: flex;
+    font-weight: 400;
+}
+.footer .footer_top .f_nav ul li {
+    margin-right: 35px;
+    /*모바일에서는 꼭 오른쪽에 여백이 들어가야함
+    두줄로 바뀔 때 오른쪽에 여백이 있어야 왼쪽 정렬 잘됨*/
+    position: relative;
+}
+.footer .footer_top .f_nav ul li::after {
+    position: absolute;
+    right: -17px;
+    top: 9px;
+    width: 2px;
+    height: 2px;
+    border-radius: 100%;
+    background-color: rgba(237, 237, 237, 0.4);
+    content: "";
+}
+.footer .footer_top .f_nav ul li:last-child {
+    margin-right: 0;
+}
+.footer .footer_top .f_nav ul li:last-child::after {
+    display: none;
+}
+.footer .footer_top .f_nav ul li.privacy {
+    font-weight: 700;
+}
+.footer .footer_btm {
+    padding-top: 20px;
+}
+.footer .footer_btm .f_info {
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+.footer .footer_btm .f_info span {
+    margin-right: 35px;
+    font-weight: 400;
+}
+.footer .footer_btm .f_info strong {
+    font-weight: 700;
+}
+.footer .footer_btm .copyright {
+    color: rgba(237,237,237,0.6);
+    font-weight: 400;
+}
+
+@media screen and (max-width:640px) {
+    .footer {
+        background-color: #075F63;
+        color: #fff;
+        padding-bottom: 100px;
+    }
+    .footer .footer_top {
+        border-bottom: 1px solid rgba(237,237,237,0.2);
+    }
+    .footer .footer_top .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 20px;
+    }
+    .footer .footer_top .f_nav ul {    
+        display: flex;
+        font-weight: 400;
+    }
+    .footer .footer_top .f_nav ul li {
+        margin-right: 35px;
+        /*모바일에서는 꼭 오른쪽에 여백이 들어가야함
+        두줄로 바뀔 때 오른쪽에 여백이 있어야 왼쪽 정렬 잘됨*/
+        position: relative;
+    }
+    .footer .footer_top .f_nav ul li::after {
+        position: absolute;
+        right: -17px;
+        top: 9px;
+        width: 2px;
+        height: 2px;
+        border-radius: 100%;
+        background-color: rgba(237, 237, 237, 0.4);
+        content: "";
+    }
+    .footer .footer_top .f_nav ul li:last-child {
+        margin-right: 0;
+    }
+    .footer .footer_top .f_nav ul li:last-child::after {
+        display: none;
+    }
+    .footer .footer_top .f_nav ul li.privacy {
+        font-weight: 700;
+    }
+    .footer .footer_btm {
+        padding-top: 20px;
+    }
+    .footer .footer_btm .f_info {
+        margin-bottom: 35px;
+        line-height: 1.5;
+    }
+    .footer .footer_btm .f_info span {
+        margin-right: 35px;
+        font-weight: 400;
+    }
+    .footer .footer_btm .f_info strong {
+        font-weight: 700;
+    }
+    .footer .footer_btm .copyright {
+        color: rgba(237,237,237,0.6);
+        font-weight: 400;
+    }
+    
 }

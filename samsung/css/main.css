@@ -727,7 +727,7 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
 
 @media screen and (max-width:640px) {
     .webzine {
-        padding: 47px 0 186px 0;
+        padding: 47px 0 0 0;
         background-position: center top 190px;
         background-size: 385px auto;
     }
@@ -848,6 +848,9 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
     margin-bottom: 35px;
     line-height: 1.5;
 }
+.footer .footer_btm .f_info span br {
+    display: none;
+}
 .footer .footer_btm .f_info span {
     margin-right: 35px;
     font-weight: 400;
@@ -862,64 +865,46 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
 
 @media screen and (max-width:640px) {
     .footer {
-        background-color: #075F63;
-        color: #fff;
-        padding-bottom: 100px;
+        padding-top: 110px;
+        padding-bottom: 40px;
     }
     .footer .footer_top {
-        border-bottom: 1px solid rgba(237,237,237,0.2);
+        border-top: 1px solid rgba(237,237,237,0.2);    
     }
     .footer .footer_top .inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        padding-bottom: 20px;
+        flex-wrap: wrap;
+        padding-top: 27px;
+        padding-bottom: 17px; 
+    }
+    .footer .footer_top .f_logo img {
+        width: 140px;
+        display: block;
     }
     .footer .footer_top .f_nav ul {    
-        display: flex;
-        font-weight: 400;
+        flex-wrap: wrap;
+        padding-top: 35px;
     }
     .footer .footer_top .f_nav ul li {
-        margin-right: 35px;
+        margin-right: 20px;
         /*모바일에서는 꼭 오른쪽에 여백이 들어가야함
         두줄로 바뀔 때 오른쪽에 여백이 있어야 왼쪽 정렬 잘됨*/
-        position: relative;
     }
     .footer .footer_top .f_nav ul li::after {
-        position: absolute;
-        right: -17px;
-        top: 9px;
-        width: 2px;
-        height: 2px;
-        border-radius: 100%;
-        background-color: rgba(237, 237, 237, 0.4);
-        content: "";
+        right: -11px;
+        top: 7px;
+        width: 1px;
+        height: 1px;
     }
-    .footer .footer_top .f_nav ul li:last-child {
-        margin-right: 0;
-    }
-    .footer .footer_top .f_nav ul li:last-child::after {
+    .footer .footer_top .f_nav ul li:nth-child(3)::after {
         display: none;
     }
-    .footer .footer_top .f_nav ul li.privacy {
-        font-weight: 700;
-    }
     .footer .footer_btm {
-        padding-top: 20px;
+        padding-top: 17px;
     }
     .footer .footer_btm .f_info {
-        margin-bottom: 35px;
-        line-height: 1.5;
+        margin-bottom: 25px;
     }
-    .footer .footer_btm .f_info span {
-        margin-right: 35px;
-        font-weight: 400;
-    }
-    .footer .footer_btm .f_info strong {
-        font-weight: 700;
-    }
-    .footer .footer_btm .copyright {
-        color: rgba(237,237,237,0.6);
-        font-weight: 400;
+    .footer .footer_btm .f_info span br {
+        display: block;
     }
 }

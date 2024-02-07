@@ -32,4 +32,6 @@ button {
     border: 0;
     color: inherit; /*브라우저가 주는 값 삭제*/
     font-family: inherit; /*button은 서체도 바뀜 - 상속*/
+    cursor: pointer;
+    font-size: inherit;
 }

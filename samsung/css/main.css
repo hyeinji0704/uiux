@@ -302,7 +302,7 @@ header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
     }
     .service ul {
         flex-wrap: wrap;
-        padding: 23px 0 23px 0;
+        padding: 23px 0 0 0;
     }
     .service ul li {
         width: 33.33%;

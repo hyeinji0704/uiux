@@ -48,125 +48,153 @@ html, body {
 } /*media*/
 
 .header {
-    /*body를 기준으로 정렬*/
-    position: fixed;
-    width: 100%;
-    height: 100px;
+    /* fixed 브라우저 위치가 고정 - 스크롤을 내리던 말던 무조건 body랑만 정렬 */
+    position: fixed;/*위에 고정값*/
     left: 0;
     top: 0;
-    z-index: 10000;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
     color: #fff;
-    border-bottom: 1px solid rgba(237, 237, 237, 0.2);
+    border-bottom: 1px solid rgba(237, 237, 237, 0.4);
 }
 .header .logo {
     float: left;
-    /*logo가 내려온 거니깐 a가 아니라 logo에 줘야함.*/
     margin-top: 21px;
 }
 .header .logo a {
-    width: 163px;
-    height: 54px;
     display: block;
-    /*배경의 로고크기는 pc/mobile에서 사이즈가 다름
-        물론 background-size를 width와 높이값으로 수정 가능
-        하지만 a태그에 준 넓이와 높이 값에 맞게 background-size가 자동으로 조정되었으면 함.
-        contain - 이미지를 짜르지 않고 영역에 딱 맞게 조절 - 주로 사용
-        100% auto - 가로는 영역에 딱맞게 세로는 가로비율에 맞게 */
-    background: url(../images/logo.svg) no-repeat left top/contain;
-    /* a태그에 써준 글자를 안보이게 하는 방법 */
+    width: 163px;
+    height: 48px;
+    background: url(../images/logo.svg)no-repeat center center/contain;
+    /*영역의 넓이와 높이에 이미지가 안짤리고 꽉차게 나오기*/
     font-size: 0;
     line-height: 0;
 }
-.header .inner {
-    float: right;
-    display: flex;
-    align-items: center;
-    /*display: flex;는 좌우로 배치된 요소의 높이를 제일 긴 사이즈와 동일하게 모든 높이를 맞춤
-        이를 원해 요소별 높이로 주고 싶으면 align-items를 줘야함*/
+.header .gnb {
+    float: left;
+    margin-left: 135px;
 }
-/*모바일에서 사용할 메뉴 열기 버튼 
--pc버전에서는 숨김 처리*/
-.header .gnb .gnb_open {
+.header .gnb .gnb_open, .header .gnb .gnb_close {
     display: none;
-    /*태그를 지운 것처럼 공간을 차지하지 않음*/
 }
-.header .gnb ul {
+.header .gnb ul.depth01 {
     display: flex;
 }
-.header .gnb ul li a {
-    font-size: 20px;
+.header .gnb ul.depth01 > li {
+    width: 210px;
+    text-align: center;
+}
+.header .gnb ul.depth01 > li > a {
+    display: block;
+    font-size: 22px;
     font-weight: 700;
-    padding: 36px 25px;
-    display: block;
+    line-height: 100px; 
 }
-.header a.login, .header a.lang {
-    font-size: 15px;
-    font-weight: 400;
-    padding: 36px 22px;
-    display: block;
+.header .gnb ul.depth01 > li:hover > a {
+    color: #075F63;
+}
+.header .gnb ul.depth01 > li:hover > a > span {
     position: relative;
+    
 }
-.header a.lang::before {
+.header .gnb ul.depth01 > li:hover > a > span::after {
     position: absolute;
-    right: 47px;
-    top: 41px;
-    width: 14px;
-    height: 14px;
-    background: url(../images/lang_icon_w.svg) no-repeat center center;
+    left: 0;
+    bottom: calc(50% - 50px);
+    width: 100%;
+    height: 10px;
+    background-color: #075F63;
     content: "";
 }
-/* header가 스크롤이 되면 jquery에서 header에 fixed라는 클래스를 추가할 예정. 그 때의 스타일 
-header에 fixed class가 동시선언된 상태....띄어쓰기 하지 말기 */
+.header .gnb ul.depth02 {
+    display: none;
+}
+.header .gnb ul.depth02 {
+    margin-top: 28px;
+}
+.header .gnb ul.depth02 > li > a {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+    display: block; /*a의 영역을 넓게 하려고*/
+    color: #1d1d1d;
+}
+.header .gnb ul.depth02 > li > a:hover {
+    font-weight: 700;
+}
+.header .tnb {
+    float: right;
+    display: flex;
+    margin-top: 40px;
+}
+.header .tnb .login, .header .tnb .lang {
+    font-size: 0;
+    line-height: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    width: 26px;
+    height: 26px;
+    padding-left: 40px;
+} 
+.header .tnb .login {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='25' viewBox='0 -960 960 960' width='25' fill='%23fff'%3E%3Cpath d='M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Zm80 0h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z'/%3E%3C/svg%3E");
+}
+.header .tnb .lang  {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20' viewBox='0 -960 960 960' width='20' fill='%23fff'%3E%3Cpath d='M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z'/%3E%3C/svg%3E");
+}
+/*header가 상단에 고정되었을 때*/
 .header.fixed {
-    color: #3d3d3d;
-    border-bottom: 0;
-    background-color: #fff;
+    background-color: rgba(244, 244, 244);
+    color: #1d1d1d;
+    border-bottom: 1px solid #ededed;
 }
 .header.fixed .logo a {
-    background: url(../images/logo_c.svg) no-repeat left top/contain;
-    /* a태그에 써준 글자를 안보이게 하는 방법 */
+    background: url(../images/logo_c.svg)no-repeat center center/contain;
 }
-.header.fixed a.lang::before {
-    background: url(../images/lang_icon_b.svg) no-repeat center center;
+.header.fixed .tnb .login {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='25' viewBox='0 -960 960 960' width='25' fill='%231d1d1d'%3E%3Cpath d='M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Zm80 0h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z'/%3E%3C/svg%3E");
 }
-
-@media screen and (max-width:640px) {
-    .header {
-        height: 50px;
-    }
-    .header .logo {
-        margin-top: 10px;
-    }
-    .header .logo a {
-        width: 76px;
-        height: 25px;
-    }
-    .header .gnb .gnb_open {
-        display: block;
-        /*태그를 지운 것을 다시 되돌리는 태그
-        display:none;으로 준 것은 display: none을 제외하고 어떤 것을 줘도 바뀜*/
-        font-size: 0;
-        line-height: 0;
-        width: 25.5px;
-        height: 17.1px;
-        background: url(../images/gnb_open_w.svg) no-repeat center center;
-        margin: 16px 3px;
-    }
-    .header .gnb ul {
-        display: none;
-    }
-    .header a.login, .header a.lang {
-        display: none;
-    }
-    .header.fixed .logo a {
-        background: url(../images/logo_c.svg) no-repeat left top/contain;
-        /* a태그에 써준 글자를 안보이게 하는 방법 */
-    }
-    .header.fixed .gnb .gnb_open {
-        background: url(../images/gnb_open_b.svg) no-repeat center center;
-    }
-}/*media*/
-
+.header.fixed .tnb .lang  {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20' viewBox='0 -960 960 960' width='20' fill='%231d1d1d'%3E%3Cpath d='M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z'/%3E%3C/svg%3E");
+}
+/*메뉴에 마우스를 오버했을 때 */
+.header.menu_over {
+    color: #1d1d1d;
+}
+.header.menu_over::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 458px;
+    background-color: #f4f4f4;
+    content: "";
+}
+.header.menu_over::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(237, 237, 237, 0.4);
+    content: "";
+}
+.header.menu_over .logo a {
+    background: url(../images/logo_c.svg)no-repeat center center/contain;
+}
+.header.menu_over .tnb .login {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='25' viewBox='0 -960 960 960' width='25' fill='%231d1d1d'%3E%3Cpath d='M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32q0 33-23.5 56.5T720-160H240q-33 0-56.5-23.5T160-240Zm80 0h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z'/%3E%3C/svg%3E");
+}
+.header.menu_over .tnb .lang  {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='20' viewBox='0 -960 960 960' width='20' fill='%231d1d1d'%3E%3Cpath d='M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z'/%3E%3C/svg%3E");
+}
+.header.menu_over .gnb ul.depth02 {
+    display: block;
+}
 .visual {
     /*background 사이즈 조절
     cover는 영역에 이미지가 꽉차게 - 이미지 일부가 짤리고 배경은 꽉참 - 배경에 이미지

@@ -204,7 +204,7 @@ html, body {
                         그래서화면을 꽉채우려면 100vh로 줘야함*/
         background-color: #fff;
         color: #1d1d1d;
-        margin-top: 50px;
+        padding-top: 50px;
         /*모바일에서 메뉴가 길면 메뉴는 스크롤 되어야 함*/
         overflow-y: scroll;
     }

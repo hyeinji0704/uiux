@@ -1,0 +1,157 @@
+@charset "utf-8";/*이 css문서는 utf-8방식으로 인코딩 되어 있습니다. */
+@import url(default.css);
+/* CDN방식은 폰트를 다른 홈페이지에 업로드하고 가져다 쓰는 방식이다. 
+(홈페이지에 웹폰트파일을 포함할 필요 없음) */
+/* 본고딕 CDN방식으로 사용할 때 
+폰트를 정의하는 font-face가 입력된 css를 import 불러다가 사용하는 방식을 많이 씀
+장점은 간단하지만 단점은 google이 서비스를 중단하면 사용 못함
+그래서 font파일을 저장해서 사용하기도 함. */
+
+@font-face {
+    font-family: 'Eulyoo1945';
+    font-weight: 400;
+    font-style: normal;
+    src: local('Eulyoo1945 Regular'), url(../fonts/Eulyoo1945-Regular.woff2) format('woff2'), url(../fonts/Eulyoo1945-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Eulyoo1945', serif; /* serif - 명조 sans-serif 고딕 */
+    font-weight: 700;
+    font-style: normal;
+    src: local('Eulyoo1945 SemiBold'), url(../fonts/Eulyoo1945-SemiBold.woff2) format('woff2'), url(../fonts/Eulyoo1945-SemiBold.woff) format('woff');
+}
+
+html, body {
+    font-family: 'Eulyoo1945';
+    font-size: 15px;
+    color: #2d2d2d;
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
+    가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
+    가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+}
+
+/*640px 이하일 때 스타일 - 640이하는 모바일 초과는 탭 */
+@media screen and (max-width:640px) {
+    html, body {
+        font-size: 13px;
+    }
+    .wrapper {
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에*/
+        margin: 0 20px; 
+        /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+    }
+    #wrap { /*id="wrap"에 적용되는 스타일 */
+        min-width: auto;
+        /* 홈페이지의 최소넓이를 제한하지 않음 */
+    }    
+} /*media*/
+
+.visual .swiper { 
+    height: 750px;
+} /* 팝업의 높이가 됨 */
+.visual .swiper-slide img { 
+     display:block; width:100%; height:100%; object-fit:cover; 
+} /* 팝업 안에 이미지를 넣었다면 이미지를 꽉차게 나타나게 하기 위해서 해당 스타일을 넣어줌 object-fit 상세설명 */
+.visual .swiper .prev, .visual .swiper .next {
+    position: absolute; /*swiper 기준*/
+    z-index: 10;
+    top: 357px;
+    width: 100px;
+    height: 37px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    line-height: 0;
+    font-size: 0;
+}
+.visual .swiper .prev {
+    left: 8%;
+    background-image: url("data:image/svg+xml,%3Csvg width='104' height='37' viewBox='0 0 104 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M41.587 1L3 36H103' stroke='white' stroke-opacity='0.4' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}
+.visual .swiper .next {
+    right: 8%;
+    background-image: url("data:image/svg+xml,%3Csvg width='104' height='37' viewBox='0 0 104 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M62.413 1L101 36H1' stroke='white' stroke-opacity='0.4' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E ");
+}
+.visual .swiper .pagination {
+    position: absolute;
+    z-index: 10;
+    left: calc(50% - 55px);
+    bottom: 47px;
+    width: auto;
+}
+.visual .swiper .pagination .swiper-pagination-bullet {
+    background-color: transparent;
+    opacity: 1;
+    border: 1px solid #fff;
+    width: 12px;
+    height: 12px;
+    outline: 0;
+}
+.visual .swiper .pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #fff;
+}
+.visual .swiper .stop, .visual .swiper .play {
+    position: absolute;
+    z-index: 10;
+    left: calc(50% + 15px);
+    bottom: 47px;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 8px auto;
+    line-height: 0;
+    font-size: 0;
+}
+.visual .swiper .stop {
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='10' viewBox='0 0 8 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='2' height='10' rx='1' fill='white'/%3E%3Crect x='6' width='2' height='10' rx='1' fill='white'/%3E%3C/svg%3E ");
+}
+.visual .swiper .play {
+    display: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='10' viewBox='0 0 8 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 4.13397C8.16667 4.51887 8.16667 5.48113 7.5 5.86603L1.5 9.33013C0.833333 9.71503 -4.47338e-07 9.2339 -4.13689e-07 8.4641L-1.10848e-07 1.5359C-7.71986e-08 0.766098 0.833333 0.284973 1.5 0.669873L7.5 4.13397Z' fill='%23D9D9D9'/%3E%3C/svg%3E ");
+}
+@media screen and (max-width:640px) {
+    .visual .swiper { 
+        height: 314px;
+    } /* 팝업의 높이가 됨 */
+    .visual .swiper .prev, .visual .swiper .next {
+        display: none;
+    }
+    .visual .swiper .pagination {
+        position: absolute;
+        z-index: 10;
+        left: calc(50% - 55px);
+        bottom: 17px;
+        width: auto;
+    }
+    .visual .swiper .pagination .swiper-pagination-bullet {
+        background-color: transparent;
+        opacity: 1;
+        border: 0.5px solid #fff;
+        width: 6px;
+        height: 6px;
+        outline: 0;
+    }
+    .visual .swiper .stop, .visual .swiper .play {
+        left: calc(50% + 15px);
+        bottom: 20px;
+        width: 10px;
+        height: 10px;
+        border: 0.5px solid #fff;
+        background-size: 3.5px auto;
+    }
+}/*media*/

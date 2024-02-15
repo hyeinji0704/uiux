@@ -14,15 +14,83 @@
 <body>
     <div id="wrap">
         <header class="header">
+            <div class="wrapper">
+                <div class="inner">
+                    <h1 class="logo"><a href="index.html">을유문화사</a></h1>
+                    <nav class="gnb">
+                        <button class="gnb_open">메뉴열기</button>
+                        <div class="gnb_wrap">
+                            <ul class="depth01">
+                                <li>
+                                    <a href="#n">을유문화사</a>
+                                    <ul class="depth02">
+                                        <li><a href="#n">인사말</a></li>
+                                        <li><a href="#n"> 출판사 소개</a></li>
+                                        <li><a href="#n">아카이브</a></li>
+                                        <li><a href="#n">을유글꼴</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n">콘텐츠</a>
+                                    <ul class="depth02">
+                                        <li><a href="#n">전체도서</a></li>
+                                        <li><a href="#n">베스트셀러</a></li>
+                                        <li><a href="#n">작가 소개</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n">을유마당</a>
+                                    <ul class="depth02">
+                                        <li><a href="#n">새소식</a></li>
+                                        <li><a href="#n">자료실</a></li>
+                                        <li><a href="#n">이벤트</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n">독자문의</a>
+                                    <ul class="depth02">
+                                        <li><a href="#n">원고 투고</a></li>
+                                        <li><a href="#n">1:1문의</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="gnb_close">메뉴닫기</button>
+                    </nav>
+                    <div class="tnb">
+                        <a href="#n" class="login">로그인</a>
+                        <a href="#n" class="search">검색</a>
+                    </div>
+                </div>
+            </div>
         </header>
         <div class="container">
             <section class="visual">
+                <!--section태그에는 h태그가 필수 -->
                 <!--pop-up이 들어가기 때문에 wrapper안넣어줌-->
                 <div class="swiper"> <!--팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                     <ul class="swiper-wrapper">  <!--각 팝업 콘텐츠를 감싸는 요소-->
-                        <li class="swiper-slide"><img src="images/visual01.png" alt="종 사진"></li>
-                        <li class="swiper-slide"><img src="images/visual02.png" alt="서점 사진"></li>
-                        <li class="swiper-slide"><img src="images/visual03.png" alt="책장 사진"></li> <!--팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <img src="images/visual01.png" alt="종 사진">
+                            <div class="visual_txt01">
+                                <h2>1945년,</h2>
+                                <strong>(을유년)</strong>
+                                <span>12월 1일</span>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/visual02.png" alt="서점 사진">
+                            <div class="visual_txt02">
+                                <h2>“출판은 사회에 공헌하는 문화 사업”</h2>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/visual03.png" alt="책장 사진">
+                            <div class="visual_txt03">
+                                <h2>문화 발전에 기여한다는<br> 
+                                    일념으로 이어나가겠습니다.</h2>'
+                            </div>
+                        </li> <!--팝업 요소들 (div로 해도 상관없음)-->
                     </ul>
                     <div class="pagination"></div>  <!--컨트롤 요소는 swiper 안에 배치-->
                     <button class="prev">이전 팝업 보기</button> <!--이전 팝업 보기-->
@@ -30,9 +98,107 @@
                     <button class="stop">일시정지</button><!--일시정지-->
                     <button class="play">재생</button><!--재생-->
                 </div>
+                  <!--팝업에 고정되는 경우-->
+                <div class="visual_txt">
+                    <h2>EULYOO PUBLISHING</h2>
+                </div>
             </section>
-            <section class="book"></section>
-            <section class="interview"></section>
+            <section class="book">
+                <div class="wrapper">
+                    <div class="book_wrap">
+                        <div class="tit">
+                            <h2>이달의<br>도서</h2>
+                            <p>을유문화사에서<br>발간된 도서목록입니다.</p>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/book01.png" alt="책 표지"></span>
+                                        <h3>밤은 부드러워, 마셔</h3>
+                                        <strong>한은형</strong>
+                                        <p>“나의 밤을 나누고픈 사람에게 종알대는 느낌으로” 이 글들을 썼다고 고백하는 작가의 사소한 일상을 들려준다. “술을 마시면 감정이 무르익는다. 나는 술을 마시고 고조된 감정을 이야기에 넣는다. 맨정신일 때 내가 쓴 이야기는 멍청하기 짝이 없다.” 술꾼으로 유명했던 스콧 피츠제럴드가 생전에 한 말이다. 알코올홀릭답게 그의 소설 속에도 술 이야기가 가득하다.</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/book02.png" alt="책 표지"></span>
+                                        <h3>필사의 시간</h3>
+                                        <strong>유한빈(펜크래프트)</strong>
+                                        <p>이 책은 을유세계문학전집의 출간 순서에 준해 작품 및 문장을 배치한 펜글씨 연습 책으로 도서 목록의 기능도 겸한 것이 특징이다. 필사 문장, 작품 소개, 작가 소개로 구성되어 있으며 엄선한 50문장을 모두 소개한 다음 부록으로 ‘필수 글자 따라 쓰기’를 별도로 수록하고 있어 초보자도 쉽게 글씨체를 연습할 수 있도록 배려했다. </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/book03.jpg" alt="책 표지"></span>
+                                        <h3>오디오·라이프·디자인</h3>
+                                        <strong>기디언 슈워츠 ,이현준</strong>
+                                        <p>팬데믹으로 집 안에서 보내는 시간이 늘어남에 따라, 과거 LP를 직접 경험한 세대뿐 아니라 레트로 유행을 이끄는 MZ세대 사이에서 턴테이블과 LP가 다시 인기를 얻고 있다. 작년 온라인에서 턴테이블 매출이 전년 대비 30퍼센트나 증가하고, LP 판매량은 무려 70퍼센트 이상 뛰었다는 기사들은 세대를 불문하고 팬데믹 시대를 살아가는 사람들의 생활상을 단적으로 보여 준다.</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/book04.jpg" alt="책 표지"></span>
+                                        <h3>소크라테스 헬스클럽</h3>
+                                        <strong>현상필</strong>
+                                        <p>우리는 액션 어드벤처 게임이나 슈퍼 히어로 영화 속에서 오디세우스와 헤라클레스, 아킬레우스 같은 고대 그리스 영웅의 모습을 발견하곤 한다. 현대에 다시 부활한 이들 그리스 영웅의 모습에 주목한 이 책은 ‘신체 단련’이 지닌 미덕을 탐구하는데, 그 소재가 남다르다.</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="more"><a href="#n">Read More</a></div>
+                    </div>
+                </div>
+            </section>
+            <section class="interview">
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="tit">
+                            <h2>월간 을터뷰</h2>
+                            <p>을유문화사에서 만난 사람들의 이야기</p>
+                            <strong>EULYOO PUBLISHING EULYOO PUBLISHING EULYOO PUBLISHING EULYOO PUBLISHING</strong>
+                        </div>
+                        <div class="list">
+                            <!-- 무조건 하나가 over상태의 디자인을 유지
+                                 마우스를 오버하면 오버 대상 변경
+                                 마우스를 아웃하면 마지막에 마우스를 올렸던 요소가 over 상태를 유지-->
+                            <ul>
+                                <li>
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/interview01.png" alt="건축가 유현준"></div>
+                                        <div class="cnt">
+                                            <h3>건축가 유현준</h3>
+                                            <p>30여 년 동안 건축 공부를 하면서 가장 인상 깊었던 건축물들, 그다음에 제게 많은 깨달음을 주었던 건축물들만 모아서 여러분께 소개해 드리는 책입니다.</p>
+                                            <span>Read More</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>  
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/interview02.png" alt="오디오 평론가 이현준"></div>
+                                        <div class="cnt">
+                                            <h3>오디오 평론가 이현준</h3>
+                                            <p>요즘 시대는 짧은 시간 동안 많은 돈을 버는 사람들을 추앙하는 시대잖아요. 평생 동안 자신의 일에 투자하는 사람이 정말 멋지다고 생각해요. </p>
+                                            <span>Read More</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/interview03.png" alt="한국외대 교수 신정환"></div>
+                                        <div class="cnt">
+                                            <h3>한국외대 교수 신정환</h3>
+                                            <p>근대인의 눈에 보이지 않는 심층의 세계를 찾는 주인공, 그래서 자신이 처한 환경을 극복하고 ‘유일무이’한 내가 되겠다고 하는 마음, 그것이 바로 돈키호테죠.</p>
+                                            <span>Read More</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="more"><a href="#n">Read More</a></div>
+                    </div>
+                </div>
+            </section>
             <section class="news"></section>
         </div>
         <footer class="footer"></footer>

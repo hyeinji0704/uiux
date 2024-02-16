@@ -46,7 +46,7 @@ html, body {
     /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
     가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
     가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
-    overflow: hidden;
+    /*overflow: hidden; sticky 사용할 때는 쓰면 안됨*/
 }
 
 /*640px 이하일 때 스타일 - 640이하는 모바일 초과는 탭 */
@@ -284,34 +284,27 @@ html, body {
 .visual .swiper-slide {
     position: relative;
 }
-.visual .swiper-slide .visual_txt01 h2 {
+.visual .swiper-slide .visual_txt_inner {
     position: absolute;
+    left: calc(50% - 640px);
+    top: 0;
     z-index: 10;
     width: 1280px;
-    left: calc(50% - 640px);
-    top: 300px;
+}
+.visual .swiper-slide .visual_txt01 h2 {
+    margin: 290px 0 0 0;
     color: rgba(255, 255, 255, 0.6);
     font-size: 120px;
 }
 .visual .swiper-slide .visual_txt01 strong {
-    position: absolute;
-    z-index: 10;
-    width: 1280px;
-    left: calc(50% - 220px);
-    top: 300px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 120px;
-    display: block;
+    color: #fff;
 }
 .visual .swiper-slide .visual_txt01 span {
-    position: absolute;
-    z-index: 10;
-    width: 1280px;
-    left: calc(50% + 170px);
-    top: 420px;
     color: rgba(255, 255, 255, 0.8);
     font-size: 120px;
     display: block;
+    text-align: right;
+    margin-top: -50px;
 }
 .visual .swiper-slide .visual_txt02 h2 {
     position: absolute;
@@ -331,16 +324,16 @@ html, body {
     color: rgba(255, 255, 255, 0.04);
     font-size: 120px;
 }
-.visual .swiper-slide .visual_txt02 strong::after {
+/*.visual .swiper-slide .visual_txt02 strong::after {
     position: absolute;
     z-index: 10;
     width: 100%;
     height: 176px;
-    left: calc(50% + 81px);
-    top: 450px;
+    left: 0;
+    top: 0;
     content: "";
-    background: url(../images/visual_text02.svg)no-repeat center center ;/*수정중*/
-}
+    background: url(../images/visual_text02.svg) no-repeat center center ;수정중
+}*/
 .visual .swiper-slide .visual_txt03 h2 {
     position: absolute;
     z-index: 10;
@@ -418,53 +411,54 @@ html, body {
         border: 0.5px solid #fff;
         background-size: 3.5px auto;
     }
+    .visual .swiper-slide .visual_txt_inner {
+        left: 20px;
+        width: calc(100% - 40px);
+    }
     .visual .swiper-slide .visual_txt01 h2 {
-        width: 360px;
         left: calc(50% - 162px);
         top: 50%;
         font-size: 30px;
     }
     .visual .swiper-slide .visual_txt01 strong {
-        width: 360px;
         left: calc(50% - 58px);
         top: 50%;
         font-size: 30px;
     }
     .visual .swiper-slide .visual_txt01 span {
-        width: 360px;
         left: calc(50% + 48px);
         top: 190px;
         color: rgba(255, 255, 255, 0.8);
         font-size: 30px;
     }
     .visual .swiper-slide .visual_txt02 h2 {
-        width: 360px;
         left: calc(50% - 118px);
         top: 215px;
         font-size: 18px;
     }
     .visual .swiper-slide .visual_txt03 h2 {
-        width: 360px;
         left: calc(50% - 160px);
         top: 145px;
         font-size: 18px;
     }
     .visual .visual_txt {
-        left: calc(50% + 42px);
+        left: auto;
+        right: 20px;
         top: 72px;
-        width: 360px;
+        width: auto;
         font-size: 11px;
     }
     .visual .visual_txt h2::before {
-        right: 247px;
+        right: 0;
         top: -3px;
-        width: 115px;
+        width: 100%;
         height: 2px;
     }
 }/*media*/
 
 .book {
     margin: 108px 0 0 0;
+    overflow: hidden;
 }
 /*
     왼쪽에 tit이 작게 있고 
@@ -615,7 +609,8 @@ html, body {
 
 @media screen and (max-width:640px) {
     .book {
-        margin: 35px 0 103px 0;
+        margin: 0;
+        padding: 35px 0 30px 0;
     }
     .book .tit {
         float: none;
@@ -664,11 +659,14 @@ html, body {
         left와 right가 동시에 선언되면 적용안됨
         그래서 left를 auto로 해제하고 right를 줘야함*/
         left: auto;
-        right: calc(50% - 50px);
-        top: 473px;
+        top: auto;
+        position: relative;
+        text-align: center;
+        margin-top: 58px;
     }
     .book .more a {
-        padding: 5px 29px 5px 5px;
+        padding: 5px 29px 10px 5px;
+        margin-bottom: 20px;
         font-size: 13px;
     }
     .book .more a::after {
@@ -690,6 +688,10 @@ html, body {
 .interview {
     background-color: #f4f4f4;
     margin: 108px 0 0 0;
+    position: relative;
+    padding: 0 0 163px 0;
+}
+.interview .inner {
     position: relative;
 }
 .interview .tit {
@@ -750,7 +752,7 @@ html, body {
 }
 .interview .list ul li a .photo img {
     filter: grayscale(100%); /*흑백*/
-    transition: 0.5s;
+    transition: 0.2s;
 }
 .interview .list ul li a .cnt {
     position: absolute;
@@ -781,66 +783,479 @@ html, body {
     background-size: 40px 40px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40' viewBox='0 -960 960 960' width='40' fill='%23fff'%3E%3Cpath d='M460-460H240v-40h220v-220h40v220h220v40H500v220h-40v-220Z'/%3E%3C/svg%3E");
 }
-/* 오버되었을 때 */
-.interview .list ul li.active a .photo {
-    box-shadow: 0px 10px 25px 0px rgba(24, 17, 78, 0.08);
+@media screen and (min-width:641px) { 
+    /*li에 active 들어갔을 때 스타일이 바뀌는 건 pc에서만 적용되는 스타일 모바일에서는 기본 스타일만 존재함.
+    미디어쿼리를 min-width:640px - 브라우저 사이즈 641px 이상에서만 해당스타일이 선언되게 지정*/
+    /* 오버되었을 때 */
+    .interview .list ul li.active a .photo {
+        box-shadow: 0px 10px 25px 0px rgba(24, 17, 78, 0.08);
+    }
+    .interview .list ul li.active a .photo img {
+        filter: grayscale(0); /*컬러로 변환*/
+    }
+    .interview .list ul li.active a .cnt {
+        width: calc(100% - 47px);
+        color: #262626;
+        padding: 30px 47px 54px 47px;
+        bottom: -86px;
+        display: block; /*flex해제*/
+        background-color: #EBE4D4;
+        border-radius: 50px 0 50px 0;
+    }
+    .interview .list ul li:nth-child(2).active a .cnt {
+        border-radius:  0 50px 0 50px;
+    }
+    .interview .list ul li.active a .cnt h3 {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+    }
+    .interview .list ul li.active a .cnt p {
+        display: block;
+        margin: 15px 0;
+        /*콘텐츠를 3줄로 제한*/
+        line-height: 1.4;
+        height: 5.6em;
+        overflow: hidden;
+    }
+    .interview .list ul li.active a .cnt span {
+        font-size: 15px;
+        line-height: 1.4;
+        width: auto;
+        height: auto;
+        background: none; /*배경삭제*/   
+        display: block; /*넓이 100%*/
+        text-align: right;
+        position: relative;
+    }
+    .interview .list ul li.active a .cnt span::after {
+        position: absolute;
+        left: 90px;
+        bottom: -10px;
+        width: calc(100% + 1em);
+        /*6em이라는 단위는 글자 6글자의 넓이
+        반응형에서 글자의 크기가 변경되면 px로 한경우 계속 글자가 바뀔 때마다
+        넓이를 변경해야함
+        하지만 em이라는 단위를 사용하면 글자크기가 줄어도 변경 안해도됨.
+        글자의 크기가 상대크기로 글자수의 넓이를 줌*/
+        height: 4px;
+        padding: 0 27px 11px 4px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 107px 6px;
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg width='107' height='6' viewBox='0 0 107 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M101.357 1L105 5H1' stroke='%23262626' stroke-opacity='0.8' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    }
+} /*media*/
+.interview .more {
+    position: absolute;
+    right: 0;
+    top: 173px;
 }
-.interview .list ul li.active a .photo img {
-    filter: grayscale(0); /*컬러로 변환*/
+.interview .more a {
+    padding: 16px 54px 11px 5px;
+    position: relative;
+    font-size: 16px;
+    color: #503C33;
+    transition: 0.5s;
 }
-.interview .list ul li.active a .cnt {
-    width: calc(100% - 47px);
-    color: #262626;
-    padding: 30px 47px 54px 47px;
-    bottom: -86px;
-    display: block; /*flex해제*/
-    background-color: #EBE4D4;
-    border-radius: 50px 0 50px 0;
+.interview .more a::after {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    border-radius: 100%;
+    border: 1px solid #7F5B4B;
+    width: 40px;
+    height: 40px;
+    content: "";
+    transition: 0.5s;
 }
-.interview .list ul li:nth-child(2).active a .cnt {
-    border-radius:  0 50px 0 50px;
+.interview .more a::before {
+    position: absolute;
+    right: 11px;
+    top: 11px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-size: 20px 7px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='7' viewBox='0 0 104 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M62.413 1L101 36H1' stroke='%237F5B4B' stroke-opacity='0.8' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    transition: 0.5s;
 }
-.interview .list ul li.active a .cnt h3 {
+.interview .more a:hover::after {
+    background-color: #7F5B4B;
+    animation-name: more; 
+    animation-duration:2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear
+    
+}
+.interview .more a:hover::before {
+    z-index: 20;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='7' viewBox='0 0 104 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M62.413 1L101 36H1' stroke='white' stroke-opacity='0.8' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    animation-name: more; 
+    animation-duration:2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear
+}
+@media screen and (max-width:640px) {
+    .interview {
+        margin: 0;
+        padding: 0 0 34px 0;
+    }
+    .interview .tit {
+        padding: 30px 0 0 0;
+        text-align: left;
+    }
+    .interview .tit h2 {
+        font-size: 26px;
+        letter-spacing: -0.05em;
+    }
+    .interview .tit p {
+        font-size: 13px;
+        margin: 6px 0 30px 0;
+    }
+    .interview .tit strong {
+        display: none;
+    }
+    .interview .list ul li {
+        width: auto;
+    }
+    .interview .list ul li:nth-child(2), .interview .list ul li:nth-child(3) {
+        display: none;
+    }
+    .interview .list ul li a .photo img {
+        filter: grayscale(0); /*흑백*/
+        width: 100%;/*감싸는 영역의 넓이에 꽉 맞게 사이즈 조정*/
+    }
+    .interview .list ul li a .cnt {
+        bottom: 0;
+        display: block;
+        padding: 36px 24px 32px 25px;
+        background-color: #A17C4B;
+        border-radius: 50px 0 50px;
+        height: 180px;
+    }
+    .interview .list ul li a .cnt h3 {
+        font-size: 18px;
+    }
+    .interview .list ul li a .cnt p {
+        display: block;
+        line-height: 1.2;
+        height: 2.4em;
+        overflow: hidden;
+        margin: 10px 0;
+    }
+    .interview .list ul li a .cnt span {
+        display: block;
+        font-size: 13px;
+        line-height: 1.2;
+        width: auto;
+        height: auto;
+        background: none;
+        padding: 11px 0 0 180px;
+    }
+    .interview .list ul li a .cnt span::after {
+        position: absolute;
+        left: 85px;
+        bottom: 40px;
+        width: calc(100% + 1em);
+        /*6em이라는 단위는 글자 6글자의 넓이
+        반응형에서 글자의 크기가 변경되면 px로 한경우 계속 글자가 바뀔 때마다
+        넓이를 변경해야함
+        하지만 em이라는 단위를 사용하면 글자크기가 줄어도 변경 안해도됨.
+        글자의 크기가 상대크기로 글자수의 넓이를 줌*/
+        height: 4px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 200px auto;
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg width='150' height='4' viewBox='0 0 107 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M101.357 1L105 5H1' stroke='%23fff' stroke-opacity='0.8' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    }
+    .interview .more {
+        /*pc버전에서는 left로 배치, 모바일에서는 right로 배치
+        left와 right가 동시에 선언되면 적용안됨
+        그래서 left를 auto로 해제하고 right를 줘야함*/
+        left: auto;
+        top: auto;
+        position: relative;
+        text-align: center;
+        margin-top: 58px;
+    }
+    .interview .more a {
+        padding: 5px 29px 5px 5px;
+        font-size: 13px;
+    }
+    .interview .more a::after {
+        right: 0;
+        top: 1px;
+        border: 0.5px solid #7F5B4B;
+        width: 22px;
+        height: 22px;
+    }
+    .interview .more a::before {
+        right: 2px;
+        top: 2px;
+        width: 22px;
+        height: 22px;
+        background-size: 11px 4px;
+    }
+}
+.news {
+    background: url(../images/news_bg.png)no-repeat center center/cover;
+    color: #fff;
+    padding: 0 0 27px 0;
+    /*타이틀이 스크롤 될 때 padding을 준 값에서부터 올라감 */
+}
+.news .inner {
+    position: relative;
+}
+.news .tit {
+    position: sticky;
+    top: 120px;
+    /*상단에 고정되었을 때 맨 상단에서부터 (header 무시)
+    아래로 배치되고 싶은 값 - 고정되기 전에는 이 값의 영향이 없음
+    주의사항 - 감싸는 요소가 overflow: hidden이 있으면 안됨*/
+    float: left;
+    margin: 140px 0 0 0;
+}
+.news .tit h2 {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+.news .list {
+    margin: 0 0 0 447px; /*타이틀과의 여백*/
+    padding: 259px 0 0 0;/*list의 상단의 여백*/
+}
+.news .list ul {
+    display: flex;
+    flex-wrap: wrap; /*여러줄*/
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.news .list ul li {
+    width: 387.8px;
+    padding-bottom: 93px;
+}
+.news .list ul li:nth-child(2n) {
+    margin-top: -120px;
+}
+.news .list ul li a span {
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+    font-size: 0;
+    line-height: 0;
+}
+.news .list ul li a span img {
+    transition: 0.5s;
+    display: block;
+}
+.news .list ul li a:hover span img {
+    transform: scale3d(1.1,1.1,1);
+}
+.news .list ul li a strong {
+    display: block;
+    color: #FF7F40;
+    font-size: 18px;
+    font-weight: 700;
+    margin:15px 0 8px 5px;
+}
+.news .list ul li a h3 {
     font-size: 22px;
     font-weight: 700;
     letter-spacing: -0.05em;
+    margin-bottom: 4px;
 }
-.interview .list ul li.active a .cnt p {
-    display: block;
-    margin: 15px 0;
-    /*콘텐츠를 3줄로 제한*/
-    line-height: 1.4;
-    height: 5.6em;
-    overflow: hidden;
-}
-.interview .list ul li.active a .cnt span {
+.news .list ul li a p {
     font-size: 15px;
-    line-height: 1.4;
-    width: auto;
-    height: auto;
-    background: none; /*배경삭제*/   
-    display: block; /*넓이 100%*/
-    text-align: right;
+    font-weight: 400;
+}
+.news .more {
+    position: absolute;
+    left: 0;
+    top: 454px;
+}
+.news .more a {
+    padding: 16px 54px 11px 5px;
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    transition: 0.5s;
+}
+.news .more a::after {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    width: 40px;
+    height: 40px;
+    content: "";
+    transition: 0.5s;
+}
+.news .more a::before {
+    position: absolute;
+    right: 11px;
+    top: 11px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-size: 20px 7px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='7' viewBox='0 0 104 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M62.413 1L101 36H1' stroke='%23fff' stroke-opacity='0.8' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    transition: 0.5s;
+}
+.news .more a:hover::after {
+    border: 1px solid #7F5B4B;
+    background-color: #7F5B4B;
+    animation-name: more; 
+    animation-duration:2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear;
+}
+.news .more a:hover::before {
+    z-index: 20;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='7' viewBox='0 0 104 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M62.413 1L101 36H1' stroke='white' stroke-opacity='0.8' stroke-width='10' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    animation-name: more; 
+    animation-duration:2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear;
+}
+@media screen and (max-width:640px) {
+    .news {
+        padding: 0 0 42px 0;
+    }
+    .news .tit {
+        position: relative;
+        top: auto;
+        float: none;/*float값 해제*/
+        margin: 0 0 0 0;
+        padding: 42px 0 0 0;
+    }
+    .news .tit br {
+        display: none;
+    }
+    .news .tit h2 {
+        font-size: 26px;
+        margin-bottom: 2px;
+    }
+    .news .tit p {
+        font-size: 13px;
+    } 
+    .news .list {
+        margin: 0; 
+        padding: 44px 0 0 0;/*list의 상단의 여백*/
+        overflow-x: auto;
+    }
+    .news .list ul {
+        flex-wrap: nowrap; /*여러줄 제거*/
+        /*li의 넓이 168px li의 갯수 6개 168*6 = 1008
+        li의 사이의 여백 16px li의 갯수 - 1개 16*5=80
+        1008+80 = 1088*/
+        width: 1088px;
+    }
+    .news .list ul li {
+        width: 168px;
+        padding-bottom: 0;
+    }
+    .news .list ul li:nth-child(2n) {
+        margin-top: 0;
+    }
+    .news .list ul li a span img {
+        width: 100%;
+    }
+    .news .list ul li a strong {
+        display: block;
+        color: #FF7F40;
+        font-size: 13px;
+        font-weight: 700;
+        margin:15px 0 8px 5px;
+    }
+    .news .list ul li a h3 {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        margin-bottom: 4px;
+        line-height: 1.2;
+        height: 2.4em;
+        overflow: hidden;
+    }
+    .news .list ul li a p {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.2;
+        height: 2.4em;
+        overflow: hidden;
+        margin-top: 12px;
+    }
+    .news .more {
+        /*pc버전에서는 left로 배치, 모바일에서는 right로 배치
+        left와 right가 동시에 선언되면 적용안됨
+        그래서 left를 auto로 해제하고 right를 줘야함*/
+        left: auto;
+        top: auto;
+        position: relative;
+        text-align: center;
+        margin-top: 58px;
+    }
+    .news .more a {
+        padding: 5px 29px 5px 5px;
+        font-size: 13px;
+    }
+    .news .more a::after {
+        right: 0;
+        top: 1px;
+        border: 0.5px solid #7F5B4B;
+        width: 22px;
+        height: 22px;
+    }
+    .news .more a::before {
+        right: 2px;
+        top: 2px;
+        width: 22px;
+        height: 22px;
+        background-size: 11px 4px;
+    }
+}
+.footer {
+    background-color: #503C33;
+    padding: 130px 0;
+    color: #fff;
+}
+.footer .inner {
+    display: flex;
+    justify-content: space-between;
     position: relative;
 }
-.interview .list ul li.active a .cnt span::after {
-    position: absolute;
-    left: 90px;
-    bottom: -10px;
-    width: calc(100% + 1em);
-    /*6em이라는 단위는 글자 6글자의 넓이
-    반응형에서 글자의 크기가 변경되면 px로 한경우 계속 글자가 바뀔 때마다
-    넓이를 변경해야함
-    하지만 em이라는 단위를 사용하면 글자크기가 줄어도 변경 안해도됨.
-    글자의 크기가 상대크기로 글자수의 넓이를 줌*/
-    height: 4px;
-    padding: 0 27px 11px 4px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 107px 6px;
-    content: "";
-    background-image: url("data:image/svg+xml,%3Csvg width='107' height='6' viewBox='0 0 107 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M101.357 1L105 5H1' stroke='%23262626' stroke-opacity='0.8' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+.footer .footer_txt {
+    font-size: 32px;
 }
-.news {
-    height: 1000px;
+.footer .footer_txt strong {
+    font-weight: 700;
+}
+.footer .footer_info strong {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+}
+.footer .footer_info span + strong {
+    margin-top: 57px;
+}
+.footer .footer_info span {
+    font-size: 15px;
+    line-height: 1.4;
+    display: block;
+}
+.footer .footer_info em {
+    display: block;
+}
+.footer .copyright {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
 }

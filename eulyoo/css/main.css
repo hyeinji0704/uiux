@@ -317,10 +317,29 @@ html, body {
     position: absolute;
     z-index: 10;
     width: 1280px;
-    left: calc(50% - 260px);
-    top: 510px;
+    left: calc(50% - 330px);
+    top: 360px;
     color: #fff;
     font-size: 40px;
+}
+.visual .swiper-slide .visual_txt02 strong {
+    position: absolute;
+    z-index: 10;
+    width: 1280px;
+    left: calc(50% + 81px);
+    top: 450px;
+    color: rgba(255, 255, 255, 0.04);
+    font-size: 120px;
+}
+.visual .swiper-slide .visual_txt02 strong::after {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 176px;
+    left: calc(50% + 81px);
+    top: 450px;
+    content: "";
+    background: url(../images/visual_text02.svg)no-repeat center center ;/*수정중*/
 }
 .visual .swiper-slide .visual_txt03 h2 {
     position: absolute;
@@ -420,7 +439,7 @@ html, body {
     }
     .visual .swiper-slide .visual_txt02 h2 {
         width: 360px;
-        left: calc(50% - 114px);
+        left: calc(50% - 118px);
         top: 215px;
         font-size: 18px;
     }
@@ -703,9 +722,16 @@ html, body {
 .interview .list ul {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    /*두번째 li에 상단여백을 줘서 내림 
+    모든 li가 길이가 늘어남 
+    두번째 li 상단여백 + li 길이만큼 늘어남 
+    flex는 모든 li 요소의 길이를 동일하게 맞추려고 함 
+    원래 li의 길이대로만 나타나게 하려면 반드시 align-items 속성을 줘야함 (어떤 값이든 상관없음) */
 }
 .interview .list ul li {
     width: 408px;
+    position: relative;
 }
 .interview .list ul li:nth-child(2) {
     margin: 40px 0 0 0;
@@ -719,9 +745,102 @@ html, body {
     line-height: 0;
     overflow: hidden; /*이미지를 감싸는 요소에 border-radius를 주는 경우에는 overflow: hidden; 줘야한다*/
 }
-.interview .list ul li:nth-child(2) a .photo img {
-    filter: grayscale(0);
+.interview .list ul li:nth-child(2) a .photo  {
+    border-radius: 0 80px 0 80px;
 }
 .interview .list ul li a .photo img {
     filter: grayscale(100%); /*흑백*/
+    transition: 0.5s;
+}
+.interview .list ul li a .cnt {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 35px;
+}
+.interview .list ul li a .cnt h3 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.interview .list ul li a .cnt p {
+    display: none;
+}
+.interview .list ul li a .cnt span {
+    font-size: 0;
+    line-height: 0;
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='40' viewBox='0 -960 960 960' width='40' fill='%23fff'%3E%3Cpath d='M460-460H240v-40h220v-220h40v220h220v40H500v220h-40v-220Z'/%3E%3C/svg%3E");
+}
+/* 오버되었을 때 */
+.interview .list ul li.active a .photo {
+    box-shadow: 0px 10px 25px 0px rgba(24, 17, 78, 0.08);
+}
+.interview .list ul li.active a .photo img {
+    filter: grayscale(0); /*컬러로 변환*/
+}
+.interview .list ul li.active a .cnt {
+    width: calc(100% - 47px);
+    color: #262626;
+    padding: 30px 47px 54px 47px;
+    bottom: -86px;
+    display: block; /*flex해제*/
+    background-color: #EBE4D4;
+    border-radius: 50px 0 50px 0;
+}
+.interview .list ul li:nth-child(2).active a .cnt {
+    border-radius:  0 50px 0 50px;
+}
+.interview .list ul li.active a .cnt h3 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.interview .list ul li.active a .cnt p {
+    display: block;
+    margin: 15px 0;
+    /*콘텐츠를 3줄로 제한*/
+    line-height: 1.4;
+    height: 5.6em;
+    overflow: hidden;
+}
+.interview .list ul li.active a .cnt span {
+    font-size: 15px;
+    line-height: 1.4;
+    width: auto;
+    height: auto;
+    background: none; /*배경삭제*/   
+    display: block; /*넓이 100%*/
+    text-align: right;
+    position: relative;
+}
+.interview .list ul li.active a .cnt span::after {
+    position: absolute;
+    left: 90px;
+    bottom: -10px;
+    width: calc(100% + 1em);
+    /*6em이라는 단위는 글자 6글자의 넓이
+    반응형에서 글자의 크기가 변경되면 px로 한경우 계속 글자가 바뀔 때마다
+    넓이를 변경해야함
+    하지만 em이라는 단위를 사용하면 글자크기가 줄어도 변경 안해도됨.
+    글자의 크기가 상대크기로 글자수의 넓이를 줌*/
+    height: 4px;
+    padding: 0 27px 11px 4px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 107px 6px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='107' height='6' viewBox='0 0 107 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M101.357 1L105 5H1' stroke='%23262626' stroke-opacity='0.8' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+}
+.news {
+    height: 1000px;
 }

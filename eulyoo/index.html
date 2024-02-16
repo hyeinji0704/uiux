@@ -82,6 +82,7 @@
                             <img src="images/visual02.png" alt="서점 사진">
                             <div class="visual_txt02">
                                 <h2>“출판은 사회에 공헌하는 문화 사업”</h2>
+                                <strong>을유문화사</strong>
                             </div>
                         </li>
                         <li class="swiper-slide">
@@ -161,9 +162,11 @@
                         <div class="list">
                             <!-- 무조건 하나가 over상태의 디자인을 유지
                                  마우스를 오버하면 오버 대상 변경
-                                 마우스를 아웃하면 마지막에 마우스를 올렸던 요소가 over 상태를 유지-->
+                                 마우스를 아웃하면 마지막에 마우스를 올렸던 요소가 over 상태를 유지
+                                처음에는 하나의 li에 active 클래스가 들어가 있는 상태고 다른 요소에 마우스를 오버하면 해당 li에만 active클래스가 추가되는 방식
+                                (기존 li에 active 클래스는 삭제)-->
                             <ul>
-                                <li>
+                                <li >
                                     <a href="#n">
                                         <div class="photo"><img src="images/interview01.png" alt="건축가 유현준"></div>
                                         <div class="cnt">
@@ -173,7 +176,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li>  
+                                <li class="active">  
                                     <a href="#n">
                                         <div class="photo"><img src="images/interview02.png" alt="오디오 평론가 이현준"></div>
                                         <div class="cnt">
@@ -183,7 +186,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li>
+                                <li >
                                     <a href="#n">
                                         <div class="photo"><img src="images/interview03.png" alt="한국외대 교수 신정환"></div>
                                         <div class="cnt">

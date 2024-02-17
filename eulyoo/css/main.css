@@ -291,40 +291,33 @@ html, body {
     z-index: 10;
     width: 1280px;
 }
-.visual .swiper-slide .visual_txt01 h2 {
-    margin: 290px 0 0 0;
+.visual .swiper-slide .visual_txt01 {
     color: rgba(255, 255, 255, 0.6);
     font-size: 120px;
+}
+.visual .swiper-slide .visual_txt01 h2 {
+    margin: 290px 0 0 0;
 }
 .visual .swiper-slide .visual_txt01 strong {
     color: #fff;
 }
 .visual .swiper-slide .visual_txt01 span {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 120px;
     display: block;
     text-align: right;
     margin-top: -50px;
 }
 .visual .swiper-slide .visual_txt02 h2 {
-    position: absolute;
-    z-index: 10;
-    width: 1280px;
-    left: calc(50% - 330px);
-    top: 360px;
+    margin: 330px;
     color: #fff;
     font-size: 40px;
 }
-.visual .swiper-slide .visual_txt02 strong {
-    position: absolute;
-    z-index: 10;
-    width: 1280px;
-    left: calc(50% + 81px);
-    top: 450px;
-    color: rgba(255, 255, 255, 0.04);
-    font-size: 120px;
+.visual .swiper-slide .visual_txt02 span {
+    display: block;
+    margin: -380px 0 0 300px;
+    color: rgba(255, 255, 255, 0.08);
+    font-size: 180px;
 }
-/*.visual .swiper-slide .visual_txt02 strong::after {
+/*.visual .swiper-slide .visual_txt02 span::after {
     position: absolute;
     z-index: 10;
     width: 100%;
@@ -335,11 +328,7 @@ html, body {
     background: url(../images/visual_text02.svg) no-repeat center center ;수정중
 }*/
 .visual .swiper-slide .visual_txt03 h2 {
-    position: absolute;
-    z-index: 10;
-    width: 1280px;
-    left: calc(50% - 640px);
-    top: 310px;
+    margin-top: 310px;
     color: #fff;
     font-size: 50px;
 }

@@ -1,0 +1,181 @@
+@charset "UTF-8";
+@import url(default.css);
+/*웹폰트 선언*/
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
+}
+html, body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px;
+    color: #2d2d2d;
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* pc형에서 wrapper사이즈보다 브라우저 넓이가 작을 때
+    가로스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김.
+    가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스 하기 위해서 최소 넓이를 입력 */
+    position: relative;
+    /*가로스크롤바가 생성되었을 때 body를 기준으로 정렬하는 요소는 깨짐.
+    그래서 모든 요소는 기본적으로 body가 아닌 wrap을 기준으로 정렬하도록 position:relative*/
+}
+
+/*640px 이하일 때 스타일 - 640이하는 모바일 초과는 탭 */
+@media screen and (max-width:640px) {
+    html, body {
+        font-size: 11px;
+        font-weight: 400;
+        /*letter-spacing: 1.2px;*/
+    }
+    .wrapper {
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에*/
+        margin: 0 20px; 
+        /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+    }
+    #wrap { /*id="wrap"에 적용되는 스타일 */
+        min-width: auto;
+        /* 홈페이지의 최소넓이를 제한하지 않음 */
+    }    
+} /*media*/
+
+.header {
+    height: 50px;
+}
+.header .gnb .gnb_btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 101;
+    width: 60px;
+    height: 50px;
+    background-color: #343434;
+}
+.header .gnb .gnb_btn button {
+    display: none;
+}
+.header .gnb .gnb_btn span {
+    position: absolute;
+    left: calc(50% - 12.25px);
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.header .gnb .gnb_btn span.bar1 {
+    top: 17px; 
+    transition: 1s;
+}
+.header .gnb .gnb_btn span.bar2 {
+    top: 25px; 
+    transition: 1s;
+}
+.header .gnb .gnb_btn span.bar3 {
+    top: 33px;
+    transition: 1s;
+}
+.header.menu_open .gnb .gnb_btn span.bar1 {
+    /*top: 25px; 
+    transform: rotate(45deg);
+    left: calc(50% - 16px);
+    width: 32px;*/
+    animation-name: menu_open1;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+.header.menu_open .gnb .gnb_btn span.bar2 {
+    opacity: 0;
+}
+.header.menu_open .gnb .gnb_btn span.bar3 {
+    /*top: 25px; 
+    transform: rotate(-45deg);
+    left: calc(50% - 16px);
+    width: 32px;*/
+    animation-name: menu_open3;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes menu_open1 {/*bar01이 열림에서 닫힘으로 바뀔 때*/
+    0% {top: 17px; transform: rotate(0deg);}
+    50% {top: 25px; transform: rotate(0deg);}
+    100% {top: 25px; transform: rotate(45deg);}
+}
+@keyframes menu_open3 {/*bar03이 열림에서 닫힘으로 바뀔 때*/
+    0% {top: 33px; transform: rotate(0deg);}
+    50% {top: 25px; transform: rotate(0deg);}
+    100% {top: 25px; transform: rotate(-45deg);}
+}
+.header .gnb .gnb_wrap {
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #805C4C;
+    color: #fff;
+    padding: 50px 30px 20px 30px;
+}
+.header .gnb .gnb_wrap {
+    display: block;
+}
+.header .gnb ul.depth01 {
+    height: calc(100vh-70px);
+    overflow-y: auto;
+}
+.header .gnb ul.depth01 > li > a {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 60px;
+    display: block;
+}
+.header .gnb ul.depth01 > li > a > span {
+    position: relative;
+}
+.header .gnb ul.depth01 > li > a > span::after {
+    position: absolute;
+    right: -35px;
+    top: -5px;
+    width: 36px;
+    height: 36px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 24px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23fff'%3E%3Cpath d='M480-373.847 303.848-549.999h352.304L480-373.847Z'/%3E%3C/svg%3E");
+    transition: 0.5s;
+}
+.header .gnb ul.depth02 {
+    display: none;
+    font-size: 16px;
+    line-height: 40px;
+}
+.header .gnb ul.depth01 > li.sub_open > a > span::after {
+    transform: rotate(180deg);
+}

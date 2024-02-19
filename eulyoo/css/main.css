@@ -399,10 +399,11 @@ html, body {
         font-size: 30px;
     }
     .visual .swiper-slide .visual_txt01 h2 {
-        margin: 150px 0 0 5px;
+        margin: 150px 0 0 22px;
     }
     .visual .swiper-slide .visual_txt01 span {
         margin-top: -15px;
+        padding-right: 15px
     }
     .visual .swiper-slide .visual_txt02 h2 {
         margin: 180px 0 0 0;

@@ -917,7 +917,7 @@ html, body {
     .interview .list ul li a .cnt p {
         display: block;
         line-height: 1.2;
-        height: 2.4em;
+        height: 2.3em;
         overflow: hidden;
         margin: 10px 0;
     }
@@ -928,7 +928,8 @@ html, body {
         width: auto;
         height: auto;
         background: none;
-        padding: 11px 0 0 180px;
+        text-align: right;
+        padding: 15px 47px 0 0;
     }
     .interview .list ul li a .cnt span::after {
         position: absolute;

@@ -161,12 +161,10 @@ html, body {
         height: 50px;
         background-color: #fff;
         box-shadow: 2px 2px 25px rgba(0,0,0,0.1);
-        translate: 0.5s;
     }
     .header .inner {
         display: flex;
         justify-content: space-between;
-        translate: 0.5s;
     }
     .header .logo {
         margin: 14px 0 0 0;

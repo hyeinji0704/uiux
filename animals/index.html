@@ -8,18 +8,193 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
+    <!--swiper작동파일-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <title>동물보호센터</title>
 </head>
 <body>
     <div id="wrap">
-        <header class="header"></header>
+        <header class="header">
+            <h1 class="logo">
+                <a href="index.html"><img src="images/logo.svg" alt="동물보호센터 로고">동물보호센터 로고</a>
+            </h1>
+            <nav class="gnb">
+                <button class="gnb_open">메뉴열기</button>
+                <div class="gnb_wrap">
+                    <ul class="depth01">
+                        <!--메뉴에 마우스를 올리면 li에 sub_over 클래스 추가-->
+                        <li>
+                            <a href="#n">찾습니다</a>
+                            <ul class="depth02">
+                                <li><a href="#n">분실신고</a></li>
+                                <li><a href="#n">구조·정보 목격담</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">구조분양</a>
+                        </li>
+                        <li>
+                            <a href="#n">네트워크</a>
+                        </li>
+                        <li>
+                            <a href="#n">재회성공담</a>
+                        </li>
+                        <li>
+                            <a href="#n">대처방법</a>
+                            <ul class="depth02">
+                                <li><a href="#n">실종시 대처방법</a></li>
+                                <li><a href="#n">구조시 대처방법</a></li>
+                                <li><a href="#n">고양이에 대해</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav>
+            <div class="tnb">
+                <a href="#n" class="search">검색</a>
+                <!--외부사이트를 연결할 때는 반드시 새창으로 target="_blank" 링크를 걸어줘야하고 
+                새창으로 링크를 걸 때는 title="새창" 고지해야함 -- 웹접근성-->
+                <a href="http://www.dogcat-e.com/index.php?code=apply" target="_blank" title="새창" class="paper">전단지</a>
+            </div>
+        </header><!--header에는 wrapper가 없음-->
         <div class="container">
-            <section class="visual"></section>
-            <section class="find"></section>
-            <section class="message"></section>
+            <section class="visual">
+                <h2>비쥬얼 팝업</h2><!--section 태그 안에는 반드시 heading 태그가 있어야함. 이 영역의 제목-->
+                <div class="swiper"> <!------------- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!------------------------ 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <img src="images/visual01.png" alt="강아지 사진">
+                            <div class="visual_txt txt01">
+                                <p><strong>가족을 기다리는 동물들,</strong><br>사지말고 입양하세요</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/visual02.png" alt="고양이 사진">
+                            <div class="visual_txt txt02">
+                                <p><strong>당신이 선택한 입양은,</strong><br>가장 실천적인<br>동물구호 활동입니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/visual03.png" alt="강아지 사진">
+                            <div class="visual_txt txt03">
+                                <p><strong>입양ON! 펫숍OFF!</strong><br>동물을 사고 <br>팔지 않는 사회</p>
+                            </div>
+                        </li> <!--------------- 팝업 요소들 (div로 해도 상관없음)-->
+                    </ul>
+                    <div class="ctrl_btn">
+                        <button class="prev">이전팝업보기</button>
+                        <button class="next">다음팝업보기</button>
+                        <button class="pause">일시정지</button>
+                        <button class="play">재생</button>
+                    </div>
+                </div>
+            </section>
+            <section class="lost">
+                <div class="wrapper">
+                    <h2>찾습니다</h2>
+                    <div class="list">
+                        <ul>
+                            <!--탑메뉴를 구현할 때는 보일 li에 active클래스를 줌
+                            active클래스가 있는 경우에만 detail이 보임-->
+                            <li class="active">
+                                <button>가족을</button>
+                                <div class="detail">
+                                    <ul>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/lost01.png" alt="이레 사진"></span>
+                                                <h3><strong class="category01">긴급</strong>이레를 찾습니다.</h3>
+                                                <p>실종 장소 : 대전광역시 유성구 도룡동<br>
+                                                    실종 날짜 : 2024.02.19<br>
+                                                    동물 정보 : 말티즈 / 수컷 / 3살</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/lost02.png" alt="삼식이 사진"></span>
+                                                <h3><strong class="category02">찾음</strong>삼식이를 찾습니다.</h3>
+                                                <p>실종 장소 : 대전광역시 유성구 도룡동<br>
+                                                    실종 날짜 : 2024.01.10<br>
+                                                    동물 정보 : 라이카 / 수컷 / 2살</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/lost03.png" alt="멜리 사진"></span>
+                                                <h3><strong class="category01">긴급</strong>멜리를 찾습니다.</h3>
+                                                <p>실종 장소 : 충청남도 태안군 어은돌 캠핑장<br>
+                                                    실종 날짜 : 2024.01.01<br>
+                                                    동물 정보 : 포메라니언 / 암컷 / 17살</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/lost04.png" alt="두비 사진"></span>
+                                                <h3><strong class="category01">긴급</strong>두비를 찾습니다.</h3>
+                                                <p>실종 장소 : 인천광역시 중구 항동7가<br>
+                                                    실종 날짜 : 2024.02.17<br>
+                                                    동물 정보 : 믹스견 / 수컷 / 9살</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="#n">자세히 보기</a>
+                                </div>
+                            </li>
+                            <li>
+                                <button>주인을</button>
+                                <div class="detail">
+                                    <ul>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/lost05.png" alt="흰색 푸들 사진"></span>
+                                                <h3><strong class="category03">구조</strong>흰색 푸들</h3>
+                                                <p>구조 장소 : 대전광역시 유성구 도룡동<br>
+                                                    구조 날짜 : 2024.02.19<br>
+                                                    동물 정보 : 푸들 / 수컷 / 3살</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/lost06.png" alt="검정 진돗개 사진"></span>
+                                                <h3><strong class="category04">목격</strong>검정 진돗개</h3>
+                                                <p>실종 장소 : 전라북도 김제시 백구면 삼정리<br>
+                                                    실종 날짜 : 2024-02-01<br>
+                                                    동물 정보 : 진돗개 / 성별모름 / 나이모름</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/lost07.png" alt="흰색 백구 사진"></span>
+                                                <h3><strong class="category03">구조</strong>흰색 백구</h3>
+                                                <p>실종 장소 : 경기도 고양시 일산동구 견달산<br>
+                                                    실종 날짜 : 2023.02.03<br>
+                                                    동물 정보 : 기타 / 암컷 / 5살</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/lost08.png" alt="파란눈 고양이 사진"></span>
+                                                <h3><strong class="category03">구조</strong>파란눈 고양이</h3>
+                                                <p>실종 장소 : 대구광역시 북구 관음동<br>
+                                                    실종 날짜 : 2024.02.17<br>
+                                                    동물 정보 : 기타 / 수컷 / 1살</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="#n">자세히 보기</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="msg"></section>
             <section class="adopt"></section>
         </div>
         <footer class="footer"></footer>
+
     </div>
 </body>
 </html>    

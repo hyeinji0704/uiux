@@ -1,4 +1,21 @@
 $(document).ready(function(){
+    let device_status
+    let window_w
+    function device_chk(){
+        window_w = $(window).width()
+        if(window_w > 1024){//pc
+            device_status = 'pc'
+        }else{ //1024보다 작다면
+            device_status = 'mobile'
+        }
+    }
+    device_chk() //html 로딩 후 ---함수의 선언
+    $(window).resize(function(){
+        device_chk() // 브라우저가 리사이즈 될 때마다 1번씩
+    })
+    console.log(device_status)
+
+
     //html 문서가 로딩된 다음에 실행
     /*
         1차 메뉴(.header ul.depth01 > li)에 마우스를 오버하면 
@@ -94,4 +111,47 @@ $(document).ready(function(){
         $(this).hide()
         $('.adopt .ctrl_btn .pause').show()
     })
+    /* 관련사이트
+        site_open을 클릭하면 목록이 나타남
+            site_list 목록이 나타남
+            site_open 사라짐
+            site_close 나타남
+        site_close을 클릭하면 목록이 사라짐
+            site_list 목록이 사라짐
+            site_open 나타남
+            site_close 사라짐
+    */
+    $('.footer .family .site_open').on('click', function(){
+        $('.footer .family .site_list').slideDown()
+        $(this).hide()
+        $('.footer .family .site_close').show()
+    })
+    $('.footer .family .site_close').on('click', function(){
+        $('.footer .family .site_list').slideUp()
+        $(this).hide()
+        $('.footer .family .site_open').show()
+    })
+    /*모바일 메뉴
+		.header .gnb .gnb_open 를 클릭하면 메뉴가 열림
+			---header에 menu_open클래스 추가
+		.header .gnb .gnb_close 를 클릭하면 메뉴가 닫힘
+			---header에 menu_open클래스 삭제
+		1차 메뉴를 클릭하면 하위메뉴가 열리는데 
+			해당 li에 sub_open 클래스를 추가
+			이미 열린 메뉴를 다시 클릭하면 닫힘
+			1차 메뉴 클릭(href)를 무력화 - 안눌려서 이동 안하게끔
+	*/
+    $('.header .gnb .gnb_open').on('click', function(){
+        $('.header').addClass('menu_open')
+    })
+    $('.header .gnb .gnb_close').on('click', function(){
+        $('.header').removeClass('menu_open')
+    })
+    $('.header .gnb ul.depth01 > li:has(.depth02) > a').on('click', function(e){
+        if(device_status == 'mobile'){//모바일일 때만 선언
+            e.preventDefault()//모바일에서 href링크 없앰
+            $(this).parent().toggleClass('sub_open')
+        }
+    })
+
 })

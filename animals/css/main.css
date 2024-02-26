@@ -348,6 +348,16 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
 @media screen and (max-width:1024px) {
     .header .gnb .gnb_wrap {
         display: none;
+        background-color: #1d1d1d;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 110;
+        width: 100%;
+        height: 100vh;
+    }
+    .header.menu_open .gnb .gnb_wrap {
+        display: block;
     }
     .header .tnb {
         margin: 15px 30px 0 0;
@@ -367,8 +377,85 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         width: 20px;
         height: 20px;
     }
+    .header.menu_open .tnb {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 125;
+        margin: 0;
+    }
+    .header.menu_open .tnb .search {
+        display: none;
+    }
+    .header.menu_open .tnb .paper {
+        display: block;
+        font-size: 26px;
+        border: 0;
+        border-radius: 0;
+        padding: 31px 70px 33px 40px;
+        background-color: orange;
+    }
+    .header.menu_open .tnb .paper::before {
+        right: 45px;
+        top: 38px;
+        width: 18px;
+        height: 18px;
+        z-index: 120;
+    }
+    .header .gnb ul.depth01 {
+        background-color: #fff;
+        color: #1d1d1d;
+        margin: 100px 0 0 0;
+        height: calc(100vh - 100px);
+        overflow-y: auto;/*메뉴 길어지면 스크롤*/
+        display: block; 
+        padding-top: 50px;
+    }
+    .header .gnb ul.depth01 > li > a {
+        font-size: 26px;
+        line-height: 80px;
+        padding: 0 40px;
+    }
+    .header .gnb ul.depth01 > li:has(.depth02) > a::after {
+        display: none;
+    }
+    .header .gnb ul.depth01 > li:has(.depth02) > a span {
+        position: relative;
+    }
+    .header .gnb ul.depth01 > li:has(.depth02) > a span::after {
+        position: absolute;
+        right: -25px;
+        top: 5px;
+        width: 20px;
+        height: 20px;
+        content: "";
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.667 16.667'%3E%3Cpath id='pets_FILL0_wght400_GRAD0_opsz24' d='M82.083-827.105a1.962,1.962,0,0,1-1.479-.636A2.176,2.176,0,0,1,80-829.3a2.176,2.176,0,0,1,.6-1.557,1.962,1.962,0,0,1,1.479-.636,1.962,1.962,0,0,1,1.479.636,2.176,2.176,0,0,1,.6,1.557,2.176,2.176,0,0,1-.6,1.557A1.962,1.962,0,0,1,82.083-827.105Zm3.75-3.509a1.962,1.962,0,0,1-1.479-.636,2.176,2.176,0,0,1-.6-1.557,2.176,2.176,0,0,1,.6-1.557A1.961,1.961,0,0,1,85.833-835a1.961,1.961,0,0,1,1.479.636,2.176,2.176,0,0,1,.6,1.557,2.176,2.176,0,0,1-.6,1.557A1.962,1.962,0,0,1,85.833-830.614Zm5,0a1.962,1.962,0,0,1-1.479-.636,2.176,2.176,0,0,1-.6-1.557,2.176,2.176,0,0,1,.6-1.557A1.961,1.961,0,0,1,90.833-835a1.961,1.961,0,0,1,1.479.636,2.176,2.176,0,0,1,.6,1.557,2.176,2.176,0,0,1-.6,1.557A1.962,1.962,0,0,1,90.833-830.614Zm3.75,3.509a1.962,1.962,0,0,1-1.479-.636,2.176,2.176,0,0,1-.6-1.557,2.176,2.176,0,0,1,.6-1.557,1.962,1.962,0,0,1,1.479-.636,1.962,1.962,0,0,1,1.479.636,2.176,2.176,0,0,1,.6,1.557,2.176,2.176,0,0,1-.6,1.557A1.962,1.962,0,0,1,94.583-827.105Zm-10.708,8.772a1.975,1.975,0,0,1-1.573-.757,2.691,2.691,0,0,1-.635-1.787,2.957,2.957,0,0,1,.74-2q.74-.855,1.469-1.689a7.992,7.992,0,0,0,1.042-1.48,8.675,8.675,0,0,1,1.042-1.5,4.162,4.162,0,0,1,1.063-.943,2.453,2.453,0,0,1,1.313-.373,2.568,2.568,0,0,1,1.313.351,3.817,3.817,0,0,1,1.063.921,9.676,9.676,0,0,1,1.031,1.513,8.922,8.922,0,0,0,1.052,1.513q.729.833,1.469,1.689a2.957,2.957,0,0,1,.74,2,2.691,2.691,0,0,1-.635,1.787,1.975,1.975,0,0,1-1.573.757,12.637,12.637,0,0,1-2.229-.2,12.654,12.654,0,0,0-2.229-.2,12.654,12.654,0,0,0-2.229.2A12.637,12.637,0,0,1,83.875-818.333Z' transform='translate(-80 835)' fill='%232d2d2d'/%3E%3C/svg%3E%0A");
+    }
+    .header .gnb ul.depth01 > li.sub_open:has(.depth02) > a span::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16.667 16.667'%3E%3Cpath id='pets_FILL0_wght400_GRAD0_opsz24' d='M82.083-826.228a1.962,1.962,0,0,0-1.479.636,2.176,2.176,0,0,0-.6,1.557,2.176,2.176,0,0,0,.6,1.557,1.962,1.962,0,0,0,1.479.636,1.962,1.962,0,0,0,1.479-.636,2.176,2.176,0,0,0,.6-1.557,2.176,2.176,0,0,0-.6-1.557A1.962,1.962,0,0,0,82.083-826.228Zm3.75,3.509a1.962,1.962,0,0,0-1.479.636,2.176,2.176,0,0,0-.6,1.557,2.176,2.176,0,0,0,.6,1.557,1.961,1.961,0,0,0,1.479.636,1.961,1.961,0,0,0,1.479-.636,2.176,2.176,0,0,0,.6-1.557,2.176,2.176,0,0,0-.6-1.557A1.962,1.962,0,0,0,85.833-822.719Zm5,0a1.962,1.962,0,0,0-1.479.636,2.176,2.176,0,0,0-.6,1.557,2.176,2.176,0,0,0,.6,1.557,1.961,1.961,0,0,0,1.479.636,1.961,1.961,0,0,0,1.479-.636,2.176,2.176,0,0,0,.6-1.557,2.176,2.176,0,0,0-.6-1.557A1.962,1.962,0,0,0,90.833-822.719Zm3.75-3.509a1.962,1.962,0,0,0-1.479.636,2.176,2.176,0,0,0-.6,1.557,2.176,2.176,0,0,0,.6,1.557,1.962,1.962,0,0,0,1.479.636,1.962,1.962,0,0,0,1.479-.636,2.176,2.176,0,0,0,.6-1.557,2.176,2.176,0,0,0-.6-1.557A1.962,1.962,0,0,0,94.583-826.228ZM83.875-835a1.975,1.975,0,0,0-1.573.757,2.691,2.691,0,0,0-.635,1.787,2.957,2.957,0,0,0,.74,2q.74.855,1.469,1.689a7.992,7.992,0,0,1,1.042,1.48,8.675,8.675,0,0,0,1.042,1.5,4.162,4.162,0,0,0,1.063.943,2.453,2.453,0,0,0,1.313.373,2.568,2.568,0,0,0,1.313-.351,3.817,3.817,0,0,0,1.063-.921,9.676,9.676,0,0,0,1.031-1.513,8.922,8.922,0,0,1,1.052-1.513q.729-.833,1.469-1.689a2.957,2.957,0,0,0,.74-2,2.691,2.691,0,0,0-.635-1.787A1.975,1.975,0,0,0,92.792-835a12.637,12.637,0,0,0-2.229.2,12.654,12.654,0,0,1-2.229.2,12.654,12.654,0,0,1-2.229-.2A12.637,12.637,0,0,0,83.875-835Z' transform='translate(-80 835)' fill='%232d2d2d'/%3E%3C/svg%3E%0A");
+    }
+    .header .gnb ul.depth01 > li.sub_open:has(.depth02) > ul.depth02 {
+        display: block;
+    }
+    .header.menu_open .gnb ul.depth02 {
+        /*display: block;*/
+        position: relative;
+        left: auto;
+        top: auto;
+        padding: 10px 14px 8px 50px;
+    }
+    .header.menu_open .gnb ul.depth02 > li > a {
+        font-size: 18px;
+        line-height: 50px;
+    }
     .header .gnb .gnb_open {
         display: block;
+    }
+    .header .gnb .gnb_open, .header .gnb .gnb_close {
         position: absolute;
         right: 0;
         top: 0;
@@ -380,6 +467,18 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         background-repeat: no-repeat;
         background-size: 30px 20px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.001 19.888'%3E%3Cpath id='menu_FILL0_wght300_GRAD0_opsz24_1_' data-name='menu_FILL0_wght300_GRAD0_opsz24 (1)' d='M141.325-685.5a1.28,1.28,0,0,1-.943-.381,1.282,1.282,0,0,1-.381-.943,1.279,1.279,0,0,1,.381-.943,1.282,1.282,0,0,1,.943-.38h27.354a1.281,1.281,0,0,1,.943.381,1.281,1.281,0,0,1,.381.943,1.279,1.279,0,0,1-.381.943,1.281,1.281,0,0,1-.943.38Zm0-8.62a1.28,1.28,0,0,1-.943-.381,1.281,1.281,0,0,1-.381-.943,1.28,1.28,0,0,1,.381-.943,1.281,1.281,0,0,1,.943-.38h27.354a1.281,1.281,0,0,1,.943.381,1.281,1.281,0,0,1,.381.943,1.279,1.279,0,0,1-.381.943,1.281,1.281,0,0,1-.943.38Zm0-8.62a1.28,1.28,0,0,1-.943-.381,1.281,1.281,0,0,1-.381-.943,1.28,1.28,0,0,1,.381-.943,1.281,1.281,0,0,1,.943-.38h27.354a1.281,1.281,0,0,1,.943.381,1.282,1.282,0,0,1,.381.943,1.28,1.28,0,0,1-.381.943,1.281,1.281,0,0,1-.943.38H141.325Z' transform='translate(-140.001 705.384)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    }
+    .header .gnb .gnb_close {
+        background-size: 48px auto;
+        z-index: 111;
+        background-color: #127058;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23fff'%3E%3Cpath d='M256-213.847 213.847-256l224-224-224-224L256-746.153l224 224 224-224L746.153-704l-224 224 224 224L704-213.847l-224-224-224 224Z'/%3E%3C/svg%3E");
+    }
+    .header.menu_open .gnb .gnb_open {
+        display: none;
+    }
+    .header.menu_open .gnb .gnb_close {
+        display: block;
     }
 }
 @media screen and (max-width:768px) {
@@ -394,11 +493,26 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         width: 100px;
         height: 28px;
     }
+    .header .gnb ul.depth01 {
+        margin: 50px 0 0 0; /*메뉴 바 높이*/
+        height: calc(100vh - 50px);/*메뉴 바 높이*/
+        padding-top: 30px;
+    }
+    .header .gnb ul.depth01 > li > a {
+        font-size: 22px;
+        line-height: 70px;
+    }
     .header .tnb {
         margin: 15px 30px 0 0;
     }
-    .header .tnb .paper {
-        display: none;
+    .header.menu_open .tnb .paper {
+        font-size: 20px;
+        padding: 11px 60px 11px 40px;
+        background-color: orange;
+    }
+    .header.menu_open .tnb .paper::before {
+        right: 38px;
+        top: 15px;
     }
     .header .tnb .search {
         padding: 0 65px 0 0; 
@@ -416,6 +530,25 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         width: 80px;
         height: 50px;
         background-size: 28px 19px;
+    }
+    .header .gnb .gnb_close {
+        height: 50px;
+    }
+}
+@media screen and (max-width:375px) {
+    .header .gnb ul.depth01 > li > a {
+        padding: 0 20px;
+    }
+    .header.menu_open .tnb .paper {
+        font-size: 18px;
+        padding: 12px 50px 13px 30px;
+        background-color: orange;
+    }
+    .header.menu_open .tnb .paper::before {
+        right: 31px;
+        top: 16px;
+        width: 15px;
+        height: 15px;
     }
 }
 .visual h2 {
@@ -514,11 +647,9 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
     }
     .visual .ctrl_btn {
         bottom: 50px;
+        border: 0;
     }
     .visual .ctrl_btn button {
-        position: absolute;
-        left: 0;
-        bottom: 0;
         width: 25px;
         height: 25px;
         border: 1px solid #fff;
@@ -579,11 +710,12 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         line-height: 35px;
     }
     .visual .ctrl_btn {
-        left: 92%;
+        left: 50%;
         bottom: 95px;
         z-index: 10;
         transform: translate(0,0);
         border: 0;
+        margin-left: 274px;
     }
     .visual .ctrl_btn button {
         position: absolute;
@@ -611,6 +743,21 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.539' height='14.075' viewBox='0 0 11.539 14.075'%3E%3Cpath id='play_arrow_FILL0_wght400_GRAD0_opsz24' d='M320-714.065v-11.8a1.079,1.079,0,0,1,.342-.812,1.117,1.117,0,0,1,.8-.328,1.139,1.139,0,0,1,.3.043,1.185,1.185,0,0,1,.3.128l9.288,5.9a1.1,1.1,0,0,1,.385.427,1.194,1.194,0,0,1,.128.541,1.194,1.194,0,0,1-.128.541,1.1,1.1,0,0,1-.385.427l-9.288,5.9a1.183,1.183,0,0,1-.3.128,1.136,1.136,0,0,1-.3.043,1.116,1.116,0,0,1-.8-.328A1.079,1.079,0,0,1,320-714.065ZM322.279-719.963Zm0,3.818,5.983-3.818-5.983-3.818Z' transform='translate(-320 727)' fill='%232d2d2d'/%3E%3C/svg%3E ");
     }
 }
+@media screen and (max-width:500px) {
+    .visual .ctrl_btn {
+        margin-left: 200px;
+    }
+}
+@media screen and (max-width:426px) {
+    .visual .ctrl_btn {
+        margin-left: 168px;
+    }
+}
+@media screen and (max-width:376px) {
+    .visual .ctrl_btn {
+        margin-left: 145px;
+    }
+}
 @media screen and (max-width:360px) {
     .visual .swiper {
         height:335px 
@@ -630,16 +777,16 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         line-height: 30px;
     }
     .visual .ctrl_btn {
-        left: 85%;
+        margin-left: 132px;
         bottom: 35px;
     }
-}
+}   
 @media screen and (max-width:320px) {
     .visual .swiper .txt01 {
         margin-top: 28px;
     }
     .visual .ctrl_btn {
-        left: 85%;
+        margin-left: 117px;
         bottom: 30px;
     }
 }
@@ -806,16 +953,16 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         }
         .lost h2 {
             font-size: 32px;
-            padding: 40px 40px 40px 0;
+            padding: 50px 40px 40px 0;
         }
         .lost h2::after {
             right: calc(50% - 80px);
-            top: 47px;
+            top: 57px;
             width: 28px;
             height: 28px;
         }
         .lost .list {
-            height: 747px;
+            height: 720px;
         }
         .lost .list > ul > li > button {
             font-size: 18px;
@@ -834,6 +981,9 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         .lost .list > ul > li .detail > ul > li a h3 {
             font-size: 18px;
             margin: 16px 0 12px 0;
+        }
+        .lost .list > ul > li .detail .more {
+            margin: 50px 0 0 0;
         }
     }
     @media screen and (max-width:768px) {
@@ -869,6 +1019,16 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         }
         .lost .list > ul > li .detail .more {
             margin: 60px 0 0 0;
+        }
+        .lost .list > ul > li .detail .more a {
+            padding: 10px 40px 10px 21px;
+            font-size: 15px;
+        }
+        .lost .list > ul > li .detail .more a::after {
+            right: 20px;
+            top: 12px;
+            width: 15px;
+            height: 15px;
         }
     }
     @media screen and (max-width:640px) {
@@ -919,11 +1079,18 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         }
     }
     @media screen and (max-width:375px) {
+        .lost h2 {
+            font-size: 26px;
+            padding: 40px 30px 20px 0;
+        }
+        .lost h2::after {
+            right: calc(50% - 65px);
+            width: 24px;
+            height: 24px;
+        }
         .lost .list {
             height: 557px;
         }
-        
-        
         .lost .list > ul > li .detail .more a {
             padding: 10px 35px 10px 18px;
             font-size: 13px;
@@ -1019,10 +1186,10 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
 }
 @media screen and (max-width:1024px) {
     .msg{
-        padding-bottom: 120px;
+        padding-bottom: 90px;
     }
     .msg h2 {
-        padding: 110px 0 60px 0;
+        padding: 70px 0 60px 0;
         font-size: 36px;
     }
     .msg p {
@@ -1031,47 +1198,56 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
 }
 @media screen and (max-width:768px) {
     .msg{
-        padding-bottom: 90px;
+        padding-bottom: 60px;
     }
     .msg h2 {
-        padding: 80px 0 40px 0;
+        padding: 50px 0 35px 0;
         font-size: 30px;
     }
     .msg p {
         font-size: 40px;
     }
 }
-@media screen and (max-width:500px) {
-    .msg{
-        padding-bottom: 65px;
-    }
+@media screen and (max-width:640px) {
     .msg h2 {
-        padding: 60px 0 35px 0;
         font-size: 28px;
+        padding: 45px 0 30px 0;
     }
     .msg p {
-        font-size: 38px;
+        font-size: 35px;
+    }
+}
+@media screen and (max-width:500px) {
+    .msg{
+        padding-bottom: 50px;
+    }
+    .msg p {
+        font-size: 36px;
     }
     .msg p .msg02 {
-        width: 2.5em; 
+        width: 3em; 
+    }
+    .msg p .msg02::before {
+        left: -8%;
+    }
+}
+@media screen and (max-width:426px) {
+    .msg p {
+        font-size: 32px;
     }
 }
 @media screen and (max-width:375px) {
-    .msg h2 {
-        padding: 60px 0 27px 0;
-        font-size: 26px;
-    }
     .msg p {
-        font-size: 34px;
+        font-size: 30px;
+    }
+    .msg h2 {
+        padding: 40px 0 27px 0;
+        font-size: 26px;
     }
 }
 @media screen and (max-width:320px) {
     .msg{
         padding-bottom: 45px;
-    }
-    .msg h2 {
-        padding: 40px 0 27px 0;
-        font-size: 24px;
     }
     .msg p {
         font-size: 28px;
@@ -1260,16 +1436,16 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
 }
 @media screen and (max-width:1024px) {
     .adopt {
-        padding-bottom: 150px;
+        padding-bottom: 135px;
     }
     .adopt h2 {
         font-size: 32px;
         font-weight: 600;
-        padding: 110px 50px 60px 0;
+        padding: 70px 30px 150px 0;
     }
     .adopt h2::after {
-        right: calc(50% - 140px);
-        top: 116px;
+        right: calc(50% - 150px);
+        top: 78px;
         width: 28px;
         height: 28px;
     }
@@ -1281,14 +1457,57 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
     .adopt .swiper ul li a .txt em {
         font-size: 16px;
     }
+    .adopt .ctrl_btn {
+        margin: 45px 0 0 0;
+    }
+    .adopt .more {
+        top: 160px;
+    }
 }
 @media screen and (max-width:768px) {
     .adopt {
-        padding-bottom: 120px;
+        padding-bottom: 110px;
+    }
+    .adopt h2 {
+        padding: 50px 30px 100px 0;
+        font-size: 28px;
+    }
+    .adopt h2::after {
+       right: calc(50% - 130px);
+       top: 55px; 
+    }
+    .adopt .swiper ul li a .txt {
+        font-size: 18px;
+    }
+    .adopt .swiper ul li a .txt em {
+        font-size: 15px;
     }
     .adopt .move {
         font-size: 60px;  
         bottom: 20px;
+    }
+    .adopt .ctrl_btn {
+        margin: 25px 0 0 0;
+    }
+    .adopt .ctrl_btn .prev, .adopt .ctrl_btn .next {
+        display: none;
+    }
+    .adopt .more {
+        top: 120px;
+    }
+    .adopt .more {
+        margin: 15px 0 0 0;
+        top: 100px;
+    }
+    .adopt .more a {
+        padding: 10px 40px 10px 21px;
+        font-size: 15px;
+    }
+    .adopt .more a::after {
+        right: 20px;
+        top: 12px;
+        width: 15px;
+        height: 15px;
     }
 }
 @media screen and (max-width:640px) {
@@ -1299,8 +1518,36 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         font-size: 40px;  
         bottom: 10px;
     }
+    .adopt .more {
+        top: 105px;
+    }
 }
 @media screen and (max-width:500px) {
+    .adopt h2 {
+        padding: 45px 30px 100px 0;
+    }
+    .adopt h2::after {
+        right: calc(50% - 130px);
+        top: 50px;
+        width: 26px;
+        height: 26px;
+    }
+    .adopt .swiper ul li a .txt {
+        font-size: 16px;
+    }
+    .adopt .more {
+        margin: 0;
+    }
+    .adopt .ctrl_btn button {
+        width: 28px;
+        height: 28px;
+    }
+    .adopt .ctrl_btn .pause {
+        background-size: 12px auto;
+    }
+    .adopt .ctrl_btn .play {
+        background-size: 10px auto;
+    }
 }
 @media screen and (max-width:375px) {
     .adopt {
@@ -1312,16 +1559,257 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
     }
 }
 @media screen and (max-width:320px) {
-    .adopt {
-        padding-bottom: 40px;
-    }
     .adopt .move {
         font-size: 36px;  
         bottom: 10px;
+    }
+    .adopt .ctrl_btn {
+        margin: 15px 0 0 0;
     }
 }
 .footer {
     padding: 80px 0;
     background-color: #1C1B17;
     color: #fff;
+}
+.footer .inner {
+    position: relative; /*sns와 familysite 정렬의 기준*/
+}
+.footer .sns {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.footer .sns ul {
+    display: flex;
+}
+.footer .sns ul li {
+    margin-right: 5px;
+}
+.footer .sns ul li:last-child {
+    margin-right: 0;
+}
+.footer .sns ul li a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #535353;
+    border-radius: 100%;
+    font-size: 0;
+    line-height: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.footer .sns ul li .twitter a{
+    background-size: 15px auto;
+}
+.footer .sns ul li .facebook a {
+    background-size: 15px auto;
+}
+.footer .sns ul li .daum a {
+    background-size: 15px auto;
+}
+.footer .sns ul li .naver a {
+    background-size: 15px auto;
+}
+.footer .f_nav ul {
+    display: flex;
+}
+    /*
+    인접선택자
+    <div class="f_nav>
+        <ul></ul>
+        <ul></ul> ....f_nav ul + ul 
+    </div>
+    ul 태그 다음에 오는 ul 태그
+    첫번째 태그는 해당사항 없음
+    */
+.footer .f_nav ul + ul {
+    margin-top: 14px;
+}
+.footer .f_nav ul li {
+    margin-right: 44px;
+    position: relative;
+}
+.footer .f_nav ul li::after {
+    position: absolute;
+    right: -22px;
+    top: 2px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.3);
+    content: "";
+}
+.footer .f_nav ul li:last-child {
+    margin-right: 0;
+}
+.footer .f_nav ul li:last-child::after {
+    display: none;
+}
+.footer .f_nav ul .privacy {
+    font-weight: 700;
+}
+.footer .family {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+@media screen and (min-width:1025px) {
+    /*pc버전에서만 리스트가 나타나고 버튼이 사라지도록*/
+    .footer .family .site_open , .footer .family .site_close {
+        display: none !important;
+    }
+    .footer .family .site_list {
+        display: block !important;
+        /* <div class="site_list" style="display:none;">
+        jaquery에서 hide/slideUp을 줬더니 태그에 직접 style="display:none; 
+        이 태그에 직접 style이라고 선언한 스타일은 인라인 방식으로 css에서 준 어떠한 스타일보다 우선 적용
+        이 때 무조건 우선순위를 1순위로 적용하는 방법이 css에서 
+        display: block !important; 준다*/
+    }
+}
+.footer .family .site_open , .footer .family .site_close {
+    display: none;
+}
+.footer .family ul li a {
+    display: block;
+    padding-right: 22px;
+    position: relative;
+    text-align: right;
+    line-height: 30px;
+}
+.footer .family ul li a::after {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    width: 13px;
+    height: 13px; 
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.961 9.961'%3E%3Cpath id='open_in_new_FILL0_wght400_GRAD0_opsz24' d='M121.107-830.039a1.066,1.066,0,0,1-.782-.325,1.066,1.066,0,0,1-.325-.782v-7.748a1.066,1.066,0,0,1,.325-.782,1.066,1.066,0,0,1,.782-.325h3.32a.535.535,0,0,1,.394.159.535.535,0,0,1,.159.394.536.536,0,0,1-.159.394.536.536,0,0,1-.394.159h-3.32v7.748h7.748v-3.32a.536.536,0,0,1,.159-.394.535.535,0,0,1,.394-.159.535.535,0,0,1,.394.159.535.535,0,0,1,.159.394v3.32a1.066,1.066,0,0,1-.325.782,1.066,1.066,0,0,1-.782.325Zm7.748-8.08-4.759,4.759a.525.525,0,0,1-.387.152.525.525,0,0,1-.387-.152.525.525,0,0,1-.152-.387.525.525,0,0,1,.152-.387l4.759-4.759h-1.439a.536.536,0,0,1-.394-.159.536.536,0,0,1-.159-.394.535.535,0,0,1,.159-.394.535.535,0,0,1,.394-.159h3.32v3.32a.535.535,0,0,1-.159.394.535.535,0,0,1-.394.159.535.535,0,0,1-.394-.159.536.536,0,0,1-.159-.394Z' transform='translate(-120 840)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.footer .copyright {
+    margin-top: 108px;
+    color: rgba(255, 255, 255, 0.6);
+}
+@media screen and (max-width:1024px) {
+    .footer {
+        padding: 55px 0;
+    }
+    .footer .sns {
+        position: relative;
+        right: auto;
+        bottom: auto;
+    }
+    .footer .sns ul {
+        justify-content: center;
+    }
+    .footer .sns ul li {
+        margin-right: 4px;
+    }
+    .footer .sns ul li a {
+        width: 40px;
+        height: 40px;
+    }
+    .footer .sns ul li .twitter a {
+        background-size: 15px auto;
+    }
+    .footer .sns ul li .facebook a {
+        background-size: 15px auto;
+    }
+    .footer .sns ul li .daum a {
+        background-size: 15px auto;
+    }
+    .footer .sns ul li .naver a {
+        background-size: 15px auto;
+        background-position: left 2px top 5px;/*background 위치 조절 할 수 있음*/
+    }
+    .footer .f_nav {
+        margin-top: 26px;
+        border-width: 1px 0 0 1px;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    .footer .f_nav ul {
+        flex-wrap: wrap;/*줄바꿈 허용*/
+    }
+    .footer .f_nav ul + ul {
+        margin-top: 0;
+    }
+    .footer .f_nav ul li {
+        margin-right: 0;
+        width: 33.33%; /*한줄에 3개씩*/
+        border-width: 0 1px 1px 0;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.2);
+        padding: 15px 0;
+        text-align: center;
+    }
+    .footer .f_nav ul li::after {
+        display: none;
+    }
+    .footer .f_nav ul li:last-child {
+        margin-right: 0;
+    }
+    .footer .f_nav ul li a {
+        display: block;
+    }
+    .footer .family {
+        position: relative; /*해제 겸 .site_list 정렬의 기준*/
+        right: auto;
+        top: auto;
+        margin: 32px 0 29px 0;
+    }
+    .footer .family .site_open {
+        display: block;
+    }
+    .footer .family .site_open , .footer .family .site_close {
+        width: 100%;
+        line-height: 50px;/*높이*/
+        background-color: #444;
+        border-radius: 10px;
+        text-align: left;
+        padding-left: 25px;
+        position: relative;
+    }
+    .footer .family .site_open::after, .footer .family .site_close::after {
+        position: absolute;
+        right: 20px;
+        top: 12px;
+        width: 20px;
+        height: 20px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+    }
+    .footer .family .site_open::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23fff'%3E%3Cpath d='M450.001-450.001h-230v-59.998h230v-230h59.998v230h230v59.998h-230v230h-59.998v-230Z'/%3E%3C/svg%3E");
+    }
+    .footer .family .site_close::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill = '%23fff'%3E%3Cpath d='M220.001-450.001v-59.998h519.998v59.998H220.001Z'/%3E%3C/svg%3E");
+    }
+    .footer .family .site_list {
+        position: absolute;
+        left: 0;
+        bottom: 52px;
+        width: 100%;
+        background-color: #444;
+        border-radius: 10px;
+        padding: 20px 0 20px 20px;
+        display: none ; /*open 클릭하면 보임*/ 
+    }
+    .footer .family ul li a {
+        padding-right: 0;
+        text-align: left;
+        line-height: 30px;
+    }
+    .footer .family ul li a::after {
+       display: none;
+    }
+    .footer .copyright {
+        margin-top: 30px;
+    }
 }

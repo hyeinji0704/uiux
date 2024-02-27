@@ -1591,8 +1591,8 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
 }
 .footer .sns ul li a {
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background-color: #535353;
     border-radius: 100%;
     font-size: 0;
@@ -1600,17 +1600,21 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
     background-position: center center;
     background-repeat: no-repeat;
 }
-.footer .sns ul li .twitter a{
-    background-size: 15px auto;
+.footer .sns ul .twitter a {
+    background-size: 22px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21.278' height='19.915' viewBox='0 0 21.278 19.915'%3E%3Cpath id='패스_240' data-name='패스 240' d='M30.472,34.431H32.28L20.609,18.454h-1.94Zm1.145-17.893h3.263l-7.128,8.436,8.386,11.479H29.571l-5.143-6.962-5.884,6.962H15.279L22.9,27.43,14.859,16.538h6.732L26.24,22.9Z' transform='translate(-14.859 -16.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
 }
-.footer .sns ul li .facebook a {
-    background-size: 15px auto;
+.footer .sns ul .facebook a {
+    background-size: 14px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10.768' height='20.105' viewBox='0 0 10.768 20.105'%3E%3Cpath id='패스_246' data-name='패스 246' d='M127.85,27.847l.558-3.638h-3.491V21.847a1.819,1.819,0,0,1,2.051-1.966h1.588v-3.1a19.375,19.375,0,0,0-2.818-.246c-2.875,0-4.754,1.743-4.754,4.9v2.773h-3.2v3.638h3.2v8.8h3.933v-8.8Z' transform='translate(-117.787 -16.538)' fill='%23fff'/%3E%3C/svg%3E ");
 }
-.footer .sns ul li .daum a {
-    background-size: 15px auto;
+.footer .sns ul .daum a {
+    background-size: 20px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17.895' height='18.243' viewBox='0 0 17.895 18.243'%3E%3Cpath id='패스_248' data-name='패스 248' d='M301.882,32.2h-2.746V25.076h2.746a3.564,3.564,0,1,1,0,7.122m9.146-5.994a9.457,9.457,0,0,0-9.146-6.688h-8.539V37.759h8.539a10.891,10.891,0,0,0,5.758-1.884c3.534-2.2,3.958-7.238,3.388-9.671' transform='translate(-293.343 -19.516)' fill='%23fff'/%3E%3C/svg%3E ");
 }
-.footer .sns ul li .naver a {
-    background-size: 15px auto;
+.footer .sns ul .naver a {
+    background-size: 18px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18.711' height='17.204' viewBox='0 0 18.711 17.204'%3E%3Cpath id='패스_250' data-name='패스 250' d='M397.551,22.809v17.2h-6.279l-6.153-8.66v8.66H378.84v-17.2h6.279l6.153,9.01v-9.01Z' transform='translate(-378.84 -22.809)' fill='%23fff'/%3E%3C/svg%3E ");
 }
 .footer .f_nav ul {
     display: flex;
@@ -1713,18 +1717,17 @@ a태그중에서 href="#gnb"인 태그의 스타일 */
         width: 40px;
         height: 40px;
     }
-    .footer .sns ul li .twitter a {
-        background-size: 15px auto;
+    .footer .sns ul .twitter a {
+        background-size: 18px auto;
     }
-    .footer .sns ul li .facebook a {
-        background-size: 15px auto;
+    .footer .sns ul .facebook a {
+        background-size: 10px auto;
     }
-    .footer .sns ul li .daum a {
-        background-size: 15px auto;
+    .footer .sns ul .daum a {
+        background-size: 18px auto;
     }
-    .footer .sns ul li .naver a {
-        background-size: 15px auto;
-        background-position: left 2px top 5px;/*background 위치 조절 할 수 있음*/
+    .footer .sns ul .naver a {
+        background-size: 18px auto;
     }
     .footer .f_nav {
         margin-top: 26px;

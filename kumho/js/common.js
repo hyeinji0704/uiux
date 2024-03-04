@@ -83,11 +83,26 @@ $(document).ready(function(){
     })
      
     $('.header .gnb .gnb_open').on('click', function(){
-        $('.header').addClass('menu_open')
-        $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
+        if(device_status == 'mobile'){
+            $('.header').addClass('menu_open')
+            $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
+        }
     })
     $('.header .gnb .gnb_close').on('click', function(){
-        $('.header').removeClass('menu_open')
-        $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+        if(device_status == 'mobile'){
+            $('.header').removeClass('menu_open')
+            $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+        }
     })
+    /*********************************************************
+        footer에 그룹사 바로가기 열기 / 닫기
+        .footer .family .open을 클릭하면 .footer .family에 on 클래스 추가
+        .footer .family .close을 클릭하면 .footer .family에 on 클래스 삭제
+    *********************************************************/
+   $('footer .family .open').on('click', function(){
+        $('.footer .family').addClass('on')
+   })
+   $('footer .family .close').on('click', function(){
+    $('.footer .family').removeClass('on')
+})
 })//$(document).ready

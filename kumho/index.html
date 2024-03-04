@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/common.js"></script>
+    <!--swiper 라이브러리 삽입-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/main.js"></script>
     <title>금호건설</title>
 </head>
 <body>
@@ -36,7 +40,7 @@
          pc버전에서 메뉴 오버 : menu_over
          모바일 버전에서 메뉴를 클릭해서 열면 : menu_open   
     -->
-        <header class="header menu_open">
+        <header class="header ">
             <h1 class="logo"><a href="#n">금호건설</a></h1>
             <nav class="gnb" id="gnb">
                 <span class="h_tit">KUMHO E&C,<br> 
@@ -96,8 +100,8 @@
                                 <li><a href="contents/ci.html">CI/BI</a></li>
                                 <li><a href="contents/brochure.html">PR갤러리</a></li>
                                 <li><a href="contents/kumho.html">금호역사관</a></li>
-                                <li><a href="https://webzine.kumhoenc.com/webzine/202401/00_main/main.asp" target="_blank" title="새창링크">웹진</a></li>
-                                <li><a href="https://kumhoenc.recruiter.co.kr/appsite/company/index" target="_blank" title="새창링크">인재채용</a></li>
+                                <li class="webzine"><a href="https://webzine.kumhoenc.com/webzine/202401/00_main/main.asp" target="_blank" title="새창링크"><span>웹진</span></a></li>
+                                <li class="recruit"><a href="https://kumhoenc.recruiter.co.kr/appsite/company/index" target="_blank" title="새창링크"><span>인재채용</span></a></li>
                                 <li><a href="contents/recruitmentGuide.html">채용가이드</a></li>
                             </ul>
                         </li>
@@ -111,12 +115,150 @@
             </div>
         </header>
         <div class="container" id="container">
-            <section class="visual"></section>
-            <section class="biz"></section>
-            <section class="news"></section>
+            <section class="visual">
+                <h2>비쥬얼</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <img src="images/main/visual01.png" alt="">
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <img src="images/main/visual02.png" alt="">
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <img src="images/main/visual03.png" alt="">
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    </ul>
+                    <div class="visual_txt">
+                        <strong>ECO&<br>SUSTAINABLE</strong>
+                        <span>Leading corporate of a new millennium</span>
+                    </div>
+                    <div class="btn_ctrl">
+                        <button class="prev">이전팝업보기</button>
+                        <button class="next">다음팝업보기</button>
+                        <button class="stop">일시정지</button>
+                        <button class="play">재생</button>
+                    </div>
+                </div>
+            </section>
+            <section class="biz">
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2><span>사업분야</span></h2>
+                        <p>WILL CHALLENGE THE WORLD'S BEST<br><strong>우수한 기술력을 바탕으로 쾌적한 생활을 마련합니다.</strong></p>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul>
+                        <!--하나의 li에 마우스를 오버하면 오버한 li에는 on클래스 추가 
+                            나머지 모든 li에는 off 클래스 추가-->
+                        <li class="biz01 ">
+                            <a href="contents/biz01.html">
+                                <strong>빌딩의 개발에서 도시의 개발</strong>
+                                <span>Architectural</span>
+                                <p>뛰어난 시공능력과 친환경 건축기술로 건축분야의 선구자</p>
+                            </a>
+                        </li>
+                        <li class="biz02">
+                            <a href="contents/biz02.html">
+                                <strong>공간과 공간을 잇는 예술</strong>
+                                <span>Civil</span>
+                                <p>도시와 국토를 잇는 공간 예술, 금호건설의 토목사업</p>
+                            </a>
+                        </li>
+                        <li class="biz03 ">
+                            <a href="contents/biz03.html">
+                                <strong>고객의 높은 신뢰를 얻어온 금호</strong>
+                                <span>Housing</span>
+                                <p>예술적인 공간을 창조하는 금호건설은
+                                    최첨단 유비쿼터스 시스템을 도입</p>
+                            </a>
+                        </li>
+                        <li class="biz04 ">
+                            <a href="contents/biz04.html">
+                                <strong>산업발전의 기틀을 다지는 사업</strong>
+                                <span>Plant/<br>Environment</span>
+                                <p>효율성을 높인 막여과식 해수담수화 시설을 개발</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="news">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2><span>NEWS</span></h2>
+                        <p>고객과 함께 아름다운 미래로<br>
+                            비상하는 금호건설입니다.</p>
+                    </div>
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                <li class="swiper-slide">
+                                    <a href="contents/news.html">
+                                        <strong class="date">2024.01.19</strong>
+                                        <h3>금호건설, 펄벅재단에 기부금 전달…
+                                            다문화가정 후원</h3>
+                                        <p>다문화가정 아이들이 건강한 사회구성원으로 성장할 수 있도록 한국펄벅재단에 기부금을 전달했다고 밝혔다.</p>
+                                        <span class="photo"><img src="images/main/news01.png" alt="한국펄벅재단에 기부금을 전달"></span>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="contents/news.html">
+                                        <strong class="date">2023.12.22</strong>
+                                        <h3>금호건설, 소외 이웃에 겨울 동계 점퍼 111벌 기부</h3>
+                                        <p>서울 종로구 지역민의 따듯한 겨울나기 지원을 위해 동계 점퍼 111벌을 전달했다고 22일 밝혔다.</p>
+                                        <span class="photo"><img src="images/main/news02.png" alt="동계 점퍼 111벌을 전달"></span>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="contents/news.html">
+                                        <strong class="date">2023.12.20</strong>
+                                        <h3>금호건설, '월곶~판교 복선전철 제9공구 공사' 수주</h3>
+                                        <p>국가철도공단에서 발주한 ‘월곶~판교 복선전철 제9공구 노반신설 기타공사’를 수주했다고 20일 밝혔다.</p>
+                                        <span class="photo"><img src="images/main/news03.png" alt="월곶~판교 복선전철 제9공구 노반신설 기타공사"></span>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="more"><a href="contents/news.html">VIEW MORE</a></div>
+                </div>
+            </section>
             <section class="service"></section>
         </div>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <div class="wrapper">
+                <!-- 그룹사 바로가기를 클릭하면 family_site에 on클래스를 추가
+                    open버튼 사라짐, close버튼 나타남, ul리스트 나타남-->
+                <div class="family">
+                    <button class="open" title="열기">그룹사 바로가기</button>
+                    <ul>
+                        <li><a href="https://www.kumhobuslines.co.kr/" target="_blank" title="새창링크">금호고속</a></li>
+                        <li><a href="https://www.usquare.co.kr/" target="_blank" title="새창링크">금호터미널</a></li>
+                        <li><a href="http://www.kumhoarts.com/" target="_blank" title="새창링크">금호문화재단</a></li>
+                        <li><a href="https://flyasiana.com/" target="_blank" title="새창링크">아시아나항공</a></li>
+                        <li><a href="https://www.asianaidt.com/" target="_blank" title="새창링크">아시아나IDT</a></li>
+                        <li><a href="https://www.airbusan.com/" target="_blank" title="새창링크">에어부산</a></li>
+                        <li><a href="http://www.asianaairport.com/kr/" target="_blank" title="새창링크">아시아나에어포트</a></li>
+                        <li><a href="https://www.asianasabre.co.kr/" target="_blank" title="새창링크">아시아나세이버</a></li>
+                        <li><a href="https://flyairseoul.com/" target="_blank" title="새창링크">에어서울</a></li>
+                    </ul>
+                    <button class="close" title="닫기">그룹사 바로가기</button>
+                </div>
+                <div class="f_nav">
+                    <ul>
+                        <li><a href="#n">제보실</a></li>
+                        <li><a href="#n">고객센터</a></li>
+                        <li><a href="#n">OB사랑방</a></li>
+                        <li><a href="#n">Contact us</a></li>
+                        <li class="privacy"><a href="#n">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="f_info"><address>서울특별시 종로구 새문안로 76 금호아시아나 본관</address></div>
+                <div class="copyright">copyright(c) KUMHO E&C ALL RIGHTS RESERVED</div>
+            </div>
+        </footer>
    </div>
 </body>
 </html>

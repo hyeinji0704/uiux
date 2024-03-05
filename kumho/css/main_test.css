@@ -311,32 +311,62 @@
         width: 100%;
         margin-bottom: 0;
     }
-    .biz .list ul li.biz01 {
-        background-image: none;
-    }
-    .biz .list ul li.biz02 {
-        background-image: none;
-    }
-    .biz .list ul li.biz03 {
-        background-image: none;
-    }
-    .biz .list ul li.biz04 {
+    .biz .list ul li.biz01, .biz .list ul li.biz02 ,.biz .list ul li.biz03, .biz .list ul li.biz04 {
         background-image: none;
     }
     .biz .list ul li a {
         display: flex;
         justify-content: center;
         height: 100px;
-        border-top-width: 1px;
-        border-bottom-width: 0;
-        border-left-width: 0;
-        border-right-width: 0;
+        border-width: 1px 0 0 0;
         border-style: solid;
         border-color: #2d2d2d;
-        padding: 0 40px 0 120px;
+        padding: 0 40px 0 130px;
+        position: relative;
     }
     .biz .list ul li:last-child a {
         border-bottom-width: 1px;
+    }
+    .biz .list ul li a::after {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        content: "";
+        background-position: center center;
+        background-repeat: no-repeat;
+        left: 32px;
+    }
+    .biz .list ul li a::before {
+        position: absolute;
+        right: 30px;
+        top: 35px;
+        width: 20px;
+        height: 20px;
+        content: "";
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 20px auto;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.33333 8.66667H0V7.33333H7.33333V0H8.66667V7.33333H16V8.66667H8.66667V16H7.33333V8.66667Z' fill='%23666666'/%3E%3C/svg%3E ");
+    }
+    .biz .list ul li.biz01 a::after {
+        top: 22px;
+        background-size: 60px auto;
+        background-image: url(../images/main/biz_icon.svg);
+    }
+    .biz .list ul li.biz02 a::after {
+        top: 20px;
+        background-size: 50px auto;
+        background-image: url(../images/main/biz_icon02.svg);
+    }
+    .biz .list ul li.biz03 a::after {
+        top: 25px;
+        background-size: 50px auto;
+        background-image: url(../images/main/biz_icon03.svg);
+    }
+    .biz .list ul li.biz04 a::after {
+        top: 25px;
+        background-size: 45px auto;
+        background-image: url(../images/main/biz_icon04.svg);
     }
     .biz .list ul li a strong {
         display: block;
@@ -351,13 +381,24 @@
         font-weight: 700;
     }
 }
-@media screen and (max-width:375px) {
+@media screen and (max-width:320px) {
     .biz .list ul li a {
-        height: 250px;
+        padding: 0 40px 0 100px;
     }
-    .biz .list ul li a {
-        padding: 0 10px 32px 10px;
-        font-weight: 700;
+    .biz .list ul li a strong {
+        display: none;
+    }
+    .biz .list ul li a span {
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .biz .list ul li a::before {
+        right: 20px;
+        top: 37px;
+        background-size: 16px auto;
+    }
+    .biz .list ul li a::after {
+        left: 25px;
     }
 }
 .news .tit {
@@ -537,4 +578,198 @@
         text-align: center;
         margin-top: 40px;
     }
+}
+
+.service {
+    background: url(../images/main/service_bg.png) center center /cover;
+    padding: 170px 0 725px 0;
+    margin-top: 140px;
+}
+.service .tit {
+    color: #fff;
+}
+.service .tit h2 {
+    display: none;
+}
+.service .tit p {
+    display: block;
+    font-size: 40px;
+    margin: 0 0 68px 0;
+}
+.service .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.service .list ul li {
+    width: calc(33.33% - 18.66px);
+    background-color: #fff;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.service .list ul li:hover {
+    transform: translate(0, -10px);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.6);
+}
+.service .list ul li a {
+    display: block;
+    height: 120px;
+    padding: 35px 0 0 150px;
+    position: relative;
+}
+.service .list ul li a::after {
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    content: "";
+    width: 65px;
+    height: 65px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.service .list ul li.esg a::after {
+    background-size: 51px auto;
+    background-image: url(../images/main/service_b_icon01.svg);
+}
+.service .list ul li.ir a::after {
+    background-size: 50px auto;
+    background-image: url(../images/main/service_b_icon02.svg);
+}
+.service .list ul li.webzine a::after {
+    background-size: 62px auto;
+    background-image: url(../images/main/service_b_icon03.svg);
+}
+.service .list ul li a strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+.service .list ul li a span {
+    display: block;
+    font-size: 16px;
+}
+.footer {
+    margin-top: -370px;
+    background: none;
+    backdrop-filter: blur(10px);
+    height: 370px;
+}
+@media screen and (max-width:1024px){
+    .service {
+        margin-top: 100px;
+        padding: 120px 0 650px 0;;
+    }
+    .service .tit p {
+        font-size: 36px;
+    }
+    .service .list ul li a {
+        padding: 32px 0 0 90px;
+    }
+    .service .list ul li a::after {
+        left: 20px;
+        top: 29px;
+    }
+    .service .list ul li.esg a::after {
+        background-size: 45px auto;
+    }
+    .service .list ul li.ir a::after {
+        background-size: 41px auto;
+    }
+    .service .list ul li.webzine a::after {
+        left: 18px;
+        top: 29px;
+        background-size: 55px auto;
+    }
+}
+@media screen and (max-width:768px) {
+    .service {
+        margin-top: 80px;
+        padding: 100px 0 450px 0;;
+    }
+    .service .tit p {
+        font-size: 30px;
+        margin: 0 0 88px 0;
+    }
+    .service .list ul li {
+        width: calc(33.33% - 10.66px);
+    }
+    .service .list ul li a {
+        padding: 90px 0 10px 0;
+        height: 140px;
+    }
+    .service .list ul li a::after {
+        left: calc(50% - 30px);
+        top: 20px;
+    }
+    .service .list ul li.webzine a::after {
+        left: 0;
+        top: 25px;
+        width: 100%;
+    }
+    .service .list ul li a strong {
+        margin: 8px 0 0 0;
+        text-align: center;
+    }
+    .service .list ul li a span {
+        display: none;
+    }
+    .footer {
+        margin-top: -280px;
+        height: 280px;
+    }
+}
+@media screen and (max-width:500px) {
+    .service {
+        margin-top: 50px;
+        padding: 100px 0 320px 0;;
+    }
+    .service .tit p {
+        font-size: 18px;
+        margin: 0 0 66px 0;
+    }
+    .service .list ul {
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        color: #fff;
+    }
+    .service .list ul li {
+        background-color: transparent;
+        width: 100%;
+        border-radius: 0;
+    }
+    .service .list ul li a {
+        padding: 70px 0 10px 0;
+        height: 120px;
+    }
+    .service .list ul li a::after {
+        left: calc(50% - 30px);
+        top: 15px;
+    }
+    .service .list ul li.esg a::after {
+        background-size: 35px auto;
+        background-image: url(../images/main/service_icon01.svg)
+    }
+    .service .list ul li.ir a::after {
+        background-size: 35px auto;
+        background-image: url(../images/main/service_icon02.svg)
+    }
+    .service .list ul li.webzine a::after {
+        left: 0;
+        top: 18px;
+        width: 100%;
+        background-size: 45px auto;
+        background-image: url(../images/main/service_icon03.svg)
+    }
+    .service .list ul li a strong {
+        margin: 15px 0 0 0;
+        font-size: 15px;
+    }
+    .footer {
+        margin-top: -265px;
+        background: #282828;
+        height: 265px;
+    }
+}
+@media screen and (max-width:320px) {
+
 }

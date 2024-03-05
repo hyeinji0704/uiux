@@ -64,10 +64,10 @@
     line-height: 45px;
     font-size: 18px;
 }
-.header .gnb ul.depth02 > li.webzine > a span, header .gnb ul.depth02 > li.recruit > a span {
+.header .gnb ul.depth02 > li > a[target="_blank"] span {
     position: relative;
 }
-.header .gnb ul.depth02 > li.webzine > a span::after, header .gnb ul.depth02 > li.recruit > a span::after {
+.header .gnb ul.depth02 > li > a[target="_blank"] span::after {
     position: absolute; 
     right: -20px;
     top: 2px;
@@ -533,7 +533,7 @@
 }
 .footer {
     background-color: #282828;
-    padding: 112px 0 100px 0;
+    padding: 75px 0 55px 0;
     color: #fff;
 }
 .footer .wrapper {
@@ -630,7 +630,7 @@
 }
 @media screen and (max-width:1024px) {
     .footer {
-        padding: 60px 0 65px 0;
+        padding: 50px 0 55px 0;
     }
     .footer .family {
         position: relative;
@@ -652,7 +652,6 @@
     .footer .f_info {
         margin: 20px 0 60px 0;
     }
-    
 }
 @media screen and (max-width:768px){
     .footer .family {

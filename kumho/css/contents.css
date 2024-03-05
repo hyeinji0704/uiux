@@ -1,6 +1,122 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
 /*
     파일명 : contents.css
     작성자 : 지혜인
     작성일 : 2024.02.28
     속  성 : 모든 콘텐츠 페이지별 디자인 스타일 저장
 */
+
+.cts_greeting {
+    margin: 40px 0 88px 0;
+}
+.cts_greeting .tit {
+    position: relative;
+    color: #fff;
+}
+.cts_greeting .tit::before {
+    position: absolute;
+    left: 0;
+    top: 94px;
+    content: "";
+    z-index: -1;
+    width: 100%;
+    height: 388px;
+    background-color: #80695B;
+}
+.cts_greeting .tit .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.cts_greeting .tit .inner h2 {
+    padding: 55px 0;
+    font-size: 32px;
+    line-height: 2;
+    font-weight: 400;
+}
+.cts_greeting .tit .inner h2 strong {
+    display: block;
+    font-size: 45px;
+    font-weight: 700;
+}
+.cts_greeting .tit .inner h2 span {
+    display: block;
+    font-weight: 700;
+}
+.cts_greeting .tit .inner .ceo {
+    display: block;
+}
+.cts_greeting .tit .inner .ceo img {
+    width: 270px;
+    display: block;
+}
+.cts_greeting .text p {
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 74px 0 49px 0;
+}
+.cts_greeting .text p strong {
+    font-weight: 700;
+}
+.cts_greeting .text .sign {
+    display: flex;
+    align-items: center;
+}
+.cts_greeting .text .sign strong {
+    display: block;
+    margin-right: 47px;
+    font-size: 28px;
+    font-weight: 700;
+}
+@media screen and (max-width:768px) {
+    .cts_greeting {
+        margin: 52px 0 66px 0;
+    }
+    .cts_greeting .tit {
+        color: #2d2d2d;
+    }
+    .cts_greeting .tit::before {
+        top: 325px;
+        height: 396px;
+    }
+    .cts_greeting .tit .inner {
+        display: block;
+        font-weight: 700;
+        text-align: center;
+    }
+    .cts_greeting .tit .inner h2 {
+        padding: 0;
+        font-size: 18px;
+        margin-bottom: 26px;
+    }
+    .cts_greeting .tit .inner h2 strong {
+        font-size: 28px;
+    }
+    .cts_greeting .tit .inner .ceo {
+        display: flex;
+        justify-content: space-around;
+    }
+    .cts_greeting .tit .inner .ceo img {
+        width: 277px;
+        display: block;
+    }
+    .cts_greeting .text p {
+        font-size: 16px;
+        margin: 61px 0 41px 0;
+    }
+    .cts_greeting .text .sign {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .cts_greeting .text .sign strong {
+        margin-right: 10px;
+        font-size: 18px;
+    }
+    .cts_greeting .text .sign img {
+        display: block;
+        width: 86px;
+    }
+}

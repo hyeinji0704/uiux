@@ -32,7 +32,7 @@
     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
 }
 .header .gnb {
-    margin-left: 200px;
+    margin-left: 20px;
 }
 .header .gnb .h_tit {
     display: none;
@@ -175,14 +175,14 @@
         position: absolute;
         right: calc(50% + 375px);
         top: 112px;
-        margin-right: 270px;
+        margin-right: 185px;
         font-size: 40px;
         letter-spacing: -0.08em;
         line-height: 1.2;
         color: #aaa;
         white-space: nowrap;
     }
-    .header.menu_over .gnb ul.depth01 > li.on > a span {/*li에 on class 추가----중요!!*/
+    .header .gnb ul.depth01 > li.on > a span, .header .gnb ul.depth01 > li[data-menu="on"] > a span {/*li에 on class 추가----중요!!*/
         padding: 16px 16px;
         position: relative;
     }
@@ -198,6 +198,15 @@
         background-size: contain;
         background-image: url("data:image/svg+xml,%3Csvg width='12' height='11' viewBox='0 0 12 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.519 11C7.37496 11 7.2274 10.9766 7.08336 10.9298C6.4053 10.7025 6.05398 9.99393 6.29288 9.34884L8.55891 3.26897L1.73622 5.56522C1.05817 5.7925 0.316877 5.45492 0.0744637 4.80983C-0.164436 4.16474 0.190401 3.45949 0.868454 3.22886L10.2663 0.0702713C10.7406 -0.0868226 11.2641 0.0234774 11.6189 0.361062C11.9738 0.698647 12.0932 1.20001 11.9246 1.6479L8.74511 10.1711C8.5554 10.6791 8.05301 10.9933 7.519 10.9967V11Z' fill='%23ED2224'/%3E%3C/svg%3E ");
     }
+    .header .gnb ul.depth01 > li.on > a span::before, .header .gnb ul.depth01 > li[data-menu="on"] > a span::before {
+        position: absolute;
+        right: 0;
+        top: 74px;
+        width: 100%;
+        height: 5px;
+        content: "";
+        background-color: #A91918;
+    }
     .header.menu_over .gnb ul.depth02 {
         display: block;
         padding-top: 12px;
@@ -205,8 +214,7 @@
     .header.menu_over .gnb ul.depth01 > li:first-child > ul.depth02 {
         border-left: 1px solid rgba(61, 61, 61, 0.6);
     }
-    .header.menu_over .gnb ul.depth02 > li > a:hover, 
-    .header.menu_over .gnb ul.depth02 > li.on > a {
+    .header .gnb ul.depth02 > li > a:hover, .header .gnb ul.depth02 > li.on > a, .header .gnb ul.depth02 > li[data-menu="on"] > a  {
         font-weight: 700;
     }
     .header.menu_over .tnb .lang::before {
@@ -263,7 +271,7 @@
 /*********** 메뉴에 상단에 고정했을 때  -- End ***********/
 @media screen and (max-width:1320px) {
     .header.menu_over .gnb .h_tit {
-        margin-right: 50px;
+        margin-right: 20px;
         font-size: 32px;
     }
 }
@@ -531,6 +539,128 @@
         background-size: 16px auto;
     }
 }
+.sub_visual {
+    height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.sub_visual.sub01 {
+    background-image: url(../images/common/sub_visual01.png);
+}
+.sub_visual.sub02 {
+    background-image: url(../images/common/sub_visual02.png);
+}
+.sub_visual.sub03 {
+    background-image: url(../images/common/sub_visual03.png);
+}
+.sub_visual.sub04 {
+    background-image: url(../images/common/sub_visual04.png);
+}
+.sub_visual.sub05 {
+    background-image: url(../images/common/sub_visual05.png);
+}
+.sub_visual .sub_tit {
+    padding: 240px 0 150px 0;
+    text-align: center;
+}
+.sub_visual .sub_tit h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+.sub_visual .sub_tit strong {
+    display: block;
+    font-size: 45px;
+}
+.sub_visual .sub_tit span {
+    display: block;
+    font-size: 26px;
+    letter-spacing: -0.05em;
+}
+.lnb {
+    font-size: 20px;
+    letter-spacing: -0.05em;
+    color: #666;
+    height: 48px;
+}
+.lnb ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.lnb ul li {
+    padding-right: 18px;
+}
+.lnb ul li a {
+    display: block;
+    line-height: 48px;
+    padding: 0 20px;
+    border-radius: 50px;
+}
+.lnb ul li.on a, .lnb ul li a:hover {
+    color: #fff;
+    font-weight: 700;
+    background-color: #271916;
+}
+@media screen and (max-width:786px) {
+    .sub_visual .sub_tit {
+        padding: 220px 0 150px 0;
+    }
+    .sub_visual .sub_tit h1 {
+        font-size: 20px;
+    }
+    .sub_visual .sub_tit strong {
+        margin-top: 15px;
+        font-size: 40px;
+    }
+    .sub_visual .sub_tit span {
+        font-size: 22px;
+    }
+    .lnb {
+        font-size: 20px;
+        height: auto;
+        overflow-x: auto;
+    }
+    .lnb ul {
+        margin-top: 22px;
+    }
+    .lnb ul li {
+        padding-right: 12px;
+    }
+    .lnb ul li a {
+        line-height: 45px;
+        padding: 0 20px;
+    }
+}
+@media screen and (max-width:500px) {
+    .sub_visual {
+        height: 273px;
+    }
+    .sub_visual .sub_tit {
+        padding: 63px 0 100px 0;
+    }
+    .sub_visual .sub_tit h1 {
+        font-size: 15px;
+    }
+    .sub_visual .sub_tit strong {
+        font-size: 24px;
+    }
+    .sub_visual .sub_tit span {
+        font-size: 15px;
+    }
+    .lnb {
+        font-size: 16px;
+    }
+    .lnb ul {
+        justify-content: flex-start;
+    }
+}
+
+.contents {
+    min-height: 200px;
+}
+
 .footer {
     background-color: #282828;
     padding: 75px 0 55px 0;

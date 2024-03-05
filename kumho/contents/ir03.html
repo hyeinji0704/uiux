@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/contents.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/contents.js"></script>
+    <title>재무정보 > IR > 금호건설</title> <!--현재메뉴에서 상위 메뉴로 한단계씩 쓰면 됨-->
+</head>
+<body>
+    <!--
+        images --- common (header/footer와 같은 모든 동일하게 보일 이미지)
+               --- main (main에만 나타나는 이미지)
+               --- contents (각가의 페이지에 사용되는 이미지)
+        css    --- common.css 
+               --- main.css 
+               --- layout.css  
+               --- contents.css 
+        js    --- common.js
+               --- main.js
+               --- sub.js 
+               --- contents.js  
+        contents --- 서브페이지들이 저장
+
+    -->
+    <div class="skipnav">
+        <!--href = #container 라고 입력하면 id="contents"로 이동
+            href="#gnb"라고 입력하면 id= "gnb"로 이동-->
+        <a href="#contents">본문 바로가기</a>
+        <a href="#gnb">대메뉴 바로가기</a>
+    </div>
+   <div id="wrap" class="sub">
+    <!-- 메뉴상단 고정 : fixed
+         pc버전에서 메뉴 오버 : menu_over
+         모바일 버전에서 메뉴를 클릭해서 열면 : menu_open   
+    -->
+        <header class="header ">
+            <h1 class="logo"><a href="../index.html">금호건설</a></h1>
+            <nav class="gnb" id="gnb">
+                <span class="h_tit">KUMHO E&C,<br> 
+                    Leading corporate<br> 
+                    of a new millennium</span>
+                <button class="gnb_open">메뉴열기</button>
+                <div class="gnb_wrap">
+                    <ul class="depth01">
+                        <!--현재 선택된 메뉴에는 on class 추가
+                            서브페이지에서 현재 메뉴에는 data-menu="on"이라는 속성 추가
+                            data라는 속성은 웹표준 x (표준 오류 날 수 있음) 공식속성은 아니지만 전달할 메시지를 쓰고 싶을 때 씀
+                            data-내맘대로이름 이라는 가상의 속성을 줘서 데이터를 전달-->
+                        <li ><!--href="contents/은 없애고 직접 부르면 됨 -->
+                            <a href="about.html"><span>회사소개</span></a>
+                            <ul class="depth02">
+                                <!--2차메뉴에 마우스를 오버하거나 on클래스가 추가된 스타일 동일하게 적용-->
+                                <li ><a href="about.html">기업정보</a></li>
+                                <li ><a href="greeting.html">CEO인사말</a></li>
+                                <li><a href="historyN.html">연혁</a></li>
+                                <li><a href="org.html">조직도</a></li>
+                                <li><a href="labInfo.html">기술혁신</a></li>
+                                <li><a href="location.html">찾아오시는길</a></li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="esg01.html"><span>ESG경영</span></a>
+                            <ul class="depth02">
+                                <li ><a href="esg01.html">윤리경영</a></li>
+                                <li><a href="esg02.html">품질경영</a></li>
+                                <li><a href="esg03.html">안전경영</a></li>
+                                <li><a href="esg04.html">환경경영</a></li>
+                                <li><a href="esg05.html">상생경영</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="biz01.html"><span>사업분야</span></a>
+                            <ul class="depth02">
+                                <li><a href="biz01.html">건축사업</a></li>
+                                <li><a href="biz02.html">토목사업</a></li>
+                                <li><a href="biz03.html">주택사업</a></li>
+                                <li><a href="biz04.html">플랜트/환경사업</a></li>
+                                <li><a href="biz05.html">사업실적검색</a></li>
+                            </ul>
+                        </li>
+                        <li class="on" data-menu="on">
+                            <a href="ir01.html"><span>IR</span></a>
+                            <ul class="depth02">
+                                <li ><a href="ir01.html">기업지배구조</a></li>
+                                <li><a href="ir02.html">경영정보</a></li>
+                                <li class="on" date-menu="on"><a href="ir03.html">재무정보</a></li>
+                                <li><a href="ir04.html">주가정보</a></li>
+                                <li><a href="ir05.html">IR Contact</a></li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="news.html"><span>홍보센터</span></a>
+                            <ul class="depth02">
+                                <li><a href="news.html">금호뉴스</a></li>
+                                <li><a href="sellList.html">분양뉴스</a></li>
+                                <li><a href="ci.html">CI/BI</a></li>
+                                <li><a href="brochure.html">PR갤러리</a></li>
+                                <li><a href="kumho.html">금호역사관</a></li>
+                                <li class="webzine"><a href="https://webzine.kumhoenc.com/webzine/202401/00_main/main.asp" target="_blank" title="새창링크"><span>웹진</span></a></li>
+                                <li class="recruit"><a href="https://kumhoenc.recruiter.co.kr/appsite/company/index" target="_blank" title="새창링크"><span>인재채용</span></a></li>
+                                <li><a href="recruitmentGuide.html">채용가이드</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav>
+            <div class="tnb">
+                <a href="https://www.kumhoenc.com/eng/main/index.asp" target="_blank" title="새창링크" class="lang"><span>ENG</span></a>
+                <a href="https://www.khapt.co.kr/oullim/main" target="_blank" title="새창링크" class="link">어울림</a>
+            </div>
+        </header>
+        <div class="container" id="container">
+            <!--1차메뉴별로 회사소개 sub01, esg sub2 클래스를 추가해서 배경이미지 교체-->
+            <!--sub에서는 section태그 안씀-->
+            <div class="sub_visual sub04">
+                <div class="wrapper">
+                    <div class="sub_tit">
+                        <h1>경영정보</h1>
+                        <strong>소중한 자산,<BR>투명경영으로 보답하겠습니다.</strong>
+                        <span>Think of the people and nature</span>
+                    </div>
+                </div>
+            </div>
+            <!--local navigation bar-->
+            <nav class="lnb">
+                <ul>
+                    <!--현재 선택된 메뉴에 on클래스 추가-->
+                    <li ><a href="ir01.html">기업지배구조</a></li>
+                    <li><a href="ir02.html">경영정보</a></li>
+                    <li class="on"><a href="ir03.html">재무정보</a></li>
+                    <li><a href="ir04.html">주가정보</a></li>
+                    <li><a href="ir05.html">IR Contact</a></li>
+                </ul>
+            </nav>
+            <div class="contents" id="contents">
+                <!--콘텐츠 내용-->
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="wrapper">
+                <!-- 그룹사 바로가기를 클릭하면 family_site에 on클래스를 추가
+                    open버튼 사라짐, close버튼 나타남, ul리스트 나타남-->
+                <div class="family">
+                    <button class="open" title="열기">그룹사 바로가기</button>
+                    <ul>
+                        <li><a href="https://www.kumhobuslines.co.kr/" target="_blank" title="새창링크">금호고속</a></li>
+                        <li><a href="https://www.usquare.co.kr/" target="_blank" title="새창링크">금호터미널</a></li>
+                        <li><a href="http://www.kumhoarts.com/" target="_blank" title="새창링크">금호문화재단</a></li>
+                        <li><a href="https://flyasiana.com/" target="_blank" title="새창링크">아시아나항공</a></li>
+                        <li><a href="https://www.asianaidt.com/" target="_blank" title="새창링크">아시아나IDT</a></li>
+                        <li><a href="https://www.airbusan.com/" target="_blank" title="새창링크">에어부산</a></li>
+                        <li><a href="http://www.asianaairport.com/kr/" target="_blank" title="새창링크">아시아나에어포트</a></li>
+                        <li><a href="https://www.asianasabre.co.kr/" target="_blank" title="새창링크">아시아나세이버</a></li>
+                        <li><a href="https://flyairseoul.com/" target="_blank" title="새창링크">에어서울</a></li>
+                    </ul>
+                    <button class="close" title="닫기">그룹사 바로가기</button>
+                </div>
+                <div class="f_nav">
+                    <ul>
+                        <li><a href="#n">제보실</a></li>
+                        <li><a href="#n">고객센터</a></li>
+                        <li><a href="#n">OB사랑방</a></li>
+                        <li><a href="#n">Contact us</a></li>
+                        <li class="privacy"><a href="#n">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="f_info"><address>서울특별시 종로구 새문안로 76 금호아시아나 본관</address></div>
+                <div class="copyright">copyright(c) KUMHO E&C ALL RIGHTS RESERVED</div>
+            </div>
+        </footer>
+   </div>
+</body>
+</html>

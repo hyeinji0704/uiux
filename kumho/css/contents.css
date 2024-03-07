@@ -864,6 +864,7 @@
 }
 .cts_biz05 .join_group .info .info_box .user_gender {
     justify-content: center; /*좌우의 가운데*/
+    color: #aaa;
 }
 .cts_biz05 .join_group .info .info_box .user_gender input {
     display: none;
@@ -881,6 +882,8 @@
 }
 .cts_biz05 .join_group .info .info_box .user_gender input:checked + label {
     border: 1px solid #A91918;
+    color: #A91918;
+    font-weight: 700;
 }
 .cts_biz05 .join_group input[type="submit"] {
     width: 100%;
@@ -895,38 +898,72 @@
     margin-top: 24px;
 }
 @media screen and (max-width:768px) {
-    .cts_biz05 .join_group .agree h2 {
-        font-size: 28px;
-    }
-    .cts_biz05 .join_group .agree p {
-        font-size: 15px;
-    }
-    .cts_biz05 .join_group .agree_box .agree_box_wrap .inner span {
-        font-size: 18px;
-    }
-    .cts_biz05 .join_group .agree_btn label {
-        font-size: 15px;
-    }
-    .cts_biz05 .join_group .agree_box {
-        padding: 20px 15px 15px 15px;
-    }
-    .cts_biz05 .join_group .info h2 {
-        font-size: 28px;
-    }
-    .cts_biz05 .join_group .info .info_box .join_info {
-        height: 50px;
-    }
-    .cts_biz05 .join_group .info .info_box .join_info:not(.user_gender) label {
-        width: 50px;
-        background-size: 20px 23px;
-        background-position: left 20px top 13px;
-    }
-    .cts_biz05 .join_group .info .info_box input[type="text"], .cts_biz05 .join_group .info .info_box input[type="password"] {
-        font-size: 18px;
-    }
-    .cts_biz05 .join_group .info .info_box .user_email input {
-        font-size: 18px;
-    }
+.cts_biz05 .join_group .agree h2 {
+    font-size: 28px;
+}
+.cts_biz05 .join_group .agree p {
+    font-size: 15px;
+}
+.cts_biz05 .join_group .agree_box .agree_box_wrap .inner span {
+    font-size: 18px;
+}
+.cts_biz05 .join_group .agree_btn label {
+    font-size: 15px;
+}
+.cts_biz05 .join_group .agree_box {
+    padding: 20px 15px 15px 15px;
+}
+.cts_biz05 .join_group .info h2 {
+    font-size: 28px;
+}
+.cts_biz05 .join_group .info .info_box .join_info {
+    height: 50px;
+}
+.cts_biz05 .join_group .info .info_box .join_info:not(.user_gender) label {
+    width: 50px;
+    background-size: 20px 23px;
+    background-position: left 20px top 13px;
+}
+.cts_biz05 .join_group .info .info_box input[type="text"], .cts_biz05 .join_group .info .info_box input[type="password"] {
+    font-size: 18px;
+}
+.cts_biz05 .join_group .info .info_box .user_email input {
+    width: calc(100% - 250px);
+}
+.cts_biz05 .join_group .info .info_box .user_email input {
+    font-size: 18px;
+}
+.cts_biz05 .join_group .info .info_box .user_gender label {
+    font-size: 16px;
+    width: calc(50% - 30px);
+    margin: 0 10px;
+    line-height: 28px;
+    border-radius: 5px;
+}
+.cts_biz05 .join_group .info .info_box input[type="text"], .cts_biz05 .join_group .info .info_box input[type="password"] {
+    width: calc(100% - 80px);
+}
+.cts_biz05 .join_group .info .info_box .user_email input {
+    width: calc(100% - 188px);
+}
+
+.cts_biz05 .join_group .info .info_box .user_email select {
+    font-size: 18px;
+    width: 120px;
+}
+.cts_biz05 .join_group input[type="submit"] {
+    font-size: 20px;
+    line-height: 50px;
+}
+}
+@media screen and (max-width: 500px) {
+.cts_biz05 .join_group .info .info_box .user_email input {
+    width: calc(100% - 160px);
+}
+.cts_biz05 .join_group .info .info_box .user_email select {
+    font-size: 15px;
+    width: 100px;
+}
 }
 
 /*재무정보 - IR*/

@@ -138,7 +138,27 @@
                 </ul>
             </nav>
             <div class="contents" id="contents">
-                <!--콘텐츠 내용-->
+                <div class="cts_biz05">
+                    <div class="wrapper">
+                        <div class="search_group">
+                            <form>
+                                <!--모든 입력양식 form태그 안에 들어와야함
+                                    단 form태그를 삭제할 수도 있으니, div처럼 쓰지말고 이 태그가 없다고 생각(아이디/클래스 주지말기)-->
+                                <fieldset><!--회원정보와 부가정보 입력을 받으면 정보의 묶음 -->
+                                    <legend>검색</legend><!--이 form태그의 역할-->
+                                    <div class="search">
+                                        <!--label은 <input type="text">의 제목
+                                            label에는 for input id를 동일한 단어를 써줘서 그 입력창의 제목이라는 것을 표시
+                                            submit버튼은 필요 없음. value 써줌-->
+                                        <label for="keyword">검색어</label>
+                                        <input type="text" id="keyword"><!--검색어 입력-->
+                                        <input type="submit" value="확인"><!--검색버튼/전송 -- submit있어야 enter치면 검색됨-->
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <footer class="footer">

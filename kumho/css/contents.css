@@ -72,13 +72,13 @@
 }
 @media screen and (max-width:768px) {
     .cts_greeting {
-        margin: 52px 0 66px 0;
+        margin: 80px 0 110px 0;
     }
     .cts_greeting .tit {
         color: #2d2d2d;
     }
     .cts_greeting .tit::before {
-        top: 325px;
+        top: 285px;
         height: 396px;
     }
     .cts_greeting .tit .inner {
@@ -120,7 +120,19 @@
         width: 86px;
     }
 }
-
+@media screen and (max-width:406px) {
+    .cts_greeting .tit .inner .ceo img {
+        width: 261px;
+    }
+}
+@media screen and (max-width:320px) {
+    .cts_greeting .tit .inner .ceo img {
+        width: 230px;
+    }
+    .cts_greeting .tit::before {
+        top: 229px;
+    }
+}
 /*연혁 -- 회사소개*/
 .cts_historyN {
     margin: 130px 0 150px 0;
@@ -385,15 +397,18 @@
 @media screen and (max-width:1024px) {
     .cts_historyN .year10 {
         display: block;
+        margin-bottom: 90px;
     }
     .cts_historyN .year_tit {
         /*틀에서 벗어나게 하려면*/
-        width: auto;
         margin-left: -20px;
         width: calc(100% + 40px);
     }
     .cts_historyN .year_tit .tit_inner {
         margin-left: 20px;
+    }
+    .cts_historyN .year_tit strong {
+        font-size: 28px;
     }
     .cts_historyN .year_tit .photo img:nth-child(1) {
         border-radius: 0;
@@ -411,27 +426,123 @@
         display: none;
     }
     .cts_historyN .year_tit .photo {
-        padding: 30px 0;
+        padding: 30px 0 60px 0;
+    }
+    .cts_historyN .year_cnt {
+        width: auto;
+    }
+    .cts_historyN .year_cnt::before {
+        left: 20px;
+        top: 61px;
+        height: calc(100% - 61px);
+    }
+    .cts_historyN .right .year_cnt::before {
+        left: 20px;
+        right: auto;
     }
     .cts_historyN .year_cnt .year01_group {
         display: block;
+        margin-left: 50px;
+    }
+    .cts_historyN .year_cnt .year01_group dl dt::before {
+        left: -34px;
     }
     .cts_historyN .right .year_cnt .year01_group {
         display: block;
+    }
+    .cts_historyN .year_cnt .year01_group dl {
+        margin-top: 20px;
+        width: auto;
     }
     .cts_historyN .right .year_cnt .year01_group dl dt {
         float: left;
     }
     .cts_historyN .right .year_cnt .year01_group dl dd {
-        margin: 0 0 30px 36px;
         text-align: left;
     }
-    
+    .cts_historyN .right .year_cnt .year01_group dl dt::before {
+        right: auto;
+        left: -34px;
+    }
+    .cts_historyN .year_cnt .year01_group:last-child dl dd:last-child::before {
+        left: -66px;
+    }
+    .cts_historyN .right .year_cnt .year01_group:last-child dl dd:last-child::before {
+        right: auto;
+        left: -66px;;
+    }
 }
 @media screen and (max-width:768px) {
-   
+    .cts_historyN {
+        margin: 80px 0 110px 0;
+    }
+    .cts_historyN .year10 {
+        margin-bottom: 80px;
+    }
+    .cts_historyN .year_tit .photo {
+        padding: 30px 0 40px 0;
+    }
+    .cts_historyN .year_cnt .year01_group dl dd {
+        margin: 0 0 20px 36px;
+    }
+    .cts_historyN .right .year_cnt .year01_group dl dd {
+        margin: 0 0 20px 36px;
+    }
 }
 
+/*사업실적검색 - 사업분야*/
+.cts_biz05 {
+    margin: 100px 0 130px 0; 
+}
+.cts_biz05 .search_group .search {
+    max-width: 779px; /* 최대넓이 */
+    width: 100%; /* max-width: 779px; width: 100%; 이렇게 주면 
+                    넓이가 기본적으로 100%인데 (감싸는 영역의 넓이의 100%)
+                    감싸는 영역이 늘어나서 많이 넓어져서 해당 요소의 넓이도 779px이상으로 늘어날 것 같으면 
+                    그이상은 안늘어나게 하는 코드 max-width*/
+    height: 70px;   
+    border: 2px solid #A91918;
+    border-radius: 50px;
+    margin: 0 auto; /*넓이가 있는 block 요소를 가운데 정렬*/
+    position: relative;/*before 정렬의 기준*/
+    padding: 0 0 0 103px;
+    display: flex;
+    align-items: center; /*위아래 가운데*/
+}
+.cts_biz05 .search_group .search::before {
+    position: absolute;
+    left: 48px;
+    top: -3px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #C40D3F;
+    content: "K";/*컨텐츠 안에 글자 쓸 수 있음*/
+}
+.cts_biz05 .search_group .search label {
+    display: none;
+}
+.cts_biz05 .search_group .search input[type="text"] {
+    min-width: 150px;
+    width:calc(100% - 176px); /*오른쪽 여백 빼주기*/
+    font-size: 22px;
+    font-weight: 700;
+    border: 0;
+}
+.cts_biz05 .search_group .search input[type="submit"] {
+    border: 0;
+    background-color: transparent;
+    font-size: 0;
+    line-height: 0;
+    width: 103px;
+    height: 70px;
+    margin-left: 68px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 39px auto;
+    background-image: url("data:image/svg+xml,%3Csvg width='39' height='39' viewBox='0 0 39 39' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.3004 27.0023L36.2598 33.9617L33.9617 36.2598L27.0023 29.3004C24.5 31.3024 21.3265 32.5 17.875 32.5C9.802 32.5 3.25 25.948 3.25 17.875C3.25 9.802 9.802 3.25 17.875 3.25C25.948 3.25 32.5 9.802 32.5 17.875C32.5 21.3265 31.3024 24.5 29.3004 27.0023ZM26.0401 25.7965C28.0272 23.7487 29.25 20.9553 29.25 17.875C29.25 11.5903 24.1597 6.5 17.875 6.5C11.5903 6.5 6.5 11.5903 6.5 17.875C6.5 24.1597 11.5903 29.25 17.875 29.25C20.9553 29.25 23.7487 28.0272 25.7965 26.0401L26.0401 25.7965Z' fill='%23C40D3F'/%3E%3C/svg%3E%0A");
+}
+
+/*재무정보 - IR*/
 .cts_ir03 {
     margin: 100px 0 130px 0; 
 }

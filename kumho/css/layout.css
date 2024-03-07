@@ -622,6 +622,7 @@
         font-size: 20px;
         height: auto;
         overflow-x: auto;
+        overflow-y: hidden;
     }
     .lnb ul {
         margin-top: 22px;

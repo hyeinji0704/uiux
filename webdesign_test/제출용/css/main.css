@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: 'Malgun Gothic', '맑은 고딕';
+    font-size: 15px;
+    color: #333333;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.header .gnb .depth01 {
+    display: flex;
+}
+.header .gnb .depth01 > li { 
+    font-size: 20px;
+    font-weight: 700;
+    width: 150px;
+    text-align: center;
+}
+.header .gnb .depth01 > li > a {
+    line-height: 100px;
+    display: block;
+}
+.header .gnb .depth01 > li.on > a {
+    background-color: #0066AD;
+    color: #fff;
+}
+.header .gnb .depth02 {
+    background-color: #30A3F3;
+    color: #fff;
+    display: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+.header .gnb li.on .depth02 {
+    display: block;
+}
+.header .gnb .depth02 > li > a {
+    display: block;
+    line-height: 50px;
+}
+.header .gnb .depth02 > li > a:hover {
+    background-color: #0066AD;
+    font-weight: 700;
+}
+.visual {
+    height: 300px;
+    position: relative;
+}
+.visual ul li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.visual ul li.active {
+    z-index: 2;
+    opacity: 1;
+}
+.container {
+    margin-top: 30px;
+    display: flex;
+}
+.container .board {
+    width: 400px;
+    height: 170px;
+    position: relative;
+}
+.container .board .list {
+    display: flex;
+}
+/*detail을 없애고 시작 나중에 생기게 할거임*/
+.container .board .list > li .detail {
+    display: none;
+}
+.container .board .list > li button {
+    border: 0;
+    background-color: #ededed;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 20px;
+}
+.container .board .list > li.on button {
+    background-color: #0066AD;
+    color: #fff;
+}
+.container .board .list > li.on .detail {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 100%;
+}
+.container .board .list .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    line-height: 28px;
+}
+.container .board .list .notice ul li a strong {
+    font-weight: 700;
+}
+.container .board .list .notice ul li a span {
+    display: block;
+    color: #666;
+}
+.container .board .list .gallery ul {
+    display: flex;
+    justify-content: space-around;
+}
+.container .board .list .gallery ul li a:hover img {
+    opacity: 0.5;
+}
+.container .banner {
+    margin: 0 30px;
+}
+.footer {
+    display: flex;
+    background-color: #2d2d2d;
+    color: rgba(255, 255, 255, 0.8);
+    height: 100px;
+    margin-top: 20px;
+}
+.footer .f_nav {
+    display: flex;
+    margin: 20px 0 10px 0;
+}
+.footer .f_nav li  {
+    margin-right: 20px;
+}
+.layer_popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+    background-color: #30A3F3;
+    color: #fff;
+    padding: 20px;
+    display: none;
+}
+.layer_popup h2 {
+    font-size: 25px;
+}
+.layer_popup p {
+    margin: 15px 0 0 0;
+}
+.layer_popup .close {
+    text-align: right;
+}
+.layer_popup .close button {
+    border: 0;
+    background-color: #fff;
+    color: #333333;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}

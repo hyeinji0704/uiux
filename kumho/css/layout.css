@@ -604,7 +604,7 @@
     font-weight: 700;
     background-color: #271916;
 }
-@media screen and (max-width:786px) {
+@media screen and (max-width:768px) {
     .sub_visual .sub_tit {
         padding: 220px 0 150px 0;
     }
@@ -626,13 +626,14 @@
     }
     .lnb ul {
         margin-top: 22px;
+        justify-content: normal;
     }
     .lnb ul li {
         padding-right: 12px;
     }
     .lnb ul li a {
         line-height: 45px;
-        padding: 0 20px;
+        padding: 0 15px;
     }
 }
 @media screen and (max-width:500px) {

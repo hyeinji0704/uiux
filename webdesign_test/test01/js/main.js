@@ -9,6 +9,7 @@ $(document).ready(function(){
     $('.header .gnb .depth01 > li:last-child > ul > li:last-child > a').on('focusout',function(){
         $('.header .gnb .depth01 > li').removeClass('on')
     })
+    
     $('.container .board .list > li').on('click', function(){
         $('.container .board .list > li').removeClass('on')
         $(this).addClass('on')

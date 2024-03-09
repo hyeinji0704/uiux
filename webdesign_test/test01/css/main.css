@@ -157,6 +157,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
+    z-index: 3;
     width: 500px;
     transform: translate(-50%, -50%);
     background-color: #30A3F3;

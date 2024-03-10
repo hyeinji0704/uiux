@@ -1,0 +1,31 @@
+$(document).ready(function(){
+    $('.header .gnb .depth01 > li').on('mouseenter focusin', function(){
+        $('.header .gnb .depth01 > li').removeClass('on')
+        $(this).addClass('on')
+    })
+    $('.header .gnb').on('mouseleave', function(){
+        $('.header .gnb .depth01 > li').removeClass('on')
+    })
+    $('.header .gnb .depth01 > li:last-child > .depth02 > li:last-child > a').on('focusout', function(){
+        $('.header .gnb .depth01 > li').removeClass('on')
+    })
+
+    $('.notice .layer_open').on('click', function(){
+        $('.popup').show()
+    })
+    $('.popup .close').on('click', function(){
+        $('.popup').hide()
+    })
+
+    let idx = 1
+    setInterval(function(){
+        if(idx < 3){
+            idx++
+        }else{
+            idx = 1
+        }
+        //console.log(idx)
+        $('.cnt_group .visual ul li').removeClass('active')
+        $('.cnt_group .visual ul li').eq(idx-1).addClass('active')
+    } ,3000)  
+})

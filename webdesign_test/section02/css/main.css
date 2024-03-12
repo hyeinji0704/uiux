@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #2737FF;
+}
+body {
+    font-family: '맑은 고딕', 'Malgun Gothic';
+    font-size: 15px;
+    color: #333333;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.header .logo a {
+    display: block;
+}
+.header .gnb .depth01 {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+}
+.header .gnb .depth01 > li {
+    color: #333;
+    width: 150px;
+    text-align: center;
+}
+.header .gnb .depth01 > li > a {
+    line-height: 100px;
+    display: block;
+}
+.header .gnb .depth01 > li.on > a, .header .gnb .depth01 > li > a:hover {
+    background-color: #2737FF;
+    color: #fff;
+}
+.header .gnb .depth02 {
+    background-color: #55A6FF;
+    color: #333;
+    font-weight: 18px;
+    font-weight: 400;
+    display: none;
+}
+.header .gnb .depth01 > li.on > .depth02 {
+    display: block;
+}
+.header .gnb .depth02 > li > a {
+    line-height: 50px;
+    display: block;
+}
+.header .gnb .depth01 > li.on .depth02 > li > a:hover {
+    background-color: #2737FF;
+    color: #fff;
+}
+.visual {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.visual ul {
+    display: flex;
+    width: 3600px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.container {
+    margin-top: 20px;
+    display: flex;
+}
+.container .board {
+    width: 400px;
+    height: 180px;
+    position: relative;
+}
+.container .board .list {
+    display: flex;
+}
+.container .board .list > li .detail {
+    display: none;
+}
+.container .board .list > li button {
+    border: 0;
+    background-color: #aaa;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px 15px;
+}
+.container .board .list > li.on button {
+    background-color: #2737FF;
+    color: #fff;
+}
+.container .board .list > li.on .detail {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+}
+.container .board .list > li.on .notice a {
+    line-height: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+.container .board .list > li.on .notice a strong {
+    font-size: 16px;
+}
+.container .board .list > li.on .notice a span {
+    font-weight: 400;
+    color: #666;
+}
+.container .board .list > li.on .gallery ul {
+    display: flex;
+    justify-content: space-around;
+}
+.container .board .list > li.on .gallery ul li a:hover {
+    opacity: 0.5;
+}
+.container .banner {
+    margin: 0 20px;
+    height: 180px;
+}
+.container .banner a {
+    display: block;
+}
+.container .link {
+    height: 180px;
+}
+.container .link a {
+    display: block;
+}
+.layer_popup {
+    background-color: cornflowerblue;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 25px 20px;
+    display: none;
+}
+.layer_popup h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
+.layer_popup p {
+    margin-top: 8px;
+    line-height: 1.4;
+    font-size: 16px;
+}
+.layer_popup .close {
+    margin-top: 10px;
+    text-align: center;
+}
+.layer_popup .close button {
+    border: 0;
+    padding: 5px 10px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+}
+.footer {
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+.footer .f_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.footer .f_nav {
+    display: flex;
+}
+.footer .f_nav li {
+    margin-right: 30px;
+}
+.footer .f_inner .copyright {
+    color: #aaa;
+}

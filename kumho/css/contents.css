@@ -517,8 +517,8 @@
 .cts_location .main_info > ul > li {
     width: calc(33.33% - 18.66px);
     /*100%/3개 (li의 갯수) = 33.33%
-    li의 사이의 여백 28 * li의 갯수 - 1(2)= 84 /4(li의 갯수 ) = 21 
-    100%/4개 (li의 갯수) = 25%  - 84 /4(li의 갯수 ) = 21 
+    li의 사이의 여백 28 * li의 갯수 - 1(2)= 56 /3(li의 갯수 ) = 18.66
+    100%/4개 (li의 갯수) = 33.33%  - 84 /4(li의 갯수 ) = 18.66
     width: calc(33.33% - 18.66px);*/
 }
 .cts_location .main_info > ul > li h3 {
@@ -629,8 +629,8 @@
     border-top: 1px solid #ddd;
 }
 .cts_location .main_info .trans > ul > li .sub {
-    width: 286px;
     padding-left: 29px;
+    width: 286px;
 }
 .cts_location .main_info .trans > ul > li .sub li {
     display: flex;
@@ -708,6 +708,211 @@
     border-top: 2px solid #666;
 }
 @media screen and (max-width:1024px) {
+    .cts_location .main_map .title h2 { 
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .cts_location .main_map .title strong {
+        font-size: 36px;
+    }
+    .cts_location .main_map .map iframe {
+        height: 350px;
+    }
+    .cts_location .main_info > ul > li {
+        width: calc(33.33% - 16px);
+    }
+    .cts_location .main_info > ul > li h3 {
+        font-size: 32px;
+        padding-bottom: 20px;
+        margin-bottom: 25px;
+    }
+    .cts_location .main_info .sub01 > li {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+    .cts_location .main_info .sub01 > li span {
+        padding-top: 5px;
+        padding-left: 0;
+    }
+    .cts_location .main_info .sub02 {
+        margin-top: 40px;
+    }
+    .cts_location .main_info .trans > ul > li > strong {
+        padding-left: 40px;
+        font-size: 20px;
+    }
+    .cts_location .main_info .trans > ul > li > strong::before {
+        width: 25px;
+        height: 30px;
+        left: 10px;
+        top: -2px;
+    }
+    .cts_location .main_info .trans > ul > li.bus > strong::before {
+        background-size: 20px auto;
+    }
+    .cts_location .main_info .trans > ul > li .sub {
+        padding-left: 15px;
+    }
+    .cts_location .main_info .trans > ul > li .sub li strong::before {
+        width: 50px;
+        height: 27px;
+        left: -10px;
+        top: -4px;
+    }
+    .cts_location .main_info .trans > ul > li .sub li span {
+        padding-left: 20px;
+    }
+    .cts_location .main_info .place .inner {
+        margin-bottom: 30px;
+    }
+    .cts_location .main_info .place .inner span {
+        font-size: 24px;
+    }
+    .cts_location .main_info .place .inner dl {
+        padding: 15px 0;
+    }
+    .cts_location .main_info .place .inner dl dt {
+        font-size: 20px;
+        width: 23.88%;
+    }
+    .cts_location .main_info .place .inner dl dd {
+        width: 100%;
+    }
+    .cts_location .main_info .place .place02 {
+        padding-top: 28px;
+    }
+}
+@media screen and (max-width:768px) {
+    .cts_location {
+        margin: 65px 0 70px;
+    }
+    .cts_location .main_map .title {
+        margin-bottom: 40px;
+    }
+    .cts_location .main_map .map iframe {
+        height: 280px;
+    }
+    .cts_location .main_info > ul {
+        display: block;
+    }
+    .cts_location .main_info > ul > li {
+        width: 100%;
+    }
+    .cts_location .main_info .sub01 > li {
+        flex-wrap: nowrap;
+    }
+    .cts_location .main_info .sub01 > li strong {
+        font-size: 26px;
+        width: 100%;
+    }
+    .cts_location .main_info .sub01 > li span {
+        width: 100%;
+        font-size: 18px;
+        white-space: normal;
+    }
+    .cts_location .main_info .sub02 {
+        width: 350px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .cts_location .main_info .place .place_inner {
+        display: flex;
+        justify-content: space-around;
+    }
+    .cts_location .main_info .place .place_inner .inner {
+        width: calc(50% - 32px);
+    }
+    .cts_location .main_info .place .place02 {
+        padding-top: 0;
+        border-top: none;
+    }
+    .cts_location .main_info .trans > ul > li > strong {
+        width: 100%;
+        font-size: 26px;
+        padding-left: 50px;
+    }
+    .cts_location .main_info .trans > ul > li .sub {
+        width: 100%;
+    }
+    .cts_location .main_info .place {
+        margin-top: 30px;
+    }
+    .cts_location .main_info .trans > ul > li > strong::before {
+        top: 3px;
+    }
+    .cts_location .main_info .trans > ul > li .sub li span {
+        font-size: 18px;
+    }
+    .cts_location .main_info .place .place_inner {
+        margin-top: 40px;
+    }
+    .cts_location .main_info .place .inner span {
+        font-size: 26px;
+    }
+    .cts_location .main_info .place .inner dl dt {
+        font-size: 22px;
+        width: 27.88%;
+    }
+    .cts_location .main_info .place .inner dl dd {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:500px) {
+    .cts_location .main_info .sub02 {
+        width: 100%;
+    }
+    .cts_location .main_map .title h2 {
+        font-size: 16px;
+    }
+    .cts_location .main_map .title strong {
+        font-size: 28px;
+    }
+    .cts_location .main_map .title {
+        margin-bottom: 30px;
+    }
+    .cts_location .main_map {
+        margin-bottom: 60px;
+    }
+    .cts_location .main_map .map iframe {
+        height: 280px;
+    }
+    .cts_location .main_info > ul > li h3 {
+        font-size: 28px;
+    }
+    .cts_location .main_info .sub01 > li strong {
+        font-size: 22px;
+        width: 35%;
+    }
+    .cts_location .main_info .sub01 > li span {
+        width: 65%;
+    }
+    .cts_location .main_info .trans > ul > li > strong {
+        width: 40%;
+        font-size: 22px
+    }
+    .cts_location .main_info .trans > ul > li.bus .sub li span {
+        padding-left: 27px;
+    }
+    .cts_location .main_info .place .inner span {
+        font-size: 22px;
+    }
+    .cts_location .main_info .place .place_inner {
+        margin-top: 30px;
+    }
+    .cts_location .main_info .place .inner dl {
+        flex-wrap: wrap;
+    }
+    .cts_location .main_info .place .inner dl.first {
+        padding: 15px 0 37px 0;
+    }
+    .cts_location .main_info .place .inner dl dt {
+        font-size: 15px;
+        width: 100%;
+    }
+    .cts_location .main_info .place .inner dl dd {
+        width: 100%;
+        padding-left: 0;
+    }
     
 }
 /*사업실적검색 - 사업분야*/

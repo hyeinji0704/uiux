@@ -515,7 +515,11 @@
     justify-content: space-between;
 }
 .cts_location .main_info > ul > li {
-    width: 408px;
+    width: calc(33.33% - 18.66px);
+    /*100%/3개 (li의 갯수) = 33.33%
+    li의 사이의 여백 28 * li의 갯수 - 1(2)= 84 /4(li의 갯수 ) = 21 
+    100%/4개 (li의 갯수) = 25%  - 84 /4(li의 갯수 ) = 21 
+    width: calc(33.33% - 18.66px);*/
 }
 .cts_location .main_info > ul > li h3 {
     font-size: 36px;

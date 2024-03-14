@@ -53,7 +53,7 @@ $(document).ready(function(){
         .biz .list ul li에 마우스를 빼면 off클래스 추가 
     **************************************************** */
     $('.biz .list ul li').on('mouseenter', function(){
-        if(device_status = 'pc'){
+        if(device_status == 'pc'){
             $('.biz .list ul li').removeClass('on')
             $('.biz .list ul li').addClass('off')
             $(this).removeClass('off')
@@ -61,7 +61,7 @@ $(document).ready(function(){
         } 
     })
     $('.biz .list ul li').on('mouseleave', function(){
-        if(device_status = 'pc'){
+        if(device_status == 'pc'){
             $('.biz .list ul li').removeClass('on')
             $('.biz .list ul li').removeClass('off')
         }

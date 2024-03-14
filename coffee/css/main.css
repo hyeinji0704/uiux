@@ -2,3 +2,59 @@
 @import url(common.css);
 @import url(layout.css);
 
+/*
+    파일명 :
+    작성자 :
+*/
+.container {
+    margin-top: 170px;/*header의 높이만큼 */
+}
+.visual .swiper { height:900px } /* 팝업의 높이가 됨 */
+.visual .swiper-slide img { 
+    display:block; 
+    width:100%;  
+    cursor: grab;
+} 
+/* 팝업 안에 이미지를 넣었다면 이미지를 꽉차게 나타나게 하기 위해서 해당 스타일을 넣어줌 object-fit 상세설명 */
+
+.visual .swiper-slide img.popup_mobile {
+    display: none;
+}
+/*
+@media screen and (max-width:1640px) {
+    .visual .swiper-slide {
+        overflow: hidden;
+    }
+    .visual .swiper-slide img {
+        width: 120%;
+        transform: translate(-10%,0);
+    }
+} 이미지가 확대되서 보임
+*/
+/*
+@media screen and (min-width:769px) and (max-width:1024px){
+    .visual .swiper-slide {
+        position: relative;
+        height: 480px;
+        overflow: hidden;
+    }
+    .visual .swiper-slide img {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        height: 480px;
+        transform: translate(-50%,0);
+    }
+} /*769-1024까지만 적용*/      
+@media screen and (max-width:768px) {
+    /*.visual .swiper-slide img {
+        width: 100%;
+        transform: translate(0,0);
+    } 120로 정해놨던거 푸는 것*/
+    .visual .swiper-slide img.popup_pc {
+        display: none;
+    } 
+    .visual .swiper-slide img.popup_mobile {
+        display: block;
+    }
+}

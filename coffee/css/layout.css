@@ -1,0 +1,17 @@
+.header {
+    position: fixed;/*상단과 스크롤 내릴 때 고정*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #FFF8E8;
+}
+.header .header_top {
+    height: 105px;
+}
+.header .header_top .logo {
+    font-size: 0;
+    line-height: 0;
+}
+.header .header_sub {
+    height: 65px;
+}

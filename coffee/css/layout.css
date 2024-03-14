@@ -5,6 +5,7 @@
     z-index: 100;
     width: 100%;
     background-color: #FFF8E8;
+    transition: transform 0.5s;
 }
 .header .header_top {
     height: 100px;
@@ -37,7 +38,7 @@
 .header .header_top .tnb {
     float: right;
     margin-top: 63px;
-    margin-right: 11%;
+    margin-right: 16%;
     font-weight: 700;
     color: #4d4d4d;
 }
@@ -179,10 +180,9 @@
     }
     /****************************메뉴 고정 끝*****************/
 }
-
 @media screen and (max-width:1640px) {
     .header .header_top .tnb {
-        margin-right: 11%;
+        
     }
     .header .header_sub .gnb .depth01 > li {
         width: 190px;
@@ -197,10 +197,15 @@
 }
 @media screen and (max-width:1440px) {
     .header .header_top .tnb {
-        margin-right: 5%;
+
     }
     .header .header_sub .gnb .depth01 > li {
         width: 16.66%;
+    }
+}
+@media screen and (max-width:1320px) {
+    .header .header_top .tnb {
+        margin-right: 13%;
     }
 }
 @media screen and (max-width:1192px) {
@@ -212,9 +217,9 @@
     }
 }
 @media screen and (max-width:1132px) {
-    /*.header .header_top .tnb {
-        font-size: 16px;
-    }*/
+    .header .header_top .tnb {
+        margin-right: 11%;
+    }
     .header .header_sub .gnb .depth01 {
         padding-left: 5%;
     }
@@ -230,6 +235,9 @@
     }
 }
 @media screen and (max-width:1024px) {
+    .header .header_top .tnb {
+        margin-right: 5%;
+    }
     .header .header_sub .gnb .depth01 {
         padding-left: 0;
     }
@@ -240,6 +248,7 @@
         padding-top: 5px;
     }
 }
+/*모바일로 변환*/
 @media screen and (max-width:768px) {
     .header {
         height: 100px;
@@ -252,12 +261,38 @@
     }
     .header .header_top .tnb {
         display: none;
+        margin-top: 0;
+        z-index: 10;
+        position: absolute;
+        right: 100px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    .header .header_top .tnb  ul li {
+        margin: 0;
+        border-width: 2px 2px 2px 0;
+        border-color: rgba(190, 142, 102, 1);
+        border-style: solid;
+    }
+    .header .header_top .tnb  ul li:first-child {
+        border-left-width: 2px; 
+    }
+    .header .header_top .tnb ul li::after {
+        display: none;
+    }
+    .header .header_top .tnb  ul li a {
+        display: block;
+        font-size: 1.333rem;
+        padding: 10px 20px;
+        color: #BE8E66;
     }
     .header .header_top .logo {
         position: relative;
+        z-index: 10;
         left: auto;
         top: auto;
         transform: translate(0, 0); 
+        margin-left: -20px;
     }
     .header .header_top .logo a {
         width: auto;
@@ -268,6 +303,12 @@
     }
     .header .header_sub .gnb_wrap {
         display: none;
+        position: absolute;/*header를 기준으로 정렬*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
     }
     .header .header_sub .gnb .gnb_open {
         display: block;
@@ -288,5 +329,155 @@
         top: 0;
         background-size:40px auto;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22.121' height='22.121' viewBox='0 0 22.121 22.121'%3E%3Cg id='그룹_72' data-name='그룹 72' transform='translate(-321.939 -12.939)'%3E%3Cline id='선_22' data-name='선 22' y1='20' x2='20' transform='translate(323 14)' fill='none' stroke='%23be8e66' stroke-width='3'/%3E%3Cline id='선_35' data-name='선 35' x1='20' y1='20' transform='translate(323 14)' fill='none' stroke='%23be8e66' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    /****************메뉴가 열렸을 때 시작************************/
+    .header.menu_open .header_top .tnb {
+        display: block;
+    }
+    .header.menu_open .header_sub .gnb_wrap {
+        display: block;
+    }
+    .header.menu_open .header_sub .gnb .depth01 {
+        flex-direction: column;
+        justify-content: normal;
+        align-items: center;
+        margin-top: 100px;/*header의 높이만큼*/
+        height: calc(100vh - 100px);
+        overflow-x: hidden;/*좌우는 스크롤 금지*/
+        overflow-y: auto; /*위아래 스크롤*/
+        background-color: #BE8E66;
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li {
+        width: 100%;
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li > a {
+        display: block;
+        font-size: 1.733rem;
+        line-height: 75px;
+        position: relative;
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li > a::after {
+        position: absolute;
+        right: 120px;
+        top: 26px;
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 18px auto;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13.6' height='13.6' viewBox='0 0 13.6 13.6'%3E%3Cg id='그룹_73' data-name='그룹 73' transform='translate(-267.4 -99.9)'%3E%3Cline id='선_38' data-name='선 38' x2='13.6' transform='translate(267.4 106.7)' fill='none' stroke='%23fff8e8' stroke-width='1'/%3E%3Cline id='선_39' data-name='선 39' x2='13.6' transform='translate(274.2 99.9) rotate(90)' fill='none' stroke='%23fff8e8' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E ");
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li.on a {
+        color: #fff;
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li.on > a::after {
+        background-size: 20px auto;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13.6' height='2' viewBox='0 0 13.6 2'%3E%3Cg id='그룹_73' data-name='그룹 73' transform='translate(-267.4 -105.7)'%3E%3Cline id='선_38' data-name='선 38' x2='13.6' transform='translate(267.4 106.7)' fill='none' stroke='%23171717' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E ");
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li > a span {
+        padding: 0;
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li.on .depth02 {
+        display: block;
+        padding-top: 0;
+    }
+    .header.menu_open .header_sub .gnb .depth02 {
+        background-color: #FFF8E8;
+    }
+    .header.menu_open .header_sub .gnb .depth02 > li > a {
+        display: block;
+        line-height: 60px;
+        font-size: 1.333rem;
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li.on .depth02 li a {
+        color: #0C0103;
+    }
+    .header.menu_open .header_sub .gnb_open {
+        display: none;
+    }
+    .header.menu_open .header_sub .gnb_close {
+        display: block;
+    }
+    /****************메뉴가 열렸을 때 끝************************/
+}
+@media screen and (max-width:500px) {
+    .header {
+        height: 50px;
+    }
+    .header .header_top .logo a {
+        padding: 8px 0;
+    }
+    .header .header_top .logo a img {
+        width: 50%;
+    } 
+    /*tnb*/
+    .header .header_top .tnb {
+        right: 50px;
+    }
+    .header .header_top .tnb  ul li {
+        border-width: 1px 1px 1px 0;
+    }
+    .header .header_top .tnb  ul li:first-child {
+        border-left-width: 1px; 
+    }
+    .header .header_top .tnb  ul li a {
+        font-size: 1.143rem;
+        padding: 5px 14px;
+    }
+    /*tnb*/
+    .header .header_sub .gnb .gnb_open, .header .header_sub .gnb .gnb_close {
+        width: 60px;
+        height: 50px;
+    }
+    .header .header_sub .gnb .gnb_open {
+        background-size: 32px auto;
+        right: 5px;
+    }
+    .header .header_sub .gnb .gnb_close {
+        background-size: 20px auto;
+        right: 0;
+    }
+    /****모바일 메뉴 오픈****/
+    .header.menu_open .header_sub .gnb .depth01 {
+        margin-top: 50px;/*header의 높이만큼*/
+        height: calc(100vh - 50px);
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li > a::after {
+        right: 90px;
+        top: 28px;
+        width: 20px;
+        height: 20px;
+        background-size: 18px auto;
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li.on > a::after {
+        background-size: 18px auto;
+    }
+    .header.menu_open .header_sub .gnb .depth02 > li > a {
+        line-height: 60px;
+        font-size: 1.333rem;
+    }
+}
+@media screen and (max-width:400px) {
+    .header .header_top .tnb {
+        right: 40px;
+    }
+    .header .header_top .tnb ul li a {
+        font-size: 0.857rem;
+        padding: 5px 14px;
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li > a::after {
+        right: 65px;
+        top: 29px;
+    }
+}
+@media screen and (max-width:375px) {
+    .header .header_top .tnb ul li a {
+        font-size: 0.857rem;
+        padding: 5px 10px;
+    }
+    .header.menu_open .header_sub .gnb .depth01 > li > a::after {
+        right: 45px;
+        top: 29px;
     }
 }

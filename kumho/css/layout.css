@@ -175,8 +175,8 @@
         position: absolute;
         right: calc(50% + 375px);
         top: 112px;
-        margin-right: 26px;
-        font-size: 36px;
+        margin-right: 180px;
+        font-size: 40px;
         letter-spacing: -0.08em;
         line-height: 1.2;
         color: #aaa;
@@ -269,6 +269,18 @@
     transition: 0.4s;
 }
 /*********** 메뉴에 상단에 고정했을 때  -- End ***********/
+@media screen and (max-width:1640px) {
+    .header.menu_over .gnb .h_tit {
+        margin-right: 85px;
+        font-size: 36px;
+    }
+}
+@media screen and (max-width:1440px) {
+    .header.menu_over .gnb .h_tit {
+        margin-right: 20px;
+        font-size: 32px;
+    }
+}
 @media screen and (max-width:1320px) {
     .header.menu_over .gnb .h_tit {
         margin-right: 27px;
@@ -620,6 +632,7 @@
         font-size: 22px;
     }
     .lnb {
+        padding-left: 20px;
         font-size: 20px;
         height: auto;
         overflow-x: auto;

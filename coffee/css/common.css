@@ -55,6 +55,11 @@ html, body {
         /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
     } 
 } /*media*/
+@media screen and (max-width:1440px) {
+    html, body {
+        font-size: 16px;
+    }
+}
 @media screen and (max-width:1024px) {
     html, body {
         font-size: 15px;

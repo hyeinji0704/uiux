@@ -15,6 +15,11 @@
 </head>
 <body>
     <div id="wrap">
+        <!--스크롤을 아래로 내리면 숨겨짐, 스크롤을 위로 올리면 보임
+            스크롤을 아래로 내렸을 때 header의 높이가 변함
+            스크롤을 내린 상태에서 보일 때 : fixed 클래스 추가
+            pc버전 메뉴를 오버했을 때 : menu_over
+            모바일에서 메뉴를 클릭했을 때 : menu_open-->
         <header class="header">
             <div class="wrapper">
                 <div class="header_top">
@@ -32,7 +37,7 @@
                         <button class="gnb_open">메뉴열기</button>
                         <div class="gnb_wrap">
                             <ul class="depth01">
-                                <li>
+                                <li >
                                     <a href="#n"><span>ABOUT US</span></a>
                                     <ul class="depth02">
                                         <li><a href="#n"><span>Brand</span></a></li>
@@ -59,7 +64,7 @@
                                 </li>
                                 <li>
                                     <a href="#n"><span>SOCIETY</span></a>
-                                    <ul c lass="depth02">
+                                    <ul class="depth02">
                                         <li><a href="#n"><span>Paul Bassett Society</span></a></li>
                                         <li><a href="#n"><span>회원 등급 혜택</span></a></li>
                                         <li><a href="#n"><span>e-Card 선물</span></a></li>
@@ -67,7 +72,7 @@
                                         <li><a href="#n"><span>제휴혜택 안내</span></a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="on">
                                     <a href="#n"><span>WHAT'S NEW</span></a>
                                     <ul class="depth02">
                                         <li><a href="#n"><span>Event / News</span></a></li>

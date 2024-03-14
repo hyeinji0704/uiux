@@ -20,6 +20,9 @@
 .visual .swiper-slide img.popup_mobile {
     display: none;
 }
+.product {
+    height: 4000px;
+}
 /*
 @media screen and (max-width:1640px) {
     .visual .swiper-slide {
@@ -57,4 +60,10 @@
     .visual .swiper-slide img.popup_mobile {
         display: block;
     }
+    .container {
+        margin-top: 100px;
+    } 
+}
+@media screen and (max-width:768px) {
+    
 }

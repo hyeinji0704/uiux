@@ -5,7 +5,7 @@
     z-index: 100;
     width: 100%;
     background-color: #FFF8E8;
-    transition: transform 0.5s;
+    transition: transform 0.2s;
 }
 .header .header_top {
     height: 100px;
@@ -181,9 +181,6 @@
     /****************************메뉴 고정 끝*****************/
 }
 @media screen and (max-width:1640px) {
-    .header .header_top .tnb {
-        
-    }
     .header .header_sub .gnb .depth01 > li {
         width: 190px;
         padding-left: 0;
@@ -196,9 +193,6 @@
     }
 }
 @media screen and (max-width:1440px) {
-    .header .header_top .tnb {
-
-    }
     .header .header_sub .gnb .depth01 > li {
         width: 16.66%;
     }
@@ -319,6 +313,7 @@
     }
     .header .header_sub .gnb .gnb_open, .header .header_sub .gnb .gnb_close {
         position: absolute;
+        z-index: 101;
         width: 80px;
         height: 100px;
         background-position: center center;

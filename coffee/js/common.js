@@ -23,7 +23,7 @@ $(document).ready(function(){
             scroll_curr = $(window).scrollTop()
             scroll_dir =scroll_prev - scroll_curr
             console.log(scroll_dir)
-            if(scroll_curr > 250){ //스크롤이 되는 중
+            if(scroll_curr > 300){ //스크롤이 되는 중
                 $('header').addClass('fixed')
                 if(scroll_dir > 0){ //위로 스크롤 되는 중 - 나타나야함
                     $('header').attr('style', 'transform: translate(0, 0)')
@@ -62,7 +62,7 @@ $(document).ready(function(){
         $(window).resize(function(){ //문서가 리사이즈될 때마다 1번씩 실행
             device_chk()
         })
-        
+
         $('.header .header_sub .gnb .depth01 > li').on('mouseenter focusin', function(){
             if(device_status == 'pc'){
                 $('.header .header_sub .gnb .depth01 > li').removeClass('on')

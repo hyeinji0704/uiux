@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+button {
+    cursor: pointer;
+}
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #592011;
+}
+body {
+    font-family: 'Malgun Gothic', serif;
+    font-size: 15px;
+    color: #333333;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    position: relative;
+    height: 100px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+}
+.header .logo a {
+    width: 200px;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+}
+.header .gnb .depth01 {
+    display: flex;
+}
+.header .gnb .depth01 > li {
+    width: 200px;
+    text-align: center;
+}
+.header .gnb .depth01 > li.on > a, .header .gnb .depth01 > li > a:hover {
+    background-color: #592011;
+    color: #fff;
+}
+.header .gnb .depth01 > li > a {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 100px;
+}
+.header .gnb .depth02 {
+    font-size: 18px;
+    background-color: #592011;
+    color: #fff;
+    display: none;
+}
+.header .gnb li.on > .depth02 {
+    display: block;
+}
+.header .gnb li.on .depth02 > li > a {
+    display: block;
+    line-height: 60px;
+}
+.header .gnb li.on .depth02 > li > a:hover {
+    background-color: #F15A29;
+}
+
+
+.visual {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.visual ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 900px;
+}
+.visual ul li {
+    font-size: 0;
+    line-height: 0;
+}
+.cnt {
+    margin-top: 20px;
+    display: flex;
+}
+.cnt .board {
+    width: 400px;
+}
+.cnt .board .list {
+    display: flex;
+    position: relative;
+}
+.cnt .board .list button {
+    border: 0;
+    padding: 8px 15px;
+    font-size: 20px;
+    background-color: #aaa;
+}
+.cnt .board .list li.on button {
+    background-color: #592011;
+    color: #fff;
+}
+.cnt .board .list .detail {
+    display: none;
+}
+.cnt .board .list > li.on .detail {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+}
+.cnt .board .list .notice li a {
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+    font-size: 18px;
+}
+.cnt .board .list .notice li a span {
+    font-size: 16px;
+    color: #666;
+}
+.cnt .board .list li.on .gallery {
+    display: flex;
+    justify-content: space-around;
+}
+.cnt .board .list li.on .gallery li a {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+}
+.cnt .board .list li.on .gallery li a:hover {
+    opacity: 0.5;
+}
+.cnt .banner {
+    width: 380px;
+    margin: 0 20px;
+}
+.cnt .link {
+    width: 380px;
+}
+.layer_popup {
+    z-index: 101;
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 30px 30px;
+    background-color: #F15A29;
+    color: #fff;
+}
+.layer_popup h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.layer_popup p {
+    font-size: 16px;
+    margin: 8px 0 15px 0;
+}
+.layer_popup .close {
+    text-align: center;
+}
+.layer_popup .close button {
+    font-size: 17px;
+    font-weight: 700;
+    padding: 5px;
+    background-color: #592011;
+    color: #fff;
+}
+.footer {
+    background-color: #333333;
+    color: #fff;
+    height: 90px;
+    margin-top: 10px;
+}
+.footer .f_logo {
+    float: left;
+    width: 150px;
+    margin-left: 15px;
+}
+.footer .info {
+    float: right;
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .info .sns {
+    width: 200px;
+    padding-right: 25px;
+}
+.footer .info .sns ul {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .info .sns ul li a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+}
+.footer .info .sns ul li a img {
+    width: 40px;
+}
+

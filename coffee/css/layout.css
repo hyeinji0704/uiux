@@ -81,10 +81,13 @@
 .header .header_sub .gnb .depth01 > li > a {
     line-height: 70px;
     font-size: 1.111rem;
+    
+    font-weight: 700;
 }
 .header .header_sub .gnb .depth02 {
     padding-top: 20px;
     display: none;
+    font-weight: 700;
 }
 .header .header_sub .gnb .depth02 > li > a {
     display: block;
@@ -128,8 +131,13 @@
         transition: 0.4s;
         background-color: #2B4836;
     }
-    .header .header_sub .gnb .depth02 > li {
-        padding-left: 10px;
+    .header .header_sub .gnb .depth02 > li > a span {
+        padding: 10px 10px;
+        border-radius: 50px;
+    }
+    .header .header_sub .gnb .depth02 > li > a:hover span {
+        background-color: #2B4836;
+        color: #fff;
     }
     /****************************메뉴 오버 끝*****************/
     /****************************메뉴 고정 시작*****************/
@@ -325,7 +333,7 @@
         background-size:40px auto;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22.121' height='22.121' viewBox='0 0 22.121 22.121'%3E%3Cg id='그룹_72' data-name='그룹 72' transform='translate(-321.939 -12.939)'%3E%3Cline id='선_22' data-name='선 22' y1='20' x2='20' transform='translate(323 14)' fill='none' stroke='%23be8e66' stroke-width='3'/%3E%3Cline id='선_35' data-name='선 35' x1='20' y1='20' transform='translate(323 14)' fill='none' stroke='%23be8e66' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E%0A");
     }
-    /****************메뉴가 열렸을 때 시작************************/
+    /****************모바일 mobile 메뉴가 열렸을 때 시작************************/
     .header.menu_open .header_top .tnb {
         display: block;
     }
@@ -379,6 +387,9 @@
     }
     .header.menu_open .header_sub .gnb .depth02 {
         background-color: #FFF8E8;
+    }
+    .header .header_sub .gnb .depth02 > li {
+        padding-left: 0;
     }
     .header.menu_open .header_sub .gnb .depth02 > li > a {
         display: block;

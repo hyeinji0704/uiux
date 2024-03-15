@@ -1,5 +1,5 @@
 @charset "utf-8";/*이 css문서는 utf-8방식으로 인코딩 되어 있습니다. */
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');/*영문웹폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');/*영문웹폰트*/
 @font-face {
     font-family: 'NanumMyeongjo';
     font-weight: 400;
@@ -26,7 +26,7 @@
     font-family: 'Playfair Display' serif;
 }*/
 html, body {
-    font-family: 'Playfair Display', 'NanumMyeongjo', serif;
+    font-family: 'Cormorant', 'NanumMyeongjo', serif;
     font-size: 18px;
     color: #0C0103;
     font-weight: 400;

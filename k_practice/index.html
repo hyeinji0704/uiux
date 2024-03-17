@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <title>금호건설</title>
+</head>
+<body>
+    <!--
+        images --- common (header/footer와 같은 모든 동일하게 보일 이미지)
+               --- main (main에만 나타나는 이미지)
+        css    --- common.css 
+               --- main.css 
+               --- layout.css  
+        js    --- common.js
+               --- main.js
+
+    -->
+    <div class="skipnav">
+        <!--href = #container 라고 입력하면 id="container"로 이동
+            href="#gnb"라고 입력하면 id= "gnb"로 이동-->
+        <a href="#container">본문 바로가기</a>
+        <a href="#gnb">대메뉴 바로가기</a>
+    </div>
+   <div id="wrap" class="main">
+    <!-- 메뉴상단 고정 : fixed
+         pc버전에서 메뉴 오버 : menu_over
+         모바일 버전에서 메뉴를 클릭해서 열면 : menu_open
+    -->
+        <header class="header">
+            <h1 class="logo"><a href="index.html"><img src="images/common/logo_w.svg" alt="">금호건설 로고</a></h1>
+            <nav class="gnb">
+                <div class="gnb_wrap">
+                    <ul class="depth01">
+                        <li>
+                            <a href="#n"></a>
+                            <ul class="depth02">
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"></a>
+                            <ul class="depth02">
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"></a>
+                            <ul class="depth02">
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"></a>
+                            <ul class="depth02">
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"></a>
+                            <ul class="depth02">
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                                <li><a href="#n"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="container"></div>
+        <footer class="footer"></footer>
+    </div>
+       
+</body>
+</html>

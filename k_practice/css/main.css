@@ -1,0 +1,11 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+/*
+    파일명 : main.css
+    작성자 : 지혜인
+    작성일 : 2024.03.16 ---- 금호건설 다시 연습중
+    속  성 : 메인페이지에만 들어가는 스타일로 저장
+            (header와 footer 빼고 전부 다)   
+*/

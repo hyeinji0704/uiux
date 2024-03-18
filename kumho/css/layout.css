@@ -371,7 +371,6 @@
     }
     .header .gnb ul.depth01 > li.on  > ul.depth02 {
         display: block;
-        font-size: 24px;
         background-color: #DAD0C7;
         padding: 10px 80px;
     }

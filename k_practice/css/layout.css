@@ -15,26 +15,28 @@
     color: #fff;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .header .logo {
-    margin-left: 15px;
+    margin: 22px 0 0 30px;
 }
 .header .logo a {
+    width: 100px;
+    height: 42.5px;
     display: block;
     font-size: 0;
     line-height: 0;
-    padding: 10px 10px;
+    padding: 5px 10px;
+    background: url(../images/common/logo_w.svg) center center / cover;
 }
 .header .gnb .gnb_open, .header .gnb .gnb_close {
     display: none;
 }
 .header .gnb .depth01 {
     display: flex;
+    text-align: center;
 }
 .header .gnb .depth01 > li {
     width: 150px;
-    text-align: center;
 }
 .header .gnb .depth01 > li > a {
     line-height: 100px;
@@ -44,13 +46,182 @@
 }
 .header .gnb .depth02 {
     display: none;
-    height: 450px;
+    height: 451px;
 }
 .header .gnb .depth02 > li > a {
+    display: block;
     font-size: 18px;
     line-height: 45px;
 }
 .header .tnb {
-    margin-right: 15px;
+    margin: 34px 0 0 15px;
     display: flex;
+}
+.header .tnb a {
+    display: block;
+    margin-right: 15px;
+    font-size: 18px;
+    font-weight: 700;
+}
+@media screen and (min-width:1025px) {
+    .header.menu_over {
+        color: #1d1d1d;
+    }
+    .header.menu_over::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 551px;/*header값 포함*/
+        background-color: #fff;
+        content: "";
+    }
+    .header.menu_over .logo a {
+        background: url(../images/common/logo_b.svg) center center / cover;
+    }
+    .header .depth01 > li > a:hover, header .depth01 > li.on > a, .header .depth01 > li[data-menu="on"] > a {
+        display: block;
+        color: red;
+        position: relative;
+    }
+    .header .depth01 > li > a:hover::before, header .depth01 > li.on > a::before, .header .depth01 > li[data-menu="on"] > a::before {
+        position: absolute;
+        left: 0;
+        top: 95px;
+        content: "";
+        width: 100%;
+        height: 5px;
+        background-color: red;
+    }
+    .header.menu_over .gnb .depth02 {
+        display: block;
+        padding-top: 15px;
+    }
+    .header.menu_over .gnb .depth02 > li > a:hover, .header.menu_over .gnb .depth02 > li.on > a, .header.menu_over .gnb .depth02 > li[data-menu="on"] > a{
+        font-weight: 700;
+    }
+}
+.header.fixed {
+    color: #1d1d1d;
+    background-color: #fff;
+}
+.header.fixed .logo a {
+    background: url(../images/common/logo_b.svg) center center / cover;
+}
+
+@media screen and (max-width:1024px) {
+    .header.menu_open {
+        z-index: 101;
+    }
+    .header .gnb .gnb_wrap {
+        display: none; /*원래는 안보임*/
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        color: #1d1d1d;
+    }
+    .header.menu_open .gnb .gnb_wrap {
+        display: block;
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        background-size: 36px auto;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 16V13.3333H24V16H0ZM0 9.33333V6.66667H24V9.33333H0ZM0 2.66667V0H24V2.66667H0Z' fill='white'/%3E%3C/svg%3E ");
+    }
+    .header.fixed .gnb .gnb_open {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 16V13.3333H24V16H0ZM0 9.33333V6.66667H24V9.33333H0ZM0 2.66667V0H24V2.66667H0Z' fill='%231d1d1d'/%3E%3C/svg%3E ");
+    }
+    .header.menu_open .gnb .gnb_open {
+        display: none;
+    }
+    .header .gnb .gnb_open, .header .gnb .gnb_close {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        width: 100px;
+        height: 100%;/*header의 높이 만큼*/
+        font-size: 0;
+        line-height: 0;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .header .gnb .gnb_close {
+        background-size: 32px auto;
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.6 21.5L0.5 19.4L8.9 11L0.5 2.6L2.6 0.5L11 8.9L19.4 0.5L21.5 2.6L13.1 11L21.5 19.4L19.4 21.5L11 13.1L2.6 21.5Z' fill='%231D1D1D'/%3E%3C/svg%3E ");
+    }
+    .header.menu_open .gnb .gnb_close {
+        display: block;
+    }
+    .header .gnb .depth01 {
+        display: block;
+        text-align: left;
+        margin-top: 100px;
+        height: calc(100vh - 100px);
+        overflow-y: auto;
+        padding-top: 20px;
+    }
+    .header .gnb .depth01 > li {
+        width: 100%;
+    }
+    .header .gnb .depth01 > li > a {
+        font-size: 28px;
+        line-height: 90px;
+        padding: 0 150px;
+        position: relative;
+    }
+    .header .gnb .depth01 > li > a::after {
+        position: absolute;
+        right: 150px;
+        top: 30px;
+        width: 20px;
+        height: 20px;
+        content: "";
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 20px auto;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 7.09364L0.5 1.59364L1.78333 0.310303L6 4.52697L10.2167 0.310303L11.5 1.59364L6 7.09364Z' fill='%23666666'/%3E%3C/svg%3E%0A");
+    }
+    .header .gnb .depth01 > li.on > a::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 0.906364L0.5 6.40636L1.78333 7.6897L6 3.47303L10.2167 7.6897L11.5 6.40636L6 0.906364Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+    }
+    .header .gnb .depth01 > li.on > a {
+        color: red;
+    }
+    .header .gnb .depth01 > li.on > .depth02 {
+        display: block;
+        background-color: #ededed;
+        padding: 10px 150px;
+    }
+    .header .gnb .depth02 {
+        height: auto;
+    }
+    .header .gnb .depth02 > li > a {
+        line-height: 60px;
+        font-size: 26px;
+    }
+    .header .gnb .depth02 > li.on > a {
+        font-weight: 700;
+    }
+    .header .tnb {
+        display: none;
+    }
+    .header.menu_open .tnb {
+        display: flex;
+        position: absolute;
+        left: 150px;
+        top: 60px;  
+        margin: 0;
+        color: #1d1d1d;
+    }
+    .header .tnb a {
+        margin-right: 30px;
+        font-size: 20px;
+    }
+    .header .tnb a span {
+        display: block;
+    }
 }

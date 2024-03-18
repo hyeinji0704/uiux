@@ -1,0 +1,240 @@
+@import url(default.css);
+@font-face {
+    font-family: 'SCoreDreamRegular';
+    src: url('../fonts/SCoreDreamRegular.woff') format('woff'), url('../fonts/SCoreDreamRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family:'SCoreDreamExtraBold';
+    src: url('../fonts/SCoreDreamExtraBold.woff') format('woff'), url('../fonts/SCoreDreamExtraBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}/*한글웹폰트*/
+
+*::selection {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+*::-moz-selection { /*호환성을 위한 코드*/
+    background-color: #1d1d1d;
+    color: #fff;
+}
+/*영문, 숫자는 영문 폰트를 사용하고 한글만 한국어 폰트를 사용하고 싶을 때 
+(단 영문 폰트로 선택한 폰트는 한국어가 지원되는 폰트면 안됨.
+body에서 폰트를 정의할 때 맨먼저 무조건 영문폰트를 먼저 선언
+영어,숫자만 영문폰트가 적용되고 한글을 지원되지 않기 때문에 다음에 선언된 한글폰트가 적용된다.
+font-family에 여러 폰트를 쓰는 것은 순서대로 적용이 된다.*/
+html, body {
+    font-family: 'SCoreDreamMedium', sans-serif;
+    font-size: 15px;
+    color: #2d2d2d;
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1280px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 100%;
+    overflow: hidden; /*sticky 사용할 때는 쓰면 안됨*/
+}
+
+/* Wrapper의 사이즈 1280 + 40px(좌우여백) = 1320 사이즈를 줄였을 때 부드럽게 들어가기 위해서*/
+@media screen and (max-width:1320px) {
+    html, body {
+        font-size: 15px;
+    }
+    .wrapper {
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에*/
+        margin: 0 20px; 
+        /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+    } 
+} /*media*/
+@media screen and (max-width:768px) {
+    html, body {
+        font-size: 13px;
+    }
+    .wrapper {
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에*/
+        margin: 0 20px; 
+        /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+    }  
+}
+.sec01  {
+    margin: 160px 0 180px 0;
+}
+.sec01 .inner {
+    margin-bottom: 40px;
+}
+.sec01 .tit {
+    position: relative;/*span의 정렬의 기준*/
+}
+.sec01 .tit span {
+    display: block;
+    font-size: 60px;
+    font-weight: 700;
+}
+.sec01 .tit .txt_black {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0; /*40%*/
+    white-space: nowrap;
+    overflow: hidden;
+    color: #2d2d2d;
+    animation-name: sec01_ani; /*keyframe에서 선언한 이름*/
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; /*끝난 상태에서 가만히 있어!*/
+}
+@keyframes sec01_ani { /* 애니메이션을 효과를 미리 설정함 */
+	0% { width: 10%;}  /* 애니메이션을 시작할때의 속성 */
+	100% { width: 100%; } /* 애니메이션이 종료될때의 속성 */
+}
+.sec01 .tit .txt_grey {
+    color: #D57C97;
+}
+.sec01 .photo {
+    height: 800px;
+}
+.sec01 .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sec02 {
+    text-align: center;
+    margin: 210px 0 300px 0;
+}
+.sec02 .tit {
+    margin-bottom: 94px;
+    font-weight: 700;
+}
+.sec02 .tit span {
+    display: block;
+    font-size: 20px;
+}
+.sec02 .tit h2 {
+    font-size: 100px;
+}
+.sec02 .photo {
+    width: 600px;
+    height: 623px;
+    margin: 0 auto;/*좌우의 가운데*/
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 1s;
+}
+.sec02 .photo.active {
+    border-radius: 0;
+    height: 800px;
+}
+.sec02 .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sec03 {
+    margin-bottom: 150px;
+    font-size: 60px;
+    line-height: 1.5;
+    text-align: center;
+    color: #1d1d1d;
+}
+.sec03 .line {
+    overflow: hidden;
+}
+.sec03 .line span {
+    display: block;
+    transform: translate(0, 1.2em);
+}
+.sec03.active .line span {
+    animation-name: sec03_ani; /*keyframe에서 선언한 이름*/
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; /*끝난 상태에서 가만히 있어!*/
+}
+.sec03.active .line:nth-child(2) span {
+    animation-delay: 0.3s;
+}
+.sec03.active .line:nth-child(3) span {
+    animation-delay: 0.6s;
+}
+@keyframes sec03_ani { /* 애니메이션을 효과를 미리 설정함 */
+	0% { transform: translate(0, 1.2em);}  /* 애니메이션을 시작할때의 속성 */
+	100% { transform: translate(0, 0);} /* 애니메이션이 종료될때의 속성 */
+}
+.sec04 {
+    padding: 200px 0;
+    margin-bottom: 150px;
+    font-size: 60px;
+    line-height: 1.5;
+    text-align: center;
+    color: #1d1d1d;
+}
+.sec05 {
+    margin: 200px 0 250px 0;
+    position: relative;
+}
+.sec05 .photo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: calc(50% + 278px);
+    height: 700px;
+}
+.sec05 .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sec05 .inner {
+    position: relative;
+}
+.sec05 .tit {
+    position: absolute;
+    left: 0;
+    top: 230px;
+    color: #fff;
+    font-size: 100px;
+    font-weight: 700;   
+    transition: 0.2s;
+}
+.sec06 {
+    height: 1000px;
+}
+body {
+    transition: 1.5s;
+}
+body.black {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+body.black .sec03, body.black .sec04 {
+    color: #fff;
+}
+@media screen and (max-width:1024px) {
+    .sec01 .tit span {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:768px) {
+    .sec01 .tit span {
+        font-size: 36px;
+    }
+    .sec02 .tit span {
+        display: block;
+        font-size: 16px;
+    }
+    .sec02 .tit h2 {
+        font-size: 60px;
+    }
+}

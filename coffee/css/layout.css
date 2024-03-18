@@ -491,18 +491,41 @@
 aside {
     position: relative;
 }
-aside button{
+aside button {
     z-index: 100;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 62px;
-    height: 62px;
-    background-color: #E3A1AD;
-    border-radius: 100%;
-    color: #474747;
+    right: 40px;
+    bottom: -40px;
+    color: #fff;
     font-size: 0.833rem;
     font-weight: 700;
+}
+aside button::after {
+    position: absolute;
+    right: -18px;
+    bottom: 20px;
+    width: 62px;
+    height: 62px;
+    content: "";
+    background-color: #E3A1AD;
+    border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16.368' height='18.363' viewBox='0 0 16.368 18.363'%3E%3Cpath id='arrow_upward_alt_FILL0_wght100_GRAD0_opsz24' d='M288.617-720.271l-6.588,6.588a.618.618,0,0,1-.391.185.536.536,0,0,1-.432-.185.593.593,0,0,1-.206-.412.593.593,0,0,1,.206-.412l7.123-7.123a1.185,1.185,0,0,1,.865-.371,1.185,1.185,0,0,1,.865.371l7.123,7.123a.618.618,0,0,1,.185.391.536.536,0,0,1-.185.432.593.593,0,0,1-.412.206.593.593,0,0,1-.412-.206l-6.588-6.588v16.057a.559.559,0,0,1-.165.412.559.559,0,0,1-.412.165.559.559,0,0,1-.412-.165.559.559,0,0,1-.165-.412Z' transform='translate(-281 722)' fill='%23fff'/%3E%3C/svg%3E ");
+}
+aside button::before {
+    position: absolute;
+    right: -25px;
+    bottom: 63px;
+    z-index: 2;
+    width: 75px;
+    height: 45px;
+    content: "";
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='71.811' height='33.976' viewBox='0 0 71.811 33.976'%3E%3Cg id='그룹_93' data-name='그룹 93' transform='translate(0 -0.001)'%3E%3Cpath id='패스_5' data-name='패스 5' d='M1.1,48.5a1.1,1.1,0,1,0,1.1,1.1,1.1,1.1,0,0,0-1.1-1.1' transform='translate(0 -36.666)' fill='%23e80a4d'/%3E%3Cpath id='패스_6' data-name='패스 6' d='M55.911,21.009a1.1,1.1,0,1,0-1.1-1.1,1.1,1.1,0,0,0,1.1,1.1' transform='translate(-40.909 -14.222)' fill='%23e80a4d'/%3E%3Cpath id='패스_8' data-name='패스 8' d='M275.552,48.5a1.1,1.1,0,1,0,1.1,1.1,1.1,1.1,0,0,0-1.1-1.1' transform='translate(-204.84 -36.666)' fill='%23e80a4d'/%3E%3Cpath id='패스_9' data-name='패스 9' d='M220.74,21.009a1.1,1.1,0,1,0-1.1-1.1,1.1,1.1,0,0,0,1.1,1.1' transform='translate(-163.931 -14.222)' fill='%23e80a4d'/%3E%3Cpath id='패스_10' data-name='패스 10' d='M138.325,2.2a1.1,1.1,0,1,0-1.1-1.1,1.1,1.1,0,0,0,1.1,1.1' transform='translate(-102.42 0.001)' fill='%23e80a4d'/%3E%3Crect id='사각형_24' data-name='사각형 24' width='71.811' height='33.975' transform='translate(0 0.001)' fill='none'/%3E%3Cpath id='패스_7' data-name='패스 7' d='M69.351,32.284c-3.533-1.374-1.7-6.97-.938-8.339,0,0-5.113,5.741-10.3,5.741s-7.591-6.7-8.343-9.675c-.752,2.972-3.152,9.675-8.343,9.675s-10.3-5.741-10.3-5.741c.759,1.368,2.6,6.965-.938,8.339-3.483,1.354-11.833-1.668-11.833-1.668,8.752,7.1,9.064,13.94,9.064,13.94a183.1,183.1,0,0,1,22.353-1.54,183.1,183.1,0,0,1,22.353,1.54s.313-6.842,9.064-13.94c0,0-8.35,3.022-11.833,1.668' transform='translate(-13.873 -15.129)' fill='%23e80a4d'/%3E%3C/g%3E%3C/svg%3E ");
 }
 .footer {
     padding: 128px 0 116px 0;
@@ -727,6 +750,16 @@ aside button{
     }
     .footer .f_link ul li.link03 a span::before {
         top: 40px;
+    }
+    aside button::after {
+        width: 45px;
+        height: 45px;
+    }
+    aside button::before {
+        width: 55px;
+        height: 25px;
+        right: -23px;
+        bottom: 55px;
     }
 }
 @media screen and (max-width:425px) {

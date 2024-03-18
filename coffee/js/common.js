@@ -106,4 +106,11 @@ $(document).ready(function(){
                 $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
             }
         })
+
+        //TOP 버튼 눌려서 상단으로 이동
+        $('aside button').on('click', function(){
+            $('html, body').animate({
+                scrollTop : 0
+            }, 500)
+        })
 })//$(document).ready

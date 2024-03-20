@@ -1,0 +1,135 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    padding: 0 50px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    padding: 25px 0 22px 0;
+}
+.header .logo a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 222px;
+    height: 53.37px;
+    background: url(../images/common/logo_white.svg)center center /cover ;
+}
+.header .inner {
+    display: flex;
+}
+.header .gnb {
+    margin-right: 342px;
+}
+.header .gnb .depth01 {
+    display: flex;
+}
+.header .gnb .depth01 > li > a {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 0 38px;
+} 
+.header .gnb .gnb_open, .header .gnb .gnb_close {
+    display: none;
+}
+.header .gnb .depth02 {
+    display: none;
+}
+.header .tnb ul {
+    margin-top: 5px;
+    display: flex;
+}
+.header .tnb ul li.lang {
+    margin-right: 75px;
+}
+.header .tnb ul li.search {
+    margin-right: 30px;
+}
+.header .tnb ul li a {
+    position: absolute;
+}
+.header .tnb ul li.lang a {
+    padding: 0 15px 0 24px;
+    font-size: 18px;
+}
+.header .tnb ul li.lang a::before {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath id='global-line' d='M10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18ZM8.168,16.134A14.32,14.32,0,0,1,6.822,10.8H3.65A6.407,6.407,0,0,0,8.168,16.134ZM8.425,10.8A12.724,12.724,0,0,0,10,16.2a12.724,12.724,0,0,0,1.575-5.4Zm7.926,0H13.178a14.32,14.32,0,0,1-1.346,5.334A6.407,6.407,0,0,0,16.35,10.8ZM3.65,9.2H6.822A14.32,14.32,0,0,1,8.168,3.866,6.407,6.407,0,0,0,3.65,9.2Zm4.775,0h3.151A12.724,12.724,0,0,0,10,3.8,12.724,12.724,0,0,0,8.425,9.2Zm3.407-5.334A14.32,14.32,0,0,1,13.178,9.2H16.35A6.407,6.407,0,0,0,11.832,3.866Z' transform='translate(-2 -2)' fill='%23fff'/%3E%3C/svg%3E ");
+}
+.header .tnb ul li.search a {
+    font-size: 0;
+    line-height: 0;
+    width: 20.31px;
+    height: 20.31px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20.314' height='20.314' viewBox='0 0 20.314 20.314'%3E%3Cpath id='search-2-line' d='M11,2a9,9,0,1,1-9,9A9,9,0,0,1,11,2Zm0,16a7,7,0,1,0-7-7A7,7,0,0,0,11,18Zm8.485.071L22.314,20.9,20.9,22.314l-2.828-2.828Z' transform='translate(-2 -2)' fill='%23fff'/%3E%3C/svg%3E ");
+}
+
+
+/*header에 black이라는 클래스가 들어가면*/
+.header[data-color='black'] {
+    color: #2d2d2d;
+}
+.header[data-color='black'] .logo a  {
+    background: url(../images/common/logo_color.svg) center center /cover ;
+}
+.header[data-color='black'] .tnb ul li.lang a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath id='global-line' d='M10,18a8,8,0,1,1,8-8A8,8,0,0,1,10,18ZM8.168,16.134A14.32,14.32,0,0,1,6.822,10.8H3.65A6.407,6.407,0,0,0,8.168,16.134ZM8.425,10.8A12.724,12.724,0,0,0,10,16.2a12.724,12.724,0,0,0,1.575-5.4Zm7.926,0H13.178a14.32,14.32,0,0,1-1.346,5.334A6.407,6.407,0,0,0,16.35,10.8ZM3.65,9.2H6.822A14.32,14.32,0,0,1,8.168,3.866,6.407,6.407,0,0,0,3.65,9.2Zm4.775,0h3.151A12.724,12.724,0,0,0,10,3.8,12.724,12.724,0,0,0,8.425,9.2Zm3.407-5.334A14.32,14.32,0,0,1,13.178,9.2H16.35A6.407,6.407,0,0,0,11.832,3.866Z' transform='translate(-2 -2)' fill='%232d2d2d'/%3E%3C/svg%3E ");
+}
+.header[data-color='black'] .tnb ul li.search a {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20.314' height='20.314' viewBox='0 0 20.314 20.314'%3E%3Cpath id='search-2-line' d='M11,2a9,9,0,1,1-9,9A9,9,0,0,1,11,2Zm0,16a7,7,0,1,0-7-7A7,7,0,0,0,11,18Zm8.485.071L22.314,20.9,20.9,22.314l-2.828-2.828Z' transform='translate(-2 -2)' fill='%232d2d2d'/%3E%3C/svg%3E ");
+}
+
+@media screen and (max-width:1440px) {
+    .header .gnb {
+        margin-right: 100px;
+    }
+}
+@media screen and (max-width:1024px) {
+    .header {
+        padding: 0 20px;
+    }
+    .header .gnb {
+        margin-right: 40px;
+    }
+    .header .gnb .depth01 > li > a {
+        font-size: 20px;
+        padding: 0 20px;
+    }
+    .header .tnb ul {
+        margin-top: 2px;
+    } 
+}
+@media screen and (max-width:768px) {
+    .header {
+        padding: 0 20px;
+    }
+    .header .inner {
+        display: block;
+    }
+    .header .gnb {
+        margin-right: 0;
+    }
+    .header .tnb {
+        display: none;
+    }
+}
+@media screen and (max-width:500px) {
+
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!--풀페이지 라이브러리-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.11/fullpage.css">
+    <!--swiper 라이브러리-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/main.css"><!--main.css가 우선시 되려면 나중에 선언되어야함-->
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="skipnav">
+        <!--href = #container 라고 입력하면 id="container"로 이동
+            href="#gnb"라고 입력하면 id= "gnb"로 이동-->
+        <a href="#container">본문 바로가기</a>
+        <a href="#gnb">대메뉴 바로가기</a>
+    </div>
+    <div id="wrap">
+        <header class="header">
+            <h1 class="logo"><a href="index.html">생명의 숲</a></h1>
+            <div class="inner">
+                <nav class="gnb">
+                    <div class="gnb_wrap">
+                        <button class="gnb_open">메뉴 열기</button>
+                        <ul class="depth01">
+                            <li>
+                                <a href="#n">소개</a>
+                                <ul class="depth02">
+                                    <li><a href="#n">생명의숲은!</a></li>
+                                    <li><a href="#n">함께하는이들</a></li>
+                                    <li><a href="#n">재정공개</a></li>
+                                    <li><a href="#n">공지사항</a></li>
+                                    <li><a href="#n">찾아오시는길</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#n">활동</a>
+                                <ul class="depth02">
+                                    <li><a href="#n"></a></li>
+                                    <li><a href="#n"></a></li>
+                                    <li><a href="#n"></a></li>
+                                    <li><a href="#n"></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#n">참여와후원</a>
+                                <ul class="depth02">
+                                    <li><a href="#n">활동소개</a></li>
+                                    <li><a href="#n">활동이야기</a></li>
+                                    <li><a href="#n">그린짐 이야기</a></li>
+                                    <li><a href="#n">아름다운 숲</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#n">자료실</a>
+                                <ul class="depth02">
+                                    <li><a href="#n">후원이야기</a></li>
+                                    <li><a href="#n">후원안내</a></li>
+                                    <li><a href="#n">기업후원</a></li>
+                                    <li><a href="#n">참여프로그램</a></li>
+                                    <li><a href="#n">자원활동안내</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#n">나의후원</a>
+                            </li>
+                        </ul>
+                        <button class="gnb_close">메뉴 닫기</button>
+                    </div>
+                </nav>
+                <div class="tnb">
+                    <ul>
+                        <li class="lang"><a href="#n">ENG</a></li>
+                        <li class="search"><a href="#n">검색</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div id="fullpage"> <!--------------- fullpage 전체를 감싸는 요소-->
+            <section class="section visual"> <!--- visual-->
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <div class="tit">
+                                <strong>더 나은 더 건강한 세상을 만들고자 하는 마음</strong>
+                                <h2>잘 심고, 잘 가꾸고</h2>
+                            </div>
+                            <div class="photo"><img src="images/main/visual01.png" alt=""></div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="tit">
+                                <strong>숲과 함께 하는 그마음 오래도록 간직하겠습니다.</strong>
+                                <h2>숲을 통한 마음</h2>
+                            </div>
+                            <div class="photo"><img src="images/main/visual02.png" alt=""></div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="tit">
+                                <strong>모두가 누리는 5분 거리의 숲을 만들기를 꿈꿉니다.</strong>
+                                <h2>Forest For Life</h2>
+                            </div>
+                            <div class="photo"><img src="images/main/visual03.png" alt=""></div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    </ul>
+                </div>
+            </section>
+            <section class="section tree"> <!--- tree-->
+                
+            </section>
+            <section class="section biz"> <!--- biz-->
+                
+            </section>
+            <section class="section news"> <!--- news-->
+                
+            </section>
+            <footer class="section fp-auto-height"> <!--------------------------- footer 처럼 높이를 낮게 설정할 요소는 클래스명 fp-auto-height 추가-->
+                footer  <br>
+                footer
+                footer
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

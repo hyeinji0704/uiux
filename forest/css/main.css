@@ -1,0 +1,101 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+/*
+    파일명 :
+    작성자 :
+*/
+.section {
+    height: 1000px;
+}
+.visual .swiper { 
+    height:1000px 
+} /* 팝업의 높이가 됨 */
+.visual .swiper-slide img { 
+    display:block; width:100%; height:100%; object-fit:contain; 
+} /* 팝업 안에 이미지를 넣었다면 이미지를 꽉차게 나타나게 하기 위해서 해당 스타일을 넣어줌 */
+.tree {
+    background-color: #fff;
+}
+.biz {
+    background-color: #E1D8CF;
+}
+.news {
+    background-color: #829E53;
+}
+footer {
+    height: 576px;
+    background-color: #FFFEE4;
+}
+/******************************
+    page에서 자동생성한 pagenation
+    #fp-nav.fp-left 동일한 선택자 두개가 존재할 때 
+    꼭 내꺼를 먼저 적용되게 하기 위해서 옆에 bodyfmf cnrkgka
+    body라는 상위요소부터 선택자를 입력한 스타일이 먼저 적용됨
+    !important 이 태그는 너무 쎔   
+*******************************/
+body #fp-nav.fp-left {
+    left: 58px;
+}
+body #fp-nav ul::before {
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    width: 2px;
+    content: "";
+    height: 100%;
+    background-color: rgba(89, 75, 65, 0.4);
+}
+body #fp-nav ul, .fp-slidesNav ul {
+    margin: 0;
+    padding: 13px;
+}
+body #fp-nav ul li {
+    margin: 20px 0;
+}
+body #fp-nav ul li .fp-tooltip {
+    font-family: inherit;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    letter-spacing: -0.05em;
+    opacity: 1;
+    width: auto;
+    font-weight: 700;
+}
+body #fp-nav ul li a span, .fp-slidesNav ul li a span {
+    display: none;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    height: 12px;
+    width: 12px;
+    border: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg id='그룹_11' data-name='그룹 11' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11.695' height='10.459' viewBox='0 0 11.695 10.459'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_87' data-name='사각형 87' width='11.695' height='10.459' fill='none'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='그룹_10' data-name='그룹 10' clip-path='url(%23clip-path)'%3E%3Cpath id='패스_97' data-name='패스 97' d='M.095,9.841s-.888-4.9,2.779-6.676S11.248.5,11.634,0c0,0,.54,4.091-1.582,6.638A9.569,9.569,0,0,1,1.1,10.42S6.887,6.908,7.2,4.978Z' transform='translate(0)' fill='%2335763c'/%3E%3C/g%3E%3C/svg%3E%0A");
+    left: 50%;
+    top: 50%;
+    margin: 0;
+}
+body #fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active + .fp-tooltip {
+    color: #35763C;
+}
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
+    display: block;
+    margin: -3px 0 0 -13px;
+    border-radius: 0;
+}
+body #fp-nav ul li:last-child {
+    display: none;
+}
+
+/*검은색일 때 
+body #fp-nav[data-color='black'] ul::before {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+body #fp-nav ul[data-color='black'] li:hover .fp-tooltip, #fp-nav.fp-show-active a.active + .fp-tooltip {
+    color: #2d2d2d;
+}*/

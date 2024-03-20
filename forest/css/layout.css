@@ -9,10 +9,10 @@
     color: #fff;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 .header .logo {
     padding: 25px 0 22px 0;
+    margin-right: 50px;
 }
 .header .logo a {
     display: block;
@@ -20,32 +20,74 @@
     line-height: 0;
     width: 222px;
     height: 53.37px;
-    background: url(../images/common/logo_white.svg)center center /cover ;
+    background: url(../images/common/logo_white.svg) center center /cover ;
 }
 .header .inner {
     display: flex;
 }
 .header .gnb {
-    margin-right: 342px;
+    margin-right: 100px;
+    text-align: center;
 }
 .header .gnb .depth01 {
     display: flex;
 }
-.header .gnb .depth01 > li > a {
+.header .gnb .depth01 > li {
+    padding: 0 0 0 38px;
+}
+.header .gnb .depth01 > li > a  {
     display: block;
-    font-size: 24px;
+    line-height: 100px;
+    font-size: 22px;
     font-weight: 700;
-    padding: 0 38px;
-} 
+}
+.header .gnb .depth01 > li > a > span {
+    padding: 8px 20px;
+}
 .header .gnb .gnb_open, .header .gnb .gnb_close {
     display: none;
 }
 .header .gnb .depth02 {
     display: none;
+    font-size: 18px;
 }
+@media screen and (min-width:769px) {
+.header.menu_over .gnb .depth02 {
+    position: relative;
+    padding: 20px 20px;
+}
+.header.menu_over .gnb .depth01 > li.on > .depth02::after, .header.menu_over .gnb .depth01 > li:hover > .depth02::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: #44564A;
+    border-radius: 18px;
+}
+.header.menu_over .gnb .depth01 > li.on > a > span, .header.menu_over .gnb .depth01 > li > a:hover > span {
+    color: #fff;
+    background-color: #44564A;
+    border-radius: 30px;
+}
+.header.menu_over .depth01 > li.on > .depth02, .header.menu_over .depth01 > li:hover > .depth02 {
+    display: block;
+}
+.header.menu_over .gnb .depth02 > li > a {
+    display: block;
+    line-height: 50px;
+}
+.header.menu_over .gnb .depth02 > li > a:hover {
+    font-weight: 700;
+} 
+}
+
 .header .tnb ul {
-    margin-top: 5px;
+    margin: 35px;
     display: flex;
+    align-items: center;
 }
 .header .tnb ul li.lang {
     margin-right: 75px;
@@ -81,10 +123,12 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20.314' height='20.314' viewBox='0 0 20.314 20.314'%3E%3Cpath id='search-2-line' d='M11,2a9,9,0,1,1-9,9A9,9,0,0,1,11,2Zm0,16a7,7,0,1,0-7-7A7,7,0,0,0,11,18Zm8.485.071L22.314,20.9,20.9,22.314l-2.828-2.828Z' transform='translate(-2 -2)' fill='%23fff'/%3E%3C/svg%3E ");
 }
 
-
 /*header에 black이라는 클래스가 들어가면*/
 .header[data-color='black'] {
     color: #2d2d2d;
+}
+.header[data-color='black'].menu_over .gnb .depth02 {
+    color: #fff;
 }
 .header[data-color='black'] .logo a  {
     background: url(../images/common/logo_color.svg) center center /cover ;
@@ -103,33 +147,119 @@
 }
 @media screen and (max-width:1024px) {
     .header {
-        padding: 0 20px;
+        padding: 0 0 0 20px;
+    }
+    .header .logo {
+        margin-right: 25px;
+        padding: 32px 0 22px 0;
     }
     .header .gnb {
-        margin-right: 40px;
+        margin-right: 0px;
+    }
+    .header .gnb .depth01 > li {
+        padding: 0;
     }
     .header .gnb .depth01 > li > a {
         font-size: 20px;
-        padding: 0 20px;
     }
-    .header .tnb ul {
-        margin-top: 2px;
-    } 
+    .header.menu_over .gnb .depth02 {
+        padding: 10px 12px;
+    }
 }
 @media screen and (max-width:768px) {
-    .header {
-        padding: 0 20px;
+    .header .logo a {
+        width: 160px;
+        height: 38.47px;
+        background: url(../images/common/logo_white.svg) center center / cover;
     }
-    .header .inner {
+    .header .gnb .depth01 > li > a {
+        font-size: 18px;
+    }
+    .header .gnb .gnb_open {
+        display: block;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='41' height='36' viewBox='0 0 41 36'%3E%3Cg id='그룹_411' data-name='그룹 411' transform='translate(-313.083 -17)'%3E%3Crect id='사각형_247' data-name='사각형 247' width='41' height='6' rx='3' transform='translate(313.083 17)' fill='%23fff'/%3E%3Crect id='사각형_248' data-name='사각형 248' width='41' height='6' rx='3' transform='translate(313.083 32)' fill='%23fff'/%3E%3Crect id='사각형_249' data-name='사각형 249' width='41' height='6' rx='3' transform='translate(313.083 47)' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+    .header .gnb .gnb_open, .header .gnb .gnb_close {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        width: 80px;
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        font-size: 0;
+        line-height: 0;
+    }
+    .header .gnb .gnb_wrap {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        color: #2d2d2d;
+    }
+    .header.menu_open .gnb .gnb_open {
+        display: none;
+    }
+    .header.menu_open .gnb .gnb_close {
+        display: block;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 38 38'%3E%3Cg id='그룹_412' data-name='그룹 412' transform='translate(-6879.54 -3292.04)'%3E%3Crect id='사각형_248' data-name='사각형 248' width='46.806' height='6.934' rx='3' transform='translate(6884.443 3292.04) rotate(45)' fill='%232d2d2d'/%3E%3Crect id='사각형_305' data-name='사각형 305' width='46.806' height='6.934' rx='3' transform='translate(6917.54 3296.943) rotate(135)' fill='%232d2d2d'/%3E%3C/g%3E%3C/svg%3E ");
+    }
+    .header.menu_open .gnb .gnb_wrap {
         display: block;
     }
-    .header .gnb {
-        margin-right: 0;
+    .header.menu_open .gnb .depth01 {
+        display: block;
+        margin-top: 100px;
+        height: calc(100vh - 100px);
+        overflow-y: auto;
+    }
+    .header .gnb .depth01 > li > a {
+        font-size: 28px;
+        line-height: 70px;
+        position: relative;
+        margin: 0 100px;
+    }
+    .header .gnb .depth01 > li.on > a::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21.668' height='10.249' viewBox='0 0 21.668 10.249'%3E%3Cpath id='arrow-down-s-fill' d='M16.834,10,6,20.249H27.668Z' transform='translate(-6 -10)' fill='%232d2d2d'/%3E%3C/svg%3E ");
+    }
+    .header .gnb .depth01 > li > a::after {
+        position: absolute;
+        right: 100px;
+        top: 30px;
+        content: "";
+        width: 22px;
+        height: 11px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21.668' height='10.249' viewBox='0 0 21.668 10.249'%3E%3Cpath id='arrow-down-s-fill' d='M16.834,20.248,6,10H27.668Z' transform='translate(-6 -10)' fill='%232d2d2d'/%3E%3C/svg%3E ");
+    }
+    .header .gnb .depth01 > li:last-child > a::after {
+        display: none;
+    }
+    .header .gnb .depth01 > li.on > .depth02 {
+        display: block;
+    }
+    .header .gnb .depth02 {
+        background-color: #44564A;
+        border-radius: 10px;
+        padding: 20px 0;
+    } 
+    .header .gnb .depth02 > li > a {
+        line-height: 60px;
+        color: #fff;
+        font-size: 21px;
     }
     .header .tnb {
         display: none;
     }
 }
 @media screen and (max-width:500px) {
-
+    .header .logo a {
+        width: 120px;
+        height: 28.85px;
+        background: url(../images/common/logo_white.svg) center center / cover;
+    }
 }

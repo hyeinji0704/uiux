@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/main.css"><!--main.css가 우선시 되려면 나중에 선언되어야함-->
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/couting.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -77,7 +78,14 @@
                 </nav>
                 <div class="tnb">
                     <ul>
-                        <li class="lang"><a href="#n">ENG</a></li>
+                        <li class="lang">
+                            <button class="open" title="열기">ENG</button>
+                            <ul class="lang_wrap">
+                                <li><a href="#n">KO</a></li>
+                                <li><a href="#n">ENG</a></li>
+                            </ul>
+                            <button class="close" title="닫기">ENG</button>
+                        </li>
                         <li class="search"><a href="#n">검색</a></li>
                     </ul>
                 </div>
@@ -110,12 +118,52 @@
                         </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
                     </ul>
                 </div>
+                <div class="paging"></div>
             </section>
             <section class="section tree"> <!--- tree-->
-                
+                <div class="tree_inner">
+                    <div class="wrapper">
+                        <div class="tit">
+                            <h2>
+                                생명의 숲은<br class="pc_br"><em><strong>지구를 위해 우리가 할 수 있는 일</strong>을 통해</em><br><strong>건강한 숲, 지속가능한 사회</strong>를 만들어 갑니다. 
+                            </h2>
+                        </div>
+                        <div class="num">
+                            <span>2023 심은 나무</span>
+                            <strong  class="counter" data-start="0" data-end="89272">89,272</strong>
+                            <span>그루</span>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="section biz"> <!--- biz-->
-                
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="tit">
+                            <strong>A day for the forest</strong>
+                            <h2>녹색도시공동체를 위한 도시숲운동</h2>
+                            <p>숲을 통해 건강한 도시생태계를 만들고자 합니다. 도시의 생활환경을 개선하기 위해 시민과 함께 숲을 가꿉니다. 지속가능한 도시숲의 관리를 위해 숲을 가꾸는 지역의 자원활동가를 양성화고 활동을 지원합니다. 더 많은 도시민이 숲의 소중함을 느낄 수 있도록 다양한 숲문화교육프로그램을 기획, 운영하고 있습니다.
+                            </p>
+                        </div>
+                        <div class="list">
+                            <ul class="list_wrap01">
+                                <li class="icon01"><a href="#n"><span>도시숲</span></a></li>
+                                <li class="icon02"><a href="#n"><span>숲환경교육</span></a></li>
+                                <li class="icon03"><a href="#n"><span>아름다운숲<br>전국대회</span></a></li>
+                            </ul>
+                            <ul class="list_wrap02">
+                                <li class="icon04"><a href="#n"><span>학교숲</span></a></li>
+                                <li class="icon05"><a href="#n"><span>숲길</span></a></li>
+                                <li class="icon06"><a href="#n"><span>나무심</span></a></li>
+                            </ul>
+                            <ul class="list_wrap03">
+                                <li class="icon07"><a href="#n"><span>사회복지</span></a></li>
+                                <li class="icon08"><a href="#n"><span>공존</span></a></li>
+                                <li class="icon09"><a href="#n"><span>생명의숲<br>연구소</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="section news"> <!--- news-->
                 
@@ -126,6 +174,35 @@
                 footer
             </footer>
         </div>
+        <aside class="quick">
+            <ul>
+                <li class="q_youtube">
+                    <a href="#n" >
+                        <span>유튜브</span>
+                    </a>
+                </li>
+                <li class="q_insta">
+                    <a href="#n" >
+                        <span>인스타그램</span>
+                    </a>
+                </li>
+                <li class="q_donate">
+                    <a href="#n" >
+                        <span>후원</span>
+                    </a>
+                </li>
+                <li class="q_news">
+                    <a href="#n" >
+                        <span>뉴스</span>
+                    </a>
+                </li>
+                <li class="q_top">
+                    <a href="#n" >
+                        <span>TOP</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
     </div>
 </body>
 </html>

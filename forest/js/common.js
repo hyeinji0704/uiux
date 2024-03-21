@@ -59,4 +59,11 @@ $(document).ready(function(){
             $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
         }
     })
+
+    $('.header .tnb .lang .open').on('click',function(){
+        $('.header .tnb .lang').addClass('on')
+    })
+    $('.header .tnb .lang .close').on('click',function(){
+        $('.header .tnb .lang').removeClass('on')
+    })
 })//$(document).ready

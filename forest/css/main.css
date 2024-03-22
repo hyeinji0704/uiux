@@ -782,11 +782,12 @@ aside.quick ul li.q_top a {
         font-size: 16px;
     }
 }
-.news .swiper-slide {
-    height: auto;
-}
+
 .news {
     background: linear-gradient(22.5deg, #EAFDD9, #EFFBF9);
+}
+.news .swiper-slide {
+    height: auto;
 }
 .news .wrapper {
     position: relative;
@@ -942,9 +943,13 @@ aside.quick ul li.q_top a {
     .news {
         height: auto !important;
         min-height: 800px !important;
+        background: #fff;
     }
     .news .wrapper {
-        margin: 0 0 0 20px;
+        margin: 30px 0 0 20px;
+    }
+    .news .tit {
+        margin-bottom: 35px;
     }
     .news .list ul li {
         width: 264px;/*모바일에서는 넓이 고정*/

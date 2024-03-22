@@ -528,6 +528,7 @@ footer .f_info strong {
     footer .footer_top .wrapper {
         flex-direction: column;
         align-items: center;
+        padding: 0;
     }
     footer .footer_top::before {
         position: absolute;
@@ -539,7 +540,7 @@ footer .f_info strong {
         background-color: #F5F5F5;
     }
     footer .footer_top .mail, footer .footer_top .donation {
-        margin: 20px 0 20px 0;
+        margin: 30px 0 20px 0;
     }
     footer .f_info span {
         display: block;

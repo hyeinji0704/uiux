@@ -7,19 +7,19 @@
     작성자 :
 */
 @media screen and (max-width:1640px) {
-    section .wrapper {
+    section .wrapper, footer .wrapper {
         width: 1100px;
         margin: 0 auto;
     }
 }
 @media screen and (max-width:1440px) {
-    section .wrapper {
+    section .wrapper, footer .wrapper {
         width: auto;
         margin: 0 210px;
     }
 }
 @media screen and (max-width:1320px) {
-    section .wrapper {
+    section .wrapper, footer .wrapper {
         margin: 0 200px;
     }
 }
@@ -27,14 +27,17 @@
     section .wrapper {
         margin: 0 20px 0 180px;
     }
+    footer .wrapper {
+        margin: 0 40px;
+    }
 }
 @media screen and (max-width:768px) {
-    section .wrapper {
+    section .wrapper, footer .wrapper {
         margin: 0 40px;
     }
 }
 @media screen and (max-width:500px) {
-    section .wrapper {
+    section .wrapper, footer .wrapper {
         margin: 0 20px;
     }
 }
@@ -543,9 +546,13 @@ aside.quick ul li.q_top a {
 .biz .tit h2 {
     font-weight: 700;
 }
+.biz .tit strong {
+    font-size: 20px;
+}
 .biz .tit p {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 17px;
+    line-height: 1.6;
 }
 .biz .list {
     width: 580px;
@@ -569,7 +576,7 @@ aside.quick ul li.q_top a {
     justify-content: center;
     align-items: flex-end;
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 8%;
 }
 .biz ul li a span {
     padding: 100px 20px 0 20px;
@@ -629,6 +636,14 @@ aside.quick ul li.q_top a {
 .biz .list_wrap02 {
     transform: translate(0, 50px);
 }
+@media screen and (max-width:1440px) {
+    .biz .tit {
+        width: 30%;
+    }
+    .biz ul li a {
+        height: 170px;
+    }
+}
 @media screen and (max-width:1320px) {
     .biz ul {
         width: calc(33.33% - 6px);
@@ -670,7 +685,7 @@ aside.quick ul li.q_top a {
     }
     .biz .tit {
         margin-top: 40px;
-        font-size: 40px;
+        font-size: 30px;
         width: auto;
     }
     .biz .tit strong {
@@ -765,10 +780,187 @@ aside.quick ul li.q_top a {
         font-size: 16px;
     }
 }
-.news {
-    background-color: #829E53;
+.news .swiper-slide {
+    height: auto;
 }
-footer {
-    height: 576px;
-    background-color: #FFFEE4;
+.news {
+    background: linear-gradient(22.5deg, #EAFDD9, #EFFBF9);
+}
+.news .wrapper {
+    position: relative;
+}
+.news .tit {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 43px;
+    line-height: 1;
+}
+.news .tit strong {
+    font-size: 20px;
+    font-weight: 400;
+}
+.news .list ul li a:hover {
+    backdrop-filter: blur(60px) brightness(-120%) opacity(30%);
+    border-radius: 10px;
+    color: #fff;
+    height: 100%;
+    padding: 40px 5% 0 5%;
+    /*transform: translate(-20px, -20px);*/
+}   
+.news .list ul li a:hover .cate {
+    background-color: transparent;
+    padding: 16px 16px 16px 0;
+}
+.news .list ul li a:hover .photo {
+    display: none;
+}
+.news .list ul li a:hover .memo, .news .list ul li a:hover .more {
+    display: block;
+}
+.news .list ul li a:hover .date {
+    color: #fff;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a span, .news .list ul li a strong {
+    display: block;
+}
+.news .list ul li a .cate {
+    font-size: 16px;
+    padding: 16px;
+    background-color: #35763C;
+    border-radius: 50px;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 18px
+}
+.news .list ul li a .photo {
+    height: 299px;
+    
+}
+.news .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 40px;
+}
+.news .list ul li a .subject {
+    font-size: 21px;
+    font-weight: 700;
+    /*두줄 제한*/
+    line-height: 1.2;
+    height: 2.4em;
+    overflow: hidden;
+    /*1줄 제한
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
+}
+.news .list ul li a .date {
+    font-size: 14px;
+    color: #666;
+    margin: 20px 0;
+}
+.news .list ul li a .memo {
+    display: none;
+    font-size: 18px;
+    line-height: 1.4;
+    height: 7em; /*5줄 제한*/
+    overflow: hidden;
+}
+.news .list ul li a .more {
+    display: none;
+    width: 145px;
+    font-size: 18px;
+    margin: 40px auto 0 auto;
+    padding: 14px 22px;
+    border-radius: 38px;
+    border: 1px solid #fff;
+}
+.news .list_more {
+    position: absolute;
+    right: 0;
+    top: 80px;
+    font-size: 20px;
+}
+.news .list_more a {
+    padding-right: 40px;
+    position: relative;
+    
+}
+.news .list_more a::before {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    content: "";
+    width: 32px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31.322' height='14.667' viewBox='0 0 31.322 14.667'%3E%3Cpath id='trending_flat_FILL0_wght200_GRAD0_opsz24' d='M188.32-616.295H160.939a.875.875,0,0,1-.67-.291,1.027,1.027,0,0,1-.269-.725,1.027,1.027,0,0,1,.269-.725.875.875,0,0,1,.67-.291H188.32l-4.208-4.562a1.047,1.047,0,0,1-.287-.7,1.016,1.016,0,0,1,.3-.738.943.943,0,0,1,.67-.33.856.856,0,0,1,.659.33l5.414,5.867a1.638,1.638,0,0,1,.455,1.148,1.638,1.638,0,0,1-.455,1.148l-5.425,5.867a.909.909,0,0,1-.641.3.87.87,0,0,1-.688-.3,1.051,1.051,0,0,1-.311-.725,1.051,1.051,0,0,1,.311-.725Z' transform='translate(-160 624.656)'/%3E%3C/svg%3E%0A");
+    transition: 0.3s;
+}
+.news .list_more a:hover::before {
+    transform: translate(8px, 0)
+}
+@media screen and (max-width:1024px) {
+    .news .tit {
+        font-size: 30px;
+    }
+    .news .list_more {
+        font-size: 17px;
+        top: 50px;
+    }
+    .news .list_more a {
+        padding-right: 36px;
+    }
+    .news .list_more a::before {
+        transform: scale(0.8);
+        top: 5px;
+    }
+    .news .list ul li a .cate {
+        font-size: 14px;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    .news .list ul li a .subject {
+        font-size: 18px;
+    }
+    .news .list ul li a .date {
+        margin: 15px 0;
+    }
+}
+@media screen and (max-width:768px) {
+    .news {
+        height: auto !important;
+        min-height: 800px !important;
+    }
+    .news .wrapper {
+        margin: 0 0 0 20px;
+    }
+    .news .list ul li {
+        width: 264px;/*모바일에서는 넓이 고정*/
+    }
+    .news .list_more {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 65px 0 0 0;
+        text-align: center;
+        font-size: 18px;
+    }
+    .news .list_more a {
+        display: inline-block;
+    }
+}
+@media screen and (max-width:500px) {
+    .news .list ul li a .subject {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: auto;
+    }
 }

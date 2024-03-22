@@ -21,7 +21,7 @@ $(document).ready(function(){
         device_chk()
     })
 
-    $('.header .gnb .depth01 > li').on('mouseenter, focusin', function(){
+    $('.header .gnb .depth01 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             $('.header').addClass('menu_over')
             $('.header .gnb .depth01 > li').removeClass('on')

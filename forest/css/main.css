@@ -801,26 +801,31 @@ aside.quick ul li.q_top a {
     font-size: 20px;
     font-weight: 400;
 }
-.news .list ul li a:hover {
-    backdrop-filter: blur(60px) brightness(-120%) opacity(30%);
-    border-radius: 10px;
-    color: #fff;
-    height: 100%;
-    padding: 40px 5% 0 5%;
-    /*transform: translate(-20px, -20px);*/
-}   
-.news .list ul li a:hover .cate {
-    background-color: transparent;
-    padding: 16px 16px 16px 0;
-}
-.news .list ul li a:hover .photo {
-    display: none;
-}
-.news .list ul li a:hover .memo, .news .list ul li a:hover .more {
-    display: block;
-}
-.news .list ul li a:hover .date {
-    color: #fff;
+@media screen and (min-width:1025px) {
+    .news .list ul li a:hover {
+        backdrop-filter: blur(60px) brightness(-120%) opacity(30%);
+        border-radius: 10px;
+        color: #fff;
+        height: 100%;
+        padding: 40px 5% 0 5%;
+        /*transform: translate(-20px, -20px);*/
+    }   
+    .news .list ul li a:hover .cate {
+        background-color: transparent;
+        padding: 16px 16px 16px 0;
+    }
+    .news .list ul li a:hover .photo {
+        display: none;
+    }
+    .news .list ul li a:hover .memo, .news .list ul li a:hover .more {
+        display: block;
+    }
+    .news .list ul li a:hover .date {
+        color: #fff;
+    }
+    .news .list_more a:hover::before {
+        transform: translate(8px, 0)
+    }
 }
 .news .list ul li a {
     display: block;
@@ -905,9 +910,7 @@ aside.quick ul li.q_top a {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31.322' height='14.667' viewBox='0 0 31.322 14.667'%3E%3Cpath id='trending_flat_FILL0_wght200_GRAD0_opsz24' d='M188.32-616.295H160.939a.875.875,0,0,1-.67-.291,1.027,1.027,0,0,1-.269-.725,1.027,1.027,0,0,1,.269-.725.875.875,0,0,1,.67-.291H188.32l-4.208-4.562a1.047,1.047,0,0,1-.287-.7,1.016,1.016,0,0,1,.3-.738.943.943,0,0,1,.67-.33.856.856,0,0,1,.659.33l5.414,5.867a1.638,1.638,0,0,1,.455,1.148,1.638,1.638,0,0,1-.455,1.148l-5.425,5.867a.909.909,0,0,1-.641.3.87.87,0,0,1-.688-.3,1.051,1.051,0,0,1-.311-.725,1.051,1.051,0,0,1,.311-.725Z' transform='translate(-160 624.656)'/%3E%3C/svg%3E%0A");
     transition: 0.3s;
 }
-.news .list_more a:hover::before {
-    transform: translate(8px, 0)
-}
+
 @media screen and (max-width:1024px) {
     .news .tit {
         font-size: 30px;

@@ -483,6 +483,7 @@ aside.quick ul li.q_top a {
 }
 @media screen and (max-width:768px) {
     .tree {
+        height: auto;
         min-height: 800px !important;
     }
     .tree .wrapper {

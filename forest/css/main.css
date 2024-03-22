@@ -306,8 +306,9 @@ aside.quick ul li.q_top a {
 }
 @media screen and (max-width:768px) {
     
-    .visual .fp-scrollable.fp-responsive .fp-is-overflow.fp-section, .fp-scrollable .fp-section, .fp-scrollable .fp-slide {
-        min-height: 800px;
+    .visual {
+        height: auto;
+        min-height: 800px !important;
     }
     .visual ul li .tit {
         left: 80px;

@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: '맑은 고딕', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #333;
+}
+.main {
+    height: calc(100% - 120px);
+    display: flex;
+}
+.header {
+    width: 200px;
+}
+.header .logo {
+    height: 100px;
+}
+.header .logo a {
+    display: block;
+    height: 100%;
+}
+.header .logo a img {
+    width: 100%;
+    height: 100%;
+}
+.header .gnb .depth01 {
+    margin: 40px 0;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: blanchedalmond;
+}
+
+.header .gnb .depth01 > li > a {
+    line-height: 55px;
+    display: block;
+    padding: 0 20px;
+}
+.header .gnb .depth01 > li.on > a, .header .gnb .depth01 > li > a:hover {
+    background-color: yellowgreen;
+}
+.header .gnb .depth02 {
+    display: none;
+    font-size: 18px;
+    background-color: yellowgreen;
+}
+.header .gnb .depth02 > li > a {
+    display: block;
+    line-height: 48px;
+    padding: 0 20px;
+}
+.header .gnb .depth02 > li > a:hover {
+    background-color: antiquewhite;
+}
+.header .gnb .depth01 > li.on > .depth02 {
+    display: block;
+}
+.header .tnb ul {
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    justify-content: space-evenly;
+}
+.cnt {
+    width: 400px;
+}
+
+.banner a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    height: 160px;
+}
+.banner a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cnt button {
+    padding: 8px 15px;
+    font-size: 18px;
+    font-weight: 700;
+    border: 0;
+    background-color: antiquewhite;
+    margin-left: 10px;
+}
+.notice {
+    margin: 10px 0;
+}
+.notice ul {
+    padding: 10px 20px 0 20px;
+}
+.notice ul li a {
+    line-height: 30px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+}
+.gallery ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.gallery ul li {
+    width: calc(50% - 10px);
+}
+.gallery ul li a {
+    height: 120px;
+    display: block;
+}
+.gallery ul li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;   
+}
+.link ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    background-color: grey;
+}
+.link ul li a {
+    line-height: 0;
+    height: 80px;
+    font-size: 0;
+    display: block;
+}
+.link ul li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual {
+    background-color: bisque;
+    overflow: hidden;
+    width: calc(100% - 600px);
+    position: relative;
+}
+.visual ul {
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+.visual ul li {
+    width: calc(100% / 3);
+    height: 100%;
+}
+.visual ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.footer {
+    width: 100%;
+    height: 120px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+}
+.f_inner {
+    padding: 30px 0 0 20px;
+}
+.f_logo {
+    width: 200px;
+}
+.f_logo img {
+    width: 100%;
+    height: 100%;
+}
+.f_nav ul {
+    display: flex;
+}
+.f_nav ul li a {
+    display: block;
+    padding: 0 15px;
+    position: relative;
+}
+.f_nav ul li a::after {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 1px;
+    height: 11px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.copyright {
+    margin : 15px 0 0 15px;
+    color: #aaa;
+}
+.popup {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 20px 30px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+.popup h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.popup p {
+    margin-bottom: 15px;
+}
+.close {
+    text-align: center;
+}
+button {
+    border: 0;
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 17px;
+    font-weight: 700;
+}

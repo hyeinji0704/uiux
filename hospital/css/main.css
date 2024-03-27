@@ -1,0 +1,14 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+/*
+    작성자 : 지혜인
+    날짜 : 2024.03.28
+    내용 : header, footer를 제외한 section
+*/
+.visual {
+    width: 100%;
+    background: url(../images/main/visual_bg01.png) no-repeat center center / cover;
+    height: 1000px;
+}

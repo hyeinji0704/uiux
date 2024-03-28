@@ -43,7 +43,7 @@ html, body {
     overflow: hidden; /*sticky 사용할 때는 쓰면 안됨*/
 }
 /* Wrapper의 사이즈 1280 + 40px(좌우여백) = 1320 사이즈를 줄였을 때 부드럽게 들어가기 위해서*/
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1320px) {
     .wrapper {
         width: auto; 
         /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨

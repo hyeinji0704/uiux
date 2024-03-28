@@ -44,4 +44,17 @@ $(document).ready(function(){
             $('.visual .swiper .pause').show()
             $('.visual .swiper .play').hide()
         })
+
+        $('.q_service').on('mouseenter', function(){
+            $(this).addClass('on')
+        })
+        $('.q_service').on('mouseleave', function(){
+            $(this).removeClass('on')
+        })
+
+        $('aside .q_top a').on('click', function(){
+            $('html, body').animate({
+                scrollTop : 0
+            }, 500)
+        })
 })

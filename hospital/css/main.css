@@ -32,25 +32,24 @@
     z-index: 10;
     width: 1440px;
     color: #fff;
-    letter-spacing: -0.05em;
+    
 }
 .visual .swiper-slide .tit strong {
-    font-size: 1.333rem;
-    font-weight: 700;
+    font-size: 1.3rem;
     display: block;
     font-family: 'Noto Sans KR';
-    margin-left: 10px;
+    margin: 0 0 10px 9px;
 }
 .visual .swiper-slide .tit span {
     font-size: 3.467rem;
     font-weight: 700;
     display: block;
+    letter-spacing: -0.05em;
 }
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
     width: auto;
 }
 .visual .swiper .swiper_cnt {
-    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -142,4 +141,76 @@
 @keyframes paging_move { /* 애니메이션을 효과를 미리 설정함 */
 	0% { width: 0; }  /* 애니메이션을 시작할때의 속성 */
 	100% { width: 100%; } /* 애니메이션이 종료될때의 속성 */
+}
+.scroll {
+    position: absolute;
+    left: 50%;
+    transform: translate( -50% , 0 );
+    bottom: 125px;
+    width:20px;
+    height: 30px;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 50px;
+    border: 1px solid #fff;
+}
+.scroll::after {
+    position: absolute;
+    left: 48%;
+    top: 2px;
+    width:2px;
+    height: 10px;
+    border-radius: 10px;
+    content: "";
+    background-color: #fff;
+    animation-name: scroll; 
+    animation-duration:3s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear
+}
+@keyframes scroll {
+    0% { transform:translate(0, 2px); opacity: 0;}
+    40% { opacity: 1;}
+    80% { transform:translate(0, 10px); opacity: 0;}
+    100% { transform:translate(0, 0); opacity: 0;}
+    }
+
+@media screen and (max-width:1440px) {
+    .in {
+        max-width: 100%;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .visual .swiper .swiper_cnt {
+        width: 100%;
+        margin: 0 20px;
+    }
+    .visual .swiper .pagination {
+        width: calc(100% - 40px);
+    }
+    .visual .swiper-slide .tit {
+        left: auto;
+    }
+}
+@media screen and (max-width:1320px) {
+    .visual .swiper { 
+        height: 700px;
+    } /* 팝업의 높이가 됨 */
+    .visual .swiper .swiper_cnt {
+        height: 700px;
+    }
+    .visual .swiper-slide .tit strong {
+        font-size: 1.26rem;
+    }
+    .visual .swiper-slide .tit span {
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width:1024px) {
+    .visual .swiper { 
+        height: 600px;
+    } /* 팝업의 높이가 됨 */
+    .visual .swiper .swiper_cnt {
+        height: 600px;
+    }
 }

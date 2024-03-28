@@ -11,8 +11,12 @@
     position: relative;
 }
 .visual .swiper { 
-    height:991px;
+    height: 750px;
 } /* 팝업의 높이가 됨 */
+.visual .swiper-slide .photo {
+    width: 100%;
+    height: 100%;
+}
 .visual .swiper-slide img { 
     display:block; width:100%; height:100%; object-fit:cover; 
 } 
@@ -52,15 +56,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1440px;
-    height: 991px;
+    height: 750px;
     z-index: 10;
 }
 .visual .swiper .prev, .visual .swiper .next {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -81,25 +85,26 @@
     top: 50%;
     left: 0;
     transform: translate(0, -50%);
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: contain;
     font-size: 0;
     line-height: 0;
-    margin-left: 96px;
-    margin-top: 130px;
+    margin-left: 90px;
+    margin-top: 131px;
 }
 .visual .swiper .pause {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cg id='그룹_372' data-name='그룹 372' transform='translate(-285 -736)'%3E%3Cg id='타원_86' data-name='타원 86' transform='translate(285 736)' fill='none' stroke='%23fff' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='11' stroke='none'/%3E%3Ccircle cx='11' cy='11' r='10' fill='none'/%3E%3C/g%3E%3Cline id='선_49' data-name='선 49' y2='8' transform='translate(293.255 743.5)' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cline id='선_50' data-name='선 50' y2='8' transform='translate(298.745 743.5)' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cg id='그룹_372' data-name='그룹 372' transform='translate(-285 -736)'%3E%3Cg id='타원_86' data-name='타원 86' transform='translate(285 736)' fill='none' stroke='%23fff' stroke-width='1'%3E%3Ccircle cx='11' cy='11' r='11' stroke='none'/%3E%3Ccircle cx='11' cy='11' r='10.5' fill='none'/%3E%3C/g%3E%3Cline id='선_49' data-name='선 49' y2='8' transform='translate(293.255 743.5)' fill='none' stroke='%23fff' stroke-width='1'/%3E%3Cline id='선_50' data-name='선 50' y2='8' transform='translate(298.745 743.5)' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 .visual .swiper .play {
     display: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cg id='그룹_373' data-name='그룹 373' transform='translate(-285 -699)'%3E%3Cg id='타원_26' data-name='타원 26' transform='translate(285 699)' fill='none' stroke='%23fff' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='11' stroke='none'/%3E%3Ccircle cx='11' cy='11' r='10' fill='none'/%3E%3C/g%3E%3Cpath id='play_pause_FILL0_wght100_GRAD0_opsz48' d='M226-584.578V-592l5.4,3.711Z' transform='translate(68.588 1298.289)' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cg id='그룹_373' data-name='그룹 373' transform='translate(-285 -699)'%3E%3Cg id='타원_26' data-name='타원 26' transform='translate(285 699)' fill='none' stroke='%23fff' stroke-width='1'%3E%3Ccircle cx='11' cy='11' r='11' stroke='none'/%3E%3Ccircle cx='11' cy='11' r='10.5' fill='none'/%3E%3C/g%3E%3Cpath id='play_pause_FILL0_wght100_GRAD0_opsz48' d='M226-584.578V-592l5.4,3.711Z' transform='translate(68.588 1298.289)' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
 .visual .swiper .pagination {
     position: absolute;
-    bottom: 150px;
+    bottom: 100px;
     width: 1440px;
     left: 0;
     display: flex;
@@ -107,12 +112,12 @@
 }
 .visual .swiper .pagination .swiper-pagination-bullet {
     background-color: rgba(230 , 230, 230, 0.2);
-    width: calc(33.33% - 3.33px);
+    width: 33.33%;
     height: 3px;
     outline: 0;
     font-size: 0;
     line-height: 0;
-    margin: 0 5px;
+    margin: 0;
     position: relative;
     opacity: 1;
     border-radius: 0;
@@ -132,7 +137,7 @@
 .visual .swiper .pagination .swiper-pagination-bullet-active::before {
     animation-name: paging_move;
     animation-iteration-count: 1;
-    animation-duration: 3s;
+    animation-duration: 3.5s;
 }
 @keyframes paging_move { /* 애니메이션을 효과를 미리 설정함 */
 	0% { width: 0; }  /* 애니메이션을 시작할때의 속성 */

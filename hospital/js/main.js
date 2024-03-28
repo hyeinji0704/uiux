@@ -12,7 +12,7 @@ $(document).ready(function(){
             effect: "fade", /* fade 효과 */
 
             autoplay: {  /* 팝업 자동 실행 */
-                delay: 3000,
+                delay: 3500,
                 disableOnInteraction: true,
             },
 

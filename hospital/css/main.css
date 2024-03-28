@@ -121,26 +121,28 @@
     opacity: 1;
     border-radius: 0;
 }
-.visual .swiper .pagination .swiper-pagination-bullet::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0;
-    content: "";
-    background-color: #fff;
-}
 .visual .swiper .pagination .swiper-pagination-bullet-active {
     opacity: 1;
 }
-.visual .swiper .pagination .swiper-pagination-bullet-active::before {
-    animation-name: paging_move;
-    animation-iteration-count: 1;
-    animation-duration: 3.5s;
-}
-@keyframes paging_move { /* 애니메이션을 효과를 미리 설정함 */
-	0% { width: 0; }  /* 애니메이션을 시작할때의 속성 */
-	100% { width: 100%; } /* 애니메이션이 종료될때의 속성 */
+@media screen and (min-width:501px) {
+    .visual .swiper .pagination .swiper-pagination-bullet::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0;
+        content: "";
+        background-color: #fff;
+    }
+    .visual .swiper .pagination .swiper-pagination-bullet-active::before {
+        animation-name: paging_move;
+        animation-iteration-count: 1;
+        animation-duration: 3.5s;
+    }
+    @keyframes paging_move { /* 애니메이션을 효과를 미리 설정함 */
+        0% { width: 0; }  /* 애니메이션을 시작할때의 속성 */
+        100% { width: 100%; } /* 애니메이션이 종료될때의 속성 */
+    }
 }
 .scroll {
     position: absolute;
@@ -212,5 +214,65 @@
     } /* 팝업의 높이가 됨 */
     .visual .swiper .swiper_cnt {
         height: 600px;
+    }
+}
+@media screen and (max-width:500px) {
+    .visual .swiper { 
+        height: 500px;
+    } /* 팝업의 높이가 됨 */
+    .visual .swiper .swiper_cnt {
+        height: 500px;
+    }
+    .scroll {
+        display: none;
+    }
+    .visual .swiper .prev, .visual .swiper .next {
+        display: none;
+    }
+    .visual .swiper .pause, .visual .swiper .play {
+        left: 50%;
+        margin-left: -20px;
+        transform: translate(-50% , 0);
+        margin-top: 144px;
+    }
+    .visual .swiper .pagination {
+        bottom: 60px;
+        left: 50%;
+        width: auto;
+        margin-left: -20px;
+        transform: translate(-50% , 0);
+    }
+    .visual .swiper .pagination .swiper-pagination-bullet {
+        background-color: rgba(230 , 230, 230, 0.2);
+        width: 5px;
+        height: 5px;
+        outline: 0;
+        font-size: 0;
+        line-height: 0;
+        margin: 0 8px;
+        position: relative;
+        opacity: 1;
+        border-radius: 50%;
+    }
+    .visual .swiper .pagination .swiper-pagination-bullet-active {
+        opacity: 1;
+        background-color: rgba(230 , 230, 230, 1);
+        border-radius: 50%;
+    }
+    .visual .swiper-slide .tit strong {
+        font-size: 0.846rem;
+        margin-left: 0.3rem;
+    }
+    .visual .swiper-slide .tit span {
+        font-size: 2.077rem;
+    }
+}
+@media screen and (max-width:375px) {
+    .visual .swiper-slide .tit strong {
+        font-size: 0.688rem;
+        margin-left: 0.3rem;
+    }
+    .visual .swiper-slide .tit span {
+        font-size: 1.7rem;
     }
 }

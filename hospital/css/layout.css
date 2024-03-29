@@ -43,7 +43,7 @@
 .header .gnb .depth01 > li > a {
     display: block;
     line-height: 100px;
-    font-size: 18px;
+    font-size: 1.333rem;
     font-weight: 700;
 }
 .header .gnb .depth02 {
@@ -54,7 +54,7 @@
 .header .gnb .depth02 > li > a {
     display: block;
     line-height: 48px;
-    font-size: 17px;
+    font-size: 1.133rem;
 }
 .header .gnb .depth01 > li > a span {
     position: relative;
@@ -128,7 +128,7 @@
 }
 .header .family a {
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.067rem;
     padding: 8px 18px 9px 18px;
     background-color: #1E6593;
     border-radius: 50px;

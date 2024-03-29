@@ -1,15 +1,15 @@
 @charset "utf-8";/*이 css문서는 utf-8방식으로 인코딩 되어 있습니다. */
 @font-face {
-    font-family: 'BookkMyungjo-Bd';
-    src: url('../fonts/BookkMyungjo-Bd.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'BookkMyungjo-Lt';
-    src: url('../fonts/BookkMyungjo-Lt.woff2') format('woff2');
+    font-family: 'Eulyoo1945';
     font-weight: 400;
     font-style: normal;
+    src: local('Eulyoo1945 Regular'), url(../fonts/Eulyoo1945-Regular.woff2) format('woff2'), url(../fonts/Eulyoo1945-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Eulyoo1945', serif; /* serif - 명조 sans-serif 고딕 */
+    font-weight: 700;
+    font-style: normal;
+    src: local('Eulyoo1945 SemiBold'), url(../fonts/Eulyoo1945-SemiBold.woff2) format('woff2'), url(../fonts/Eulyoo1945-SemiBold.woff) format('woff');
 }
 @font-face {
     font-family: 'NotoSans-Regular';
@@ -34,10 +34,10 @@
 }
 /*font-family에 여러 폰트를 쓰는 것은 순서대로 적용이 된다.*/
 .font {
-    font-family : 'BookkMyungjo-Bd', sans-serif;
+    font-family : 'Eulyoo1945', serif;
 }
 html, body {
-    font-family: 'Noto Sans KR','BookkMyungjo-Bd', "Noto Serif", "Malgun Gothic", "Apple SD Gothic Neo", "Pretendard Variable", serif;
+    font-family: 'Noto Sans KR','Eulyoo1945', "Noto Serif", "Malgun Gothic", "Apple SD Gothic Neo", "Pretendard Variable", serif;
     font-size: 15px;
     color: #333;
     font-weight: 400;

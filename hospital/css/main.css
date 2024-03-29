@@ -41,8 +41,8 @@
     margin: 0 0 10px 9px;
 }
 .visual .swiper-slide .tit span {
-    font-size: 3.467rem;
-    font-weight: 700;
+    font-size: 5rem;
+    font-weight: 400;
     display: block;
     letter-spacing: -0.05em;
 }
@@ -69,7 +69,7 @@
     background-size: contain;
     font-size: 0;
     line-height: 0;
-    margin-top: 130px;
+    margin-top: 160px;
 }
 .visual .swiper .prev {
     left: 0;
@@ -92,7 +92,7 @@
     font-size: 0;
     line-height: 0;
     margin-left: 90px;
-    margin-top: 131px;
+    margin-top: 161px;
 }
 .visual .swiper .pause {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cg id='그룹_372' data-name='그룹 372' transform='translate(-285 -736)'%3E%3Cg id='타원_86' data-name='타원 86' transform='translate(285 736)' fill='none' stroke='%23fff' stroke-width='1'%3E%3Ccircle cx='11' cy='11' r='11' stroke='none'/%3E%3Ccircle cx='11' cy='11' r='10.5' fill='none'/%3E%3C/g%3E%3Cline id='선_49' data-name='선 49' y2='8' transform='translate(293.255 743.5)' fill='none' stroke='%23fff' stroke-width='1'/%3E%3Cline id='선_50' data-name='선 50' y2='8' transform='translate(298.745 743.5)' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -149,19 +149,19 @@
     left: 50%;
     transform: translate( -50% , 0 );
     bottom: -59px;
-    width:20px;
-    height: 30px;
+    width:30px;
+    height: 40px;
     font-size: 0;
     line-height: 0;
     border-radius: 50px;
-    border: 1px solid #fff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
 }
 .scroll::before {
     position: absolute;
     left: 48%;
     top: 11px;
-    width: 2px;
-    height: 45px;
+    width: 2.5px;
+    height: 53px;
     border-radius: 10px;
     content: "";
     background-color: rgba(230, 230, 230, 0.2);
@@ -171,7 +171,7 @@
     left: 48%;
     top: 9px;
     z-index: 500;
-    width: 2px;
+    width: 2.5px;
     height: 15px;
     border-radius: 20px;
     content: "";
@@ -184,7 +184,7 @@
 @keyframes scroll {
     0% { transform:translate(0, 2px); opacity: 0;}
     40% { transform:translate(0, 2px); opacity: 1;}
-    80% { transform:translate(0, 30px); opacity: 0;}
+    80% { transform:translate(0, 35px); opacity: 0;}
     100% { transform:translate(0, 0); opacity: 0;}
     }
 
@@ -333,7 +333,6 @@ aside.quick > ul > li.q_top > a::before {
 aside.quick .service_open {
     display: none;
     z-index: 102;
-    transition: 0.5s;
 }
 aside.quick > ul > li.q_service {
     position: relative;
@@ -416,7 +415,6 @@ aside.quick > ul > li.q_service {
     font-size: 6.667rem;
     font-weight: 700;
     line-height: 1.2;
-    letter-spacing: -0.03em;
 }
 .story_top span {
     display: block;
@@ -728,17 +726,19 @@ aside.quick > ul > li.q_service {
 .biz .list ul li a strong {
     font-size: 1.067rem;
     display: block;
+    transition: 0.2s;
 }
 .biz .list ul li a span {
     display: block;
     font-size: 1.667rem;
-    font-weight: 700;
     margin-top: 8px;
+    transition: cubic-bezier(0.4, 0.0, 0.2, 1);
+    
 }
 .biz .list ul li a .list_sub {
     position: absolute;
     left: 260px;
-    bottom: 60px;
+    bottom: 35px;
     display: none;
     opacity: 0;
 }
@@ -800,7 +800,7 @@ aside.quick > ul > li.q_service {
         width: 190px;
     }
     .biz .list ul li.off a strong {
-        display: none;
+        opacity: 0;
     }
     .biz .list ul li.off a span {
         font-size: 1.533rem;
@@ -1122,7 +1122,7 @@ aside.quick > ul > li.q_service {
 }
 .special .cnt ul li {
     display: flex;
-    margin-bottom: 55px;
+    margin-bottom: 45px;
 }
 .special .cnt ul li:last-child {
     margin-bottom: 0;
@@ -1144,7 +1144,7 @@ aside.quick > ul > li.q_service {
     line-height: 1.4;
 }
 .special .cnt ul li .sub strong {     
-    display: inline-block;
+    display: block;
     margin-bottom: 5px;
     font-size: 1.6rem;
     font-weight: 900;
@@ -1279,12 +1279,12 @@ aside.quick > ul > li.q_service {
     display: block;
     font-size: 1.333rem;
     font-weight: 700;
-    color: #E9D9CD;
+    color: #B5A597;
 }
 .notice .tit h2 {
     font-size: 3.4rem;
     font-weight: 700;
-    margin: 29px 0 67px 0;
+    margin: 29px 0 10px 0;
 }
 .notice .tit p {
     font-size: 1.133rem;
@@ -1364,7 +1364,7 @@ aside.quick > ul > li.q_service {
 .notice .prev, .notice .next {
     position: absolute;
     left: 0;
-    top: 585px;
+    top: 587px;
     z-index: 10;
     width: 50px;
     height: 70px;
@@ -1375,10 +1375,10 @@ aside.quick > ul > li.q_service {
     line-height: 0;
 }
 .notice .prev {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='38.792' viewBox='0 0 20 38.792'%3E%3Cpath id='chevron_right_FILL0_wght100_GRAD0_opsz48' d='M366.136-660.582l17.476-17.573a.879.879,0,0,0,.388-.728.879.879,0,0,0-.388-.728,1.119,1.119,0,0,0-.777-.388,1.119,1.119,0,0,0-.777.388l-17.184,17.185a3.735,3.735,0,0,0-.631.825,2.066,2.066,0,0,0-.243,1.019,2.154,2.154,0,0,0,.243.971,3.345,3.345,0,0,0,.631.874l17.184,17.185a1.182,1.182,0,0,0,.728.34.991.991,0,0,0,.825-.34,1.119,1.119,0,0,0,.388-.777,1.119,1.119,0,0,0-.388-.777Z' transform='translate(-364 680)' fill='%23333'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='38.792' viewBox='0 0 20 38.792'%3E%3Cpath id='chevron_right_FILL0_wght100_GRAD0_opsz48' d='M366.136-660.582l17.476-17.573a.879.879,0,0,0,.388-.728.879.879,0,0,0-.388-.728,1.119,1.119,0,0,0-.777-.388,1.119,1.119,0,0,0-.777.388l-17.184,17.185a3.735,3.735,0,0,0-.631.825,2.066,2.066,0,0,0-.243,1.019,2.154,2.154,0,0,0,.243.971,3.345,3.345,0,0,0,.631.874l17.184,17.185a1.182,1.182,0,0,0,.728.34.991.991,0,0,0,.825-.34,1.119,1.119,0,0,0,.388-.777,1.119,1.119,0,0,0-.388-.777Z' transform='translate(-364 680)' fill='%23888'/%3E%3C/svg%3E%0A");
 }
 .notice .next {
     left: 50px;
     border-left-width: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='38.792' viewBox='0 0 20 38.792'%3E%3Cpath id='chevron_right_FILL0_wght100_GRAD0_opsz48' d='M381.864-660.583l-17.476-17.573a.879.879,0,0,1-.388-.728.879.879,0,0,1,.388-.728,1.119,1.119,0,0,1,.777-.388,1.119,1.119,0,0,1,.777.388l17.184,17.185a3.735,3.735,0,0,1,.631.825,2.066,2.066,0,0,1,.243,1.019,2.154,2.154,0,0,1-.243.971,3.345,3.345,0,0,1-.631.874l-17.184,17.184a1.182,1.182,0,0,1-.728.34.991.991,0,0,1-.825-.34,1.119,1.119,0,0,1-.388-.777,1.119,1.119,0,0,1,.388-.777Z' transform='translate(-364 680)' fill='%23333'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='38.792' viewBox='0 0 20 38.792'%3E%3Cpath id='chevron_right_FILL0_wght100_GRAD0_opsz48' d='M381.864-660.583l-17.476-17.573a.879.879,0,0,1-.388-.728.879.879,0,0,1,.388-.728,1.119,1.119,0,0,1,.777-.388,1.119,1.119,0,0,1,.777.388l17.184,17.185a3.735,3.735,0,0,1,.631.825,2.066,2.066,0,0,1,.243,1.019,2.154,2.154,0,0,1-.243.971,3.345,3.345,0,0,1-.631.874l-17.184,17.184a1.182,1.182,0,0,1-.728.34.991.991,0,0,1-.825-.34,1.119,1.119,0,0,1-.388-.777,1.119,1.119,0,0,1,.388-.777Z' transform='translate(-364 680)' fill='%23888'/%3E%3C/svg%3E%0A");
 }

@@ -113,9 +113,10 @@ $(document).ready(function(){
                 delay: 2500,
                 disableOnInteraction: true,
             },
-            navigation: {
-                nextEl: '.notice .next',
-                prevEl: '.notice .prev',
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: false,
+                draggable: true,
             },
         });
 })

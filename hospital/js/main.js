@@ -92,31 +92,40 @@ $(document).ready(function(){
         })
 
         const notice_swiper = new Swiper('.notice .swiper', { /* 팝업을 감싼는 요소의 class명 */
-            slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+            slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
             spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
             breakpoints: {
-                768: {    /* 768px 이상일때 적용 */
+                375: {    /* 768px 이상일때 적용 */
                     slidesPerView: 2,
                     spaceBetween: 20,
                 },
-                1024: {   /* 1024px 이상일때 적용 */
+                768: {    /* 768px 이상일때 적용 */
                     slidesPerView: 3,
                     spaceBetween: 20,
                 },
                 1280: {    /* 1280 px 이상일때 적용 */
                     slidesPerView: 'auto',
-                    spaceBetween: 20,
+                    spaceBetween: 0,
                 },
             },
-            loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-            autoplay: {  /* 팝업 자동 실행 */
-                delay: 2500,
-                disableOnInteraction: true,
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar',
+            loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+            /*scrollbar: {
+                el: '.notice .cnt .swiper-scrollbar',
                 hide: false,
                 draggable: true,
+            },*/
+            navigation: {  /* 이전, 다음 버튼 */
+                nextEl: '.notice  .next',  /* 다음 버튼의 클래스명 */
+                prevEl: '.notice  .prev',  
+            },
+        });
+
+        const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소의 class명 */
+            slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+            loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+            pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+                el: '.news .swiper-pagination', /* 해당 요소의 class명 */
+                clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
             },
         });
 })

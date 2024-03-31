@@ -46,7 +46,7 @@ $(document).ready(function(){
             $(this).addClass('on')
         }
     })
-    $('.header').on('mouseleave', function(){
+    $('.header .gnb').on('mouseleave', function(){
         if(device_status == 'pc') {
             $('.header').removeClass('menu_over')
             $('.header .gnb .depth01 > li').removeClass('on')

@@ -25,11 +25,11 @@
 }/*한글웹폰트*/
 /*한글웹폰트*/
 *::selection {
-    background-color: #3BBEA3;
+    background-color: #1E6593;
     color: #fff;
 }
 *::-moz-selection { /*호환성을 위한 코드*/
-    background-color: #3BBEA3;
+    background-color: #1E6593;
     color: #fff;
 }
 /*font-family에 여러 폰트를 쓰는 것은 순서대로 적용이 된다.*/
@@ -101,9 +101,9 @@ html, body {
     left: 0;
     top: 0;
     width: 100%;
-    height: 50px;
-    background-color: #FF7F40;
+    height: 50px;    
     color: #fff;
+    background: rgba(0, 0, 0, .6);
     font-size: 18px;
     font-weight: 700;
     text-align: center;
@@ -112,7 +112,7 @@ html, body {
 /*속성선택자 
 a태그중에서 href="#gnb"인 태그의 스타일 */
 .skipnav a[href="#gnb"] {
-    background-color: #ff4040;
+    background: #ddd;;
 }
 .skipnav a:focus {
     top: 100px;

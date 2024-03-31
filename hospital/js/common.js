@@ -85,4 +85,11 @@ $(document).ready(function(){
         }
     })
     /*****************메뉴 오버 and 오픈**************** */
+
+    $('.footer .f_btm .open').on('click', function(){
+        $('.footer .f_btm .familysite').addClass('on')
+    })
+    $('.footer .f_btm .close').on('click', function(){
+        $('.footer .f_btm .familysite').removeClass('on')
+    })
 })

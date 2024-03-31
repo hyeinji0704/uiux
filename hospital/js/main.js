@@ -122,6 +122,7 @@ $(document).ready(function(){
 
         const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소의 class명 */
             slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+            spaceBetween: 20, /* 팝업과 팝업 사이 여백 */
             loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
             pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
                 el: '.news .swiper-pagination', /* 해당 요소의 class명 */

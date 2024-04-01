@@ -280,6 +280,7 @@
 @media screen and (max-width:1440px) {
     .header .logo {
         transform: scale(0.88);
+        margin-left: -20px;
     }
     .header .gnb {
         padding-left: 80px;

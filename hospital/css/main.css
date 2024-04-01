@@ -317,8 +317,8 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
         background-repeat: no-repeat;
         background-position: center center;
         content: "";
@@ -373,8 +373,8 @@
         top: 50%;
         transform: translate(-50%, -70%);
         content: "";
-        width: 30px;
-        height: 30px;
+        width: 26px;
+        height: 26px;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;

@@ -566,6 +566,7 @@
     padding-top: 53px;
 }
 .footer .f_inner {
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding-bottom: 58px;
@@ -612,6 +613,7 @@
     font-size: 0.933rem;
 }
 .footer .f_btm {
+    z-index: 110;
     position: relative;
 }
 .footer .f_btm .familysite ul {
@@ -667,4 +669,36 @@
 }
 .footer .f_btm .familysite.on ul {
     display: block;/*보임*/
+}
+
+@media screen and (max-width:768px)  {
+    .footer .f_inner {
+        padding-bottom: 150px;
+        flex-direction: column;
+    }
+    .footer .f_btm {
+        margin-top: 50px;
+        position: absolute;
+        right: 0;
+        top: 120px;
+        transform: translate(0, 0);
+    } 
+    .footer .f_top .link {
+        flex-wrap: wrap;
+        line-height: 2;
+    }
+    .footer .f_btm .familysite ul {
+        width: auto;
+        padding: 15px 30px 15px 25px;
+        bottom: 44px;
+    }
+}
+@media screen and (max-width:500px) {
+    .footer .f_btm {
+        position: absolute;
+        right: auto;
+        left: 50%;
+        top: 180px;
+        transform: translate(-50%, 0);
+    } 
 }

@@ -59,14 +59,16 @@ $(document).ready(function(){
             $('.visual .swiper .play').hide()
         })
 
-        $('.q_service').on('mouseenter', function(){
+        $('.q_service .q_btn').on('mouseenter', function(){
             $(this).addClass('on')
+            $('.q_service .service_open').slideDown();
         })
         $('.q_service').on('mouseleave', function(){
             $(this).removeClass('on')
+            $('.q_service .service_open').slideUp();
         })
 
-        $('aside .q_top a').on('click', function(){
+        $('aside .menu_btn_top a').on('click', function(){
             $('html, body').animate({
                 scrollTop : 0
             }, 500)

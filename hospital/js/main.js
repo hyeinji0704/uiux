@@ -108,7 +108,7 @@ $(document).ready(function(){
                     spaceBetween: 0,
                 },
             },
-            loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+            loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
             /*scrollbar: {
                 el: '.notice .cnt .swiper-scrollbar',
                 hide: false,

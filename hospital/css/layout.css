@@ -522,28 +522,18 @@
     }
     .header.menu_open .share {
         right: 45px;
-        top: 15px;
+        top: 24px;
     }
     .header.menu_open .share_open {
         top: 40px;
     }
     .header.menu_open .family {
         left: 20px;
-        top: 14px;
+        top: 24px;
     }
     .header.menu_open .family a {
         font-size: 1rem;
         padding: 6px 12px 6px 12px;
-    }
-    .header.menu_open .search_group .search_wrap {
-        min-width: 100%;
-        padding: 10px 4px;
-    }
-    .header.menu_open .search_group .search_wrap {
-        height: 50px;
-    }
-    .header.menu_open .search_wrap input[type="text"] {
-        font-size: 1rem;
     }
     .header.menu_open .search_wrap input[type="submit"] {
         right: 0px;

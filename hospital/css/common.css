@@ -26,7 +26,7 @@
     font-family : "Nanum Myeongjo", serif;
 }
 html, body {
-    font-family: 'Noto Sans KR','Nanum Myeongjo', "Noto Serif", "Malgun Gothic", "Apple SD Gothic Neo", "Pretendard Variable", serif;
+    font-family: 'Noto Sans KR',"Malgun Gothic", "Apple SD Gothic Neo", "Pretendard Variable",'Nanum Myeongjo', "Noto Serif", serif;
     font-size: 14px;
     color: #333;
     font-weight: 400;

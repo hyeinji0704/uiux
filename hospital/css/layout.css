@@ -449,7 +449,6 @@
         display: block;
         padding-left: 5px;
     }
-    
 }
 @media screen and (max-width:768px) {
     .header {
@@ -512,28 +511,11 @@
     }
 }
 @media screen and (max-width:400px) {
-    .header {
-        height: 50px;
-    }
-    .header.menu_open {
-        height: 120px;
-        padding: 0 20px;
-    }
     .header .logo {
         margin-left: -10px;
     }
     .header .logo a {
         width: 150px;
-    }
-    .header .gnb .gnb_open, .header .gnb .gnb_close {
-        width: 50px;
-        height: 50px;
-        background-size: 22px auto;
-    }
-    .header.menu_open .gnb .depth01 {
-        margin-top: 120px;
-        height: calc(100vh - 120px);
-        padding-top: 40px;
     }
     .header.menu_open .gnb .depth01 > li {
         padding: 0 20px;

@@ -136,4 +136,13 @@ $(document).ready(function(){
             duration: 1000, // 애니메이션 효과가 작동되는 시간
             easing: 'ease', // 가속도
         });
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 1000) {
+                $('.quick').addClass('show')
+            } else {
+                $('.quick').removeClass('show');
+            }
+        });
+
 })

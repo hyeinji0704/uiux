@@ -266,10 +266,13 @@
         transform: scale(0.95);
     }
     .header .gnb {
-        padding-left: 250px;
+        padding-left: 230px;
     }
     .header .gnb .depth01 > li {
         width: 150px;
+    }
+    .header .tnb {
+        padding-left: 20px;
     }
 }
 @media screen and (max-width:1540px) {

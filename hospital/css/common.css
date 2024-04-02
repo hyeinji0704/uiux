@@ -27,7 +27,7 @@
 }
 html, body {
     font-family: 'Noto Sans KR','Nanum Myeongjo', "Noto Serif", "Malgun Gothic", "Apple SD Gothic Neo", "Pretendard Variable", serif;
-    font-size: 15px;
+    font-size: 14px;
     color: #333;
     font-weight: 400;
     line-height: 1.4;
@@ -61,14 +61,9 @@ html, body {
         /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
     } 
 }
-@media screen and (max-width:1024px) {
-    html, body {
-        font-size: 14px;
-    }
-}
 @media screen and (max-width:768px) {
     html, body {
-        font-size: 13px;
+        font-size: 12px;
     }
     .wrapper {
         width: auto; 

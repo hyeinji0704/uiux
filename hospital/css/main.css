@@ -466,6 +466,16 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         height: 22px;
     }
 }
+@media screen and (max-width:768px) {
+    .quick {
+        bottom: 308px;
+    }
+}
+@media screen and (max-width:500px) {
+    .quick {
+        bottom: 340px;
+    }
+}
 .story {
     margin-top: 489px;
     color: #333;
@@ -1817,7 +1827,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     display: none;
 }
 .news .photo {
-    width: 80%;
+    width: 50%;
     line-height: 0;
     font-size: 0;
 }

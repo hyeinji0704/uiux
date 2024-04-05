@@ -1,5 +1,5 @@
 @charset "utf-8";/*이 css문서는 utf-8방식으로 인코딩 되어 있습니다. */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');/*영문웹폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');/*영문웹폰트*/
 @font-face {
     font-family: 'Pretendard';
     font-weight: 400;
@@ -22,8 +22,9 @@
     color: #fff;
 }
 /*font-family에 여러 폰트를 쓰는 것은 순서대로 적용이 된다.*/
+.font { font-family: 'Pretendard', sans-serif;}
 body {
-    font-family: 'Work Sans', 'Pretendard', sans-serif;
+    font-family: 'Yantramanav', 'Pretendard', sans-serif;
     font-size: 18px;
     color: #1d1d1d;
     font-weight: 400;

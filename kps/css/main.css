@@ -2,3 +2,10 @@
 @import url(common.css);
 @import url(layout.css);
 
+.visual {
+    height: 100vh;
+    background: url(../images/main/visual_bg.png) center center / cover;
+    color: #fff;
+    font-size: 0;
+    line-height: 0;
+}

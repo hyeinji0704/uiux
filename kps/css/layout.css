@@ -16,7 +16,7 @@
     top: 0;
     z-index: -1;
     width: 100%;
-    height: 90px;
+    height: 100%;
     content: "";
     backdrop-filter: blur(40px);
     transition: 0.5s;
@@ -311,10 +311,105 @@
     .header.menu_open .gnb .depth01 > li.on .depth02 {
         display: block;
     }
+    .header.menu_open .logo {
+        display: none;
+    }
+    .header.menu_open .tnb {
+        display: flex;
+        padding-left: 60px;
+    }
+    .header .tnb .lang {
+        margin-right: 40px;
+    }
     .header .gnb .depth02 {
         color: #1d1d1d;
         background-color: #fff;
         padding: 10px 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .header {
+        height: 70px;
+    }
+    .header .logo {
+        margin-left: 30px;
+        padding: 22px 0 18px 0;
+    }
+    .header .tnb {
+        padding: 25px 0 18px 0;
+    }
+    .header .tnb .lang {
+        margin-right: 27px;
+    }
+    .header .logo a {
+        background-size: 120px auto;
+    }
+    .header.menu_open .gnb .depth01 {
+        margin-top: 70px;
+        height: calc(100vh - 70px);
+        padding-top: 80px;
+    }
+    .header .gnb .gnb_button {
+        right: 30px;
+    }
+    .header.menu_open .tnb {
+        padding-left: 30px;
+    }
+    .header .gnb .depth01 > li > a::after {
+        right: 150px;
+    }
+    .header .gnb .gnb_button {
+        top: 22px;
+    }
+    .header .gnb .gnb_button button {
+        width: 60px;
+        height: 30px;
+    }
+    .header .gnb .gnb_button .line {
+        width: 50px;
+        height: 3px;
+    }
+    .header .gnb .gnb_button .line02 {
+        width: 25px;
+    }
+    .header .gnb .gnb_button.active .line , .header .gnb .gnb_button.active .line.line2{
+        width: 35px; 
+    }
+}
+@media screen and (max-width:550px) {
+    .header .logo {
+        margin-left: 20px;
+    }
+    .header .logo a {
+        background-size: 100px auto;
+    }
+    .header .gnb .gnb_button {
+        right: 20px;
+    }
+    .header .gnb .depth01 > li {
+        font-size: 18px;
+    }
+    .header .gnb .depth01 > li > a {
+        line-height: 45px;
+    }
+    .header .gnb .depth02 {
+        font-size: 16px;
+    }
+    .header .gnb .depth02 > li > a {
+        padding: 8px 0;
+    }
+    .header .gnb .depth01 > li > a::after {
+        right: 80px;
+        top: 17px;
+    }
+    .header.menu_open .tnb {
+        padding-left: 20px;
+    }
+}
+@media screen and (max-width:380px) {
+    .header .gnb .depth01 > li > a::after {
+        right: 40px;
     }
 }
 .footer {

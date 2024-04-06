@@ -4,8 +4,79 @@
 
 .visual {
     height: 100vh;
-    background: url(../images/main/visual_bg.png) center center / cover;
+    background: url(../images/main/visual_bg03.png) center center / cover;
     color: #fff;
+}
+.visual .wrapper {
+    position: relative;
+    height: 100%;
+}
+.visual .h2 {
     font-size: 0;
     line-height: 0;
+}
+.visual .tit {
+    position: absolute;
+    left: 0;
+    top: 50%;   
+    transform: translate(0,-50%);
+    font-size: 90px;
+    letter-spacing: 0.01em;
+}
+.visual .tit .text {
+    display: block;
+}
+.visual .tit .text01 {
+    animation-name: text1_move;
+    animation-duration:3.5s; 
+    animation-iteration-count:1; 
+    animation-timing-function:cubic-bezier(0.6, 0.8, 0.8, 1.0);
+    animation-fill-mode:forwards;
+}
+.visual .tit .text02 {
+    animation-name: text2_move;
+    animation-duration:3.5s; 
+    animation-iteration-count:1; 
+    animation-timing-function:cubic-bezier(0.6, 0.8, 0.8, 1.0);
+    animation-fill-mode:forwards;
+}
+.visual .tit .text03 {
+    animation-name: text3_move;
+    animation-duration:3.5s; 
+    animation-iteration-count:1; 
+    animation-timing-function:cubic-bezier(0.6, 0.8, 0.8, 1.0);
+    animation-fill-mode:forwards;
+}
+@keyframes text1_move { 
+	0% { transform:translate(0, 0); opacity: 1;} 
+    88% { opacity: 0.9;}  
+	100% { transform:translate(73%, 0); opacity: 0;} 
+}
+@keyframes text2_move { 
+	0% { transform:translate(0, 0) ; opacity: 1; }  
+    88% { opacity: 0.9;}  
+	100% { transform:translate(66%, 0); opacity: 0; } 
+}
+@keyframes text3_move { 
+	0% { transform:translate(0, 0) ; opacity: 1;}  
+    88% { opacity: 0.9;}  
+	100% { transform:translate(62%, 0); opacity: 0; } 
+}
+.visual .logo_ani {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    animation-name: logo_move;
+    animation-duration:3.5s; 
+    animation-delay: 3.5s;
+    animation-iteration-count:1; 
+    animation-timing-function:cubic-bezier(0.6, 0.8, 0.8, 1.0);
+    animation-fill-mode:forwards;
+    opacity: 0;
+}
+@keyframes logo_move { 
+	0% { opacity: 0;}  
+	70% {  opacity: 1;} 
 }

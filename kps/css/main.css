@@ -67,14 +67,13 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
+    opacity: 0;
     animation-name: logo_move;
     animation-duration:3.5s; 
     animation-delay: 3.5s;
     animation-iteration-count:1; 
     animation-timing-function:cubic-bezier(0.6, 0.8, 0.8, 1.0);
     animation-fill-mode:forwards;
-    opacity: 0;
 }
 @keyframes logo_move { 
 	0% { opacity: 0;}  

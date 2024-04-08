@@ -1,11 +1,13 @@
 @import url(default.css);
 @import url(common.css);
 @import url(layout.css);
-
 .visual {
     height: 100vh;
     background: url(../images/main/visual_bg.png) center center / cover;
     color: #fff;
+}
+.visual .swiper {
+    height: 100vh;
 }
 .visual .wrapper {
     position: relative;
@@ -16,7 +18,6 @@
     line-height: 0;
 }
 .visual .tit {
-    display: none;
     position: absolute;
     left: 50%;
     top: 50%;   
@@ -107,224 +108,436 @@
         font-size: 35px;
     }
 }
-.vision {
+
+.story {
     position: relative;
+    height: 200vh;
+    text-align: center;
+}
+.story.fixed .story_wrap {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.story.fixed_after .story_wrap {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     overflow: hidden;
 }
-.vision .inner {
-    padding: 5em 0 7.5em 0;
-    text-align: center;
-    font-weight: 700;
-    color: #fff;
+.story .story_wrap {
+    height: 100vh;
 }
-.vision .tit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.story .tit {
+    padding-top: 167px;
 }
-.vision .tit h2 {
+.story .tit h2 {
     font-size: 150px;
+    font-weight: 700;
     color: #9CD0FF;
 }
-.vision .tit p {
-    font-size: 26px;
+.story .tit p {
+    font-size: 28px;
+    font-weight: 700;
 }
-.vision .tit .more {
-    margin-top: 52px;
-    font-size: 16px;
-    font-weight: 400;
-    position: relative;
-    width: 9em;
-}
-.vision .tit .more a {
-    display: block;
-    padding: 10px 40px 10px 20px;
-    border: 1px solid #fff;
-    border-radius: 70px;
-    transition: 0.2s;
-}
-.vision .tit .more a:hover {
-    border: 1px solid #001154;
-    background-color: #001154;
-}
-.vision .tit .more a::before {
+.story .cnt {
     position: absolute;
-    right: 15px;
-    top: 14px;
-    content: "";
-    width: 17px;
-    height: 12px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11.603' viewBox='0 0 17 11.603'%3E%3Cpath id='east_FILL0_wght300_GRAD0_opsz24' d='M114.357-728.057H100.3a.662.662,0,0,1-.488-.2.663.663,0,0,1-.2-.488.661.661,0,0,1,.2-.487.662.662,0,0,1,.488-.2h14.056L110.4-733.4a.666.666,0,0,1-.2-.468.637.637,0,0,1,.2-.486.641.641,0,0,1,.475-.188.647.647,0,0,1,.478.19l5.03,5.03a.753.753,0,0,1,.181.271.883.883,0,0,1,.053.307.912.912,0,0,1-.053.311.738.738,0,0,1-.18.274l-5.03,5.03a.632.632,0,0,1-.468.189.687.687,0,0,1-.484-.189.638.638,0,0,1-.208-.488.681.681,0,0,1,.208-.488Z' transform='translate(-99.617 734.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    left: 50%;
+    bottom: -80px;
+    transform: translate(-50%,0);
+    z-index: 10;
+    opacity: 0;
+    width: 1640px;
+    height: calc(100% - 300px);
+    transition: 0.5s;
+    transition-timing-function: ease-out;
 }
-.vision .cnt {
-    margin-top: 141px;
-}
-.vision .cnt ul {
+.story .cnt ul {
     display: flex;
     justify-content: space-between;
 }
-.vision .cnt ul li h3 {
+.story .cnt ul li h3 {
     font-size: 22px;
+    font-weight: 700;
 }
-.vision .cnt ul li p {
+.story .cnt ul li b {
+    font-size: 100px;
+    margin-right: 5px;
+}
+.story .cnt ul li p {
     font-size: 20px;
 }
-.vision .cnt ul li b {
-    font-size: 100px;
-    margin-right: 10px;
-}
-.vision .vision_bg {
+.story .story_sub {
+    color: #fff;
     position: absolute;
     left: 50%;
     bottom: 0;
+    z-index: -1;    
+    width: 1024px;
+    height: calc(100% - 490px);
     transform: translate(-50%, 0);
-    font-size: 0;
-    line-height: 0;
-    margin: 0 auto;/*좌우의 가운데*/
-    z-index: -1;
-    width: 100%;
-    height: 727px;
+    transition: 0.5s;
+    transition-timing-function: ease-out;
 }
-.vision .vision_bg img {
+.story .bg_wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+}
+.story .bg {
+    display: block;
+    padding: 50%;
+    height: 512px;
+    border-radius: 50% 50% 0 0;
+    background: url(../images/main/vision_bg.png) no-repeat center center / cover;
+}
+.story .bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-@media screen and (max-width:1140px) {
-    .vision .tit h2 {
-        font-size: 130px;
+.story .more {
+    font-size: 16px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    opacity: 0;
+    transition: 0.5s;
+    transition-timing-function: ease-out;
+}
+.story .more a {
+    border: 1px solid #fff;
+    display: block;
+    padding: 15px 30px 13px 12px;
+    position: relative;
+    width: 9em;
+    border-radius: 50px;
+}
+.story .more a::after {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    content: "";
+    width: 28px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11.603' viewBox='0 0 17 11.603'%3E%3Cpath id='east_FILL0_wght300_GRAD0_opsz24' d='M114.357-728.057H100.3a.662.662,0,0,1-.488-.2.663.663,0,0,1-.2-.488.661.661,0,0,1,.2-.487.662.662,0,0,1,.488-.2h14.056L110.4-733.4a.666.666,0,0,1-.2-.468.637.637,0,0,1,.2-.486.641.641,0,0,1,.475-.188.647.647,0,0,1,.478.19l5.03,5.03a.753.753,0,0,1,.181.271.883.883,0,0,1,.053.307.912.912,0,0,1-.053.311.738.738,0,0,1-.18.274l-5.03,5.03a.632.632,0,0,1-.468.189.687.687,0,0,1-.484-.189.638.638,0,0,1-.208-.488.681.681,0,0,1,.208-.488Z' transform='translate(-99.617 734.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.story .more a:hover {
+    border: 1px solid #001154;
+    background-color: #001154;
+}
+.story.active .tit p {
+    color: #fff;
+}
+.story.active .more {
+    opacity: 1;
+}
+.story.active .cnt {
+    opacity: 1;
+}
+.story.active .story_sub {
+    height: calc(100% - 270px);
+} 
+@media screen and (max-width:1700px) {
+    .story .cnt {
+        width: 1440px;
     }
-    .vision .tit p {
-        font-size: 23px;
+}
+@media screen and (max-width:1520px) {
+    .story .cnt {
+        width: 1240px;
     }
-    .vision .cnt ul li h3 {
-        font-size: 18px;
+}
+@media screen and (max-width:1320px) {
+    .story .cnt {
+        width: 1024px;
+        bottom: -45px;
     }
-    .vision .cnt ul li b {
-        font-size: 90px;
-        margin-right: 7px;
+    .story .tit {
+        padding-top: 157px;
     }
-    .vision .cnt ul li p {
-        font-size: 18px;
+    .story .tit h2 {
+        font-size: 140px;
     }
-    .vision .vision_bg {
-        height: 680px;
+    .story .tit p {
+        font-size: 26px;
+    }
+    .story .cnt ul li h3 {
+        font-size: 21px;
+    }
+    .story .cnt ul li b {
+        font-size: 95px;
+    }
+    .story .cnt ul li p {
+        font-size: 19px;
     }
 }
 @media screen and (max-width:1024px) {
-    .vision .tit h2 {
-        font-size: 110px;
+    .story .cnt {
+        width: 100%;
+        padding: 0 60px;
     }
-    .vision .tit p {
+    .story .tit {
+        padding-top: 186px;
+    }
+    .story .tit h2 {
+        font-size: 130px;
+    }
+    .story .tit p {
+        font-size: 24px;
+    }
+    .story .more {
+        margin-top: 40px;
+    }
+    .story .cnt ul li h3 {
+        font-size: 20px;
+    }
+    .story .cnt ul li b {
+        font-size: 90px;
+    }
+    .story .cnt ul li p {
         font-size: 18px;
-    }
-    .vision .cnt ul li h3 {
-        font-size: 18px;
-    }
-    .vision .cnt ul li b {
-        font-size: 80px;
-        margin-right: 7px;
-    }
-    .vision .cnt ul li p {
-        font-size: 18px;
-    }
-    .vision .vision_bg {
-        height: 610px;
     }
 }
 @media screen and (max-width:768px) {
-    .vision .tit h2 {
-        font-size: 100px;
+    .story .cnt {
+        padding: 0 40px;
+        bottom: -30px;
     }
-    .vision .tit p {
-        font-size: 17px;
+    .story .tit h2 {
+        font-size: 120px;
     }
-    .vision .cnt ul li h3 {
+    .story .tit p {
+        font-size: 20px;
+    }
+    .story .more {  
+        margin-top: 35px;
+    }
+    .story .cnt ul li h3 {
+        font-size: 18px;
+    }
+    .story .cnt ul li b {
+        font-size: 80px;
+    }
+    .story .cnt ul li p {
         font-size: 16px;
     }
-    .vision .cnt ul li b {
-        font-size: 60px;
-        margin-right: 5px;
-    }
-    .vision .cnt ul li p {
-        font-size: 15px;
-    }
-    .vision .vision_bg {
-        height: 560px;
-    }
-    .vision .tit .more {
-        font-size: 14px;
-    }
-    .vision .tit .more a::before {
-        background-size: 14px auto;
-        right: 11px;
-        top: 12px;
-    }
-    .vision .tit .more a {
-        padding: 8px 20px 8px 10px;
+    .story .bg {
+        border-radius: 0;
     }
 }
-@media screen and (max-width:500px) {
-    .vision .tit h2 {
-        font-size: 65px;
+@media screen and (max-width:650px) {   
+    .story .cnt {
+        bottom: 40px;
     }
-    .vision .tit p {
-        font-size: 15px;
+    .story .tit h2 {
+        font-size: 100px;
     }
-    .vision .cnt {
-        margin-top: 90px;
-    } 
-    .vision .cnt ul {
+    .story .tit {
+        padding-top: 205px;
+    }
+    .story .cnt ul {
         flex-wrap: wrap;
     }
-    .vision .cnt ul li {
+    .story .cnt ul li {
         width: 50%;
-        margin-bottom: 37px;
+        margin-bottom: 30px;
     }
-    .vision .cnt ul li h3 {
-        font-size: 13px;
+    .story .cnt ul li b {
+        font-size: 70px;
     }
-    .vision .cnt ul li b {
-        font-size: 50px;
+    .story .more {
+        font-size: 14px;
     }
-    .vision .cnt ul li p {
-        font-size: 11px;
+    .story .more a {
+        padding: 11px 28px 11px 10px;
     }
-    .vision .vision_bg {
-        height: 533px;
+    .story .more a::after {
+        background-size: 15px auto;
+        right: 8px;
+        top: 12px;
     }
-    .vision .inner {
-        padding: 11em 0 0.5em 0;
+    .story .bg {
+        height: 562px;
     }
 }
-@media screen and (max-width:320px) {
-    .vision .tit h2 {
-        font-size: 55px;
-    }
-    .vision .tit p {
-        font-size:13px;
-    }
-    .vision .cnt {
-        margin-top: 90px;
+@media screen and (max-width:500px) {  
+    .story .tit {
+        padding-top: 216px;
     } 
-    .vision .cnt ul li {
-        margin-bottom: 37px;
+    .story .cnt {
+        padding: 0 20px;
+        bottom: 35px;
     }
-    .vision .cnt ul li h3 {
+    .story .tit h2 {
+        font-size: 80px;
+    }
+    .story .tit p {
+        font-size: 18px;
+    }
+    .story .cnt ul li {
+        margin-bottom: 40px;
+    }
+    .story .cnt ul li h3 {
+        font-size: 15px;
+    }
+    .story .cnt ul li b {
+        font-size: 60px;
+    }
+    .story .cnt ul li p {
         font-size: 13px;
     }
-    .vision .cnt ul li b {
+}
+@media screen and (max-width:400px) {
+    .story .tit {
+        padding-top: 225px;
+    }
+    .story .tit h2 {
+        font-size: 70px;
+    }
+    .story .tit p {
+        font-size: 15px;
+    }
+    .story .cnt ul li {
+        margin-bottom: 40px;
+    }
+    .story .more a {
+        padding: 9px 20px 9px 4px;
+        width: 8em;
+    }
+    .story .more a::after {
+        background-size: 13px auto;
+        right: 3px;
+        top: 9px;
+    }
+}
+@media screen and (max-width:360px) {
+    .story .tit h2 {
+        font-size: 60px;
+    }
+    .story .tit p {
+        font-size: 14px;
+    }
+    .story .cnt {
+        bottom: 50px;
+    }
+    .story .cnt ul li {
+        margin-bottom: 70px;
+    }
+    .story .cnt ul li h3 {
+        font-size: 14px;
+    }
+    .story .cnt ul li b {
         font-size: 50px;
     }
-    .vision .cnt ul li p {
-        font-size: 11px;
+    .story .cnt ul li p {
+        font-size: 12px;
     }
-    .vision .vision_bg {
-        height: 533px;
-    }
-    .vision .inner {
-        padding: 11em 0 1.5em 0;
-    }
+}
+.biz {
+    color: #fff;
+}
+.biz .wrapper {
+    position: relative;
+}
+.biz .fixed_tit {
+    position: absolute;
+    left: 0;
+    top: 176px;
+    z-index: 100;
+    font-size: 50px;
+    color: #fff;
+}
+.biz .cnt {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.biz .txt {
+    margin-top: 230px;
+    width: calc(50% - 174px);
+}
+.biz .txt h3 {
+    font-size: 46px;
+    font-weight: 700;
+}
+.biz .txt strong {
+    font-size: 26px;
+    color: #AAAAAA;
+    display: block;
+    margin: 20px 0;
+}
+.biz .txt .sub {
+    display: flex;
+    font-size: 14px;
+}
+.biz .txt .sub span {
+    display: block;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    margin-right: 8px;
+}
+.biz .txt p {
+    font-size: 18px;
+    margin: 95px 0 47px 0;
+}
+.biz .txt .sub span:last-child {
+    margin-right: 0;
+}
+.biz .txt .more {
+    font-size: 16px;
+    color: #fff;
+}
+.biz .txt .more a {
+    border: 1px solid #fff;
+    display: block;
+    padding: 15px 30px 13px 20px;
+    position: relative;
+    width: 9em;
+    border-radius: 50px;
+}
+.biz .txt .more a::after {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    content: "";
+    width: 28px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11.603' viewBox='0 0 17 11.603'%3E%3Cpath id='east_FILL0_wght300_GRAD0_opsz24' d='M114.357-728.057H100.3a.662.662,0,0,1-.488-.2.663.663,0,0,1-.2-.488.661.661,0,0,1,.2-.487.662.662,0,0,1,.488-.2h14.056L110.4-733.4a.666.666,0,0,1-.2-.468.637.637,0,0,1,.2-.486.641.641,0,0,1,.475-.188.647.647,0,0,1,.478.19l5.03,5.03a.753.753,0,0,1,.181.271.883.883,0,0,1,.053.307.912.912,0,0,1-.053.311.738.738,0,0,1-.18.274l-5.03,5.03a.632.632,0,0,1-.468.189.687.687,0,0,1-.484-.189.638.638,0,0,1-.208-.488.681.681,0,0,1,.208-.488Z' transform='translate(-99.617 734.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.biz .txt .more a:hover {
+    border: 1px solid #001154;
+    background-color: #001154;
+}
+.biz .cnt::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    content: "";
+    background-color: rgba(29, 29, 29, 0.8);
+}
+.biz .biz01 {
+    background: url(../images/main/biz_bg01.png) center center /cover;
+}
+.biz .biz02 {
+    background: url(../images/main/biz_bg02.png) center center /cover;
+}
+.biz .biz03 {
+    background: url(../images/main/biz_bg03.png) center center /cover;
+}
+.biz .biz04 {
+    background: url(../images/main/biz_bg04.png) center center /cover;
 }

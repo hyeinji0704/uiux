@@ -25,7 +25,7 @@ $(document).ready(function(){
     let device_status
     let window_w
     function device_chk(){
-        let window_w = $(window).width()
+        window_w = $(window).width()
         if(window_w > 1260 ){ //pc
             device_status = 'pc'
         }else{ //모바일

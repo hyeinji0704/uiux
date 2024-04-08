@@ -197,6 +197,9 @@
     .header.fixed  .gnb .depth02 > li > a:hover::before {
         background-color: #001154;
     }
+    .header.fixed .gnb .depth01 > li:hover {
+        background-color:#ededed;
+    }
     /*****************************메뉴 고정 끝****************/ 
 }
 

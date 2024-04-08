@@ -8,7 +8,7 @@ $(document).ready(function(){
     let device_status
     let window_w
     function device_chk(){
-        let window_w = $(window).width()
+        window_w = $(window).width()
         if(window_w > 1024 ){ //pc
             device_status = 'pc'
         }else{ //모바일
@@ -28,19 +28,18 @@ $(document).ready(function(){
         scroll_prev = scroll_curr
         scroll_curr = $(window).scrollTop()
         scroll_dir = scroll_prev - scroll_curr
-        console.log(scroll_dir)
         if(scroll_curr > 300){
             $('.header').addClass('fixed')
             if(scroll_dir > 0){
-                $('header').attr('style', 'transform: translate(0, 0)')
+                $('.header').attr('style', 'transform: translate(0, 0)')
             }else{
-                $('header').attr('style', 'transform: translate(0, -170px)')
+                $('.header').attr('style', 'transform: translate(0, -170px)')
                 $('.header .gnb .depth01 > li').removeClass('on')
                 $('.header').removeClass('menu_over')
             }
         }else{
             $('.header').removeClass('fixed')
-            $('header').attr('style', 'tramsform: translate(0,0)')
+            $('header').attr('style', 'transform: translate(0,0)')
         }
     }
     scroll_chk()

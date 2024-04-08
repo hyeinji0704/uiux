@@ -6,7 +6,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.svg">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/couting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <script src="js/main.js"></script>
     <script src="js/common.js"></script>
     <title>한전KPS</title>
@@ -90,33 +91,41 @@
             <section class="visual">
                 <div class="wrapper">
                     <h2>visual</h2>
-                    <div class="tit tit_font ">
-                        <span class="text text01">Green Planet</span>
-                        <span class="text text02">함께 만들어 가는</span>
-                        <span class="text text03">미래가치 창조 기업</span>
-                    </div>
-                    <div class="logo_ani">
-                        <span class="logo"><img src="images/main/visual_logo1.png" alt=""></span>
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                            <li class="swiper-slide">
+                                <div class="tit tit_font ">
+                                    <span class="text text01">Green Planet</span>
+                                    <span class="text text02">함께 만들어 가는</span>
+                                    <span class="text text03">미래가치 창조 기업</span>
+                                </div>
+                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            <li class="swiper-slide">
+                                <div class="logo_ani">
+                                    <span class="logo"><img src="images/main/visual_logo1.png" alt=""></span>
+                                </div>
+                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        </ul>
                     </div>
                     <div class="scroll"></div>
                 </div>
             </section>
-            <section class="vision">
-                <div class="wrapper">
-                    <div class="inner">
-                        <div class="tit">
-                            <h2>OUR VISION</h2>
-                            <p>세계 No.1 전력설비 정비산업 Grand 플랫폼 기업으로<br>발돋움하여 국가와 산업 발전에 앞장겠습니다.</p>
-                            <div class="more"><a href="#n">VIEW MORE</a></div>
-                        </div>
-                        <div class="cnt">
+            <section class="story ">
+                <div class="story_wrap">
+                    <div class="tit">
+                        <h2>OUR VISION</h2>
+                        <p>세계 No.1 전력설비 정비산업 Grand 플랫폼 기업으로<br>발돋움하여 국가와 산업 발전에 앞장겠습니다.</p>
+                        <div class="more"><a href="#n">VIEW MORE</a></div>
+                    </div>
+                    <div class="story_sub">
+                        <div class="cnt" >
                             <ul class="font">
                                 <li>
                                     <h3>매출액</h3>
                                     <p><b>2.1</b>조원</p>
                                 </li>
                                 <li>
-                                    <h3>신성장사업 비중</h3>
+                                    <h3>신성장사업비중</h3>
                                     <p><b>4.2</b>%</p>
                                 </li>
                                 <li>
@@ -129,11 +138,91 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="bg_wrap"></div><div class="bg"></div>
                     </div>
                 </div>
-                <div class="vision_bg"><img src="images/main/vision_bg.png" alt=""></div>
             </section>
-            <section class="biz"></section>
+            <section class="biz">
+                <div class="wrapper"><h2 class="fixed_tit">BUISNESS</h2></div>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <div class="biz01 cnt">
+                                <div class="wrapper">
+                                    <div class="txt">
+                                        <h3>발전설비정비(수화력, 원자력)</h3>
+                                        <strong>Power Plant Services(Hydro,Thermal and Nuclear)</strong>
+                                        <div class="sub">
+                                            <span>수화력</span>
+                                            <span>원자력</span>
+                                            <span>Hydro</span>
+                                            <span>Thermal</span>
+                                            <span>Nuclear</span>
+                                        </div>
+                                        <p>한전KPS는 국가경제의 대동맥과 같은 전력의 안정적인 공급과 국가 기간산업의 핵심인 전력설비의 유지·관리를 위해 국내 발전설비 및 산업설비에 대한 고품질 책임정비를 수행하고 있습니다.</p>
+                                        <div class="more"><a href="#n">VIEW MORE</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="biz02 cnt">
+                                <div class="wrapper">
+                                    <div class="txt">
+                                        <h3>송변전설비 정비</h3>
+                                        <strong>Power Transmission and Substation Facilities Services</strong>
+                                        <div class="sub">
+                                            <span>유지정비</span>
+                                            <span>활선정비</span>
+                                            <span>HVDC</span>
+                                            <span>Power Transmission</span>
+                                        </div>
+                                        <p>한전KPS는 국가전력망인 가공송전설비의 고장예방 및 신속한 복구를 위해 전국에 정비 네트워크를 구축, 운영함으로써 안정적인 전력공급에 전력을 다하고 있으며 송변전 관련 토털 정비서비스를 제공하고 있습니다.</p>
+                                        <div class="more"><a href="#n">VIEW MORE</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="biz03 cnt">
+                                <div class="wrapper">
+                                    <div class="txt">
+                                        <h3>해외사업</h3>
+                                        <strong>Overseas Power Plant O&M Services(Themal and Nuclear)</strong>
+                                        <div class="sub">
+                                            <span>O&M</span>
+                                            <span>해외사업</span>
+                                            <span>Thermal</span>
+                                            <span>Nuclear</span>
+                                        </div>
+                                        <p>다년간의 정비 노하우와 축적된 기술력을 바탕으로 국내외 다양한 발전설비를 운전 및 책임정비해 온 한전KPS는 해외 25여 개국에 진출해기술한국의 위상을 드높이고 있습니다.</p>
+                                        <div class="more"><a href="#n">VIEW MORE</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <div class="biz04 cnt">
+                                <div class="wrapper">
+                                    <div class="txt">
+                                        <h3>전문기술서비스</h3>
+                                        <strong>Expert as a Service</strong>
+                                        <div class="sub">
+                                            <span>전략기술개발</span>
+                                            <span>발전정비기술</span>
+                                            <span>원자력정비기술</span>
+                                            <span>신재생에너지</span>
+                                            <span>Engineering</span>
+                                        </div>
+                                        <p>한전KPS는 전략기술개발&디지털기술개발센터, 솔루션센터, 엔지니어링센터 등 전문센터에서 연구조직별 특화된 연구개발에 집중할 수 있도록 효율중심의 R&D수행체계를 구축하여 운영하고 있습니다.</p>
+                                        <div class="more"><a href="#n">VIEW MORE</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    </ul>
+                </div>
+            </section>
             <section class="news"></section>
             <section class="network"></section>
             <span></span>

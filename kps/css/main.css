@@ -443,6 +443,11 @@
 .biz {
     color: #fff;
 }
+.biz .swiper {
+    height: 100vh;
+    margin-left: 0;
+    margin-right: 0;
+}
 .biz .wrapper {
     position: relative;
 }
@@ -460,6 +465,15 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
+}
+.biz .cnt::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    content: "";
+    background-color: rgba(29, 29, 29, 0.8);
 }
 .biz .txt {
     margin-top: 230px;
@@ -519,15 +533,6 @@
 .biz .txt .more a:hover {
     border: 1px solid #001154;
     background-color: #001154;
-}
-.biz .cnt::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    content: "";
-    background-color: rgba(29, 29, 29, 0.8);
 }
 .biz .biz01 {
     background: url(../images/main/biz_bg01.png) center center /cover;

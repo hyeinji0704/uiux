@@ -1,0 +1,119 @@
+@charset "utf-8";/*이 css문서는 utf-8방식으로 인코딩 되어 있습니다. */
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');/*영문웹폰트*/
+@font-face {
+    font-family: 'SUIT';
+    font-weight: 500;
+    font-display: swap;
+    src: local('SUIT-ExtraBold'), url(../fonts/SUIT-Medium.woff2)format('woff2'), url(../fonts/SUIT-Medium.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+/*한글웹폰트*/
+*::selection {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+*::-moz-selection { /*호환성을 위한 코드*/
+    background-color: #1d1d1d;
+    color: #fff;
+}
+/*font-family에 여러 폰트를 쓰는 것은 순서대로 적용이 된다.*/
+.font { font-family: 'Pretendard', sans-serif;}
+.tit_font { font-family:  'SUIT', sans-serif;}
+body {
+    font-family: 'Yantramanav', 'Pretendard','SUIT', sans-serif;
+    font-size: 18px;
+    color: #1d1d1d;
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1620px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 100%;
+    overflow: hidden; /*sticky 사용할 때는 쓰면 안됨*/
+}
+/* Wrapper의 사이즈 1280 + 40px(좌우여백) = 1320 사이즈를 줄였을 때 부드럽게 들어가기 위해서*/
+@media screen and (max-width:1600px) {
+    .wrapper {
+        width: 1320px; /* 넓이 제한 */
+        margin: 0 auto; /* 센터 */
+    }
+}
+@media screen and (max-width:1320px) {
+    .wrapper {
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에*/
+        margin: 0 60px; 
+        /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+    } 
+}
+@media screen and (max-width:1024px) {
+    html, body {
+        font-size: 14px;
+    }
+} /*media*/
+@media screen and (max-width:768px) {
+    html, body {
+        font-size: 13px;
+    }
+    .wrapper {
+        width: auto; 
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에*/
+        margin: 0 20px; 
+        /* 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+    }  
+}
+.skipnav {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    z-index: 1000000;
+    width: 100%;
+}
+.skipnav a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #001154;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 15px;
+}
+/*속성선택자 
+a태그중에서 href="#gnb"인 태그의 스타일 */
+.skipnav a[href="#gnb"] {
+    background-color: #E70011;
+}
+.skipnav a:focus {
+    top: 100px;
+}
+
+/*
+    파일명 : common.css
+    작성자 : 지혜인
+    작성일 : 2024.02.28
+    속  성 : 홈페이지 전체에 공통으로 적용되는 스타일로 저장    
+            (header와 footer 적용)   
+*/

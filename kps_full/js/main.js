@@ -6,50 +6,40 @@
 */
 $(document).ready(function(){
     const myFullpage = new fullpage('#fullpage', {  /* html에서 페이지 전체를 감싸는 요소 */
-
-		navigation: true, /* 오른쪽에 각 페이지의 paging */
-		navigationPosition: 'right', /* 위치 */
-		navigationTooltips: ['첫번째', '두번째', '세번째', '네번째'], /* 툴팁 */
 		showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
 
 		autoScrolling:true, /* 한페이지씩 스크롤 */
 		scrollHorizontally: true,
+        scrollOverflow: true,
 
 		verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 */
-		
-		scrollOverflow: false, /* 컨텐츠가 넘쳐도 스크롤 금지 */
 
 		afterLoad: function(origin, destination, direction, trigger){
-			if(destination.index == 2){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
-				console.log('3번째 슬라이드가 로딩 되었을때');
-			}
+			
 		},
+        onScrollOverflow: function(section, slide, position, direction){
+            
+            if(section.index == 2){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
+                obj_size = obj_start+position*1.8
+                if(obj_size > $(window).width()){
+                    obj_size = $(window).width()
+                }
+                obj.width(obj_size)
+                obj_radius = 50 - position*0.1
+                if(obj_radius < 0){
+                    obj_radius = 0
+                }
+                $('.story .bg').attr('style', 'border-radius:'+obj_radius+'% '+obj_radius+'% 0 0')
+                $('.story').addClass('active')
+			}else{
+                $('.story .bg').attr('style', 'border-radius:50% 50% 0 0')
+                $('.story').removeClass('active')
+            }
+        },
 
 	});
-
-
-    const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
-    direction: "vertical",
-    slidesPerView: 1,
-    spaceBetween: 0,
-    mousewheel: true,
-
-    on: {
-        slideChange: function() {
-            setTimeout(function () {
-                visual_swiper.params.touchReleaseOnEdges = false;  
-                visual_swiper.params.mousewheel.releaseOnEdges = false;
-            });
-        },
-        reachEnd: function() {
-            setTimeout(function () {
-                visual_swiper.params.touchReleaseOnEdges = true;
-                visual_swiper.params.mousewheel.releaseOnEdges = true;
-            }, 500);
-        },
-    }
-    });
-
+    
+   
     let device_status
     let window_w
     let window_h 
@@ -110,36 +100,17 @@ $(document).ready(function(){
         }
     }
     device_chk()//문서가 로딩되고 1번 실행
-    story_chk()
+    //story_chk()
     $(window).resize(function(){ //문서가 리사이즈될 때마다 1번씩 실행
         device_chk()
-        story_chk()
+        //story_chk()
     })
     $(window).scroll(function(){
-        story_chk()
+        //story_chk()
     })
-    
-    
 
-    const biz_swiper = new Swiper('.biz .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        direction: "vertical",
-        slidesPerView: 1,
-        spaceBetween: 0,
-        mousewheel: true,
-
-        on: {
-            slideChange: function() {
-                setTimeout(function () {
-                    biz_swiper.params.touchReleaseOnEdges = false;  
-                    biz_swiper.params.mousewheel.releaseOnEdges = false;
-                });
-            },
-            reachEnd: function() {
-                setTimeout(function () {
-                    biz_swiper.params.touchReleaseOnEdges = true;
-                    biz_swiper.params.mousewheel.releaseOnEdges = true;
-                }, 500);
-            },
-        }
-    });
+    $('.news .list li').on('click', function(){
+        $('.news .list li').removeClass('on')
+        $(this).addClass('on')
+    })
 })

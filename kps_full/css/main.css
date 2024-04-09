@@ -1,9 +1,13 @@
 @import url(default.css);
 @import url(common.css);
 @import url(layout.css);
+body {
+    background: url(../images/main/visual_bg.png) center center / cover;
+}
+
+
 .visual {
     height: 100vh;
-    background: url(../images/main/visual_bg.png) center center / cover;
     color: #fff;
 }
 .visual .swiper {
@@ -18,25 +22,15 @@
     line-height: 0;
 }
 .visual .tit {
-    position: absolute;
-    left: 50%;
-    top: 50%;   
-    transform: translate(-50%,-50%);
     font-size: 90px;
     letter-spacing: 0.01em;
     text-align: center;
-    width: 100%;
 }
 .visual .tit .text {
     display: block;
 }
 .visual .logo_ani {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 100%;
     display: flex;
-    transform: translate(-50%, -50%);
     justify-content: center;
     align-items: center;
 }
@@ -51,7 +45,7 @@
     max-width: 100%;
 }
 .visual .scroll::before {
-    position: absolute;
+    position: fixed;
     left: 50%;
     bottom: 60px;
     transform: translate(-50%, 0);
@@ -109,27 +103,40 @@
     }
 }
 
+
+.vision {
+    background-color: #fff;
+}
 .story {
     position: relative;
-    height: 200vh;
+    /* height: 200vh; */
+    height: 3000px;
     text-align: center;
+    
 }
-.story.fixed .story_wrap {
-    position: fixed;
+.story .story_wrap {
+    position: sticky;
     top: 0;
     width: 100%;
+    
 }
-.story.fixed_after .story_wrap {
+/* .story.fixed_after .story_wrap {
     position: absolute;
     bottom: 0;
     width: 100%;
     overflow: hidden;
-}
+} */
 .story .story_wrap {
     height: 100vh;
 }
 .story .tit {
     padding-top: 167px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    z-index: 10;
+    width: 100%;
 }
 .story .tit h2 {
     font-size: 150px;
@@ -172,7 +179,7 @@
     position: absolute;
     left: 50%;
     bottom: 0;
-    z-index: -1;    
+    z-index: 5;    
     width: 1024px;
     height: calc(100% - 490px);
     transform: translate(-50%, 0);
@@ -372,8 +379,10 @@
         padding-top: 216px;
     } 
     .story .cnt {
-        padding: 0 20px;
         bottom: 35px;
+    }
+    .story .cnt ul {
+        padding: 0 60px;
     }
     .story .tit h2 {
         font-size: 80px;
@@ -442,29 +451,21 @@
 }
 .biz {
     color: #fff;
-}
-.biz .swiper {
-    height: 100vh;
-    margin-left: 0;
-    margin-right: 0;
+    position: relative;
 }
 .biz .wrapper {
     position: relative;
-}
-.biz .fixed_tit {
-    position: absolute;
-    left: 0;
-    top: 176px;
-    z-index: 100;
-    font-size: 50px;
-    color: #fff;
-}
-.biz .cnt {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
+}
+.biz .fixed_tit {
+    font-size: 30px;
+}
+.biz .cnt {
+    height: 100vh;
 }
 .biz .cnt::before {
     position: absolute;
@@ -476,7 +477,7 @@
     background-color: rgba(29, 29, 29, 0.8);
 }
 .biz .txt {
-    margin-top: 230px;
+    margin-top: 80px;
     width: calc(50% - 174px);
 }
 .biz .txt h3 {
@@ -487,7 +488,8 @@
     font-size: 26px;
     color: #AAAAAA;
     display: block;
-    margin: 20px 0;
+    line-height: 1;
+    margin: 15px 0;
 }
 .biz .txt .sub {
     display: flex;
@@ -495,14 +497,15 @@
 }
 .biz .txt .sub span {
     display: block;
-    padding: 5px 15px 5px 15px;
+    padding: 5px 15px 4px 15px;
     border: 1px solid #fff;
     border-radius: 50px;
     margin-right: 8px;
 }
 .biz .txt p {
     font-size: 18px;
-    margin: 95px 0 47px 0;
+    margin: 80px 0 47px 0;
+    line-height: 1.5;
 }
 .biz .txt .sub span:last-child {
     margin-right: 0;
@@ -512,12 +515,15 @@
     color: #fff;
 }
 .biz .txt .more a {
-    border: 1px solid #fff;
+    border: 1px solid #001154;
+    background-color: #001154;
     display: block;
-    padding: 15px 30px 13px 20px;
+    padding: 12px 30px 11px 20px;
     position: relative;
     width: 9em;
     border-radius: 50px;
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 .biz .txt .more a::after {
     position: absolute;
@@ -531,8 +537,8 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11.603' viewBox='0 0 17 11.603'%3E%3Cpath id='east_FILL0_wght300_GRAD0_opsz24' d='M114.357-728.057H100.3a.662.662,0,0,1-.488-.2.663.663,0,0,1-.2-.488.661.661,0,0,1,.2-.487.662.662,0,0,1,.488-.2h14.056L110.4-733.4a.666.666,0,0,1-.2-.468.637.637,0,0,1,.2-.486.641.641,0,0,1,.475-.188.647.647,0,0,1,.478.19l5.03,5.03a.753.753,0,0,1,.181.271.883.883,0,0,1,.053.307.912.912,0,0,1-.053.311.738.738,0,0,1-.18.274l-5.03,5.03a.632.632,0,0,1-.468.189.687.687,0,0,1-.484-.189.638.638,0,0,1-.208-.488.681.681,0,0,1,.208-.488Z' transform='translate(-99.617 734.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
 }
 .biz .txt .more a:hover {
-    border: 1px solid #001154;
-    background-color: #001154;
+    border: 1px solid #fff;
+    background-color: transparent;
 }
 .biz .biz01 {
     background: url(../images/main/biz_bg01.png) center center /cover;
@@ -545,4 +551,451 @@
 }
 .biz .biz04 {
     background: url(../images/main/biz_bg04.png) center center /cover;
+}
+@media screen and (max-width:1440px) {
+    .biz .txt {
+        width: calc(50% - 135px);
+    }
+    .biz .txt h3 {
+        font-size: 40px;
+    }
+    .biz .txt strong {
+        font-size: 22px;
+        margin: 16px 0;
+    }
+    .biz .txt p {
+        font-size: 16px;
+        margin: 60px 0 40px 0;
+    }
+}
+@media screen and (max-width:1320px) {
+    .biz .txt .sub {
+        flex-wrap: wrap;
+    }
+    .biz .txt .sub span {
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:1260px) {
+    .biz .txt {
+        width: 48%;
+    }
+    .biz .txt strong {
+        margin: 11px 0;
+    }
+    .biz .txt h3 {
+        font-size: 37px;
+    }
+}
+@media screen and (max-width:1024px) {
+    .biz .fixed_tit {
+        font-size: 24px;
+    }
+    .biz .txt h3 {
+        font-size: 32px;
+    }
+    .biz .txt strong {
+        font-size: 18px;
+    }
+    .biz .txt .sub span {
+        display: block;
+        padding: 4px 13px 3px 13px;
+    }
+    .biz .txt p {
+        font-size: 15px;
+        margin: 42px 0 38px 0;
+    }
+    .biz .txt .more {
+        font-size: 14px;
+    }
+    .biz .txt .more a {
+        padding: 11px 28px 11px 16px;
+    }
+    .biz .txt .more a::after {
+        background-size: 15px auto;
+        right: 9px;
+        top: 12px;
+    }
+}
+@media screen and (max-width:768px) {
+    .biz .wrapper {
+        justify-content: flex-end;
+    }
+    .biz .fixed_tit {
+        position: absolute;
+        left: 0;
+        top: 150px;
+    }
+    .biz .cnt::before {
+        bottom: 0;
+        top: auto;
+        width: 100%;
+        height: 50%;
+    }
+    .biz .cnt {
+        justify-content: flex-end;
+    }
+    .biz .txt {
+        height: 45%;
+        margin-top: 0;
+        width: auto;
+    }
+    .biz .txt h3 {
+        font-size: 28px;
+    }
+    .biz .txt strong {
+        font-size: 17px;
+    }
+    .biz .txt p {
+        margin: 27px 0 55px 0;
+    }
+}
+@media screen and (max-width:600px) {
+    .biz .txt p {
+        display: none;
+    }
+    .biz .txt .more {
+        position: absolute;
+        right: 0;
+        bottom: 60px;
+    }
+}
+@media screen and (max-width:500px) {
+    .biz .txt h3 {
+        font-size: 26px;
+    }
+    .biz .txt strong {
+        font-size: 16px;
+    }
+    .biz .txt strong {
+        margin: 3px 0 24px 0;
+    }
+    .biz .txt .sub {
+        font-size: 13px;
+    }
+    .biz .txt .sub span {
+        margin-bottom: 7px;
+    }
+    .biz .txt .more {
+        font-size: 13px;
+    }
+    .biz .txt .more a::after {
+        background-size: 13px auto;
+        right: 6px;
+    }
+}
+
+.news {
+    background-color: #fff;
+}
+.news .tit {
+    padding-top: 187px; 
+    font-weight: 700;
+}
+.news .tit h2 {
+    font-size: 26px;
+    color: #014099;
+}
+.news .tit p {
+    margin-top: 38px;
+    font-size: 46px;
+}
+.news .list {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding-bottom: 610px;
+}
+.news .list button {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 0;
+    border-radius: 50px;
+    margin-right: 16px;
+    width: 150px;
+}
+.news .list li button {
+    border: 1px solid #BCC7D7;
+}
+.news .list li .detail {
+    display: none;
+}
+.news .list li .detail .hover {
+    display: none;
+}
+.news .list li .detail > ul > li {
+    width: calc(33.33% - 80px);
+    position: relative;
+    padding: 28px 28px;
+    transition: 0.3s;
+}
+.news .list li .detail > ul > li::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #686868;
+    transition: 0.3s;
+}
+.news .list li .detail > ul > li > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+}
+.news .list li .detail strong {
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    height: 2.6em;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.news .list li .detail span {
+    display: block;
+    font-size: 18px;
+    color: #AAAAAA;
+    padding-bottom: 25px;
+}
+.news .list li .detail .photo {
+    height: 210px;
+}
+.news .list li .detail .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+/*버튼에 on class넣었을 때*/
+.news .list li.on button, .news .list li:hover button {
+    background-color: #014099;
+    border: 1px solid #014099;
+    color: #fff;
+}
+.news .list li.on .detail {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 140px;
+}
+.news .list li.on .detail > ul {
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (min-width:1025px) {
+/* li hover 했을 때 */
+.news .list li .detail > ul > li:hover {
+    background-color: #014099;
+    color: #fff;
+    border-radius: 5px;
+}
+.news .list li .detail > ul > li:hover::before {
+    display: none;
+}
+.news .list li .detail > ul > li:hover .hover {
+    display: block;
+    line-height: 1.4;
+    height: 4.2em;
+    overflow: hidden;
+}
+.news .list li .detail > ul > li:hover .photo {
+    display: none;
+}
+}
+@media screen and (max-width:1440px) {
+    .news .tit h2 {
+        font-size: 24px;
+    }
+    .news .tit p {
+        margin-top: 36px;
+        font-size: 44px;
+    }
+    .news .list li .detail strong {
+        font-size: 24px;
+    }
+    .news .list li.on .detail {
+        top: 90px;
+    }
+    .news .list {
+        margin-top: 0;
+    }
+    .news .list {
+        padding-bottom: 556px;
+    }
+}
+@media screen and (max-width:1320px) {
+    .news .tit {
+        padding-top: 150px;
+    }
+    .news .tit p {
+        margin-top: 30px; 
+    }
+    .news .list {
+        margin-top: 25px;
+    }
+    .news .list li .detail > ul > li {
+        width: calc(33.33% - 50px);
+    }
+    .news .list {
+        padding-bottom: 535px;
+    }
+}
+@media screen and (max-width:1260px) {
+    .news .tit h2 {
+        font-size: 22px;
+    }
+    .news .tit p {
+        margin-top: 28px;
+        font-size: 42px;
+    }
+    .news .list {
+        padding-bottom: 520px;
+    }
+    .news .list button {
+        font-size: 18px;
+        padding: 10px 0;
+        margin-right: 13px;
+        width: 140px;
+    }
+    .news .list li.on .detail {
+        top: 100px;
+    }
+    .news .list li .detail strong {
+        font-size: 22px;
+    }
+    .news .list li .detail span {
+        font-size: 17px;
+        padding-bottom: 15px;
+    }
+    .news .list li .detail > ul > li > a {
+        height: 310px;
+    }
+    .news .list li .detail .photo {
+        height: 180px;
+    }
+    .news .list li .detail .hover {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:1024px) {
+    .news .tit {
+        padding-top: 130px;
+    }
+    .news .tit h2 {
+        font-size: 18px;
+    }
+    .news .tit p {
+        margin-top: 43px;
+        font-size: 36px;
+    }
+    .news .list {
+        padding-bottom: 464px;
+        margin-top: 75px;
+        justify-content: flex-start;
+    }
+    .news .list li .detail > ul > li {
+        width: calc(33.33% - 20px);
+        padding: 24px 23px;
+    }
+    .news .list li.on .detail {
+        top: 80px;
+    }
+    .news .list li .detail span {
+        font-size: 17px;
+        padding-bottom: 8px;
+    }
+}
+@media screen and (max-width:768px) {
+    .news .list li .detail > ul > li:last-child {
+        display: none;
+    }
+    .news .list li .detail > ul > li {
+        width: calc(50% - 20px);
+    }
+    .news .tit p {
+        margin-top: 21px;
+        font-size: 30px;
+    }
+    .news .list button {
+        font-size: 16px;
+        padding: 8px 0;
+        margin-right: 10px;
+        width: 118px;
+    }
+    .news .list li .detail strong {
+        font-size: 20px;
+    }
+    .news .list li .detail .hover {
+        font-size: 16px;
+    }
+    .news .list li .detail span {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:600px) {
+    .news .list li .detail > ul > li {
+        width: calc(50% - 13px);
+        padding: 20px 14px;
+    }
+}
+@media screen and (max-width:500px) {
+    .news .tit {
+        padding-top: 110px;
+        text-align: center;
+    }
+    .news .list {
+        padding-bottom: 503px;
+        justify-content: center;
+    }
+    .news .tit p {
+        margin-top: 20px;
+        font-size: 26px;
+    }
+    .news .list li.on .detail {
+        top: 90px;
+        width: 100%;
+    }
+    .news .list li .detail > ul > li {
+        width: 100%;
+        padding: 32px 21px 25px 21px;
+        background-color: #F6F6F6;
+    }
+    .news .list li .detail > ul > li:nth-child(2) {
+        display: none;
+    }
+    .news .list li.on .notice p {
+        display: block;
+        padding-bottom: 160px;
+    }
+    .news .list li .detail strong {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1;
+    }
+    .news .list li .detail .hover {
+        font-size: 14px;
+    }
+    .news .list li .detail span {
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:375px) {
+    .news .list button {
+        font-size: 15px;
+        width: 100px;
+    }
+    .news .list li .detail > ul > li {
+        padding: 21px 21px 25px 21px;
+    }
+    .news .list button {
+        margin-right: 6px;
+        width: 94px;
+    }
+    .news .list li .detail strong {
+        margin-top: 10px;
+    }
 }

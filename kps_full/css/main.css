@@ -7,15 +7,13 @@ body {
 
 
 .visual {
-    height: 100vh;
     color: #fff;
-}
-.visual .swiper {
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 .visual .wrapper {
     position: relative;
-    height: 100%;
+    overflow-y: hidden;
 }
 .visual h2 {
     font-size: 0;
@@ -25,6 +23,7 @@ body {
     font-size: 90px;
     letter-spacing: 0.01em;
     text-align: center;
+    line-height: 1.3;
 }
 .visual .tit .text {
     display: block;
@@ -106,7 +105,6 @@ body {
 
 .vision {
     background-color: #fff;
-    
 }
 .story {
     position: relative;
@@ -162,7 +160,6 @@ body {
 }
 .story .cnt ul li h3 {
     font-size: 22px;
-    font-weight: 700;
 }
 .story .cnt ul li b {
     font-size: 100px;
@@ -310,9 +307,33 @@ body {
         font-size: 18px;
     }
 }
+@media screen and (max-width:1023px) {
+    .story {
+        height: 100vh;
+    }
+    .story .more {
+        opacity: 1;
+    }
+    .story .cnt {
+        opacity: 1;
+    }
+    .story .story_sub {
+        width: 100%;
+        height: calc(100% - 270px);
+        overflow: hidden;
+    }
+    .story .tit p {
+        color: #fff;
+    }
+    .story .bg {
+        padding: 0;
+        border-radius: 0 0 0 0;
+        height: 100%;
+    }
+}
 @media screen and (max-width:768px) {
     .story .cnt {
-        padding: 0 40px;
+        padding: 0 20px;
         bottom: -30px;
     }
     .story .tit h2 {
@@ -377,19 +398,16 @@ body {
         padding-top: 216px;
     } 
     .story .cnt {
-        bottom: 35px;
-    }
-    .story .cnt ul {
-        padding: 0 60px;
+        bottom: 60px;
     }
     .story .tit h2 {
         font-size: 80px;
     }
     .story .tit p {
-        font-size: 18px;
+        font-size: 17px;
     }
     .story .cnt ul li {
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
     .story .cnt ul li h3 {
         font-size: 15px;
@@ -513,6 +531,29 @@ body {
     color: #fff;
 }
 .biz .txt .more a {
+    display: block;
+    position: relative;
+    width: 7em;
+    border-radius: 50px;
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.biz .txt .more a::after {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    content: "";
+    width: 28px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11.603' viewBox='0 0 17 11.603'%3E%3Cpath id='east_FILL0_wght300_GRAD0_opsz24' d='M114.357-728.057H100.3a.662.662,0,0,1-.488-.2.663.663,0,0,1-.2-.488.661.661,0,0,1,.2-.487.662.662,0,0,1,.488-.2h14.056L110.4-733.4a.666.666,0,0,1-.2-.468.637.637,0,0,1,.2-.486.641.641,0,0,1,.475-.188.647.647,0,0,1,.478.19l5.03,5.03a.753.753,0,0,1,.181.271.883.883,0,0,1,.053.307.912.912,0,0,1-.053.311.738.738,0,0,1-.18.274l-5.03,5.03a.632.632,0,0,1-.468.189.687.687,0,0,1-.484-.189.638.638,0,0,1-.208-.488.681.681,0,0,1,.208-.488Z' transform='translate(-99.617 734.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+/* .biz .txt .more {
+    font-size: 16px;
+    color: #fff;
+}
+.biz .txt .more a {
     border: 1px solid #001154;
     background-color: #001154;
     display: block;
@@ -533,11 +574,13 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11.603' viewBox='0 0 17 11.603'%3E%3Cpath id='east_FILL0_wght300_GRAD0_opsz24' d='M114.357-728.057H100.3a.662.662,0,0,1-.488-.2.663.663,0,0,1-.2-.488.661.661,0,0,1,.2-.487.662.662,0,0,1,.488-.2h14.056L110.4-733.4a.666.666,0,0,1-.2-.468.637.637,0,0,1,.2-.486.641.641,0,0,1,.475-.188.647.647,0,0,1,.478.19l5.03,5.03a.753.753,0,0,1,.181.271.883.883,0,0,1,.053.307.912.912,0,0,1-.053.311.738.738,0,0,1-.18.274l-5.03,5.03a.632.632,0,0,1-.468.189.687.687,0,0,1-.484-.189.638.638,0,0,1-.208-.488.681.681,0,0,1,.208-.488Z' transform='translate(-99.617 734.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
-}
+} 
 .biz .txt .more a:hover {
     border: 1px solid #fff;
     background-color: transparent;
 }
+*/
+
 .biz .biz01 {
     background: url(../images/main/biz_bg01.png) center center /cover;
 }
@@ -606,13 +649,10 @@ body {
     .biz .txt .more {
         font-size: 14px;
     }
-    .biz .txt .more a {
-        padding: 11px 28px 11px 16px;
-    }
     .biz .txt .more a::after {
         background-size: 15px auto;
-        right: 9px;
-        top: 12px;
+        right: 0;
+        top: 0;
     }
 }
 @media screen and (max-width:768px) {
@@ -679,7 +719,6 @@ body {
     }
     .biz .txt .more a::after {
         background-size: 13px auto;
-        right: 6px;
     }
 }
 
@@ -687,7 +726,7 @@ body {
     background-color: #fff;
 }
 .news .tit {
-    padding-top: 150px; 
+    padding-top: 40px;
     font-weight: 700;
 }
 .news .tit h2 {
@@ -703,7 +742,7 @@ body {
     display: flex;
     justify-content: flex-end;
     position: relative;
-    padding-bottom: 610px;
+    padding-bottom: 480px;
 }
 .news .list button {
     font-size: 20px;
@@ -718,6 +757,9 @@ body {
 }
 .news .list li .detail {
     display: none;
+    position: absolute;
+    left: 0;
+    top: 100px;
 }
 .news .list li .detail .hover {
     display: none;
@@ -725,7 +767,7 @@ body {
 .news .list li .detail > ul > li {
     width: calc(33.33% - 80px);
     position: relative;
-    padding: 28px 28px;
+    padding: 28px 28px 33px 28px;
     transition: 0.3s;
 }
 .news .list li .detail > ul > li::before {
@@ -734,7 +776,7 @@ body {
     bottom: 0;
     content: "";
     width: 100%;
-    height: 5px;
+    height: 3.5px;
     background-color: #686868;
     transition: 0.3s;
 }
@@ -743,6 +785,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 350px;
+    position: relative;
 }
 .news .list li .detail strong {
     display: block;
@@ -757,7 +800,6 @@ body {
     display: block;
     font-size: 18px;
     color: #AAAAAA;
-    padding-bottom: 25px;
 }
 .news .list li .detail .photo {
     height: 210px;
@@ -767,6 +809,36 @@ body {
     height: 100%;
     object-fit: contain;
 }
+.news .list li .article strong, .news .list li .blog strong {
+    font-size: 24px;
+}
+.news .more {
+    display: none;
+    position: absolute;
+    right: 37px;
+    bottom: 34px;
+    font-size: 16px;
+    color: #fff;
+}
+.news .more a {
+    display: block;
+    position: relative;
+    width: 7em;
+    border-radius: 50px;
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.news .more a::after {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    content: "";
+    width: 28px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11.603' viewBox='0 0 17 11.603'%3E%3Cpath id='east_FILL0_wght300_GRAD0_opsz24' d='M114.357-728.057H100.3a.662.662,0,0,1-.488-.2.663.663,0,0,1-.2-.488.661.661,0,0,1,.2-.487.662.662,0,0,1,.488-.2h14.056L110.4-733.4a.666.666,0,0,1-.2-.468.637.637,0,0,1,.2-.486.641.641,0,0,1,.475-.188.647.647,0,0,1,.478.19l5.03,5.03a.753.753,0,0,1,.181.271.883.883,0,0,1,.053.307.912.912,0,0,1-.053.311.738.738,0,0,1-.18.274l-5.03,5.03a.632.632,0,0,1-.468.189.687.687,0,0,1-.484-.189.638.638,0,0,1-.208-.488.681.681,0,0,1,.208-.488Z' transform='translate(-99.617 734.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
 /*버튼에 on class넣었을 때*/
 .news .list li.on button, .news .list li:hover button {
     background-color: #014099;
@@ -775,35 +847,42 @@ body {
 }
 .news .list li.on .detail {
     display: block;
-    position: absolute;
-    left: 0;
-    top: 140px;
+    
 }
 .news .list li.on .detail > ul {
     display: flex;
     justify-content: space-between;
 }
 @media screen and (min-width:1025px) {
-/* li hover 했을 때 */
-.news .list li .detail > ul > li:hover {
-    background-color: #014099;
-    color: #fff;
-    border-radius: 5px;
-}
-.news .list li .detail > ul > li:hover::before {
-    display: none;
-}
-.news .list li .detail > ul > li:hover .hover {
-    display: block;
-    line-height: 1.4;
-    height: 4.2em;
-    overflow: hidden;
-}
-.news .list li .detail > ul > li:hover .photo {
-    display: none;
-}
+    /* li hover 했을 때 */
+    .news .list li .detail > ul > li:hover {
+        background-color: #014099;
+        color: #fff;
+        border-radius: 5px;
+    }
+    .news .list li .detail > ul > li:hover::before {
+        display: none;
+    }
+    .news .list li .detail > ul > li:hover .hover {
+        display: block;
+        line-height: 1.4;
+        height: 4.2em;
+        overflow: hidden;
+    }
+    .news .list li .detail > ul > li:hover .photo {
+        display: none;
+    }
+    .news .list li .detail > ul > li:hover .more {
+        display: block;
+    }
+    .news .list li .detail > ul > li:hover span {
+        color: #ddd;
+    }
 }
 @media screen and (max-width:1440px) {
+    .news .tit {
+        padding-top: 70px;
+    }
     .news .tit h2 {
         font-size: 24px;
     }
@@ -814,31 +893,30 @@ body {
     .news .list li .detail strong {
         font-size: 24px;
     }
-    .news .list li.on .detail {
+    .news .list li .article strong, .news .list li .blog strong {
+        font-size: 22px;
+    }
+    .news .list li .detail {
         top: 90px;
     }
     .news .list {
         margin-top: 0;
-    }
-    .news .list {
-        padding-bottom: 556px;
+        padding-bottom: 480px;
     }
 }
 @media screen and (max-width:1320px) {
     .news .tit {
-        padding-top: 150px;
+        padding-top: 85px;
     }
     .news .tit p {
         margin-top: 30px; 
     }
     .news .list {
         margin-top: 25px;
+        padding-bottom: 458px;
     }
     .news .list li .detail > ul > li {
         width: calc(33.33% - 50px);
-    }
-    .news .list {
-        padding-bottom: 535px;
     }
 }
 @media screen and (max-width:1260px) {
@@ -850,7 +928,7 @@ body {
         font-size: 42px;
     }
     .news .list {
-        padding-bottom: 520px;
+        padding-bottom: 430px;
     }
     .news .list button {
         font-size: 18px;
@@ -858,15 +936,17 @@ body {
         margin-right: 13px;
         width: 140px;
     }
-    .news .list li.on .detail {
+    .news .list li .detail {
         top: 100px;
     }
     .news .list li .detail strong {
         font-size: 22px;
     }
+    .news .list li .article strong, .news .list li .blog strong {
+        font-size: 20px;
+    }
     .news .list li .detail span {
         font-size: 17px;
-        padding-bottom: 15px;
     }
     .news .list li .detail > ul > li > a {
         height: 310px;
@@ -880,7 +960,7 @@ body {
 }
 @media screen and (max-width:1024px) {
     .news .tit {
-        padding-top: 130px;
+        padding-top: 95px;
     }
     .news .tit h2 {
         font-size: 18px;
@@ -890,7 +970,7 @@ body {
         font-size: 36px;
     }
     .news .list {
-        padding-bottom: 464px;
+        padding-bottom: 425px;
         margin-top: 75px;
         justify-content: flex-start;
     }
@@ -898,12 +978,14 @@ body {
         width: calc(33.33% - 20px);
         padding: 24px 23px;
     }
-    .news .list li.on .detail {
+    .news .list li.detail {
         top: 80px;
     }
     .news .list li .detail span {
         font-size: 17px;
-        padding-bottom: 8px;
+    }
+    .news .list button {
+        width: 125px;
     }
 }
 @media screen and (max-width:768px) {
@@ -926,6 +1008,9 @@ body {
     .news .list li .detail strong {
         font-size: 20px;
     }
+    .news .list li .article strong, .news .list li .blog strong {
+        font-size: 18px;
+    }
     .news .list li .detail .hover {
         font-size: 16px;
     }
@@ -945,14 +1030,13 @@ body {
         text-align: center;
     }
     .news .list {
-        padding-bottom: 503px;
         justify-content: center;
     }
     .news .tit p {
         margin-top: 20px;
         font-size: 26px;
     }
-    .news .list li.on .detail {
+    .news .list li .detail {
         top: 90px;
         width: 100%;
     }
@@ -980,20 +1064,557 @@ body {
     .news .list li .detail span {
         font-size: 13px;
     }
-}
-@media screen and (max-width:375px) {
     .news .list button {
         font-size: 15px;
         width: 100px;
     }
+    .news .list {
+        margin-top: 56px;
+    }
+}
+@media screen and (max-width:375px) {
     .news .list li .detail > ul > li {
         padding: 21px 21px 25px 21px;
     }
     .news .list button {
         margin-right: 6px;
-        width: 94px;
+        width: 85px;
     }
     .news .list li .detail strong {
         margin-top: 10px;
+    }
+    .news .tit p {
+        font-size: 24px;
+    }
+    .news .tit h2 {
+        font-size: 17px;
+    }
+}
+
+.network {
+    padding-top: 160px;
+    background-color: #001154;
+    overflow-x: hidden;
+}
+.network .inner {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 574px;
+}
+.network .tit {
+    font-weight: 700;
+    width: 45em;
+}
+.network .tit .mobile_br {
+    display: none;
+}
+.network .tit h2 {
+    font-size: 26px;
+    color: #fff;
+}
+.network .tit p {
+    color: #fff;
+    margin-top: 38px;
+    font-size: 46px;
+}
+.network .more {
+    margin-top: 35px;
+    font-size: 16px;
+    color: #fff;
+    width: 8em;
+}
+.network .more a {
+    display: block;
+    position: relative;
+    width: 7em;
+    border-radius: 50px;
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.network .more a::after {
+    position: absolute;
+    right: 0;
+    top: 1px;
+    content: "";
+    width: 28px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11.603' viewBox='0 0 17 11.603'%3E%3Cpath id='east_FILL0_wght300_GRAD0_opsz24' d='M114.357-728.057H100.3a.662.662,0,0,1-.488-.2.663.663,0,0,1-.2-.488.661.661,0,0,1,.2-.487.662.662,0,0,1,.488-.2h14.056L110.4-733.4a.666.666,0,0,1-.2-.468.637.637,0,0,1,.2-.486.641.641,0,0,1,.475-.188.647.647,0,0,1,.478.19l5.03,5.03a.753.753,0,0,1,.181.271.883.883,0,0,1,.053.307.912.912,0,0,1-.053.311.738.738,0,0,1-.18.274l-5.03,5.03a.632.632,0,0,1-.468.189.687.687,0,0,1-.484-.189.638.638,0,0,1-.208-.488.681.681,0,0,1,.208-.488Z' transform='translate(-99.617 734.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.network .cnt {
+    position: absolute;
+    z-index: -1;
+    right: 45px;
+    top: -59px;
+}
+.network .cnt .map img {
+    width: 100%;
+    height: 100%;
+}
+.network .cnt .cont {
+    position: absolute;
+}
+.network .cnt .cont a {
+    position: absolute; 
+    background-color: rgba(0, 0, 0 , 0.8); 
+    color: #fff ;
+    top: 0; 
+    right: 0 ; 
+    transform: translate(50%,-220%); 
+    padding: 9px 12px;
+    white-space: nowrap;
+    border-radius: 10px; 
+    opacity: 0; 
+    pointer-events: none; 
+    transition: all .5s
+}
+.network .cnt .cont a::before {
+    content: ""; 
+    position: absolute; 
+    width: 21.5px; 
+    height: 15px;
+    right: 2px; 
+    bottom: 4px; 
+    transform: translate(0,100%); 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21.5' height='15' viewBox='0 0 21.5 15'%3E%3Cpath id='패스_14446' data-name='패스 14446' d='M12063.5,15105v15l21.5-15' transform='translate(-12063.5 -15105)' opacity='0.8'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; 
+}
+.network .cnt .cont.cont01 {
+    right: 20%; top: 56%;
+}
+.network .cnt .cont.cont02 {
+    right: 31.5%; top: 58.3%;
+}
+.network .cnt .cont.cont03 {
+    right: 35.8%; top: 49%;
+}
+.network .cnt .cont.cont04 {
+    right: 42.3%; top: 49%;
+}
+.network .cnt .cont.cont05 {
+    right: 40.2%; top: 76.2%;
+}
+.network .cnt .cont.cont06 {
+    right: 46.3%; top: 81%;
+}
+.network .cnt .cont.cont07 {
+    right: 67.5%; top: 81.5%;
+}
+.network .cnt .cont .circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.network .cnt .cont .circle .cir {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%; 
+    background-color: #9CD0FF; 
+    cursor: pointer;
+}
+.network .cnt .cont .circle.basic .cir01 {
+    width: 1.5em;
+    height: 1.5em;
+    opacity: 0.6;
+}
+.network .cnt .cont .circle.basic .cir02 {
+    width: 0.8em;
+    height: 0.8em;
+}
+.network .cnt .cont .circle.hover {
+    opacity: 0;
+    pointer-events: none;
+}
+.network .cnt .cont .circle.hover .cir {
+    width: 6em; 
+    height: 6em;
+    animation: waves 2.5s ease-in-out infinite; 
+    opacity: 0
+}
+.network .cnt .cont .circle.hover .cir01 {
+    animation-delay: 0s;
+}
+.network .cnt .cont .circle.hover .cir02 {
+    animation-delay: 0.75s;
+}
+.network .cnt .cont .circle.hover .cir03 {
+    animation-delay: 1.5s;
+}
+/*active class 추가*/
+.network .cnt .cont.active .circle.hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+.network .cnt .cont.active .circle.basic {
+    opacity: 0;
+}
+.network .cnt .cont.active  a {
+    opacity: 1; 
+    pointer-events: none; 
+}
+/*active class 추가*/
+@keyframes waves {
+    0% {
+        transform: translate(-50%,-50%) scale(0.2, 0.2);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%,-50%) scale(0.8, 0.8);
+        opacity: 0;
+    }
+}
+@media screen and (max-width:1440px) {
+    .network {
+        padding-top: 150px;
+    }    
+    .network .inner {
+        padding-bottom: 475px;
+    }
+    .network .tit h2 {
+        font-size: 24px;
+    }
+    .network .tit p {
+        margin-top: 36px;
+        font-size: 44px;
+    }
+}
+@media screen and (max-width:1320px) {
+    .network {
+        padding-top: 140px;
+    }
+    .network .cnt {
+        right: -30px;
+        top: -40px;
+    }
+    .network .tit p {
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width:1260px) {
+    .network {
+        padding-top: 130px;
+    }
+    .network .tit h2 {
+        font-size: 22px;
+    }
+    .network .inner {
+        padding-bottom: 440px;
+    }
+}
+@media screen and (max-width:1180px) {
+    .network .inner {
+        padding-bottom: 400px;
+    }
+    .network .cnt {
+        right: -80px;
+        top: -35px;
+    }
+}
+@media screen and (max-width:1024px) {
+    .network .tit h2 {
+        font-size: 18px;
+    }
+    .network .tit p {
+        margin-top: 43px;
+        font-size: 36px;
+    }
+    .network .cnt {
+        top: auto;
+        bottom: 0;
+    }
+    .network .more {
+        font-size: 14px;
+    }
+    .network .more a::after {
+        background-size: 15px auto;
+    }
+}
+@media screen and (max-width:768px) {
+    .network {
+        padding-top: 80px;
+    }
+    .network .cnt {
+        bottom: 21px;
+    }
+    .network .tit p {
+        margin-top: 21px;
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:600px) {
+    .network .cnt .cont .circle.basic .cir01 {
+        width: 1.2em;
+        height: 1.2em;
+    }
+    .network .cnt .cont .circle.basic .cir02 {
+        width: 0.6em;
+        height: 0.6em;
+    }
+    .network .cnt .cont a {
+        transform: translate(50%, -175%);
+    }
+    @keyframes waves {
+        0% {
+            transform: translate(-50%,-50%) scale(0.15, 0.15);
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.5;
+        }
+        100% {
+            transform: translate(-50%,-50%) scale(0.6, 0.6);
+            opacity: 0;
+        }
+    }
+}
+@media screen and (max-width:500px) {
+    .network .tit p {
+        margin-top: 20px;
+        font-size: 26px;
+    }
+    .network .tit {
+        width: 100%;
+    }
+    .network .inner {
+        padding-bottom: 340px;
+    }
+    .network .tit .mobile_br {
+        display: block;
+    }
+    .network .cnt {
+        right: -20px;
+        bottom: 50px;
+    }
+    .network .more {
+        font-size: 13px;
+    }
+    .network .more a::after {
+        background-size: 13px auto;
+    }
+}
+@media screen and (max-width:425px) {
+    .network .tit p {
+        margin-top: 20px;
+        font-size: 26px;
+    }
+    .network .inner {
+        padding-bottom: 340px;
+    }
+    .network .cnt .cont .circle.basic .cir01 {
+        width: 1.1em;
+        height: 1.1em;
+    }
+    .network .cnt .cont .circle.basic .cir02 {
+        width: 0.5em;
+        height: 0.5em;
+    }
+}
+@media screen and (max-width:375px) {
+    .network .inner {
+        padding-bottom: 280px;
+    }
+    .network .tit p {
+        font-size: 24px;
+    }
+    .network .tit h2 {
+        font-size: 17px;
+    }
+    .network .cnt .cont a {
+        transform: translate(39%, -150%);
+    }
+}
+
+.recruit {
+    background: url(../images/main/re_bg02.png) no-repeat center center;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+}
+.recruit .tit {
+    padding-top: 205px;
+}
+.recruit .tit h2 {
+    font-size: 46px;
+    font-weight: 700;
+}
+.recruit .tit p {
+    margin: 36px 0 101px 0;
+}
+.recruit .link {
+    padding-bottom: 205px;
+}
+.recruit .link a {
+    margin: 0 20px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    padding: 17px 50px 17px 30px;
+    position: relative;
+}
+.recruit .link a::before {
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    content: "";
+    width: 28px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11.603' viewBox='0 0 17 11.603'%3E%3Cpath id='east_FILL0_wght300_GRAD0_opsz24' d='M114.357-728.057H100.3a.662.662,0,0,1-.488-.2.663.663,0,0,1-.2-.488.661.661,0,0,1,.2-.487.662.662,0,0,1,.488-.2h14.056L110.4-733.4a.666.666,0,0,1-.2-.468.637.637,0,0,1,.2-.486.641.641,0,0,1,.475-.188.647.647,0,0,1,.478.19l5.03,5.03a.753.753,0,0,1,.181.271.883.883,0,0,1,.053.307.912.912,0,0,1-.053.311.738.738,0,0,1-.18.274l-5.03,5.03a.632.632,0,0,1-.468.189.687.687,0,0,1-.484-.189.638.638,0,0,1-.208-.488.681.681,0,0,1,.208-.488Z' transform='translate(-99.617 734.538)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.recruit .link a:hover {
+    border: 1px solid #001154;
+    background-color: #001154;
+}
+@media screen and (max-width:1440px) {
+    .recruit .tit h2 {
+        font-size: 44px;
+    }
+    .recruit .tit {
+        padding-top: 140px;
+    }
+    .recruit .link {
+        padding-bottom: 163px;
+    }
+    .recruit .tit p {
+        margin: 26px 0 76px 0;
+    }
+}
+@media screen and (max-width:1260px) {
+    .recruit .tit h2 {
+        font-size: 40px;
+    }
+    .recruit .link {
+        padding-bottom: 150px;
+    }
+}
+@media screen and (max-width:1024px) {
+    .recruit .tit h2 {
+        font-size: 36px;
+    }
+    .recruit .tit p {
+        margin: 22px 0 40px 0;
+    }
+    .recruit .link {
+        font-size: 15px;
+        padding-bottom: 145px;
+    }
+    .recruit .link a {
+        padding: 15px 45px 15px 25px;
+    } 
+    .recruit .link a::before {
+        right: 14px;
+        top: 16px;
+    }
+}
+@media screen and (max-width:768px) {
+    .recruit .tit {
+        padding-top: 100px;
+    }
+    .recruit .tit h2 {
+        font-size: 30px;
+    }
+    .recruit .tit p {
+        font-size: 16px;
+        margin: 15px 0 36px 0;
+    }
+    .recruit .link {
+        font-size: 15px;
+        padding-bottom: 110px;
+    }
+    .recruit .link a {
+        padding: 12px 40px 12px 20px;
+    } 
+    .recruit .link a::before {
+        right: 10px;
+        top: 12.5px;
+        background-size: 15px auto;
+    }
+}
+@media screen and (max-width:500px) {
+    .recruit .tit h2 {
+        font-size: 26px;
+    }
+    .recruit .tit p {
+        display: none;
+    }
+    .recruit .link {
+        margin-top: 38px;
+        padding-bottom: 75px;
+    }
+    .recruit .link .mobile_none {
+        display: none;
+    }
+    .recruit .tit {
+        padding-top: 80px;
+    }
+}
+@media screen and (max-width:375px) {
+    .recruit .tit h2 {
+        font-size: 22px;
+    }
+    .recruit .link {
+        font-size: 14px;
+    }
+    .recruit .link a {
+        padding: 10px 35px 10px 15px;
+    }
+    .recruit .link a::before {
+        right: 7px;
+        top: 10px;
+        background-size: 13px auto;
+    }
+}
+@media screen and (max-width:320px) {
+    .recruit .tit h2 {
+        font-size: 20px;
+    }
+}
+.sec_btm {
+    background-color: #1d1d1d;
+}
+.top {
+    position: absolute;
+    right: 4%;
+    bottom: 50%;
+    font-size: 0;
+    line-height: 0;
+    z-index: 10;
+}
+.top button {
+    width: 96px;
+    height: 96px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.173' height='11.358' viewBox='0 0 11.173 11.358'%3E%3Cpath id='arrow_forward_FILL0_wght300_GRAD0_opsz24' d='M189.421-761.758h-8.837a.564.564,0,0,1-.415-.167.564.564,0,0,1-.167-.415.564.564,0,0,1,.167-.415.564.564,0,0,1,.415-.167h8.837l-4.015-4.015a.547.547,0,0,1-.171-.406.577.577,0,0,1,.183-.413.609.609,0,0,1,.409-.175.543.543,0,0,1,.409.175l4.925,4.925a.644.644,0,0,1,.154.23.746.746,0,0,1,.045.261.747.747,0,0,1-.045.261.645.645,0,0,1-.154.23l-4.925,4.925a.556.556,0,0,1-.4.165.581.581,0,0,1-.419-.165.571.571,0,0,1-.181-.415.571.571,0,0,1,.181-.415Z' transform='translate(767.932 191.359) rotate(-90)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+@media screen and (max-width:768px) {
+    .top button {
+        width: 70px;
+        height: 70px;
+    }
+    .top {
+        bottom: 67%;
+    }
+}
+@media screen and (max-width:500px) {
+    .top button {
+        width: 60px;
+        height: 60px;
+    }
+}
+@media screen and (max-width:375px) {
+    .top {
+        bottom: 20%;
     }
 }

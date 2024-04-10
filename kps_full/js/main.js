@@ -17,29 +17,34 @@ $(document).ready(function(){
 		afterLoad: function(origin, destination, direction, trigger){
 			if((destination.index == 2)){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
 				$('.header').addClass('fixed')
+                $('.header').addClass('black')
 			}else if((destination.index == 7)){
 				$('.header').addClass('fixed')
+                $('.header').addClass('black')
             }else {
                 $('.header').removeClass('fixed')
+                $('.header').removeClass('black')
             }
 		},
         onScrollOverflow: function(section, slide, position, direction){
-            
-            if(section.index == 2){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
-                obj_size = obj_start+position*1.2
-                if(obj_size > $(window).width()){
-                    obj_size = $(window).width()
-                }
-                obj.width(obj_size)
-                obj_radius = 50 - position*0.06
-                if(obj_radius < 0){
-                    obj_radius = 0
-                }
-                $('.story .bg').attr('style', 'border-radius:'+obj_radius+'% '+obj_radius+'% 0 0')
-                $('.story').addClass('active')
-			}else{
-                $('.story .bg').attr('style', 'border-radius:50% 50% 0 0')
-                $('.story').removeClass('active')
+            if(window_w > 1023){
+                if(section.index == 2){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
+                        obj_size = obj_start+position*1.2
+                        if(obj_size > $(window).width()){
+                            obj_size = $(window).width()
+                        }
+                        obj.width(obj_size)
+                        obj_radius = 50 - position*0.06
+                        if(obj_radius < 0){
+                            obj_radius = 0
+                        }
+                        $('.story .bg').attr('style', 'border-radius:'+obj_radius+'% '+obj_radius+'% 0 0')
+                        $('.story').addClass('active')
+                    }else{
+                        $('.story .bg').attr('style', 'border-radius:50% 50% 0 0')
+                        $('.story').removeClass('active')
+                    }
+
             }
         },
 
@@ -67,44 +72,6 @@ $(document).ready(function(){
         console.log(device_status)
     }
 
-    function story_chk(){
-        window_w = $(window).width()
-        window_h = $(window).height()
-        scrolling = $(window).scrollTop()
-        if((scrolling >= obj_wrap.offset().top)&&(scrolling <= obj_wrap.offset().top + obj_wrap.height() - window_h)){
-            obj_wrap.addClass('fixed')
-            obj_wrap.removeClass('fixed_after')
-        }else if(scrolling > obj_wrap.offset().top + obj_wrap.height() - window_h){
-            obj_wrap.removeClass('fixed')
-            obj_wrap.addClass('fixed_after')
-        }else{
-            obj_wrap.removeClass('fixed')
-            obj_wrap.removeClass('fixed_after')
-        }
-        if(scrolling >= obj_wrap.offset().top){
-            obj_size = obj_start+(scrolling - obj_wrap.offset().top)*1.8
-            if(obj_size > window_w){
-                obj_size = window_w
-            }
-            obj.width(obj_size)
-            obj_radius = 50 - (scrolling - obj_wrap.offset().top)*0.1
-            /*obj_h = 429 + (scrolling - obj_wrap.offset().top)*0.21
-            obj.height(obj_h) 
-            if(obj_radius < 0) {
-                obj.height(obj_h) 
-            }else{
-                obj.height(429)
-            }*/
-            if(obj_radius < 0){
-                obj_radius = 0
-            }
-            $('.story .bg').attr('style', 'border-radius:'+obj_radius+'% '+obj_radius+'% 0 0')
-            $('.story').addClass('active')
-        }else{
-            $('.story .bg').attr('style', 'border-radius:50% 50% 0 0')
-            $('.story').removeClass('active')
-        }
-    }
     device_chk()//문서가 로딩되고 1번 실행
     //story_chk()
     $(window).resize(function(){ //문서가 리사이즈될 때마다 1번씩 실행
@@ -118,5 +85,12 @@ $(document).ready(function(){
     $('.news .list li').on('click', function(){
         $('.news .list li').removeClass('on')
         $(this).addClass('on')
+    })
+    $('.network .cnt .cont').on('mouseover', function(){
+        $('.network .cnt .cont').removeClass('active')
+        $(this).addClass('active')
+    })
+    $('.top button').on('click', function(){
+        fullpage_api.moveTo(1);
     })
 })

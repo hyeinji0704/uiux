@@ -15,17 +15,23 @@ $(document).ready(function(){
 		verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 */
 
 		afterLoad: function(origin, destination, direction, trigger){
-			
+			if((destination.index == 2)){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
+				$('.header').addClass('fixed')
+			}else if((destination.index == 7)){
+				$('.header').addClass('fixed')
+            }else {
+                $('.header').removeClass('fixed')
+            }
 		},
         onScrollOverflow: function(section, slide, position, direction){
             
             if(section.index == 2){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
-                obj_size = obj_start+position*1.8
+                obj_size = obj_start+position*1.2
                 if(obj_size > $(window).width()){
                     obj_size = $(window).width()
                 }
                 obj.width(obj_size)
-                obj_radius = 50 - position*0.1
+                obj_radius = 50 - position*0.06
                 if(obj_radius < 0){
                     obj_radius = 0
                 }

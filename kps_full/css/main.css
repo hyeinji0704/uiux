@@ -105,6 +105,7 @@ body {
 
 .vision {
     background-color: #fff;
+    
 }
 .fp-overflow {
     overflow-x: hidden;
@@ -312,7 +313,7 @@ body {
 }
 @media screen and (max-width:1023px) {
     .story {
-        height: 200vh;
+        height: 100vh;
     }
     .story .more {
         opacity: 1;
@@ -323,7 +324,6 @@ body {
     .story .story_sub {
         width: 100%;
         height: calc(100% - 270px);
-        overflow: hidden;
     }
     .story .tit p {
         color: #fff;

@@ -15,13 +15,10 @@ $(document).ready(function(){
 		verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 */
 
 		afterLoad: function(origin, destination, direction, trigger){
-			if((destination.index == 2)){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
+			if((destination.index == 2) || (destination.index == 7)){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
 				$('.header').addClass('fixed')
                 $('.header').addClass('black')
-			}else if((destination.index == 7)){
-				$('.header').addClass('fixed')
-                $('.header').addClass('black')
-            }else {
+			}else {
                 $('.header').removeClass('fixed')
                 $('.header').removeClass('black')
             }
@@ -93,4 +90,5 @@ $(document).ready(function(){
     $('.top button').on('click', function(){
         fullpage_api.moveTo(1);
     })
+
 })

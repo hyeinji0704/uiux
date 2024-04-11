@@ -105,7 +105,6 @@ body {
 
 .vision {
     background-color: #fff;
-    
 }
 .fp-overflow {
     overflow-x: hidden;
@@ -313,7 +312,7 @@ body {
 }
 @media screen and (max-width:1023px) {
     .story {
-        height: 100vh;
+        height: 200vh;
     }
     .story .more {
         opacity: 1;

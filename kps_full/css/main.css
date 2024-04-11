@@ -5,11 +5,11 @@ body {
     background: url(../images/main/visual_bg.png) center center / cover;
 }
 
-
 .visual {
     color: #fff;
     height: 100%;
     width: 100%;
+    
 }
 .visual .wrapper {
     position: relative;
@@ -105,6 +105,10 @@ body {
 
 .vision {
     background-color: #fff;
+    
+}
+.fp-overflow {
+    overflow-x: hidden;
 }
 .story {
     position: relative;

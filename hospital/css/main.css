@@ -234,6 +234,12 @@
     .visual .swiper .swiper_cnt {
         height: 600px;
     }
+    .visual .swiper .prev, .visual .swiper .next {
+        margin-left: 40px;
+    }
+    .visual .swiper .pause , .visual .swiper .play {
+        left: 5px;
+    }
 }
 @media screen and (max-width:500px) {
     .in {
@@ -348,7 +354,7 @@
     max-height: 0; 
     overflow: hidden; 
     transition: max-height 500ms , opacity .3s; 
-    opacity: 0
+    opacity: 0;
 } 
 .quick .menu_btn_box ul li a {
     display: flex; 
@@ -1697,7 +1703,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         position: absolute;
         left: auto;
         right: 0;
-        top: 308px;
+        top: 233px;
         font-weight: 700;
         font-family: 'Noto Sans KR';
     }

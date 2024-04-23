@@ -1,3 +1,8 @@
 {
+<<<<<<< HEAD
     "liveServer.settings.port": 5501
+=======
+    "editor.codeActionsOnSave": {},
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": ""
+>>>>>>> 2ea97c2c6692319470fc965059a76e10d5cbc749
 }

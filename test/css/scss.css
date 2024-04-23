@@ -1,0 +1,17 @@
+.header {
+  height: 100px;
+  color: #1d1d1d;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.header ul {
+  display: flex;
+}
+.header ul li {
+  width: 25%;
+}
+.header ul li.on {
+  color: #f60;
+}/*# sourceMappingURL=scss.css.map */

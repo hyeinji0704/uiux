@@ -1,0 +1,23 @@
+$font-base-color : #1d1d1d;
+$font-gray-color : #666;
+@mixin ab_center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header {
+    height: 100px;
+    color: $font-base-color;
+    @include ab_center;
+    ul {
+        display: flex;
+        li {
+            width: 25%;
+            &.on {
+                color: #f60;
+            }
+        }
+    }
+}

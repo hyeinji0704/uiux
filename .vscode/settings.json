@@ -1,8 +1,14 @@
 {
-<<<<<<< HEAD
-    "liveServer.settings.port": 5501
-=======
-    "editor.codeActionsOnSave": {},
-    "liveServer.settings.AdvanceCustomBrowserCmdLine": ""
->>>>>>> 2ea97c2c6692319470fc965059a76e10d5cbc749
+    "liveSassCompile.settings.generateMap": false,	//css map파일 생성
+    "liveSassCompile.settings.autoprefix": false,	//벤더프리픽스
+    "liveSassCompile.settings.compileOnWatch": false,	//Watch Sass 실행 시 모든 .scss 컴파일
+    "liveSassCompile.settings.watchOnLaunch": true,	//Watch Sass 자동 실행
+    "liveSassCompile.settings.formats": [	//포맷 설정(복수 설정 가능)
+    
+    {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "/js_practice",
+    }
+    ],
 }

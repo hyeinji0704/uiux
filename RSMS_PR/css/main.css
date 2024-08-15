@@ -1,0 +1,13 @@
+@import url(default.css);
+@import url(common.css);
+
+:root {
+    --black-primary: #000000;
+    --black-secondary: #555555;
+    --blue-primary: #00388F;
+    --blue-secondary: #3B70D9;
+    --gray-light: #D9D9D9;
+    --gray-lighter: #DDDDDD;
+    --gray-lightest: #F2F5F9;
+    --white: #FFFFFF;
+}

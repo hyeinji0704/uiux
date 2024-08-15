@@ -1,0 +1,49 @@
+@charset "utf-8";/*이 css문서는 utf-8방식으로 인코딩 되어 있습니다. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');/*영문웹폰트*/
+@font-face {
+	font-family: 'Noto Sans KR Regular';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/NotoSans-Regular.woff') format('woff'), url('../fonts/NotoSans-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Noto Sans KR Medium';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../fonts/NotoSans-Medium.woff') format('woff'), url('../fonts/NotoSans-Medium.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Noto Sans KR Bold';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../fonts/NotoSans-Bold.woff') format('woff'), url('../fonts/NotoSans-Bold.woff2') format('woff2');
+}
+/*한글웹폰트*/
+*::selection {
+    background-color: #FFEFBC;
+    color: #0C0103;
+}
+*::-moz-selection { /*호환성을 위한 코드*/
+    background-color: #FFEFBC;
+    color: #0C0103;
+}
+
+html, body {
+    font-family: 'Noto Sans KR', 'Rubik', "Malgun Gothic", "Apple SD Gothic Neo", "Pretendard Variable", serif;
+    font-size: 15px;
+    color: #000;
+    font-weight: 400;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.wrapper {
+    width: 1800px; /* 넓이 제한 */
+    margin: 0 auto; /* 센터 */
+}
+#wrap { /*id="wrap"에 적용되는 스타일 */
+    min-width: 100%;
+    overflow: hidden; /*sticky 사용할 때는 쓰면 안됨*/
+}
+/* Wrapper의 사이즈 1280 + 40px(좌우여백) = 1320 사이즈를 줄였을 때 부드럽게 들어가기 위해서*/
+

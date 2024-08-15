@@ -7,8 +7,105 @@
     <title>연구비팝업</title>
 </head>
 <body>
-    <header class="header">
-        <h1></h1>
-    </header>
+    <div id="wrap" class="container">
+        <header class="header">
+            <div class="wrapper">
+                <h1>연구비 집행 통합모니터링</h1>
+                <button class="close-btn" onclick="closePanel()">닫기</button>
+            </div>
+        </header>
+        <div class="section">
+            <div class="wrapper">
+                <div class="inner left">
+                    <div class="content01">
+                        <h2>연구비 교부</h2>
+                        <ul>
+                            <li>
+                                <div class="item">
+                                    <h3>정부지원연구개발비<span class="label org">기관</span></h3>
+                                    <div class="info">
+                                        <div class="num">
+                                            <div class="amount">1612<span class="amount_text">미입금</span></div>
+                                            <div class="separator">/</div>
+                                            <div class="total">2000<span class="total_text">전체</span></div>
+                                            <strong>개 기관</strong>
+                                        </div>
+                                        <div class="percent">35%</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <h3>민간현금 입금기한<span class="label org">기관</span></h3>
+                                    <div class="info">
+                                        <div class="num">
+                                            <div class="amount">1612<span class="amount_text">미입금</span></div>
+                                            <div class="separator">/</div>
+                                            <div class="total">2000<span class="total_text">전체</span></div>
+                                            <strong>개 기관</strong>
+                                        </div>
+                                        <div class="percent">35%</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 35%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content02">
+                        <h2>연구비 정산</h2>
+                        <ul>
+                            <li>
+                                <div class="item">
+                                    <h3>사용실적보고서<span class="label task">과제</span></h3>
+                                    <div class="info">
+                                        <div class="num">
+                                            <div class="amount">1612<span class="amount_text">미입금</span></div>
+                                            <div class="separator">/</div>
+                                            <div class="total">2000<span class="total_text">전체</span></div>
+                                            <strong>개 기관</strong>
+                                        </div>
+                                        <div class="percent">35%</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <h3>민간현금 입금기한<span class="label task">과제</span></h3>
+                                    <div class="info">
+                                        <div class="num">
+                                            <div class="amount">1612<span class="amount_text">미입금</span></div>
+                                            <div class="separator">/</div>
+                                            <div class="total">2000<span class="total_text">전체</span></div>
+                                            <strong>개 기관</strong>
+                                        </div>
+                                        <div class="percent">35%</div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 35%;"></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="inner right"></div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        function closePanel() {
+            document.querySelector('.container').style.display = 'none';
+        }
+    </script>
 </body>
 </html>

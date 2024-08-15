@@ -11,3 +11,130 @@
     --gray-lightest: #F2F5F9;
     --white: #FFFFFF;
 }
+.header {
+    background-color: var(--white);
+}
+.header .wrapper {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.header h1 {
+    color: var(--blue-primary);
+    font-weight: 700;
+    font-size: 18px;
+}
+.header .close-btn {
+    padding: 20px;
+    background: url(../images/vector.svg) center center no-repeat;
+    font-size: 0;
+    line-height: 0;
+}
+.section {
+    background-color:  var(--gray-lightest);
+    padding: 22px 0;
+}
+.section .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.section .wrapper .inner {
+    width: 50%;
+} 
+.section .wrapper .inner .content01 {
+    margin-bottom: 20px;
+}
+.section .wrapper .inner h2 {
+    font-weight: 700;
+}
+.section .wrapper .inner ul {
+    display: flex;
+    justify-content: space-between;
+}
+.section .wrapper .inner ul li {
+    width: calc(50% - 10px);
+    background-color: var(--white);
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    padding: 0 30px;
+}
+.section .wrapper .inner ul li h3 {
+    color: var(--blue-secondary);
+    font-weight: 500;
+    margin: 18px 0 30px 0;
+}
+.section .wrapper .inner ul li .label {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border: 1px solid #DDD;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+.section .wrapper .inner ul li .label.task {
+    color: var(--blue-primary);
+}
+.section .wrapper .inner ul li .item .info {
+    display: flex;
+    justify-content: space-between;
+} 
+.section .wrapper .inner ul li .item .num {
+    display: flex;
+}
+.section .wrapper .inner ul li .item .num strong {
+    display: inline-block;
+}
+.section .wrapper .inner ul li .item .num .separator {
+    margin: 0 15px;
+}
+.section .wrapper .inner ul li .item .num .amount {
+    position: relative;
+}
+.section .wrapper .inner ul li .item .num .total {
+    position: relative;
+}
+.section .wrapper .inner ul li .item .num .amount_text {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+}
+.section .wrapper .inner ul li .item .num .total_text {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+}
+.progress {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #007bff;
+}
+
+.progress-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+}
+
+.progress-circle::before {
+    content: attr(data-percent) "%";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+}

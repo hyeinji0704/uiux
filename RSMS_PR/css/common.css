@@ -30,15 +30,16 @@
 
 html, body {
     font-family: 'Noto Sans KR', 'Rubik', "Malgun Gothic", "Apple SD Gothic Neo", "Pretendard Variable", serif;
-    font-size: 15px;
+    font-size: 16px;
     color: #000;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.67;
+    letter-spacing: -0.54px;
     word-break: keep-all;
     word-wrap: break-word;
 }
 .wrapper {
-    width: 1800px; /* 넓이 제한 */
+    width: 1480px; /* 넓이 제한 */
     margin: 0 auto; /* 센터 */
 }
 #wrap { /*id="wrap"에 적용되는 스타일 */
